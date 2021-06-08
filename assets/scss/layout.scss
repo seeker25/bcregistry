@@ -1,0 +1,19 @@
+
+// Helper Classes
+.table--fixed {
+  table-layout: fixed;
+}
+
+.text--center {
+  text-align: center;
+}
+
+.nuxt-inline-helper {
+  display: inline-block;
+  
+  &:before {
+    display: inline-block;
+    width: 0.25rem;
+    content: ' ';
+  }
+}

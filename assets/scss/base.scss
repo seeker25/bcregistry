@@ -1,0 +1,218 @@
+// IMPORTS
+@import "theme.scss";
+
+// FONTS
+@font-face {
+  font-family: 'BCSans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('~assets/fonts/BCSans/BCSans-Regular.woff2') format('woff2'), /* Optimized for very modern browsers */
+       url('~assets/fonts/BCSans/BCSans-Regular.woff') format('woff'), local('BCSans'); /* Modern Browsers */
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BCSans';
+  font-style: italic;
+  src: url('~assets/fonts/BCSans/BCSans-Italic.woff2') format('woff2'), /* Optimized for very modern browsers */
+       url('~assets/fonts/BCSans/BCSans-Italic.woff') format('woff'), local('BCSans'); /* Modern Browsers */
+  font-display: swap;
+}
+@font-face {
+  font-family: 'BCSans';
+  font-weight: 700;
+  src: url('~assets/fonts/BCSans/BCSans-Bold.woff2') format('woff2'), /* Optimized for very modern browsers */
+       url('~assets/fonts/BCSans/BCSans-Bold.woff') format('woff'), local('BCSans'); /* Modern Browsers */
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BCSans';
+  font-style: italic;
+  font-weight: 700;
+  src: url('~assets/fonts/BCSans/BCSans-BoldItalic.woff2') format('woff2'), /* Optimized for very modern browsers */
+       url('~assets/fonts/BCSans/BCSans-BoldItalic.woff') format('woff'), local('BCSans'); /* Modern Browsers */
+  font-display: swap;
+}
+
+// RESET
+* {
+  box-sizing: border-box;
+}
+
+// BASIC PAGE STRUCTURE / SETUP
+html,
+body {
+  min-height: 100vh;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  overflow-y: scroll;
+  color: $gray7;
+  background: $gray1;
+  font-size: 1rem;
+  font-family: 'BCSans', Verdana, Arial, sans-serif;
+}
+
+// TYPOGRAPHY
+h1, h2, h3, h4, h5, h6 {
+  color: $gray9;
+  letter-spacing: -0.02rem;
+  font-weight: 700;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+
+  + p {
+    margin-top: 0.75rem;
+  }
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+a {
+  color: $BCgovLink;
+}
+
+p {
+  margin: 1rem 0;
+}
+
+// ELEMENTS
+hr {
+  margin: 2.5rem 0;
+  border-color: $gray4;
+  border-style: solid;
+}
+
+ol {
+  margin:0 0 1.5em;
+  padding:0;
+  counter-reset:item;
+}
+ 
+ol > li {
+  margin: 1rem 0;
+  padding:0 0 0 5rem;
+  list-style-type: none;
+  counter-increment: item;
+}
+ 
+ol > li:before {
+  display: inline-block;
+  margin-left: -5rem;
+  width: 3rem;
+  padding-right: 2rem;
+  font-weight: 700;
+  text-align: right;
+  content:counter(item) ".";
+}
+
+pre {
+  background-color: #ffffff !important;
+}
+
+table {
+  width: 100%;
+  background-color: #fff;
+  border: 2px solid $gray1;
+  border-collapse: collapse;
+
+  th, td {
+    padding: 1rem;
+    border: 2px solid $gray1;
+    text-align: left;
+  }
+
+  th {
+    color: #ffffff;
+    background-color: $BCgovBlue4;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+}
+
+// CUSTOM
+a.button {
+  margin-top: 0.75rem;
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+
+  &.primary {
+    color: #ffffff;
+    background-color: $BCgovBlue5;
+    font-weight: 700;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 0.25rem;
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12)!important;
+
+  .card-title {
+    flex: 0 0 auto;
+    margin-top: -0.5rem;
+    margin-bottom: 0;
+  }
+
+  .card-body {
+    flex: 1 1 auto;
+  }
+
+  .card-actions {
+    margin-top: 1rem;
+  }
+}
+
+// HELPER CLASSES
+.align--center {
+  align-self: center;
+}
+
+.table--fixed {
+  table-layout: fixed;
+}
+
+.text--center {
+  text-align: center;
+}
+.text--left {
+  text-align: left;
+}
+
+.nuxt-inline-helper {
+  display: inline-block;
+  
+  &:before {
+    display: inline-block;
+    width: 0.25rem;
+    content: ' ';
+  }
+}
+
+.account-container {
+  width: 100%;
+}
+.account-container h1 {
+  text-align: center;
+  padding-top: 50px;
+}
