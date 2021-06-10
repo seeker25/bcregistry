@@ -1,33 +1,33 @@
 <template>
-  <div class="accounts-container">
+  <div class="accounts-footer-container">
     <hr />
-    <div class="accounts-container py-10">
-      <h2>Explore services by account type:</h2>
+    <div class="accounts-footer">
+      <div class="accounts-footer-info">Explore services by account type:</div>
+      <footer class="app-footer">
+        <div class="container">
+          <nav>
+            <ul>
+              <li>
+                <nuxt-link to="/bcregistries-account"
+                  >BC Registries Account</nuxt-link
+                >
+              </li>
+              <li>
+                <nuxt-link to="/bconline-account">BC OnLine Account</nuxt-link>
+              </li>
+              <li>
+                <nuxt-link to="/direct-account"
+                  >Individual / Direct Accounts</nuxt-link
+                >
+              </li>
+              <li>
+                <nuxt-link to="/no-account">Account Not Required</nuxt-link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </footer>
     </div>
-    <footer class="app-footer">
-      <div class="container">
-        <nav>
-          <ul>
-            <li>
-              <nuxt-link to="/bcregistries-account"
-                >BC Registries Account</nuxt-link
-              >
-            </li>
-            <li>
-              <nuxt-link to="/bconline-account">BC OnLine Account</nuxt-link>
-            </li>
-            <li>
-              <nuxt-link to="/direct-account"
-                >Individual / Direct Accounts</nuxt-link
-              >
-            </li>
-            <li>
-              <nuxt-link to="/no-account">Account Not Required</nuxt-link>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </footer>
   </div>
 </template>
 
@@ -40,19 +40,27 @@ hr {
   border-style: solid;
 }
 
-.accounts-container {
+.accounts-footer-container {
   background: $BCgovInputBG;
   width: 100%;
 }
-.accounts-container h2 {
-  text-align: center;
+.accounts-footer {
+  padding-top: 35px;
+  padding-bottom: 35px;
 }
-
+.accounts-footer-info {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #212529;
+  padding-bottom: 20px;
+}
 .app-footer {
   display: flex;
   min-height: 3.5rem;
   background-color: $BCgovInputBG;
   font-size: 0.875rem;
+  text-align: center;
 }
 
 nav {
@@ -71,12 +79,10 @@ nav {
     a {
       display: block;
       padding: 0.25rem 0.5rem;
+      font-size: 16px;
+      font-weight: bold;
       color: $BCgovLink;
-      text-decoration: none;
-
-      &:hover {
-        text-decoration: underline;
-      }
+      text-decoration: underline;
     }
   }
 
@@ -91,7 +97,7 @@ nav {
     li {
       margin-right: 0.5rem;
       padding-right: 0.5rem;
-      border-right: 1px solid $gray4;
+      border-right: 1px solid $gray3;
 
       a {
         padding: 0.25rem 0.5rem;

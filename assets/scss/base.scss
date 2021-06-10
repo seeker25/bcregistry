@@ -209,10 +209,53 @@ a.button {
   }
 }
 
+// Common account menu begin
 .account-container {
   width: 100%;
+  padding-bottom: 30px;
 }
 .account-container h1 {
   text-align: center;
   padding-top: 50px;
 }
+
+.menu-list-text {
+  font-weight: bold;
+  color: black;
+}
+.menu-header {
+  color: #fff;
+  background: #38598a;
+  font-weight: bold;
+  font-size: 16px;
+  padding-left: 30px;
+}
+.menu-item {
+  font-size: 16px;
+  line-height: 24px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+.menu-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #212529;
+  padding-top: 100px;
+  text-align: center;
+}
+.menu-info {
+  font-size: 16px;
+  line-height: 24px;
+  color: #495057;
+  text-align: center;
+  max-width: 850px;
+}
+.menu-info-bold {
+  font-size: 18px;
+  font-weight: bold;
+  color: #212529;
+  text-align: center;
+}
+// Common account menu end
