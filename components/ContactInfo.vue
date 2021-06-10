@@ -6,8 +6,8 @@
           <h3 class="mb-6">Need more information?</h3>
           <p class="mb-4">
             To learn more about BC Registries and Online Services, please
-            <a
-              href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services"
+            <!-- eslint-disable-next-line -->
+            <a href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -29,9 +29,9 @@
               <span>Phone:</span><a href="tel:+1250-387-7848">250-387-7848</a>
             </li>
             <li>
-              <span>Email:</span
-              ><a
-                href="mailto:BCRegistries@gov.bc.ca?subject=BC%20Registries%20-%20Business%20Registry%20Support%20Request"
+              <span>Email:</span>
+              <!-- eslint-disable-next-line -->
+              <a href="mailto:BCRegistries@gov.bc.ca?subject=BC%20Registries%20-%20Business%20Registry%20Support%20Request"
                 >BCRegistries@gov.bc.ca</a
               >
             </li>
