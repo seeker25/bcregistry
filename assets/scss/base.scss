@@ -93,10 +93,12 @@ p {
 
 // ELEMENTS
 hr {
-  margin: 2.5rem 0;
+  margin: 0;
   border-color: $gray4;
   border-style: solid;
+  border-width: 3px;
 }
+
 
 ol {
   margin:0 0 1.5em;
@@ -146,6 +148,7 @@ table {
 }
 
 // CUSTOM
+/*
 a.v-btn {
   margin-top: 0.75rem;
   display: inline-block;
@@ -159,7 +162,7 @@ a.v-btn {
     font-weight: 700;
   }
 }
-
+*/
 .card {
   display: flex;
   flex-direction: column;
@@ -212,7 +215,6 @@ a.v-btn {
 // Common account menu begin
 .account-container {
   width: 100%;
-  padding-bottom: 30px;
 }
 .account-container h1 {
   text-align: center;
@@ -229,6 +231,7 @@ a.v-btn {
   font-weight: bold;
   font-size: 16px;
   padding-left: 30px;
+  padding-top: 12px !important;
 }
 .menu-item {
   font-size: 16px;
@@ -238,11 +241,14 @@ a.v-btn {
   padding-top: 35px;
   padding-bottom: 35px;
 }
+.menu-item-title {
+  font-size: 16px !important;
+  font-weight: bold !important;
+}
 .menu-title {
   font-size: 32px;
   font-weight: bold;
   color: #212529;
-  padding-top: 100px;
   text-align: center;
 }
 .menu-info {
@@ -258,4 +264,66 @@ a.v-btn {
   color: #212529;
   text-align: center;
 }
+.menu-title-badge {
+  color: #003366 !important;
+  background: $BCgovGold5 !important;
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: none !important;
+  text-align: center;
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  margin: 0px;
+  padding-top: 0px !important;
+  height: 35px !important;
+}
 // Common account menu end
+
+// Common payment section begin
+.payment {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #e2e8ee;
+}
+.payment-info-bold {
+  font-size: 18px;
+  font-weight: bold;
+  color: $gray9;
+  text-align: center;
+}
+.payment-info {
+  font-size: 16px;
+  line-height: 24px;
+  color: $gray7;
+  text-align: center;
+}
+// Common payment section end
+
+// Common button begin
+.button-row {
+  width: 100%;
+  padding-top: 30px;
+  text-align: center;
+}
+.button-blue {
+  color: #fff !important;
+  background: #38598a !important;
+  font-weight: bold;
+  font-size: 12px;
+  text-decoration: none !important;
+  text-transform: none !important;
+  text-align: center;
+  border-radius: 0.25rem;
+}
+.button-gold {
+  color: $gray9 !important;
+  background: $BCgovGold5 !important;
+  font-weight: bold;
+  font-size: 12px;
+  text-decoration: none !important;
+  text-transform: none !important;
+  text-align: center;
+  border-radius: 0.25rem;
+}
+
+// Common button end

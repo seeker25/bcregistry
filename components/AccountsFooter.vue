@@ -34,12 +34,6 @@
 <style lang="scss" scoped>
 @import '../assets/scss/theme.scss';
 
-hr {
-  margin: 1.5rem 0;
-  border-color: $gray4;
-  border-style: solid;
-}
-
 .accounts-footer-container {
   background: $BCgovInputBG;
   width: 100%;
@@ -81,7 +75,7 @@ nav {
       padding: 0.25rem 0.5rem;
       font-size: 16px;
       font-weight: bold;
-      color: $BCgovLink;
+      color: $gray9;
       text-decoration: underline;
     }
   }

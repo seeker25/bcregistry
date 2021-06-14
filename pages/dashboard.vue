@@ -8,22 +8,14 @@
               <h1 class="text--left">My Registry Dashboard</h1>
               <v-row>
                 <v-col class="text--left col-2 mt-7 mb-10">
-                  <v-btn
-                    color="primary"
-                    class="cta-btn-auth font-weight-bold"
-                    to="/ppr/dashboard"
+                  <v-btn class="button-blue" :href="$config.pprURL"
+                    >PPR Dashboard</v-btn
                   >
-                    PPR Dashboard
-                  </v-btn>
                 </v-col>
                 <v-col class="text--left col-5 mt-7 mb-10">
-                  <v-btn
-                    color="primary"
-                    class="cta-btn-auth font-weight-bold"
-                    to="/business/auth/home/decide-business"
+                  <v-btn class="button-blue" :href="$config.businessURL"
+                    >Manage Businesses</v-btn
                   >
-                    Manage Businesses
-                  </v-btn>
                 </v-col>
               </v-row>
             </div>

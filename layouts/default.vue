@@ -9,11 +9,13 @@
   </div>
 </template>
 <script>
+// import SbcHeader from 'sbc-common-components/src/components/SbcHeader.vue'
 import SbcHeaderStatic from '~/components/SbcHeaderStatic.vue'
 import SbcFooterStatic from '~/components/SbcFooterStatic.vue'
 import ContactInfo from '~/components/ContactInfo.vue'
 export default {
   components: {
+    // SbcHeader,
     SbcHeaderStatic,
     SbcFooterStatic,
     ContactInfo,

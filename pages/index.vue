@@ -1,60 +1,75 @@
 <template>
   <div>
-    <div class="app-body">
-      <div>
-        <article>
-          <header class="hero-banner d-flex align-center">
-            <div class="container">
-              <h1 class="text--left">
-                Access and manage your BC
-                <br />Registries and Online services
-              </h1>
-              <p class="text--left mt-7 mb-10">
-                All registrations of businesses, not-for-profit societies,
-                cooperative associations, <br />
-                personal property and manufactured homes are administered and
-                supported by <br />
-                BC Registries and Online Services.
-              </p>
-              <p class="text--left mt-7 mb-10">
-                As our online modernization initiative continues, refer to this
-                page for updates on<br />
-                ways to manage registration information
-              </p>
-              <div role="dialog" class="v-dialog__container">
+    <div style="pa-0">
+      <article>
+        <header class="hero-banner d-flex align-center">
+          <div class="container">
+            <h1>
+              Access and manage your BC
+              <br />Registries and Online services
+            </h1>
+            <p class="services-info">
+              All registrations of businesses, not-for-profit societies,
+              cooperative associations, <br />
+              personal property and manufactured homes are administered and
+              supported by <br />
+              BC Registries and Online Services.
+            </p>
+            <p class="services-info">
+              As our online modernization initiative continues, refer to this
+              page for updates on<br />
+              ways to manage registration information
+            </p>
+            <div role="dialog" class="v-dialog__container">
+              <div role="document" class="v-dialog__content" style="z-index: 0">
                 <div
-                  role="document"
-                  class="v-dialog__content"
-                  style="z-index: 0"
-                >
-                  <div
-                    class="v-dialog"
-                    style="max-width: 640px; display: none"
-                  ></div>
-                </div>
+                  class="v-dialog"
+                  style="max-width: 640px; display: none"
+                ></div>
               </div>
             </div>
-          </header>
-        </article>
-      </div>
+          </div>
+        </header>
+      </article>
     </div>
-
     <AccountsFooter />
+    <hr />
+    <BCRegistriesAccount />
+    <hr />
+    <BCOnlineAccount />
+    <hr />
+    <DirectAccount />
+    <hr />
+    <NoAccount />
   </div>
 </template>
 
 <script>
 import AccountsFooter from '~/components/AccountsFooter.vue'
+import BCOnlineAccount from '~/components/BCOnlineAccount.vue'
+import BCRegistriesAccount from '~/components/BCRegistriesAccount.vue'
+import DirectAccount from '~/components/DirectAccount.vue'
+import NoAccount from '~/components/NoAccount.vue'
 export default {
   components: {
     AccountsFooter,
+    BCRegistriesAccount,
+    BCOnlineAccount,
+    DirectAccount,
+    NoAccount,
   },
 }
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/scss/theme.scss';
+
 h1 {
-  font-size: 2.25rem;
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 50px;
+  color: $gray9;
+  text-align: left;
 }
 
 h1 + p {
@@ -213,5 +228,11 @@ $card-width: 50%;
 
 article {
   padding: 0;
+}
+.services-info {
+  font-size: 16px;
+  line-height: 24px;
+  color: $gray7;
+  text-align: left;
 }
 </style>

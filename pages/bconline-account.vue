@@ -1,9 +1,12 @@
 <template>
-  <v-container fluid no-gutters>
-    <div class="account-container">
-      <h1>BC OnLine Account</h1>
-    </div>
-  </v-container>
+  <BCOnlineAccount />
 </template>
 
-<script></script>
+<script>
+import BCOnlineAccount from '~/components/BCOnlineAccount.vue'
+export default {
+  components: {
+    BCOnlineAccount,
+  },
+}
+</script>

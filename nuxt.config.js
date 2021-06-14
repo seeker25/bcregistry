@@ -69,6 +69,21 @@ export default {
     },
   },
 
+  // Environment variables for all site links defined here.
+  publicRuntimeConfig: {
+    baseURL: process.env.BCROS_BASE_URL,
+    authURL: process.env.AUTH_URL,
+    nameRequestURL: process.env.NAME_REQUEST_URL,
+    businessURL: process.env.BUSINESS_URL,
+    colinURL: process.env.COLIN_URL,
+    onestopURL: process.env.ONESTOP_URL,
+    societiesURL: process.env.SOCIETIES_URL,
+    pprURL: process.env.PPR_URL,
+    willsURL: process.env.WILLS_URL,
+    bcolURL: process.env.BCOL_URL,
+    regAccountCreateURL: process.env.REGISTRY_ACCOUNT_CREATE_URL,
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 }

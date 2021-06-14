@@ -1,9 +1,12 @@
 <template>
-  <v-container fluid no-gutters>
-    <div class="account-container">
-      <h1>Individual / Direct Accounts</h1>
-    </div>
-  </v-container>
+  <DirectAccount />
 </template>
 
-<script></script>
+<script>
+import DirectAccount from '~/components/DirectAccount.vue'
+export default {
+  components: {
+    DirectAccount,
+  },
+}
+</script>
