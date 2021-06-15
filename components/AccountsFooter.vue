@@ -8,20 +8,16 @@
           <nav>
             <ul>
               <li>
-                <nuxt-link to="/bcregistries-account"
-                  >BC Registries Account</nuxt-link
-                >
+                <a href="#bcregistries-account">BC Registries Account</a>
               </li>
               <li>
-                <nuxt-link to="/bconline-account">BC OnLine Account</nuxt-link>
+                <a href="#bconline-account">BC OnLine Account</a>
               </li>
               <li>
-                <nuxt-link to="/direct-account"
-                  >Individual / Direct Accounts</nuxt-link
-                >
+                <a href="#direct-account">Individual / Direct Accounts</a>
               </li>
               <li>
-                <nuxt-link to="/no-account">Account Not Required</nuxt-link>
+                <a href="#no-account">Account Not Required</a>
               </li>
             </ul>
           </nav>
@@ -73,9 +69,9 @@ nav {
     a {
       display: block;
       padding: 0.25rem 0.5rem;
-      font-size: 16px;
+      font-size: 1rem;
       font-weight: bold;
-      color: $gray9;
+      color: $BCgovLink;
       text-decoration: underline;
     }
   }

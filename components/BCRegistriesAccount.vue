@@ -1,5 +1,6 @@
 <template>
   <div
+    id="bcregistries-account"
     class="account-container"
     style="padding-bottom: 70px; padding-top: 100px"
   >
@@ -54,7 +55,7 @@
                 >
                   Go to BC Business Registry
                 </a>
-                <v-icon color="#212529" size="16px">mdi-open-in-new</v-icon>
+                <v-icon color="#1a5a96" size="16px">mdi-open-in-new</v-icon>
               </p>
             </v-card-text>
           </v-card>
@@ -99,7 +100,7 @@
                 >
                   Go to Name Request
                 </a>
-                <v-icon color="#212529" size="16px">mdi-open-in-new</v-icon>
+                <v-icon color="#1a5a96" size="16px">mdi-open-in-new</v-icon>
               </p>
             </v-card-text>
           </v-card>
@@ -145,7 +146,7 @@
                 >
                   Go to Wills Registry
                 </a>
-                <v-icon color="#212529" size="16px">mdi-open-in-new</v-icon>
+                <v-icon color="#1a5a96" size="16px">mdi-open-in-new</v-icon>
               </p -->
             </v-card-text>
           </v-card>
@@ -189,7 +190,7 @@
                 <nuxt-link to="/ppr-marketing"
                   >Go to Personal Property Registry</nuxt-link
                 >
-                <v-icon color="#212529" size="16px">mdi-open-in-new</v-icon>
+                <v-icon color="#1a5a96" size="16px">mdi-open-in-new</v-icon>
               </p>
             </v-card-text>
           </v-card>
@@ -217,11 +218,11 @@
         <v-col cols="3"></v-col>
       </v-row>
       <v-row class="button-row">
-        <v-col cols="3"></v-col>
-        <v-col cols="3" style="padding-right: 0px">
+        <!-- v-col cols="3"></v-col -->
+        <v-col cols="6" style="padding-right: 10px; text-align: right">
           <SbcSigninButton />
         </v-col>
-        <v-col cols="3" style="padding-left: 0px">
+        <v-col cols="6" style="padding-left: 10px; text-align: left">
           <v-btn
             class="button-gold"
             style="height: 40px"
@@ -229,7 +230,7 @@
             >Create a BC Registries Account</v-btn
           >
         </v-col>
-        <v-col cols="3"></v-col>
+        <!-- v-col cols="3"></v-col -->
       </v-row>
     </div>
   </div>
@@ -263,8 +264,8 @@ ul li::before {
 }
 
 a {
-  color: $gray9;
-  font-size: 16px;
+  color: $BCgovLink;
+  font-size: 1rem;
   font-weight: bold;
   text-decoration: underline;
 }

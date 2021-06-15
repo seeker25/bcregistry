@@ -1,5 +1,6 @@
 <template>
   <div
+    id="no-account"
     class="account-container"
     style="padding-bottom: 70px; padding-top: 70px"
   >
@@ -46,7 +47,7 @@
                 >
                   Go to Name Request
                 </a>
-                <v-icon color="#212529" size="16px">mdi-open-in-new</v-icon>
+                <v-icon color="#1a5a96" size="16px">mdi-open-in-new</v-icon>
               </p>
             </v-card-text>
           </v-card>
@@ -95,8 +96,8 @@ ul li::before {
 }
 
 a {
-  color: $gray9;
-  font-size: 16px;
+  color: $BCgovLink;
+  font-size: 1rem;
   font-weight: bold;
   text-decoration: underline;
 }

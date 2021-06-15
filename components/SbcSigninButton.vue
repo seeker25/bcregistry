@@ -81,11 +81,12 @@
   color: #fff !important;
   background: #38598a !important;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 0.75em;
   text-decoration: none;
   text-transform: none;
   text-align: center;
   border-radius: 0.25rem;
+  flex: auto;
 }
 .menu-card {
   background: #fff !important;

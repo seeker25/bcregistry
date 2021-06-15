@@ -1,5 +1,6 @@
 <template>
   <div
+    id="bconline-account"
     class="account-container"
     style="padding-bottom: 70px; padding-top: 70px"
   >
@@ -29,8 +30,10 @@
               <v-spacer></v-spacer>
             </v-card-title>
             <v-card-text class="menu-item">
-              Incorporate, register, and manage BC or extraprovincial
-              corporations except for benefit companies.
+              <p>
+                Incorporate, register, and manage BC or extraprovincial
+                corporations except for benefit companies.
+              </p>
             </v-card-text>
           </v-card>
         </v-col>
@@ -41,7 +44,9 @@
               <v-spacer></v-spacer>
             </v-card-title>
             <v-card-text class="menu-item">
-              Research or request a name for your new or existing BC business.
+              <p>
+                Research or request a name for your new or existing BC business.
+              </p>
             </v-card-text>
           </v-card>
         </v-col>
@@ -52,8 +57,10 @@
               <v-spacer></v-spacer>
             </v-card-title>
             <v-card-text class="menu-item">
-              Personal property registrations and search for existing
-              registrations.
+              <p>
+                Personal property registrations and search for existing
+                registrations.
+              </p>
             </v-card-text>
           </v-card>
         </v-col>
@@ -67,7 +74,7 @@
               <v-spacer></v-spacer>
             </v-card-title>
             <v-card-text class="menu-item">
-              Registrations and search for manufactured and mobile homes.
+              <p>Registrations and search for manufactured and mobile homes.</p>
             </v-card-text>
           </v-card>
         </v-col>
@@ -78,11 +85,13 @@
               <v-spacer></v-spacer>
             </v-card-title>
             <v-card-text class="menu-item">
-              File a Wills Notice or search for an existing Wills Notice.
-              <span style="font-weight: bold"
-                >Wills Registry will also be available through the BC Registries
-                Account soon.</span
-              >
+              <p>
+                File a Wills Notice or search for an existing Wills Notice.
+                <span style="font-weight: bold"
+                  >Wills Registry will also be available through the BC
+                  Registries Account soon.</span
+                >
+              </p>
             </v-card-text>
           </v-card>
         </v-col>
@@ -93,8 +102,10 @@
               <v-spacer></v-spacer>
             </v-card-title>
             <v-card-text class="menu-item">
-              Update your personal and/or business records with provincial and
-              local government organizations.
+              <p>
+                Update your personal and/or business records with provincial and
+                local government organizations.
+              </p>
             </v-card-text>
           </v-card>
         </v-col>
@@ -150,7 +161,7 @@ ul li::before {
 
 a {
   color: $BCgovLink;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: bold;
   text-decoration: underline;
 }
