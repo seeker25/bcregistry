@@ -84,7 +84,7 @@ h3 {
 }
 
 a {
-  color: $BCgovLink;
+  color: $BCgovLink
 }
 
 p {
@@ -145,6 +145,12 @@ table {
     font-weight: 700;
     white-space: nowrap;
   }
+}
+
+ul {
+  list-style: square;
+  padding-left: 30px;
+  color: $gray4;
 }
 
 // CUSTOM
@@ -215,18 +221,21 @@ a.v-btn {
 // Common account menu begin
 .account-container {
   width: 100%;
+  flex-wrap: wrap !important;
 }
 .account-container h1 {
   text-align: center;
   padding-top: 50px;
 }
 .menu-card {
-  display: flex;
-  flex-direction: column;
+  padding-top: 30px;
+  padding-right: 20px;
+  background-color: #f1f3f5 !important;
 }
 .menu-list-text {
   font-weight: bold;
-  color: black;
+  color: $gray7;
+  font-size: 1rem;
 }
 .menu-header {
   flex: 0 3 auto;
@@ -306,6 +315,12 @@ a.v-btn {
 // Common payment section end
 
 // Common button begin
+.menu-card-button {
+  width: 100%;
+  padding-top: 30px;
+  text-align: center;
+  background-color: #e2e8ee !important;
+}
 .button-row {
   width: 100%;
   padding-top: 30px;
@@ -321,6 +336,7 @@ a.v-btn {
   text-align: center;
   border-radius: 0.25rem;
   flex: auto;
+  max-width: 300px;
 }
 .button-gold {
   color: $gray9 !important;
@@ -332,5 +348,6 @@ a.v-btn {
   text-align: center;
   border-radius: 0.25rem;
   flex: auto;
+  max-width: 300px;
 }
 // Common button end

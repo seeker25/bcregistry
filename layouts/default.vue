@@ -1,12 +1,14 @@
 <template>
-  <div id="app" class="app-container">
+  <!-- div id="app" class="app-container" -->
+  <v-app id="app" class="app-container">
     <SbcHeaderStatic />
     <div class="app-body">
       <nuxt />
     </div>
     <ContactInfo />
     <SbcFooterStatic />
-  </div>
+  </v-app>
+  <!-- /div -->
 </template>
 <script>
 // import SbcHeader from 'sbc-common-components/src/components/SbcHeader.vue'
@@ -37,6 +39,10 @@ export default {
   flex: 0 0 auto;
   height: 70px;
   z-index: 2;
+}
+
+.theme--light.v-application {
+  background-color: var(--v-background-base, #f1f3f5) !important;
 }
 
 .app-body {

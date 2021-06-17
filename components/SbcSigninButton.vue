@@ -1,5 +1,5 @@
 <template>
-  <div data-app>
+  <div>
     <v-menu bottom width="330" transition="slide-y-transition">
       <template #activator="{ on, attrs }">
         <v-btn

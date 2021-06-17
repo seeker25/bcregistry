@@ -7,15 +7,19 @@
             <div class="container">
               <h1 class="text--left">My Registry Dashboard</h1>
               <v-row>
-                <v-col class="text--left col-2 mt-7 mb-10">
-                  <v-btn class="button-blue" :href="$config.pprURL"
-                    >PPR Dashboard</v-btn
-                  >
-                </v-col>
-                <v-col class="text--left col-5 mt-7 mb-10">
-                  <v-btn class="button-blue" :href="$config.businessURL"
-                    >Manage Businesses</v-btn
-                  >
+                <v-col cols="auto">
+                  <v-card flat tile class="d-flex flex-wrap">
+                    <v-card flat tile class="text--left mt-7 mb-10 pr-3">
+                      <v-btn class="button-blue" :href="$config.pprURL"
+                        >PPR Dashboard</v-btn
+                      >
+                    </v-card>
+                    <v-card flat tile class="text--left mt-7 mb-10 pl-3">
+                      <v-btn class="button-blue" :href="$config.businessURL"
+                        >Manage Businesses</v-btn
+                      >
+                    </v-card>
+                  </v-card>
                 </v-col>
               </v-row>
             </div>

@@ -22,94 +22,91 @@
         >
         <v-col cols="2"></v-col>
       </v-row>
-      <v-row class="padding-top:30px">
-        <v-col cols="4" style="pr-5">
-          <v-card>
-            <v-card-title class="menu-header">
-              <span class="menu-item-title">Corporate Registry</span>
-              <v-spacer></v-spacer>
-            </v-card-title>
-            <v-card-text class="menu-item">
-              <p>
-                Incorporate, register, and manage BC or extraprovincial
-                corporations except for benefit companies.
-              </p>
-            </v-card-text>
-          </v-card>
-        </v-col>
-        <v-col cols="4" style="pr-5">
-          <v-card>
-            <v-card-title class="menu-header">
-              <span class="menu-item-title">Name Request Online (NRO)</span>
-              <v-spacer></v-spacer>
-            </v-card-title>
-            <v-card-text class="menu-item">
-              <p>
-                Research or request a name for your new or existing BC business.
-              </p>
-            </v-card-text>
-          </v-card>
-        </v-col>
-        <v-col cols="4" style="pr-5">
-          <v-card>
-            <v-card-title class="menu-header">
-              <span class="menu-item-title">Personal Property Registry</span>
-              <v-spacer></v-spacer>
-            </v-card-title>
-            <v-card-text class="menu-item">
-              <p>
-                Personal property registrations and search for existing
-                registrations.
-              </p>
-            </v-card-text>
-          </v-card>
-        </v-col>
-      </v-row>
 
-      <v-row class="padding-top:30px">
-        <v-col cols="4" style="pr-5">
-          <v-card>
-            <v-card-title class="menu-header">
-              <span class="menu-item-title">Manufactured Homes Registry</span>
-              <v-spacer></v-spacer>
-            </v-card-title>
-            <v-card-text class="menu-item">
-              <p>Registrations and search for manufactured and mobile homes.</p>
-            </v-card-text>
-          </v-card>
-        </v-col>
-        <v-col cols="4" style="pr-5">
-          <v-card>
-            <v-card-title class="menu-header">
-              <span class="menu-item-title">Wills Registry</span>
-              <v-spacer></v-spacer>
-            </v-card-title>
-            <v-card-text class="menu-item">
-              <p>
-                File a Wills Notice or search for an existing Wills Notice.
-                <span style="font-weight: bold"
-                  >Wills Registry will also be available through the BC
-                  Registries Account soon.</span
-                >
-              </p>
-            </v-card-text>
-          </v-card>
-        </v-col>
-        <v-col cols="4" style="pr-5">
-          <v-card>
-            <v-card-title class="menu-header">
-              <span class="menu-item-title">Address Change BC</span>
-              <v-spacer></v-spacer>
-            </v-card-title>
-            <v-card-text class="menu-item">
-              <p>
-                Update your personal and/or business records with provincial and
-                local government organizations.
-              </p>
-            </v-card-text>
-          </v-card>
-        </v-col>
-      </v-row>
+      <v-card
+        flat
+        class="d-md-flex flex-wrap"
+        style="background-color: #f1f3f5; padding-top: 30px"
+      >
+        <v-card flat max-width="350px" class="mr-5 mb-7">
+          <v-card-title class="menu-header">
+            <span class="menu-item-title">Corporate Registry</span>
+            <v-spacer></v-spacer>
+          </v-card-title>
+          <v-card-text class="menu-item">
+            <p>
+              Incorporate, register, and manage BC or extraprovincial
+              corporations except for benefit companies.
+            </p>
+          </v-card-text>
+        </v-card>
+        <v-card flat max-width="350px" class="mr-5 mb-7">
+          <v-card-title class="menu-header">
+            <span class="menu-item-title">Name Request Online (NRO)</span>
+            <v-spacer></v-spacer>
+          </v-card-title>
+          <v-card-text class="menu-item">
+            <p>
+              Research or request a name for your new or existing BC business.
+            </p>
+          </v-card-text>
+        </v-card>
+        <v-card flat max-width="350px" class="mr-5 mb-7">
+          <v-card-title class="menu-header">
+            <span class="menu-item-title">Personal Property Registry</span>
+            <v-spacer></v-spacer>
+          </v-card-title>
+          <v-card-text class="menu-item">
+            <p>
+              Personal property registrations and search for existing
+              registrations.
+            </p>
+          </v-card-text>
+        </v-card>
+      </v-card>
+
+      <v-card
+        flat
+        class="d-md-flex flex-wrap"
+        style="background-color: #f1f3f5; padding-top: 2px"
+      >
+        <v-card flat max-width="350px" class="mr-5 mb-7">
+          <v-card-title class="menu-header">
+            <span class="menu-item-title">Manufactured Homes Registry</span>
+            <v-spacer></v-spacer>
+          </v-card-title>
+          <v-card-text class="menu-item">
+            <p>Registrations and search for manufactured and mobile homes.</p>
+          </v-card-text>
+        </v-card>
+        <v-card flat max-width="350px" class="mr-5 mb-7">
+          <v-card-title class="menu-header">
+            <span class="menu-item-title">Wills Registry</span>
+            <v-spacer></v-spacer>
+          </v-card-title>
+          <v-card-text class="menu-item">
+            <p>
+              File a Wills Notice or search for an existing Wills Notice.
+              <span style="font-weight: bold"
+                >Wills Registry will also be available through the BC Registries
+                Account soon.</span
+              >
+            </p>
+          </v-card-text>
+        </v-card>
+        <v-card flat max-width="350px" class="mr-5 mb-7">
+          <v-card-title class="menu-header">
+            <span class="menu-item-title">Address Change BC</span>
+            <v-spacer></v-spacer>
+          </v-card-title>
+          <v-card-text class="menu-item">
+            <p>
+              Update your personal and/or business records with provincial and
+              local government organizations.
+            </p>
+          </v-card-text>
+        </v-card>
+      </v-card>
     </v-container>
     <div class="payment">
       <v-row>
@@ -140,29 +137,3 @@
 </template>
 
 <script></script>
-
-<style lang="scss" scoped>
-@import '@/assets/scss/theme.scss';
-
-ul {
-  list-style: square;
-  /* list-style-type: square; /* Remove default bullets */
-  padding-left: 30px;
-}
-
-ul li::before {
-  /* content: '\2022'; /* Add content: \2022 is the CSS Code/unicode for a bullet */
-  color: $gray3; /* Change the color */
-  font-weight: bold; /* If you want it to be bold */
-  display: inline-block; /* Needed to add space between the bullet and the text */
-  width: 1em; /* Also needed for space (tweak if needed) */
-  margin-left: -1em; /* Also needed for space (tweak if needed) */
-}
-
-a {
-  color: $BCgovLink;
-  font-size: 1rem;
-  font-weight: bold;
-  text-decoration: underline;
-}
-</style>

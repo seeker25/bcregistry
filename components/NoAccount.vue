@@ -13,47 +13,50 @@
         >
         <v-col cols="2"></v-col>
       </v-row>
-      <v-row class="padding-top:30px">
-        <v-col cols="4" style="pr-5"></v-col>
-        <v-col cols="4" style="pr-5">
-          <v-card>
-            <v-card-title class="menu-header">
-              <v-row>
-                <v-col cols="9"
-                  ><span class="menu-item-title"
-                    >Name Requests (Beta)</span
-                  ></v-col
-                >
-                <v-col cols="3">
-                  <v-row>
-                    <v-col cols="auto" class="menu-title-badge">NEW</v-col>
-                  </v-row>
-                  <v-row>
-                    <v-col cols="auto"></v-col>
-                  </v-row>
-                </v-col>
-              </v-row>
-            </v-card-title>
-            <v-card-text class="menu-item">
-              <p>
-                Research and request a name for your new or existing BC existing
-                BC business.
-              </p>
-              <p style="padding-top: 30px">
-                <a
-                  :href="$config.nameRequestURL"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Go to Name Request
-                </a>
-                <v-icon color="#1a5a96" size="16px">mdi-open-in-new</v-icon>
-              </p>
-            </v-card-text>
-          </v-card>
-        </v-col>
-        <v-col cols="4" style="pr-5"></v-col>
-      </v-row>
+
+      <v-card
+        flat
+        class="justify-center d-md-flex flex-wrap"
+        style="background-color: #f1f3f5; padding-top: 30px"
+      >
+        <v-card flat max-width="350px" class="mr-5">
+          <v-card-title class="menu-header">
+            <v-row>
+              <v-col cols="9"
+                ><span class="menu-item-title"
+                  >Name Requests (Beta)</span
+                ></v-col
+              >
+              <v-col cols="3">
+                <v-row>
+                  <v-col cols="auto" class="menu-title-badge">NEW</v-col>
+                </v-row>
+                <v-row>
+                  <v-col cols="auto"></v-col>
+                </v-row>
+              </v-col>
+            </v-row>
+          </v-card-title>
+          <v-card-text class="menu-item">
+            <p>
+              Research and request a name for your new or existing BC existing
+              BC business.
+            </p>
+            <p style="padding-top: 30px">
+              <a
+                :href="$config.nameRequestURL"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Go to Name Request
+              </a>
+              <v-icon class="pl-1" color="primary" dark dense
+                >mdi-open-in-new</v-icon
+              >
+            </p>
+          </v-card-text>
+        </v-card>
+      </v-card>
     </v-container>
     <div class="payment">
       <v-row>
@@ -78,25 +81,10 @@
 <script></script>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/theme.scss';
-
-ul {
-  list-style: square;
-  /* list-style-type: square; /* Remove default bullets */
-  padding-left: 30px;
-}
-
-ul li::before {
-  /* content: '\2022'; /* Add content: \2022 is the CSS Code/unicode for a bullet */
-  color: $gray3; /* Change the color */
-  font-weight: bold; /* If you want it to be bold */
-  display: inline-block; /* Needed to add space between the bullet and the text */
-  width: 1em; /* Also needed for space (tweak if needed) */
-  margin-left: -1em; /* Also needed for space (tweak if needed) */
-}
+@import '../assets/scss/theme.scss';
 
 a {
-  color: $BCgovLink;
+  color: $BCgovLink !important;
   font-size: 1rem;
   font-weight: bold;
   text-decoration: underline;

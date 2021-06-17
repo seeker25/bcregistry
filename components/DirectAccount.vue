@@ -23,79 +23,84 @@
         >
         <v-col cols="2"></v-col>
       </v-row>
-      <v-row class="padding-top:30px">
-        <v-col cols="4" style="pr-5">
-          <v-card>
-            <v-card-title class="menu-header">
-              <span class="menu-item-title">Corporate Registry</span>
-              <v-spacer></v-spacer>
-            </v-card-title>
-            <v-card-text class="menu-item">
-              <p>
-                Incorporate, register, and manage BC or extraprovincial
-                corporations except for benefit companies.
-              </p>
-              <p style="padding-top: 30px">
-                <a
-                  :href="$config.colinURL"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Go to Corporate Online
-                </a>
-                <v-icon color="#1a5a96" size="16px">mdi-open-in-new</v-icon>
-              </p>
-            </v-card-text>
-          </v-card>
-        </v-col>
-        <v-col cols="4" style="pr-5">
-          <v-card>
-            <v-card-title class="menu-header">
-              <span class="menu-item-title">OneStop Business Registry</span>
-              <v-spacer></v-spacer>
-            </v-card-title>
-            <v-card-text class="menu-item">
-              <p>
-                Registration for sole proprietorships, general partnerships, and
-                "Doing business as" (DBA) names.
-              </p>
-              <p style="padding-top: 30px">
-                <a
-                  :href="$config.onestopURL"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Go to OneStop
-                </a>
-                <v-icon color="#1a5a96" size="16px">mdi-open-in-new</v-icon>
-              </p>
-            </v-card-text>
-          </v-card>
-        </v-col>
-        <v-col cols="4" style="pr-5">
-          <v-card>
-            <v-card-title class="menu-header">
-              <span class="menu-item-title">Societies Online</span>
-              <v-spacer></v-spacer>
-            </v-card-title>
-            <v-card-text class="menu-item">
-              <p>
-                Registration and management of BC and extraprovincial societies.
-              </p>
-              <p style="padding-top: 30px">
-                <a
-                  :href="$config.societiesURL"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Go to Societies Online
-                </a>
-                <v-icon color="#1a5a96" size="16px">mdi-open-in-new</v-icon>
-              </p>
-            </v-card-text>
-          </v-card>
-        </v-col>
-      </v-row>
+
+      <v-card
+        flat
+        class="d-md-flex flex-wrap"
+        style="background-color: #f1f3f5; padding-top: 30px"
+      >
+        <v-card flat max-width="350px" class="mr-5 mb-7">
+          <v-card-title class="menu-header">
+            <span class="menu-item-title">Corporate Registry</span>
+            <v-spacer></v-spacer>
+          </v-card-title>
+          <v-card-text class="menu-item">
+            <p>
+              Incorporate, register, and manage BC or extraprovincial
+              corporations except for benefit companies.
+            </p>
+            <p style="padding-top: 30px">
+              <a
+                :href="$config.colinURL"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Go to Corporate Online
+              </a>
+              <v-icon class="pl-1" color="primary" dark dense
+                >mdi-open-in-new</v-icon
+              >
+            </p>
+          </v-card-text>
+        </v-card>
+        <v-card flat max-width="350px" class="mr-5 mb-7">
+          <v-card-title class="menu-header">
+            <span class="menu-item-title">OneStop Business Registry</span>
+            <v-spacer></v-spacer>
+          </v-card-title>
+          <v-card-text class="menu-item">
+            <p>
+              Registration for sole proprietorships, general partnerships, and
+              "Doing business as" (DBA) names.
+            </p>
+            <p style="padding-top: 30px">
+              <a
+                :href="$config.onestopURL"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Go to OneStop
+              </a>
+              <v-icon class="pl-1" color="primary" dark dense
+                >mdi-open-in-new</v-icon
+              >
+            </p>
+          </v-card-text>
+        </v-card>
+        <v-card flat max-width="350px" class="mr-5 mb-7">
+          <v-card-title class="menu-header">
+            <span class="menu-item-title">Societies Online</span>
+            <v-spacer></v-spacer>
+          </v-card-title>
+          <v-card-text class="menu-item">
+            <p>
+              Registration and management of BC and extraprovincial societies.
+            </p>
+            <p style="padding-top: 30px">
+              <a
+                :href="$config.societiesURL"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Go to Societies Online
+              </a>
+              <v-icon class="pl-1" color="primary" dark dense
+                >mdi-open-in-new</v-icon
+              >
+            </p>
+          </v-card-text>
+        </v-card>
+      </v-card>
     </v-container>
     <div class="payment">
       <v-row>
@@ -121,25 +126,10 @@
 <script></script>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/theme.scss';
-
-ul {
-  list-style: square;
-  /* list-style-type: square; /* Remove default bullets */
-  padding-left: 30px;
-}
-
-ul li::before {
-  /* content: '\2022'; /* Add content: \2022 is the CSS Code/unicode for a bullet */
-  color: $gray3; /* Change the color */
-  font-weight: bold; /* If you want it to be bold */
-  display: inline-block; /* Needed to add space between the bullet and the text */
-  width: 1em; /* Also needed for space (tweak if needed) */
-  margin-left: -1em; /* Also needed for space (tweak if needed) */
-}
+@import '../assets/scss/theme.scss';
 
 a {
-  color: $BCgovLink;
+  color: $BCgovLink !important;
   font-size: 1rem;
   font-weight: bold;
   text-decoration: underline;
