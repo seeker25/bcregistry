@@ -1,10 +1,10 @@
 <template>
   <div>
-    <v-menu bottom width="330" transition="slide-y-transition">
+    <v-menu bottom width="300" transition="slide-y-transition">
       <template #activator="{ on, attrs }">
         <v-btn
           large
-          class="button-login mr-4"
+          class="button-login"
           aria-label="log in"
           v-bind="attrs"
           v-on="on"
@@ -13,9 +13,9 @@
           <v-icon class="mr-n1 ml-2">mdi-menu-down</v-icon>
         </v-btn>
       </template>
-      <v-card class="menu-card">
+      <v-card class="menu-card pa-0">
         <div>
-          <v-card-title class="menu-card-title"
+          <v-card-title class="menu-card-title pt-2 pb-2 pr-0"
             >Select login method</v-card-title
           >
           <v-divider class="menu-card-divider"></v-divider>
@@ -31,10 +31,10 @@
               'dashboard'
             "
           >
-            <v-list-item-icon left>
+            <v-list-item-icon left class="pl-0 pr-0">
               <v-icon color="#38598a">mdi-card-account-details-outline</v-icon>
             </v-list-item-icon>
-            <v-list-item-title class="menu-card-item"
+            <v-list-item-title class="menu-card-item pl-0"
               >BC Services Card</v-list-item-title
             >
           </v-list-item>
@@ -48,10 +48,12 @@
               'dashboard'
             "
           >
-            <v-list-item-icon left>
+            <v-list-item-icon left class="pl-0">
               <v-icon color="#38598a">mdi-two-factor-authentication</v-icon>
             </v-list-item-icon>
-            <v-list-item-title class="menu-card-item">BCeID</v-list-item-title>
+            <v-list-item-title class="menu-card-item pl-0"
+              >BCeID</v-list-item-title
+            >
           </v-list-item>
           <v-list-item
             key="idir"
@@ -63,10 +65,12 @@
               'dashboard'
             "
           >
-            <v-list-item-icon left>
+            <v-list-item-icon left class="pl-0">
               <v-icon color="#38598a">mdi-account-group-outline</v-icon>
             </v-list-item-icon>
-            <v-list-item-title class="menu-card-item">IDIR</v-list-item-title>
+            <v-list-item-title class="menu-card-item pl-0"
+              >IDIR</v-list-item-title
+            >
           </v-list-item>
         </v-list>
       </v-card>
@@ -79,10 +83,11 @@
 
 .button-login {
   color: #fff !important;
-  background: #38598a !important;
+  background: #003366 !important;
   font-weight: bold;
-  font-size: 0.75em;
+  font-size: 0.875em;
   text-decoration: none;
+  letter-spacing: none;
   text-transform: none;
   text-align: center;
   border-radius: 0.25rem;
@@ -94,19 +99,20 @@
 }
 .menu-card-title {
   background: #fff !important;
-  color: $gray7;
+  color: $gray7 !important;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 0.875em;
+  max-height: 1.25 em !important;
 }
 .menu-card-item {
   background: #fff !important;
   color: $gray7 !important;
-  font-size: 14px;
+  font-size: 0.875em;
   text-align: left;
-  padding-left: 15px;
 }
 .menu-card-divider {
   background: $gray7 !important;
   color: $gray7 !important;
+  padding: 0em !important;
 }
 </style>

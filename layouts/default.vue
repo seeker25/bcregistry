@@ -1,5 +1,4 @@
 <template>
-  <!-- div id="app" class="app-container" -->
   <v-app id="app" class="app-container">
     <SbcHeaderStatic />
     <div class="app-body">
@@ -8,7 +7,6 @@
     <ContactInfo />
     <SbcFooterStatic />
   </v-app>
-  <!-- /div -->
 </template>
 <script>
 // import SbcHeader from 'sbc-common-components/src/components/SbcHeader.vue'
@@ -66,16 +64,16 @@ export default {
   top: 0;
 }
 
-.container,
-.nuxt-content {
-  margin: 0 auto;
+.container {
+  margin-left: 5rem !important;
+  padding: 0 !important;
   width: 100%;
-  max-width: 1400px;
-  padding: 0 2rem;
+  max-width: 1360px !important;
 }
 
 .nuxt-content {
-  max-width: 100%;
+  margin: 0;
+  width: 100%;
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
