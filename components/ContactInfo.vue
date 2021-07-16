@@ -1,10 +1,10 @@
 <template>
   <div class="contact-info-container">
     <div class="container">
-      <div class="row">
+      <div class="row pt-7 pb-7">
         <div class="col-md-7 col-12">
-          <h3 class="mb-6">Need more information?</h3>
-          <p class="mb-4">
+          <h3 class="mb-6 mr-16">Need more information?</h3>
+          <p class="mb-4 mr-16">
             To learn more about BC Registries and Online Services, please
             <!-- eslint-disable-next-line -->
             <a href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services"
@@ -16,8 +16,8 @@
           </p>
         </div>
         <div class="col-md-5 col-12">
-          <h3 class="mb-6">Contact Us</h3>
-          <p class="mb-5">
+          <h3 class="mb-6 mr-16">Contact Us</h3>
+          <p class="mb-5 mr-16">
             For support or questions about this application, contact us at:
           </p>
           <ul class="contact-info__list mb-5">
@@ -51,6 +51,7 @@
 .contact-info-container {
   color: #fff;
   background-color: #036;
+  padding-right: 5rem !important;
 }
 .contact-info-container .container {
   padding-top: 2rem;

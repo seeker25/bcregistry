@@ -1,24 +1,19 @@
 <template>
   <div>
-    <div style="pa-0">
+    <div class="pa-0">
       <article>
         <header class="hero-banner d-flex align-center">
           <div class="container">
-            <h1>
-              Access and manage your BC
-              <br />Registries and Online services
-            </h1>
+            <h1>Access and manage your BC Registries and Online services</h1>
             <p class="services-info">
               All registrations of businesses, not-for-profit societies,
-              cooperative associations, <br />
-              personal property and manufactured homes are administered and
-              supported by <br />
-              BC Registries and Online Services.
+              cooperative associations, personal property and manufactured homes
+              are administered and supported by BC Registries and Online
+              Services.
             </p>
             <p class="services-info">
               As our online modernization initiative continues, refer to this
-              page for updates on<br />
-              ways to manage registration information
+              page for updates on ways to manage registration information
             </p>
             <div role="dialog" class="v-dialog__container">
               <div role="document" class="v-dialog__content" style="z-index: 0">
@@ -33,13 +28,9 @@
       </article>
     </div>
     <AccountsFooter />
-    <hr />
     <BCRegistriesAccount />
-    <hr />
     <BCOnlineAccount />
-    <hr />
     <DirectAccount />
-    <hr />
     <NoAccount />
   </div>
 </template>
@@ -65,9 +56,10 @@ export default {
 @import '@/assets/scss/theme.scss';
 
 h1 {
-  font-size: 40px;
+  font-size: 2.5rem;
   font-weight: bold;
-  line-height: 50px;
+  max-width: 30ch;
+  line-height: 3.125rem;
   color: $gray9;
   text-align: left;
 }
@@ -76,8 +68,8 @@ h1 + p {
   max-width: 55ch;
   margin-right: auto;
   margin-left: auto;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 // Card Container
@@ -145,14 +137,16 @@ $card-width: 50%;
     background-image: none;
   }
 }
+@media (min-width: 800px) {
+  .hero-banner {
+    height: 30rem;
+    background-size: 750px;
+  }
+}
 @media (min-width: 960px) {
   .hero-banner {
     height: 30rem;
     background-size: 900px;
-  }
-  .hero-banner.auth {
-    height: 38rem;
-    background-size: 1100px;
   }
 }
 @media (min-width: 1200px) {
@@ -160,17 +154,10 @@ $card-width: 50%;
     height: 30rem;
     background-size: 900px;
   }
-  .hero-banner.auth {
-    height: 38rem;
-    background-size: 1100px;
-  }
 }
 @media (min-width: 1264px) and (min-height: 900px) {
   .hero-banner {
     background-size: 950px;
-  }
-  .hero-banner.auth {
-    background-size: 1150px;
   }
 }
 @media (min-width: 1360px) {
@@ -182,18 +169,10 @@ $card-width: 50%;
   .hero-banner {
     background-size: 1150px;
   }
-  .hero-banner.auth {
-    background-size: 1300px;
-  }
 }
 @media (min-width: 1920px) {
   .hero-banner {
     background-size: 1320px;
-    background-position-x: right;
-    background-position-y: -240px;
-  }
-  .hero-banner.auth {
-    background-size: 1520px;
     background-position-x: right;
     background-position-y: -240px;
   }
@@ -230,8 +209,8 @@ article {
   padding: 0;
 }
 .services-info {
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 1rem;
+  line-height: 1.5rem;
   color: $gray7;
   text-align: left;
 }
