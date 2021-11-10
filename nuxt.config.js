@@ -96,6 +96,18 @@ export default {
     regAccountCreateURL: process.env.REGISTRY_ACCOUNT_CREATE_URL,
   },
 
+  devServer: {
+    proxy: {
+      // this is needed to prevent a CORS error when running locally (will need to update with url)
+      '/local-keycloak-config-url/*': {
+        target: 'https://ppr-ui-dev.apps.silver.devops.gov.bc.ca/ppr/config/kc/',
+        pathRewrite: {
+          '/local-keycloak-config-url': ''
+        }
+      }
+    }
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 }

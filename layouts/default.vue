@@ -1,6 +1,10 @@
 <template>
   <v-app id="app" class="app-container">
-    <SbcHeader />
+    <sbc-header
+        class="sbc-header"
+        :in-auth="false"
+        :show-actions="true"
+      />
     <Breadcrumb />
     <div class="app-body">
       <nuxt />
