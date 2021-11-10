@@ -1,23 +1,25 @@
 <template>
   <v-app id="app" class="app-container">
-    <SbcHeaderStatic />
+    <SbcHeader />
     <Breadcrumb />
     <div class="app-body">
       <nuxt />
     </div>
     <ContactInfo />
-    <SbcFooterStatic />
+    <SbcFooter />
   </v-app>
 </template>
 <script>
-// import SbcHeader from 'sbc-common-components/src/components/SbcHeader.vue'
+import SbcFooter from 'sbc-common-components/src/components/SbcFooter.vue'
+import SbcHeader from 'sbc-common-components/src/components/SbcHeader.vue'
 import SbcHeaderStatic from '~/components/SbcHeaderStatic.vue'
 import SbcFooterStatic from '~/components/SbcFooterStatic.vue'
 import ContactInfo from '~/components/ContactInfo.vue'
 import Breadcrumb from '~/components/Breadcrumb.vue'
 export default {
   components: {
-    // SbcHeader,
+    SbcFooter,
+    SbcHeader,
     SbcHeaderStatic,
     SbcFooterStatic,
     ContactInfo,
