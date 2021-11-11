@@ -1,10 +1,6 @@
 <template>
   <v-app id="app" class="app-container">
-    <sbc-header
-        class="sbc-header"
-        :in-auth="false"
-        :show-actions="true"
-      />
+    <sbc-header class="sbc-header" :in-auth="false" :show-actions="true" />
     <Breadcrumb />
     <div class="app-body">
       <nuxt />
@@ -16,18 +12,14 @@
 <script>
 import SbcFooter from 'sbc-common-components/src/components/SbcFooter.vue'
 import SbcHeader from 'sbc-common-components/src/components/SbcHeader.vue'
-import SbcHeaderStatic from '~/components/SbcHeaderStatic.vue'
-import SbcFooterStatic from '~/components/SbcFooterStatic.vue'
 import ContactInfo from '~/components/ContactInfo.vue'
 import Breadcrumb from '~/components/Breadcrumb.vue'
 export default {
   components: {
     SbcFooter,
     SbcHeader,
-    SbcHeaderStatic,
-    SbcFooterStatic,
     ContactInfo,
-    Breadcrumb
+    Breadcrumb,
   },
 }
 </script>

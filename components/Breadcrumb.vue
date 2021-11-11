@@ -1,28 +1,40 @@
 <template>
   <v-container fluid class="breadcrumb-row view-container px-15 py-0">
     <div class="container pa-0">
-      <v-row no-gutters class="container" style="padding: 6px 0;">
+      <v-row no-gutters class="container" style="padding: 6px 0">
         <v-col cols="auto">
           <v-row no-gutters>
             <v-col cols="auto">
-              <v-btn id="breadcrumb-back-btn" class="back-btn" exact :href="backUrl" icon small>
+              <v-btn
+                id="breadcrumb-back-btn"
+                class="back-btn"
+                exact
+                :href="backUrl"
+                icon
+                small
+              >
                 <v-icon>mdi-arrow-left</v-icon>
               </v-btn>
             </v-col>
-            <v-col class="pl-3" cols="auto" style="padding-top: 2px;">
-              <div style="border-right: thin solid #ced4da; height: 28px;" />
+            <v-col class="pl-3" cols="auto" style="padding-top: 2px">
+              <div style="border-right: thin solid #ced4da; height: 28px" />
             </v-col>
           </v-row>
         </v-col>
-        <v-col cols="auto" class="pl-3" style="padding-top: 6px;">
+        <v-col cols="auto" class="pl-3" style="padding-top: 6px">
           <v-breadcrumbs class="pa-0" :items="breadcrumbs">
-            <v-breadcrumbs-item slot="item" slot-scope="{ item }" exact :href="item.href">
+            <v-breadcrumbs-item
+              slot="item"
+              slot-scope="{ item }"
+              exact
+              :href="item.href"
+            >
               <span v-if="!item.disabled" class="underlined breadcrumb-text">
                 {{ item.text }}
               </span>
               <span v-else class="breadcrumb-text">{{ item.text }}</span>
             </v-breadcrumbs-item>
-            <v-breadcrumbs-divider class="px-1" slot="divider">
+            <v-breadcrumbs-divider slot="divider" class="px-1">
               <v-icon color="white">mdi-chevron-right</v-icon>
             </v-breadcrumbs-divider>
           </v-breadcrumbs>
@@ -33,43 +45,42 @@
 </template>
 <script lang="ts">
 export default {
+  data() {
+    return {
+      backUrl: '',
+    }
+  },
   computed: {
-    breadcrumbs () {
+    breadcrumbs() {
       // @ts-ignore - not sure why typescript isn't picking $route up
       if (this.$route.path === '/ppr-marketing') {
-        return  [
-        {
-          disabled: false,
-          href: '/',
-          text: 'BC Registries Dashboard'
-        },
-        {
-          disabled: true,
-          href: '',
-          text: 'My Personal Property Registry'
-        }
-      ]
-    }
-    // @ts-ignore - not sure why typescript isn't picking $route up
-    if (this.$route.path === '/') {
-        return  [
-        {
-          disabled: true,
-          href: 'dev',
-          text: 'BC Registries Dashboard'
-        }
-      ]
+        return [
+          {
+            disabled: false,
+            href: '/',
+            text: 'BC Registries Dashboard',
+          },
+          {
+            disabled: true,
+            href: '',
+            text: 'My Personal Property Registry',
+          },
+        ]
+      }
+      // @ts-ignore - not sure why typescript isn't picking $route up
+      if (this.$route.path === '/') {
+        return [
+          {
+            disabled: true,
+            href: 'dev',
+            text: 'BC Registries Dashboard',
+          },
+        ]
       }
     },
   },
-  data() {
-        return {
-            backUrl: ''
-        }
-  }
 }
 </script>
-
 
 <style lang="scss" scoped>
 @import '@/assets/scss/theme.scss';

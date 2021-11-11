@@ -41,7 +41,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
-    '@nuxt/content'
+    '@nuxt/content',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -100,12 +100,13 @@ export default {
     proxy: {
       // this is needed to prevent a CORS error when running locally (will need to update with url)
       '/local-keycloak-config-url/*': {
-        target: 'https://ppr-ui-dev.apps.silver.devops.gov.bc.ca/ppr/config/kc/',
+        target:
+          'https://ppr-ui-dev.apps.silver.devops.gov.bc.ca/ppr/config/kc/',
         pathRewrite: {
-          '/local-keycloak-config-url': ''
-        }
-      }
-    }
+          '/local-keycloak-config-url': '',
+        },
+      },
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

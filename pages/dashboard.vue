@@ -64,7 +64,6 @@ $card-width: 50%;
   display: flex;
   justify-content: space-between;
   margin: 2rem calc(#{$card-container-spacing} * -1);
-
   .card {
     margin: $card-container-spacing;
     width: $card-width;
