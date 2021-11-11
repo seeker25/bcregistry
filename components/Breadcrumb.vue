@@ -32,24 +32,40 @@
   </v-container>
 </template>
 <script lang="ts">
-
 export default {
-  data() {
-    return {
-      breadcrumbs: [
-    {
-      disabled: false,
-      href: 'dev',
-      text: 'BC Registries Dashboard'
+  computed: {
+    breadcrumbs () {
+      // @ts-ignore - not sure why typescript isn't picking $route up
+      if (this.$route.path === '/ppr-marketing') {
+        return  [
+        {
+          disabled: false,
+          href: '/',
+          text: 'BC Registries Dashboard'
+        },
+        {
+          disabled: true,
+          href: '',
+          text: 'My Personal Property Registry'
+        }
+      ]
+    }
+    // @ts-ignore - not sure why typescript isn't picking $route up
+    if (this.$route.path === '/') {
+        return  [
+        {
+          disabled: true,
+          href: 'dev',
+          text: 'BC Registries Dashboard'
+        }
+      ]
+      }
     },
-    {
-      disabled: true,
-      href: '',
-      text: 'My Personal Property Registry'
-    }
-  ],
-  backUrl: ''
-    }
+  },
+  data() {
+        return {
+            backUrl: ''
+        }
   }
 }
 </script>

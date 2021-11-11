@@ -30,6 +30,7 @@
       "@nuxt/types",
       "@nuxtjs/axios",
       "@nuxt/content",
+      "@nuxt/vue-app",
       "@types/node"
     ]
   },
