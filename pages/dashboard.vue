@@ -116,7 +116,6 @@ $card-width: 50%;
   padding: 2rem 1.5rem;
 }
 
-
 article {
   padding: 0;
 }
