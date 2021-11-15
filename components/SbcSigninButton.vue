@@ -81,7 +81,6 @@
 <style lang="scss" scoped>
 @import '../assets/scss/theme.scss';
 
-
 .menu-card {
   background: #fff !important;
   color: $gray7;
