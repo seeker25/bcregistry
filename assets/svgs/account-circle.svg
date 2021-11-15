@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>account-circle</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.219608 0 0 0 0 0.349020 0 0 0 0 0.541176 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="OPTA-PPRHome-FINAL" transform="translate(-830.000000, -908.000000)">
+            <g id="Coming-Soon" transform="translate(0.000000, 680.000000)">
+                <g id="account-circle" transform="translate(721.000000, 228.000000)" filter="url(#filter-1)">
+                    <g transform="translate(109.000000, 0.000000)">
+                        <path d="M16,27.8709677 C12,27.8709677 8.464,25.7736815 6.4,22.6277522 C6.448,19.3507424 12.8,17.5483871 16,17.5483871 C19.2,17.5483871 25.552,19.3507424 25.6,22.6277522 C23.536,25.7736815 20,27.8709677 16,27.8709677 M16.5333333,5.16129032 C19.1843001,5.16129032 21.3333333,7.24099987 21.3333333,9.80645161 C21.3333333,12.3719034 19.1843001,14.4516129 16.5333333,14.4516129 C13.8823665,14.4516129 11.7333333,12.3719034 11.7333333,9.80645161 C11.7333333,7.24099987 13.8823665,5.16129032 16.5333333,5.16129032 M16,0 C7.163444,0 0,7.163444 0,16 C0,20.2434638 1.68570945,24.3131264 4.6862915,27.3137085 C7.68687356,30.3142906 11.7565362,32 16,32 C20.2434638,32 24.3131264,30.3142906 27.3137085,27.3137085 C30.3142906,24.3131264 32,20.2434638 32,16 C32,7.152 24.8,0 16,0 Z" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

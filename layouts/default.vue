@@ -1,24 +1,25 @@
 <template>
   <v-app id="app" class="app-container">
-    <SbcHeaderStatic />
+    <sbc-header class="sbc-header" :in-auth="false" :show-actions="true" />
+    <Breadcrumb />
     <div class="app-body">
       <nuxt />
     </div>
     <ContactInfo />
-    <SbcFooterStatic />
+    <SbcFooter />
   </v-app>
 </template>
 <script>
-// import SbcHeader from 'sbc-common-components/src/components/SbcHeader.vue'
-import SbcHeaderStatic from '~/components/SbcHeaderStatic.vue'
-import SbcFooterStatic from '~/components/SbcFooterStatic.vue'
+import SbcFooter from 'sbc-common-components/src/components/SbcFooter.vue'
+import SbcHeader from 'sbc-common-components/src/components/SbcHeader.vue'
 import ContactInfo from '~/components/ContactInfo.vue'
+import Breadcrumb from '~/components/Breadcrumb.vue'
 export default {
   components: {
-    // SbcHeader,
-    SbcHeaderStatic,
-    SbcFooterStatic,
+    SbcFooter,
+    SbcHeader,
     ContactInfo,
+    Breadcrumb,
   },
 }
 </script>
@@ -62,13 +63,6 @@ export default {
 .app-container .app-header {
   position: sticky;
   top: 0;
-}
-
-.container {
-  margin-left: 5rem !important;
-  padding: 0 !important;
-  width: 100%;
-  max-width: 1360px !important;
 }
 
 .nuxt-content {

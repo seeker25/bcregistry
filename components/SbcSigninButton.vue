@@ -82,8 +82,8 @@
 @import '../assets/scss/theme.scss';
 
 .button-login {
-  color: #fff !important;
-  background: #003366 !important;
+  color: #003366 !important;
+  background: #fcba19 !important;
   font-weight: bold;
   font-size: 0.875em;
   text-decoration: none;

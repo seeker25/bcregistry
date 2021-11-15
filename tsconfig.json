@@ -12,6 +12,9 @@
     "allowJs": true,
     "sourceMap": true,
     "strict": true,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "strictPropertyInitialization": false,
     "noEmit": true,
     "experimentalDecorators": true,
     "baseUrl": ".",
@@ -27,6 +30,7 @@
       "@nuxt/types",
       "@nuxtjs/axios",
       "@nuxt/content",
+      "@nuxt/vue-app",
       "@types/node"
     ]
   },

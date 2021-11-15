@@ -353,3 +353,92 @@ a.v-btn {
   border-width: 3px;
   box-shadow: 0 1px 1px $gray4, 0 -1px 1px $gray4;
 }
+
+
+@media only screen and (max-width: 640px) {
+  .hero-banner {
+    background-image: none;
+  }
+}
+@media (min-width: 960px) {
+  .hero-banner {
+    height: 30rem;
+    background-size: 900px;
+  }
+  .hero-banner.auth {
+    height: 38rem;
+    background-size: 1100px;
+  }
+}
+@media (min-width: 1200px) {
+  .hero-banner {
+    height: 30rem;
+    background-size: 900px;
+  }
+  .hero-banner.auth {
+    height: 38rem;
+    background-size: 1100px;
+  }
+}
+@media (min-width: 1264px) and (min-height: 900px) {
+  .hero-banner {
+    background-size: 950px;
+  }
+  .hero-banner.auth {
+    background-size: 1150px;
+  }
+}
+@media (min-width: 1360px) {
+  .hero-banner .container {
+    padding: 2rem 1rem;
+  }
+}
+@media (min-width: 1700px) {
+  .hero-banner {
+    background-size: 1150px;
+  }
+  .hero-banner.auth {
+    background-size: 1300px;
+  }
+}
+@media (min-width: 1920px) {
+  .hero-banner {
+    background-size: 1320px;
+    background-position-x: right;
+    background-position-y: -240px;
+  }
+  .hero-banner.auth {
+    background-size: 1520px;
+    background-position-x: right;
+    background-position-y: -240px;
+  }
+}
+.hero-banner__cta-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.hero-banner__cta-btns .cta-btn {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+}
+
+
+.hero-banner__cta-btns .cta-btns-authenticated > div,
+.hero-banner__cta-btns .cta-btns-authenticated {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 350px;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: 13px;
+}
+.hero-banner__cta-btns .cta-btns-authenticated .v-btn,
+.hero-banner__cta-btns .cta-btns-authenticated > div .v-btn {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  margin-bottom: 13px;
+}
