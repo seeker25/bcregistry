@@ -81,18 +81,7 @@
 <style lang="scss" scoped>
 @import '../assets/scss/theme.scss';
 
-.button-login {
-  color: #003366 !important;
-  background: #fcba19 !important;
-  font-weight: bold;
-  font-size: 0.875em;
-  text-decoration: none;
-  letter-spacing: none;
-  text-transform: none;
-  text-align: center;
-  border-radius: 0.25rem;
-  flex: auto;
-}
+
 .menu-card {
   background: #fff !important;
   color: $gray7;

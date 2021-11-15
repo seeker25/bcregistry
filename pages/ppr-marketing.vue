@@ -138,7 +138,7 @@
     </v-container>
     </div>
     <v-container class="padding-100">
-      <h3 class="text--center pb-5">Helpful Links</h3>
+      <h2 class="text--center pb-5">Helpful Links</h2>
       <v-row>
         <v-col></v-col>
         <v-col cols="3">
@@ -190,9 +190,9 @@
           </ul>
         </v-col>
       </v-row>
-      <div class="mt-10">
+      <div class="mt-10 text--center">
       <template v-if="!userProfile">
-        <v-btn large color="bcgovgold" class="cta-btn font-weight-bold mr-2" to="/choose-authentication-method">
+        <v-btn large color="bcgovgold" class="button-login font-weight-bold mr-2" to="/choose-authentication-method">
           Create a BC Registries Account
         </v-btn>
       </template>
@@ -207,17 +207,18 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import SbcSigninButton from '~/components/SbcSigninButton.vue'
 export default {
   components: {
-    SbcSigninButton,
+    SbcSigninButton
   },
   data() {
     return {
       /** Whether the user is logged in. */
-      userProfile: false,
+      userProfile: false
     }
+  }
 }
 </script>
 
@@ -234,13 +235,7 @@ export default {
   padding-top: 100px;
   text-align: center;
 }
-.button-login {
-  color: #fff !important;
-  background: #38598a !important;
-  font-weight: bold;
-  font-size: 12px;
-  border-radius: 0.25rem;
-}
+
 .ppr-bg {
   color: $gray9;
   background-color: #fff;
@@ -329,4 +324,10 @@ li {
   padding-bottom: 5px;
   font-weight: normal;
 }
+
+.learn-more-btn:hover {
+    color: white !important;
+    background: $BCgovBlue5;
+    opacity: .8;
+  }
 </style>
