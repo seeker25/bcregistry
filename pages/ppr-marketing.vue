@@ -419,7 +419,8 @@ li {
   font-weight: normal;
 }
 
-a, .learn-more-btn {
+a,
+.learn-more-btn {
   color: $BCgovLink;
 }
 
