@@ -12,7 +12,7 @@
           </v-row>
           <v-row>
             <v-col cols="5">
-              Ther Personal Property Registry records security interests and
+              The Personal Property Registry records security interests and
               liens against personal property in British Columbia, whether the
               property belongs to a business or individual.
             </v-col>
@@ -334,7 +334,7 @@ export default {
 .ppr-bg {
   color: $gray9;
   background-color: #fff;
-  background-image: url(../assets/img/PPR_dashboard_thumbnail_image.jpg);
+  background-image: url(../assets/img/PPR_homebanner_image_x2.jpg);
   background-position: right center;
   background-size: 50%;
   background-repeat: no-repeat;
@@ -417,6 +417,15 @@ li {
   padding-top: 5px;
   padding-bottom: 5px;
   font-weight: normal;
+}
+
+a,
+.learn-more-btn {
+  color: $BCgovLink;
+}
+
+.v-btn__content {
+  letter-spacing: normal;
 }
 
 .learn-more-btn:hover {
