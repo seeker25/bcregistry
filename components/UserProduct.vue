@@ -26,7 +26,10 @@ import { ProductI } from '@/interfaces'
 export default {
   name: 'UserProduct',
   props: {
-    product: Object as () => ProductI
+    product: {
+      type: Object as () => ProductI,
+      default: null
+    }
   },
   data() {
     return {

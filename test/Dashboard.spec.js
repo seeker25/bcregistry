@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Vuetify from 'vuetify'
 import { createLocalVue } from '@vue/test-utils'
-import sinon from 'sinon'
+import { createSandbox } from 'sinon'
+import flushPromises from 'flush-promises'
 // local
 import dashboard from '@/pages/dashboard.vue'
 import UserProduct from '@/components/UserProduct.vue'
@@ -38,19 +39,20 @@ describe('Dashboard tests', () => {
   sessionStorage.setItem('AUTH_API_URL', 'mocked_url')
   
   beforeEach(async () => {
-    sandbox = sinon.createSandbox()
+    sandbox = createSandbox()
     const getStub = sandbox.stub(authAxios, 'get')
     const getProducts = getStub.withArgs(`orgs/${currentAccount.id}/products`)
     getProducts.returns(new Promise(resolve => resolve({ data: testProducts })))
 
     const propsData = {}
     wrapper = createComponent(dashboard, localVue, store, propsData, vuetify)
+    await flushPromises()
   })
-  afterEach(async () => {
+  afterEach(() => {
     wrapper.destroy()
   })
 
-  test('Displays active products', async () => {
+  test('Displays active products', () => {
     expect(wrapper.findComponent(dashboard).exists()).toBe(true)
     // PPR is not subscribed in this test, check product list
     expect(wrapper.findAllComponents(UserProduct).length).toBe(1)

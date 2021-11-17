@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuetify from 'vuetify'
 import { createLocalVue } from '@vue/test-utils'
+import flushPromises from 'flush-promises'
 // local
 import UserProduct from '@/components/UserProduct.vue'
 import { state } from '@/store'
@@ -24,8 +25,9 @@ describe('UserProduct tests', () => {
   }
   beforeEach(async () => {
     wrapper = createComponent(UserProduct, localVue, store, propsData, vuetify)
+    await flushPromises()
   })
-  afterEach(async () => {
+  afterEach(() => {
     wrapper.destroy()
   })
 
