@@ -3,7 +3,7 @@ import colors from 'vuetify/es5/util/colors'
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-
+  ssr: false, // Required for sbc-common-header sessionStorage config to work.
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - BCRegistry',
@@ -44,6 +44,10 @@ export default {
     '@nuxt/content',
   ],
 
+  server: {
+    port: 8080, // default: 3000
+  },
+
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 
@@ -81,6 +85,10 @@ export default {
     },
   },
 
+  router: {
+    middleware: 'commonHeaderRedirect',
+  },
+
   // Environment variables for all site links defined here.
   publicRuntimeConfig: {
     baseURL: process.env.BCROS_BASE_URL,
@@ -94,6 +102,10 @@ export default {
     willsURL: process.env.WILLS_URL,
     bcolURL: process.env.BCOL_URL,
     regAccountCreateURL: process.env.REGISTRY_ACCOUNT_CREATE_URL,
+    keycloakConfigPath:
+      process.env.BCROS_BASE_URL + process.env.KEYCLOAK_CONFIG_PATH,
+    authAPIURL: process.env.AUTH_API_URL,
+    statusAPIURL: process.env.STATUS_API_URL,
   },
 
   devServer: {

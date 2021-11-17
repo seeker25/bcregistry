@@ -40,7 +40,15 @@
   </div>
 </template>
 <script>
-export default {}
+import { SessionStorageKeys } from 'sbc-common-components/src/util/constants'
+
+export default {
+  asyncData(context) {
+    if (!sessionStorage.getItem(SessionStorageKeys.KeyCloakToken)) {
+      context.redirect('/signin')
+    }
+  },
+}
 </script>
 
 <style lang="scss" scoped>

@@ -57,7 +57,7 @@ export default {
         return [
           {
             disabled: false,
-            href: '/',
+            href: '/dashboard',
             text: 'BC Registries Dashboard',
           },
           {
@@ -68,12 +68,22 @@ export default {
         ]
       }
       // @ts-ignore - not sure why typescript isn't picking $route up
+      if (this.$route.path === '/dashboard') {
+        return [
+          {
+            disabled: true,
+            href: '',
+            text: 'BC Registries Dashboard',
+          },
+        ]
+      }
+      // @ts-ignore - not sure why typescript isn't picking $route up
       if (this.$route.path === '/') {
         return [
           {
             disabled: true,
-            href: 'dev',
-            text: 'BC Registries Dashboard',
+            href: '',
+            text: 'Access and manage your BC Registries and Online services',
           },
         ]
       }

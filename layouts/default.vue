@@ -9,6 +9,7 @@
     <SbcFooter />
   </v-app>
 </template>
+
 <script>
 import SbcFooter from 'sbc-common-components/src/components/SbcFooter.vue'
 import SbcHeader from 'sbc-common-components/src/components/SbcHeader.vue'
@@ -21,6 +22,7 @@ export default {
     ContactInfo,
     Breadcrumb,
   },
+  middleware: ['commonHeaderSetup'],
 }
 </script>
 
