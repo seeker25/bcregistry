@@ -1,0 +1,47 @@
+import Vue from 'vue'
+import Vuetify from 'vuetify'
+import { createLocalVue } from '@vue/test-utils'
+// local
+import UserProduct from '@/components/UserProduct.vue'
+import { state } from '@/store'
+import { createComponent } from '@/test/utils'
+
+Vue.use(Vuetify)
+const vuetify = new Vuetify({})
+const store = state
+const localVue = createLocalVue()
+localVue.use(Vuetify)
+
+describe('UserProduct tests', () => {
+  let wrapper
+  const propsData = {
+    product: {
+      image: '',
+      link: '',
+      text: '',
+      title: ''
+    }
+  }
+  beforeEach(async () => {
+    wrapper = createComponent(UserProduct, localVue, store, propsData, vuetify)
+  })
+  afterEach(async () => {
+    wrapper.destroy()
+  })
+
+  test('It renders given title and props', async () => {
+    const testProduct = {
+      image: '',
+      link: '',
+      text: 'test text',
+      title: 'test title'
+    }
+    await wrapper.setProps({ product: testProduct })
+    expect(wrapper.findComponent(UserProduct).exists()).toBe(true)
+    expect(wrapper.findComponent(UserProduct).vm.$props.product).toEqual(testProduct)
+    expect(wrapper.find('.service-info h2').exists()).toBe(true)
+    expect(wrapper.find('.service-info h2').text()).toBe(testProduct.title)
+    expect(wrapper.find('.service-info p').exists()).toBe(true)
+    expect(wrapper.find('.service-info p').text()).toBe(testProduct.text)
+  })
+})
