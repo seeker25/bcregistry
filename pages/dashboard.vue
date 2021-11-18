@@ -35,7 +35,7 @@ export default {
   components: {
     UserProduct
   },
-  asyncData(context) {
+  data(context) {
     if (!sessionStorage.getItem(SessionStorageKeys.KeyCloakToken)) {
       context.redirect('/signin')
     }

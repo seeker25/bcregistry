@@ -3,6 +3,8 @@ import Vuetify from 'vuetify'
 import { createLocalVue } from '@vue/test-utils'
 import { createSandbox } from 'sinon'
 import flushPromises from 'flush-promises'
+// bcregistry
+import { SessionStorageKeys } from 'sbc-common-components/src/util/constants'
 // local
 import dashboard from '@/pages/dashboard.vue'
 import UserProduct from '@/components/UserProduct.vue'
@@ -32,11 +34,10 @@ const testProducts = [
 describe('Dashboard tests', () => {
   let wrapper
   let sandbox
-  // FUTURE: use sbc-common-component constants
-  sessionStorage.setItem('KEYCLOAK_TOKEN', 'token')
+  sessionStorage.setItem(SessionStorageKeys.KeyCloakToken, 'token')
   const currentAccount = { id: 'test_id' }
-  sessionStorage.setItem('CURRENT_ACCOUNT', JSON.stringify(currentAccount))
-  sessionStorage.setItem('AUTH_API_URL', 'mocked_url')
+  sessionStorage.setItem(SessionStorageKeys.CurrentAccount, JSON.stringify(currentAccount))
+  sessionStorage.setItem(SessionStorageKeys.AuthApiUrl, 'mocked_url')
   
   beforeEach(async () => {
     sandbox = createSandbox()
