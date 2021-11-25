@@ -87,6 +87,28 @@ export default {
 
   router: {
     middleware: 'commonHeaderRedirect',
+    extendRoutes(routes) {
+      routes.push({
+        path: '/ppr-marketing/signin/bcsc',
+        component: '~/pages/signin/bcsc.vue',
+      })
+      routes.push({
+        path: '/ppr-marketing/signin/bceid',
+        component: '~/pages/signin/bceid.vue',
+      })
+      routes.push({
+        path: '/ppr-marketing/signin/idir',
+        component: '~/pages/signin/idir.vue',
+      })
+      routes.push({
+        path: '/ppr-marketing/signout',
+        component: '~/pages/signout.vue',
+      })
+      routes.push({
+        path: '/dashboard/signout',
+        component: '~/pages/signout.vue',
+      })
+    },
   },
 
   // Environment variables for all site links defined here.

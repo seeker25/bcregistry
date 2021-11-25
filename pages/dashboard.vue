@@ -35,10 +35,12 @@ export default {
   components: {
     UserProduct
   },
-  data(context) {
+  asyncData(context) {
     if (!sessionStorage.getItem(SessionStorageKeys.KeyCloakToken)) {
       context.redirect('/signin')
     }
+  },
+  data() {
     return {
       productInfo: { ...ProductInfo },
       subscribedProducts: []
