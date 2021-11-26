@@ -39,12 +39,11 @@ export default {
     if (!sessionStorage.getItem(SessionStorageKeys.KeyCloakToken)) {
       context.redirect('/signin')
     }
-    this.roles = getKeycloakRoles()
   },
   data() {
     return {
       productInfo: { ...ProductInfo },
-      roles: [],
+      roles: getKeycloakRoles(),
       isStaffSbc: false,
       subscribedProducts: []
     }
