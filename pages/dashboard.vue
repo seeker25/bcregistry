@@ -28,9 +28,9 @@
 import { SessionStorageKeys } from 'sbc-common-components/src/util/constants'
 // local
 import UserProduct from '@/components/UserProduct.vue'
-import { ProductStatus } from '@/enums'
+import { ProductCode, ProductStatus } from '@/enums'
 import { ProductInfo } from '@/resources'
-import { getAccountProducts } from '@/utils'
+import { getAccountProducts, getKeycloakRoles } from '@/utils'
 export default {
   components: {
     UserProduct
@@ -47,7 +47,20 @@ export default {
     }
   },
   async mounted() {
-    const products = await getAccountProducts()
+    let products = []
+    const roles = getKeycloakRoles()
+    if (roles.includes('staff')) {
+      products = [
+        {
+          code: ProductCode.BUSINESS,
+          subscriptionStatus: ProductStatus.ACTIVE
+        },
+        {
+          code: ProductCode.PPR,
+          subscriptionStatus: ProductStatus.ACTIVE
+        },
+      ]
+    } else products = await getAccountProducts()
     this.subscribedProducts = products.filter(
       product => product.subscriptionStatus === ProductStatus.ACTIVE)
   }
