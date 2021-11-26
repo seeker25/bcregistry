@@ -1,6 +1,6 @@
 <template>
   <v-container class="pa-12" fluid>
-    <h1 class="dash-header">BC Registries Dashboard</h1>
+    <h1 class="dash-header">{{ isStaffSbc ? 'SBC Staff' : 'BC' }} Registries Dashboard</h1>
     <p class="dash-header-info ma-0 pt-3">Access to your BC Registries account product and services</p>
     <h3 class="dash-sub-header">My Products and Services ({{ subscribedProducts.length  }})</h3>
     <v-row no-gutters>
@@ -39,17 +39,25 @@ export default {
     if (!sessionStorage.getItem(SessionStorageKeys.KeyCloakToken)) {
       context.redirect('/signin')
     }
+    this.roles = getKeycloakRoles()
   },
   data() {
     return {
       productInfo: { ...ProductInfo },
+      roles: [],
+      isStaffSbc: false,
       subscribedProducts: []
     }
   },
   async mounted() {
+    // title logic
+    if (this.roles.includes('staff') && this.roles.includes('gov_account_user')) {
+      this.isStaffSbc = true
+    }
+
+    // get products / services
     let products = []
-    const roles = getKeycloakRoles()
-    if (roles.includes('staff')) {
+    if (this.roles.includes('staff')) {
       products = [
         {
           code: ProductCode.BUSINESS,
