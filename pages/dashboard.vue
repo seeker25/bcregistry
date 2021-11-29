@@ -1,6 +1,6 @@
 <template>
   <v-container class="pa-12" fluid>
-    <h1 class="dash-header">BC Registries Dashboard</h1>
+    <h1 class="dash-header">{{ isStaffSbc ? 'SBC Staff' : 'BC' }} Registries Dashboard</h1>
     <p class="dash-header-info ma-0 pt-3">Access to your BC Registries account product and services</p>
     <h3 class="dash-sub-header">My Products and Services ({{ subscribedProducts.length  }})</h3>
     <v-row no-gutters>
@@ -28,9 +28,9 @@
 import { SessionStorageKeys } from 'sbc-common-components/src/util/constants'
 // local
 import UserProduct from '@/components/UserProduct.vue'
-import { ProductStatus } from '@/enums'
+import { ProductCode, ProductStatus } from '@/enums'
 import { ProductInfo } from '@/resources'
-import { getAccountProducts } from '@/utils'
+import { getAccountProducts, getKeycloakRoles } from '@/utils'
 export default {
   components: {
     UserProduct
@@ -43,11 +43,31 @@ export default {
   data() {
     return {
       productInfo: { ...ProductInfo },
+      roles: getKeycloakRoles(),
+      isStaffSbc: false,
       subscribedProducts: []
     }
   },
   async mounted() {
-    const products = await getAccountProducts()
+    // title logic
+    if (this.roles.includes('staff') && this.roles.includes('gov_account_user')) {
+      this.isStaffSbc = true
+    }
+
+    // get products / services
+    let products = []
+    if (this.roles.includes('staff')) {
+      products = [
+        {
+          code: ProductCode.BUSINESS,
+          subscriptionStatus: ProductStatus.ACTIVE
+        },
+        {
+          code: ProductCode.PPR,
+          subscriptionStatus: ProductStatus.ACTIVE
+        },
+      ]
+    } else products = await getAccountProducts()
     this.subscribedProducts = products.filter(
       product => product.subscriptionStatus === ProductStatus.ACTIVE)
   }
