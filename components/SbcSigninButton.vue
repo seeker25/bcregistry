@@ -28,7 +28,7 @@
               $config.authURL +
               'signin/bcsc/' +
               encodeURIComponent($config.baseURL) +
-              '/dashboard'
+              'dashboard'
             "
           >
             <v-list-item-icon left class="pl-0 pr-0">
@@ -45,7 +45,7 @@
               $config.authURL +
               'signin/bceid/' +
               encodeURIComponent($config.baseURL) +
-              '/dashboard'
+              'dashboard'
             "
           >
             <v-list-item-icon left class="pl-0">
