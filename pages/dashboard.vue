@@ -1,19 +1,22 @@
 <template>
-  <v-container class="pa-12" fluid>
+  <v-container fluid class="px-10 py-12">
     <h1 class="dash-header">{{ isStaffSbc ? 'SBC Staff' : 'BC' }} Registries Dashboard</h1>
     <p class="dash-header-info ma-0 pt-3">Access to your BC Registries account product and services</p>
-    <h3 class="dash-sub-header">My Products and Services ({{ subscribedProducts.length  }})</h3>
+    <h3 class="dash-sub-header">
+      My Products and Services
+      <span style="font-weight: normal;">({{ subscribedProducts.length  }})</span>
+    </h3>
     <v-row no-gutters>
       <v-col cols="8">
         <user-product
           v-for="product in subscribedProducts"
           :key="product.code"
           class="mt-5"
-          :product="productInfo[product.code]"
+          :product="getProductInfo($config, product.code)"
         />
       </v-col>
       <v-col class="pl-6" cols="4">
-        <v-container class="dash-container-info mt-5 white" fluid>
+        <v-container rounded class="dash-container-info mt-5 white" fluid>
           <h4>Add Product and Services</h4>
           <p class="ma-0 pt-3">
             To request access to additional products and services, contact the account
@@ -29,8 +32,7 @@ import { SessionStorageKeys } from 'sbc-common-components/src/util/constants'
 // local
 import UserProduct from '@/components/UserProduct.vue'
 import { ProductCode, ProductStatus } from '@/enums'
-import { ProductInfo } from '@/resources'
-import { getAccountProducts, getKeycloakRoles } from '@/utils'
+import { getAccountProducts, getKeycloakRoles, getProductInfo } from '@/utils'
 export default {
   components: {
     UserProduct
@@ -42,10 +44,10 @@ export default {
   },
   data() {
     return {
-      productInfo: { ...ProductInfo },
+      getProductInfo,
       roles: getKeycloakRoles(),
       isStaffSbc: false,
-      subscribedProducts: []
+      subscribedProducts: [],
     }
   },
   async mounted() {

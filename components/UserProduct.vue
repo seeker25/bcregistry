@@ -1,10 +1,5 @@
 <template>
-  <v-card
-    :class="{ 'service-container': true, 'border-left': addBorder }"
-    :href="product.link"
-    @mouseover="addBorder = true"
-    @mouseleave="addBorder = false"
-  >
+  <v-card class="service-container" :href="product.link">
     <v-row align="center" no-gutters>
       <v-col cols="auto">
         <img v-if="product.image" class="service-img" :src="`/${product.image}.jpg`" />
@@ -12,7 +7,7 @@
       <v-col class="service-info">
         <h2>{{ product.title }}</h2>
         <p class="pt-3 ma-0">{{ product.text }}</p>
-        <v-btn class="action-btn px-5">
+        <v-btn class="action-btn px-5" :depressed="true">
           Open
           <v-icon>mdi-chevron-right</v-icon>
         </v-btn>
@@ -30,11 +25,6 @@ export default {
       type: Object as () => ProductI,
       default: null
     }
-  },
-  data() {
-    return {
-      addBorder: false
-    }
   }
 }
 </script>
@@ -51,14 +41,16 @@ export default {
   text-transform: none;
   pointer-events: none;
 }
-.border-left {
-  border-left: 3px solid $primary-blue !important;
-}
 .service-container {
   border-left: 3px solid transparent;
   cursor: pointer;
   max-width: none;
   padding: 30px;
+
+  &:hover {
+    border-left: 3px solid $primary-blue !important;
+    box-shadow: 1px 1px 6px 0px $gray6;
+  }
 }
 .service-img {
   height: 225px;

@@ -1,7 +1,7 @@
 <template>
-  <v-container fluid class="breadcrumb-row view-container px-15 py-0">
+  <v-container class="breadcrumb-row pa-0">
     <div class="container pa-0">
-      <v-row no-gutters class="container" style="padding: 6px 0">
+      <v-row no-gutters style="padding: 6px 0">
         <v-col cols="auto">
           <v-row no-gutters>
             <v-col cols="auto">
@@ -104,6 +104,7 @@ export default {
 .breadcrumb-row {
   background-color: $BCgovBlue3-5;
   color: white;
+  max-width: none;
 }
 .breadcrumb-text {
   color: white !important;
