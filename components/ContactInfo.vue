@@ -5,13 +5,13 @@
         <div class="col-md-7 col-12">
           <h3 class="mb-6 mr-16">Need more information?</h3>
           <p class="mb-4 mr-16">
-            To learn more about BC Registries and Online Services, please
+            To learn more about Personal Property Registration in British Columbia,
             <!-- eslint-disable-next-line -->
-            <a href="https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/citizens-services"
+            <a href="https://www2.gov.bc.ca/gov/content/employment-business/business/managing-a-business/bc-registry-services-personal-property-registry"
               target="_blank"
               rel="noopener noreferrer"
             >
-              visit the Citizen Services page
+              please visit the Personal Property Information page.
             </a>
           </p>
         </div>
@@ -23,22 +23,19 @@
           <ul class="contact-info__list mb-5">
             <li>
               <span>Toll Free:</span
-              ><a href="tel:+1-877-526-1526">1-877-526-1526</a>
-            </li>
-            <li>
-              <span>Phone:</span><a href="tel:+1250-387-7848">250-387-7848</a>
+              ><a href="tel:+1-800-663-6102">1-800-663-6102</a>
             </li>
             <li>
               <span>Email:</span>
               <!-- eslint-disable-next-line -->
-              <a href="mailto:BCRegistries@gov.bc.ca?subject=BC%20Registries%20-%20Business%20Registry%20Support%20Request"
-                >BCRegistries@gov.bc.ca</a
+              <a href="mailto:bcolhelp@gov.bc.ca?subject=Personal%20-%20Property%20Registry%20Support%20Request"
+                >bcolhelp@gov.bc.ca</a
               >
             </li>
           </ul>
           <p class="mb-0">
             <strong>Hours of Operation:</strong><br />
-            Monday to Friday, 8:30am - 4:30pm Pacific Time
+            Monday to Friday, 8:00m - 5:00pm Pacific Time (except Statutory Holidays)
           </p>
         </div>
       </div>

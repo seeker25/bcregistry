@@ -104,8 +104,8 @@
   padding: 0em !important;
 }
 .button-login {
-  color: #003366 !important;
-  background: #fcba19 !important;
+  color: white !important;
+  background: #003366 !important;
   font-weight: bold;
   font-size: 0.875em;
   text-decoration: none;
@@ -114,5 +114,9 @@
   text-align: center;
   border-radius: 0.25rem;
   flex: auto;
+  -webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+  height: 44px;
 }
 </style>

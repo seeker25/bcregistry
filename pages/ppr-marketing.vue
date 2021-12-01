@@ -5,7 +5,7 @@
         <v-container>
           <v-row>
             <v-col cols="6">
-              <h1 class="text--left">
+              <h1 class="text--left bigger-h1">
                 Register or search for legal claims on personal property
               </h1>
             </v-col>
@@ -13,21 +13,33 @@
           <v-row>
             <v-col cols="5">
               The Personal Property Registry records security interests and
-              liens against personal property in British Columbia, whether the
-              property belongs to a business or individual.
+              liens against personal property belonging to British Columbia businesses
+              and individuals.
             </v-col>
           </v-row>
-          <v-row>
+          <v-row v-if="!loggedIn">
             <v-col cols="6">
               <SbcSigninButton />
             </v-col>
           </v-row>
-          <v-row>
+          <v-row v-if="!loggedIn">
             <v-col>
               New to BC Registries?
               <a class="font-weight-bold" href="/"
                 >Create a BC Registries Account</a
               >
+            </v-col>
+          </v-row>
+          <v-row v-if="loggedIn">
+            <v-col>
+              <v-btn
+                  large
+                  color="bcgovgold"
+                  class="button-login font-weight-bold mr-2"
+                  to="https://ppr-ui-dev.apps.silver.devops.gov.bc.ca/ppr"
+                >
+                  Manage My Personal Property Registry
+                </v-btn>
             </v-col>
           </v-row>
         </v-container>
@@ -170,7 +182,7 @@
         </v-row>
       </v-container>
     </div>
-    <v-container class="padding-100">
+    <v-container class="padding-100 body-text">
       <h2 class="text--center pb-5">Helpful Links</h2>
       <v-row>
         <v-col></v-col>
@@ -188,7 +200,8 @@
             <v-row
               ><v-col
                 >Find detailed information about the Personal Property Registry.
-                <br /><a href="#">Learn More</a></v-col
+                <br /><a href="https://www2.gov.bc.ca/gov/content/employment-business/business/managing-a-business/bc-registry-services-personal-property-registry">
+                Learn More <v-icon class="pl-1" color="primary" dark dense>mdi-open-in-new</v-icon></a></v-col
               ></v-row
             >
           </v-card>
@@ -209,7 +222,8 @@
             <v-row
               ><v-col
                 >Vehicle claim history reports are available from ICBC and
-                Carfax. <br /><a href="#">Order a Report</a></v-col
+                Carfax. <br /><a href="https://www.icbc.com/vehicle-registration/buy-vehicle/buy-a-used-vehicle/Pages/Vehicle-history-reports.aspx">
+                Order a Report <v-icon class="pl-1" color="primary" dark dense>mdi-open-in-new</v-icon></a></v-col
               ></v-row
             ></v-card
           >
@@ -228,7 +242,9 @@
             <v-row
               ><v-col
                 >Get professional support filling out forms and filling
-                documents. <br /><a href="#">Contact Dye & Durham</a></v-col
+                documents. <br /><a href="https://dyedurham.com/">Contact Dye & Durham
+                <v-icon class="pl-1" color="primary" dark dense>mdi-open-in-new</v-icon>
+                </a></v-col
               ></v-row
             ></v-card
           >
@@ -237,8 +253,8 @@
       </v-row>
     </v-container>
     <div class="whitebg full-width">
-      <v-container class="padding-100">
-        <h1 class="text--center">Create an Account to get started</h1>
+      <v-container class="padding-100 body-text">
+        <h1 class="text--center">Create an Account to Get started</h1>
         <v-row class="pt-4 pb-6"
           ><v-col class="text--center"
             >Log in securely using your mobile BC Services Card, government's
@@ -275,7 +291,7 @@
           </v-col>
         </v-row>
         <div class="mt-10 text--center">
-          <template v-if="!userProfile">
+          <template v-if="!loggedIn">
             <v-btn
               large
               color="bcgovgold"
@@ -299,20 +315,32 @@
         </div>
       </v-container>
     </div>
+    <ContactInfo />
   </div>
 </template>
 
 <script lang="ts">
+import { SessionStorageKeys } from 'sbc-common-components/src/util/constants'
+import ContactInfo from '~/components/ContactInfo.vue'
 import SbcSigninButton from '~/components/SbcSigninButton.vue'
 export default {
+  head: {
+    title: 'BC Personal Property Registry',
+  },
   components: {
     SbcSigninButton,
+    ContactInfo,
   },
-  data() {
-    return {
-      /** Whether the user is logged in. */
-      userProfile: false,
-    }
+  computed: {
+    loggedIn: function () {
+      console.log(sessionStorage.getItem(SessionStorageKeys.KeyCloakToken))
+      if (!sessionStorage.getItem(SessionStorageKeys.KeyCloakToken)) {
+        console.log('returning false')
+        return false
+      }
+      console.log('returning true')
+      return true
+    },
   },
 }
 </script>
@@ -334,7 +362,7 @@ export default {
 .ppr-bg {
   color: $gray9;
   background-color: #fff;
-  background-image: url(../assets/img/PPR_homebanner_image_x2.jpg);
+  background-image: url(../assets/img/PPR_homebanner_image_v2_x2.jpg);
   background-position: right center;
   background-size: 50%;
   background-repeat: no-repeat;
@@ -366,6 +394,9 @@ export default {
 
 .whitebg {
   background-color: #fff;
+}
+.bigger-h1 {
+  font-size: 2.5rem;
 }
 
 .padding-100 {
@@ -419,9 +450,19 @@ li {
   font-weight: normal;
 }
 
+.body-text .col {
+  color: $gray7;
+  line-height: 22px;
+}
+
 a,
 .learn-more-btn {
   color: $BCgovLink;
+}
+
+a .v-icon {
+  text-decoration: none;
+  text-decoration-color: white;
 }
 
 .v-btn__content {
