@@ -10,8 +10,7 @@ import dashboard from '@/pages/dashboard.vue'
 import UserProduct from '@/components/UserProduct.vue'
 import { state } from '@/store'
 import { ProductCode, ProductStatus } from '@/enums'
-import { ProductInfo } from '@/resources'
-import { authAxios } from '@/utils'
+import { authAxios, getProductInfo } from '@/utils'
 import { createComponent } from '@/test/utils'
 
 Vue.use(Vuetify)
@@ -58,13 +57,14 @@ describe('Dashboard tests', () => {
     expect(wrapper.findComponent(dashboard).exists()).toBe(true)
     // PPR is not subscribed in this test, check product list
     expect(wrapper.findAllComponents(UserProduct).length).toBe(1)
-    expect(wrapper.findComponent(UserProduct).vm.$props.product).toEqual(ProductInfo[ProductCode.BUSINESS])
+    expect(wrapper.findComponent(UserProduct).vm.$props.product).toEqual(getProductInfo(wrapper.vm.$config, ProductCode.BUSINESS))
     // check layout
     expect(wrapper.find('.dash-header').exists()).toBe(true)
     expect(wrapper.find('.dash-header').text()).toBe('BC Registries Dashboard')
     expect(wrapper.find('.dash-header-info').exists()).toBe(true)
     expect(wrapper.find('.dash-sub-header').exists()).toBe(true)
-    expect(wrapper.find('.dash-sub-header').text()).toBe('My Products and Services (1)')
+    expect(wrapper.find('.dash-sub-header').text()).toContain('My Products and Services')
+    expect(wrapper.find('.dash-sub-header').text()).toContain('(1)')
     expect(wrapper.find('.dash-container-info').exists()).toBe(true)
   })
 })
