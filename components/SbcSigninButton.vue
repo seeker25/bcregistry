@@ -18,7 +18,7 @@
           <v-card-title class="menu-card-title pt-2 pb-2 pr-0"
             >Select login method</v-card-title
           >
-          <v-divider class="menu-card-divider"></v-divider>
+          <v-divider></v-divider>
         </div>
         <v-list tile dense class="menu-card-item">
           <v-list-item
@@ -32,7 +32,7 @@
             "
           >
             <v-list-item-icon left class="pl-0 pr-0">
-              <v-icon color="#38598a">mdi-card-account-details-outline</v-icon>
+              <v-icon>mdi-card-account-details-outline</v-icon>
             </v-list-item-icon>
             <v-list-item-title class="menu-card-item pl-0"
               >BC Services Card</v-list-item-title
@@ -49,7 +49,7 @@
             "
           >
             <v-list-item-icon left class="pl-0">
-              <v-icon color="#38598a">mdi-two-factor-authentication</v-icon>
+              <v-icon>mdi-two-factor-authentication</v-icon>
             </v-list-item-icon>
             <v-list-item-title class="menu-card-item pl-0"
               >BCeID</v-list-item-title
@@ -66,7 +66,7 @@
             "
           >
             <v-list-item-icon left class="pl-0">
-              <v-icon color="#38598a">mdi-account-group-outline</v-icon>
+              <v-icon>mdi-account-group-outline</v-icon>
             </v-list-item-icon>
             <v-list-item-title class="menu-card-item pl-0"
               >IDIR</v-list-item-title
@@ -95,7 +95,7 @@
 .menu-card-item {
   background: #fff !important;
   color: $gray7 !important;
-  font-size: 0.875em;
+  font-size: 0.875rem !important;
   text-align: left;
 }
 .menu-card-divider {

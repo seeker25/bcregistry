@@ -25,7 +25,7 @@
           <v-row v-if="!loggedIn">
             <v-col>
               New to BC Registries?
-              <a class="font-weight-bold" href="/"
+              <a class="font-weight-bold" href="https://dev.bcregistry.ca/business/auth/choose-authentication-method"
                 >Create a BC Registries Account</a
               >
             </v-col>
@@ -34,11 +34,10 @@
             <v-col>
               <v-btn
                   large
-                  color="bcgovgold"
                   class="button-login font-weight-bold mr-2"
                   to="https://ppr-ui-dev.apps.silver.devops.gov.bc.ca/ppr"
                 >
-                  Manage My Personal Property Registry
+                  Go to My Personal Property Registry
                 </v-btn>
             </v-col>
           </v-row>
@@ -46,16 +45,16 @@
       </header>
     </article>
 
-    <v-container>
-      <h1 class="text--center" style="padding-top: 100px">Coming Soon...</h1>
+    <v-container class="body-text">
+      <h1 class="text--center" style="padding-top: 80px">Coming Soon...</h1>
       <v-row class="pt-3 pb-8">
         <v-col cols="12" class="text--center">
           In early 2022, the BC Personal Property Registry will be launching an
           all-new application.
         </v-col>
       </v-row>
-      <v-row style="padding-bottom: 100px">
-        <v-col class="text--center" cols="3">
+      <v-row style="padding-bottom: 80px">
+        <v-col class="text--center px-6" cols="3">
           <img class="pr-1" src="@/assets/svgs/table-search.svg" />
           <v-icon medium color="#38598a">mdi-currency-usd-circle</v-icon
           ><br /><br />
@@ -65,7 +64,7 @@
             registering.
           </p>
         </v-col>
-        <v-col class="text--center" cols="3">
+        <v-col class="text--center px-6" cols="3">
           <img
             class="pr-1"
             src="@/assets/svgs/monitor-dashboard.svg"
@@ -76,7 +75,7 @@
             dashboard.
           </p></v-col
         >
-        <v-col class="text--center" cols="3">
+        <v-col class="text--center px-6" cols="3">
           <img
             class="pr-1"
             src="@/assets/svgs/account-circle.svg"
@@ -87,7 +86,7 @@
             location.
           </p></v-col
         >
-        <v-col class="text--center" cols="3">
+        <v-col class="text--center px-6" cols="3">
           <img class="pr-1" src="@/assets/svgs/table-key.svg" /><br /><br />
           <h4>API Services</h4>
           <p>
@@ -98,18 +97,31 @@
       </v-row>
     </v-container>
     <div class="whitebg full-width">
-      <v-container class="padding-100">
-        <v-row>
+      <v-container class="padding-100 body-text">
+        <v-row style="height: 400px;">
           <v-col cols="6" class="search-bg"></v-col>
           <v-col cols="6">
-            <h3 class="pb-4">
+            <h2 class="pb-6">
               Search for Registered Security Agreements and Liens
-            </h3>
+            </h2>
             <ul>
               <li>
-                Search for legal claims on personal property as well as the
-                people, businesses, and organizations associated with these
-                claims.
+                Search for 
+                <v-tooltip
+                      top
+                      content-class="top-tooltip pa-2 mr-2"
+                      transition="fade-transition"
+                    >
+                  <template v-slot:activator="{ on }">
+                    <span style="text-decoration: underline dotted;" v-on="on"> 
+                legal claims on personal property</span>
+                </template>
+                <div class="pa-2" style="width: 250px">
+                Legal claims on personal property (also called security interests
+                or property interests) include security agreements, liens, and more.
+                </div>
+              </v-tooltip>
+               as well as the people, businesses, and organizations associated with these claims.
               </li>
               <li>
                 Select registrations to download and view the secured parties,
@@ -122,19 +134,20 @@
               </li>
             </ul>
             <div class="note">
-              Note: The Personal Property Reigstry includes interests in
-              fixtures and coprs (personal property attached to land), but does
+              Note: The Personal Property Registry includes interests in
+              fixtures and crops (personal property attached to land), but does
               not include ownership and interests in real property (land). Find
               real property interests in the
               <a href="https://www.ltsa.ca" target="_blank"
-                >Land Title Surveyor Authority (LTSA).</a
+                >Land Title Surveyor Authority (LTSA).
+                <v-icon class="pl-1" color="primary" dark dense>mdi-open-in-new</v-icon></a
               >
             </div>
           </v-col>
         </v-row>
-        <v-row class="padding-100">
+        <v-row class="padding-100" style="height: 500px;">
           <v-col cols="6">
-            <h3 class="pb-4">Get Detailed Search Result Reports</h3>
+            <h2 class="pb-6">Get Detailed Search Result Reports</h2>
             <ul>
               <li>
                 Get a detailed report containing the list of registrations that
@@ -153,10 +166,10 @@
           </v-col>
           <v-col cols="6" class="report-bg"></v-col>
         </v-row>
-        <v-row>
+        <v-row style="height: 480px;">
           <v-col cols="6" class="register-bg"></v-col>
           <v-col cols="6">
-            <h3 class="pb-4">Register Security Agreements and Liens</h3>
+            <h2 class="pb-6">Register Security Agreements and Liens</h2>
             <ul>
               <li>Register legal claims on personal property.</li>
               <li>
@@ -263,7 +276,7 @@
         </v-row>
         <v-row>
           <v-col cols="6">
-            <h3 class="pb-4">It's Secure</h3>
+            <h2 class="pb-4">It's Secure</h2>
             <ul>
               <li>
                 A mobile card is a representation of your BC Services Card on
@@ -277,10 +290,10 @@
             </ul>
           </v-col>
           <v-col cols="6">
-            <h3 class="pb-4">It's Quick and Easy</h3>
+            <h2 class="pb-4">It's Quick and Easy</h2>
             <ul>
               <li>
-                It normally takes about 5 minutes to set up a mobile card.
+                It normally takes about 5 minutes to <a href="#">set up a mobile card</a>.
               </li>
               <li>
                 You can verify your identity by video right from your mobile
@@ -294,7 +307,6 @@
           <template v-if="!loggedIn">
             <v-btn
               large
-              color="bcgovgold"
               class="button-login font-weight-bold mr-2"
               to="/choose-authentication-method"
             >
@@ -371,7 +383,7 @@ export default {
 .report-bg {
   background-color: #fff;
   background-image: url(../assets/img/PPR_reportpaper_x2.jpg);
-  background-position: center center;
+  background-position: top center;
   background-size: 75%;
   background-repeat: no-repeat;
 }
@@ -379,16 +391,16 @@ export default {
 .search-bg {
   background-color: #fff;
   background-image: url(../assets/img/PPR_search_screenshot.png);
-  background-position: center center;
-  background-size: 60%;
+  background-position: top center;
+  background-size: 75%;
   background-repeat: no-repeat;
 }
 
 .register-bg {
   background-color: #fff;
   background-image: url(../assets/img/PPR_register_screenshot.png);
-  background-position: center center;
-  background-size: 60%;
+  background-position: top center;
+  background-size: 75%;
   background-repeat: no-repeat;
 }
 
@@ -473,5 +485,22 @@ a .v-icon {
   color: white !important;
   background: $BCgovBlue5;
   opacity: 0.8;
+}
+
+.button-login {
+  color: white !important;
+  background: #003366 !important;
+  font-weight: bold;
+  font-size: 0.875em;
+  text-decoration: none;
+  letter-spacing: none;
+  text-transform: none;
+  text-align: center;
+  border-radius: 0.25rem;
+  flex: auto;
+  -webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+  height: 44px;
 }
 </style>
