@@ -347,10 +347,8 @@ export default {
     loggedIn: function () {
       console.log(sessionStorage.getItem(SessionStorageKeys.KeyCloakToken))
       if (!sessionStorage.getItem(SessionStorageKeys.KeyCloakToken)) {
-        console.log('returning false')
         return false
       }
-      console.log('returning true')
       return true
     },
   },
