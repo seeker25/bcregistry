@@ -1,7 +1,7 @@
 <template>
   <v-app id="app" class="app-container">
     <sbc-header class="sbc-header" :in-auth="false" :show-actions="true" />
-    <Breadcrumb />
+    <Breadcrumb class="px-10" />
     <div class="app-body">
       <nuxt />
     </div>
