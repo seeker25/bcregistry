@@ -293,7 +293,9 @@
             <h2 class="pb-4">It's Quick and Easy</h2>
             <ul>
               <li>
-                It normally takes about 5 minutes to <a href="#">set up a mobile card</a>.
+                It normally takes about 5 minutes to
+                <a href=" https://www2.gov.bc.ca/gov/content/governments/government-id/bcservicescardapp">
+                set up a mobile card</a>.
               </li>
               <li>
                 You can verify your identity by video right from your mobile
@@ -344,7 +346,7 @@ export default {
     ContactInfo,
   },
   computed: {
-    loggedIn: function () {
+    loggedIn() {
       console.log(sessionStorage.getItem(SessionStorageKeys.KeyCloakToken))
       if (!sessionStorage.getItem(SessionStorageKeys.KeyCloakToken)) {
         return false
