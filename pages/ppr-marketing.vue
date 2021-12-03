@@ -4,21 +4,21 @@
       <header class="ppr-bg auth d-flex align-center">
         <v-container>
           <v-row>
-            <v-col cols="6">
+            <v-col class="col-md-6 col-sm-12">
               <h1 class="text--left bigger-h1">
                 Register or search for legal claims on personal property
               </h1>
             </v-col>
           </v-row>
           <v-row>
-            <v-col cols="5">
+            <v-col class="col-md-5 col-sm-12">
               The Personal Property Registry records security interests and
               liens against personal property belonging to British Columbia businesses
               and individuals.
             </v-col>
           </v-row>
           <v-row v-if="!loggedIn">
-            <v-col cols="6">
+            <v-col class="col-md-6 col-sm-12">
               <SbcSigninButton />
             </v-col>
           </v-row>
@@ -54,7 +54,7 @@
         </v-col>
       </v-row>
       <v-row style="padding-bottom: 80px">
-        <v-col class="text--center px-6" cols="3">
+        <v-col class="text--center px-6 col-md-3 col-sm-6">
           <img class="pr-1" src="@/assets/svgs/table-search.svg" />
           <v-icon medium color="#38598a">mdi-currency-usd-circle</v-icon
           ><br /><br />
@@ -64,7 +64,7 @@
             registering.
           </p>
         </v-col>
-        <v-col class="text--center px-6" cols="3">
+        <v-col class="text--center px-6 col-md-3 col-sm-6">
           <img
             class="pr-1"
             src="@/assets/svgs/monitor-dashboard.svg"
@@ -75,7 +75,7 @@
             dashboard.
           </p></v-col
         >
-        <v-col class="text--center px-6" cols="3">
+        <v-col class="text--center px-6 col-md-3 col-sm-6">
           <img
             class="pr-1"
             src="@/assets/svgs/account-circle.svg"
@@ -86,7 +86,7 @@
             location.
           </p></v-col
         >
-        <v-col class="text--center px-6" cols="3">
+        <v-col class="text--center px-6 col-md-3 col-sm-6">
           <img class="pr-1" src="@/assets/svgs/table-key.svg" /><br /><br />
           <h4>API Services</h4>
           <p>
@@ -98,9 +98,9 @@
     </v-container>
     <div class="whitebg full-width">
       <v-container class="padding-100 body-text">
-        <v-row style="height: 400px;">
-          <v-col cols="6" class="search-bg"></v-col>
-          <v-col cols="6">
+        <v-row class="search-height">
+          <div class="search-bg col-md-6 col-sm-12"></div>
+          <div class="col-md-6 col-sm-12">
             <h2 class="pb-6">
               Search for Registered Security Agreements and Liens
             </h2>
@@ -143,10 +143,10 @@
                 <v-icon class="pl-1" color="primary" dark dense>mdi-open-in-new</v-icon></a
               >
             </div>
-          </v-col>
+          </div>
         </v-row>
-        <v-row class="padding-100" style="height: 500px;">
-          <v-col cols="6">
+        <v-row class="padding-100 report-height">
+          <div class="col-md-6 col-sm-12">
             <h2 class="pb-6">Get Detailed Search Result Reports</h2>
             <ul>
               <li>
@@ -163,12 +163,12 @@
                 a claim, on personal property.
               </li>
             </ul>
-          </v-col>
-          <v-col cols="6" class="report-bg"></v-col>
+          </div>
+          <div class="report-bg col-md-6 col-sm-12"></div>
         </v-row>
-        <v-row style="height: 480px;">
-          <v-col cols="6" class="register-bg"></v-col>
-          <v-col cols="6">
+        <v-row class="register-height">
+          <div class="register-bg col-md-6 col-sm-12"></div>
+          <div class="col-md-6 col-sm-12">
             <h2 class="pb-6">Register Security Agreements and Liens</h2>
             <ul>
               <li>Register legal claims on personal property.</li>
@@ -191,15 +191,15 @@
               <li>Amend, Renew, or Discharge registrations.</li>
               <li>Re-register expired or discharged registrations.</li>
             </ul>
-          </v-col>
+          </div>
         </v-row>
       </v-container>
     </div>
     <v-container class="padding-100 body-text">
       <h2 class="text--center pb-5">Helpful Links</h2>
       <v-row>
-        <v-col></v-col>
-        <v-col cols="3">
+        <div class="col-sm-12 col-md-1"></div>
+        <div class="col-sm-12 col-md-3">
           <v-card class="text--center pa-5">
             <v-row
               ><v-col class="font-weight-bold">MORE INFORMATION</v-col></v-row
@@ -218,8 +218,8 @@
               ></v-row
             >
           </v-card>
-        </v-col>
-        <v-col cols="3">
+        </div>
+        <div class="col-sm-12 col-md-3">
           <v-card class="text--center pa-5"
             ><v-row
               ><v-col class="font-weight-bold"
@@ -240,8 +240,8 @@
               ></v-row
             ></v-card
           >
-        </v-col>
-        <v-col cols="3">
+        </div>
+        <div class="col-sm-12 col-md-3">
           <v-card class="text--center pa-5"
             ><v-row
               ><v-col class="font-weight-bold">LEGAL SERVICES</v-col></v-row
@@ -261,8 +261,8 @@
               ></v-row
             ></v-card
           >
-        </v-col>
-        <v-col></v-col>
+        </div>
+        <div class="col-sm-12 col-md-1"></div>
       </v-row>
     </v-container>
     <div class="whitebg full-width">
@@ -275,7 +275,7 @@
           >
         </v-row>
         <v-row>
-          <v-col cols="6">
+          <div class="col-md-6 col-sm-12">
             <h2 class="pb-4">It's Secure</h2>
             <ul>
               <li>
@@ -288,8 +288,8 @@
                 device.
               </li>
             </ul>
-          </v-col>
-          <v-col cols="6">
+          </div>
+          <div class="col-md-6 col-sm-12">
             <h2 class="pb-4">It's Quick and Easy</h2>
             <ul>
               <li>
@@ -303,7 +303,7 @@
                 by video.
               </li>
             </ul>
-          </v-col>
+          </div>
         </v-row>
         <div class="mt-10 text--center">
           <template v-if="!loggedIn">
@@ -422,13 +422,34 @@ export default {
   font-style: italic;
 }
 
+@media (max-width: 640px) {
+  .ppr-bg {
+    background: none;
+  }
+  .report-bg, .search-bg, .register-bg {
+    background-size:100%;
+    width: 400px;
+    height: 300px;
+  }
+
+}
+
 @media (min-width: 960px) {
   .container {
     max-width: 900px;
   }
   .ppr-bg {
     height: 30rem;
-    background-size: 900px;
+  }
+   
+  .report-height {
+    height: 400px;
+  } 
+  .search-height {
+    height: 500px;
+  }
+  .register-height {
+    height: 480px;
   }
 }
 

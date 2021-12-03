@@ -2,7 +2,7 @@
   <div class="contact-info-container">
     <div class="container">
       <div class="row pt-7 pb-7">
-        <div class="col-md-7 col-12">
+        <div class="col-md-7 col-sm-12 col-12">
           <h3 class="mb-6 mr-16">Need more information?</h3>
           <p class="mb-4 mr-16">
             To learn more about Personal Property Registration in British Columbia,
@@ -15,9 +15,9 @@
             </a>
           </p>
         </div>
-        <div class="col-md-5 col-12">
-          <h3 class="mb-6 mr-16">Contact Us</h3>
-          <p class="mb-5 mr-16">
+        <div class="col-md-5 col-sm-12 col-12">
+          <h3 class="mb-6 wide-16">Contact Us</h3>
+          <p class="mb-5 wide-16">
             For support or questions about this application, contact us at:
           </p>
           <ul class="contact-info__list mb-5">
@@ -48,7 +48,19 @@
 .contact-info-container {
   color: #fff;
   background-color: #036;
+}
+@media (min-width: 960px) {
+.contact-info-container {
+  padding-right: 10px;
+}
+}
+@media (min-width: 1920px) {
+.contact-info-container {
   padding-right: 5rem !important;
+}
+.wide-16 {
+  margin-right: 64px;
+}
 }
 .contact-info-container .container {
   padding-top: 2rem;
