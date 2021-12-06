@@ -25,7 +25,7 @@
           <v-row v-if="!loggedIn">
             <v-col>
               New to BC Registries?
-              <a class="font-weight-bold" :href="$config.authURL + '/choose-authentication-method'"
+              <a class="font-weight-bold" :href="$config.authURL + 'choose-authentication-method'"
                 >Create a BC Registries Account</a
               >
             </v-col>
