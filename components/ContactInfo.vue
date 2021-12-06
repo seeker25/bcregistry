@@ -3,8 +3,8 @@
     <div class="container">
       <div class="row pt-7 pb-7">
         <div class="col-md-7 col-sm-12 col-12">
-          <h3 class="mb-6 mr-16">Need more information?</h3>
-          <p class="mb-4 mr-16">
+          <h3 class="mb-6 wide-16">Need more information?</h3>
+          <p class="mb-4 wide-16">
             To learn more about Personal Property Registration in British Columbia,
             <!-- eslint-disable-next-line -->
             <a href="https://www2.gov.bc.ca/gov/content/employment-business/business/managing-a-business/bc-registry-services-personal-property-registry"

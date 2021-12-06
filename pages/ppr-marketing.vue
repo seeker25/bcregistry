@@ -196,9 +196,11 @@
       </v-container>
     </div>
     <v-container class="padding-100 body-text">
+      <v-row><v-col cols="12">
       <h2 class="text--center pb-5">Helpful Links</h2>
+      </v-col></v-row>
       <v-row>
-        <div class="col-sm-12 col-md-1"></div>
+        <v-col></v-col>
         <div class="col-sm-12 col-md-3">
           <v-card class="text--center pa-5">
             <v-row
@@ -262,7 +264,7 @@
             ></v-card
           >
         </div>
-        <div class="col-sm-12 col-md-1"></div>
+        <v-col></v-col>
       </v-row>
     </v-container>
     <div class="whitebg full-width">
@@ -443,13 +445,13 @@ export default {
   }
    
   .report-height {
-    height: 400px;
+    height: 500px;
   } 
   .search-height {
-    height: 500px;
+    height: 400px;
   }
   .register-height {
-    height: 480px;
+    height: 410px;
   }
 }
 
