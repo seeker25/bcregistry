@@ -25,7 +25,7 @@
           <v-row v-if="!loggedIn">
             <v-col>
               New to BC Registries?
-              <a class="font-weight-bold" href="https://dev.bcregistry.ca/business/auth/choose-authentication-method"
+              <a class="font-weight-bold" :href="$config.authURL + '/choose-authentication-method'"
                 >Create a BC Registries Account</a
               >
             </v-col>
@@ -35,7 +35,7 @@
               <v-btn
                   large
                   class="button-login font-weight-bold mr-2"
-                  to="https://ppr-ui-dev.apps.silver.devops.gov.bc.ca/ppr"
+                  to="$config.pprURL"
                 >
                   Go to My Personal Property Registry
                 </v-btn>
@@ -349,7 +349,6 @@ export default {
   },
   computed: {
     loggedIn() {
-      console.log(sessionStorage.getItem(SessionStorageKeys.KeyCloakToken))
       if (!sessionStorage.getItem(SessionStorageKeys.KeyCloakToken)) {
         return false
       }
