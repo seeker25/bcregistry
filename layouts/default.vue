@@ -5,7 +5,6 @@
     <div class="app-body">
       <nuxt />
     </div>
-    <ContactInfo />
     <SbcFooter />
   </v-app>
 </template>
@@ -13,13 +12,11 @@
 <script>
 import SbcFooter from 'sbc-common-components/src/components/SbcFooter.vue'
 import SbcHeader from 'sbc-common-components/src/components/SbcHeader.vue'
-import ContactInfo from '~/components/ContactInfo.vue'
 import Breadcrumb from '~/components/Breadcrumb.vue'
 export default {
   components: {
     SbcFooter,
     SbcHeader,
-    ContactInfo,
     Breadcrumb,
   },
   middleware: ['commonHeaderSetup'],

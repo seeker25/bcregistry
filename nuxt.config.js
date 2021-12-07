@@ -6,8 +6,8 @@ export default {
   ssr: false, // Required for sbc-common-header sessionStorage config to work.
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - BCRegistry',
-    title: 'BCRegistry',
+    titleTemplate: '%s - BC Registry',
+    title: 'BC Registry',
     htmlAttrs: {
       lang: 'en',
     },
@@ -62,7 +62,7 @@ export default {
       light: true,
       themes: {
         light: {
-          primary: colors.blue.darken2,
+          primary: '#1a5a96',
           accent: colors.grey.darken3,
           secondary: colors.amber.darken3,
           info: colors.teal.lighten1,

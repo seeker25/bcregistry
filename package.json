@@ -12,7 +12,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@mdi/font": "^5.9.55",
+    "@mdi/font": "^6.1.95",
     "@nuxt/content": "^1.14.0",
     "@nuxtjs/axios": "^5.13.1",
     "core-js": "^3.1.4",
