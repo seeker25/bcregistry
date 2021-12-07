@@ -4,7 +4,20 @@
       <v-row no-gutters style="padding: 6px 0">
         <v-col cols="auto">
           <v-row no-gutters>
-            <v-col cols="auto">
+            <v-col v-if="backDisabled" cols="auto">
+              <v-btn
+                id="breadcrumb-back-btn"
+                class="back-btn-disabled"
+                exact
+                :href="backUrl"
+                disabled
+                icon
+                small
+              >
+                <v-icon>mdi-arrow-left</v-icon>
+              </v-btn>
+            </v-col>
+            <v-col v-else cols="auto">
               <v-btn
                 id="breadcrumb-back-btn"
                 class="back-btn"
@@ -44,6 +57,7 @@
   </v-container>
 </template>
 <script lang="ts">
+import { getKeycloakRoles } from '@/utils'
 export default {
   data() {
     return {
@@ -51,6 +65,13 @@ export default {
     }
   },
   computed: {
+    backDisabled() {
+      // @ts-ignore - not sure why typescript isn't picking $route up
+      if (this.$route.path === '/dashboard') {
+        return true
+      }
+      return false
+    },
     breadcrumbs() {
       // @ts-ignore - not sure why typescript isn't picking $route up
       if (this.$route.path === '/ppr-marketing') {
@@ -69,6 +90,16 @@ export default {
       }
       // @ts-ignore - not sure why typescript isn't picking $route up
       if (this.$route.path === '/dashboard') {
+        const keycloakRoles = getKeycloakRoles()
+        if (keycloakRoles && keycloakRoles.includes('gov_account_user')) {
+          return [
+            {
+              disabled: true,
+              href: '',
+              text: 'Staff Dashboard',
+            },
+          ]
+        }
         return [
           {
             disabled: true,
@@ -100,6 +131,13 @@ export default {
   color: $primary-blue !important;
   min-height: 32px !important;
   min-width: 32px !important;
+}
+.back-btn-disabled {
+  background-color: white;
+  color: $primary-blue !important;
+  min-height: 32px !important;
+  min-width: 32px !important;
+  opacity: 0.4 !important;
 }
 .breadcrumb-row {
   background-color: $BCgovBlue3-5;
