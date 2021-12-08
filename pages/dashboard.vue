@@ -52,13 +52,13 @@ export default {
   },
   async mounted() {
     // title logic
-    if (this.roles.includes('staff') && this.roles.includes('gov_account_user')) {
+    if (this.roles.includes('gov_account_user')) {
       this.isStaffSbc = true
     }
 
     // get products / services
     let products = []
-    if (this.roles.includes('staff')) {
+    if (this.roles.includes('staff') || this.roles.includes('gov_account_user')) {
       products = [
         {
           code: ProductCode.BUSINESS,
