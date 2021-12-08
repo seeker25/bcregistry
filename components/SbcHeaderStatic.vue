@@ -260,20 +260,6 @@ export default class SbcHeader extends Mixins(NavigationMixin) {
 
 $app-header-font-color: #ffffff;
 
-.app-header {
-  height: 70px;
-  color: $app-header-font-color;
-  border-bottom: 2px solid $BCgovGold5;
-  background-color: $BCgovBlue5;
-
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
-  }
-}
-
 nav {
   ul {
     font-size: 0.875rem;

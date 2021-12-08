@@ -1,7 +1,7 @@
 <template>
   <v-app id="app" class="app-container">
     <sbc-header class="sbc-header" :in-auth="false" :show-actions="true" />
-    <Breadcrumb class="px-10" />
+    <Breadcrumb class="wide-10" />
     <div class="app-body">
       <nuxt />
     </div>
@@ -33,10 +33,19 @@ export default {
   min-height: 100vh;
 }
 
-.app-header {
-  flex: 0 0 auto;
-  height: 70px;
-  z-index: 2;
+@media (min-width: 960px) {
+  .app-header {
+    flex: 0 0 auto;
+    height: 70px;
+    z-index: 2;
+  }
+}
+
+@media (max-width: 960px) {
+  .app-header {
+    height: 100px !important;
+    padding: 0 10px;
+  }
 }
 
 .theme--light.v-application {
@@ -69,5 +78,12 @@ export default {
   width: 100%;
   padding-top: 3rem;
   padding-bottom: 3rem;
+}
+
+@media (min-width: 960px) {
+  .wide-10 {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
 }
 </style>

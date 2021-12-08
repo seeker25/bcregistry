@@ -423,7 +423,7 @@ export default {
   font-style: italic;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 960px) {
   .ppr-bg {
     background: none;
   }
@@ -432,7 +432,9 @@ export default {
     width: 400px;
     height: 300px;
   }
-
+  .row {
+    margin: 2px;
+  }
 }
 
 @media (min-width: 960px) {
