@@ -1,10 +1,10 @@
 <template>
   <v-container class="breadcrumb-row pa-0">
     <div class="container pa-0">
-      <v-row no-gutters style="padding: 6px 0">
+      <v-row no-gutters class="pad-wide">
         <v-col cols="auto">
           <v-row no-gutters>
-            <v-col v-if="backDisabled" cols="auto">
+            <v-col v-if="backDisabled" cols="auto" class="pad-wide">
               <v-btn
                 id="breadcrumb-back-btn"
                 class="back-btn-disabled"
@@ -17,7 +17,7 @@
                 <v-icon>mdi-arrow-left</v-icon>
               </v-btn>
             </v-col>
-            <v-col v-else cols="auto">
+            <v-col v-else cols="auto" class="pad-wide">
               <v-btn
                 id="breadcrumb-back-btn"
                 class="back-btn"
@@ -34,7 +34,7 @@
             </v-col>
           </v-row>
         </v-col>
-        <v-col cols="auto" class="pl-3" style="padding-top: 6px">
+        <v-col class="pl-3 col-md-10 pad-wide">
           <v-breadcrumbs class="pa-0" :items="breadcrumbs">
             <v-breadcrumbs-item
               slot="item"
@@ -152,4 +152,16 @@ export default {
   color: white !important;
   text-decoration: underline;
 }
+
+@media (min-width: 960px) {
+  .row.no-gutters.pad-wide, .col.pad-wide {
+    padding: 6px 0
+  }
+}
+@media (max-width: 960px) {
+  .row.no-gutters.pad-wide, .col.pad-wide {
+    margin: 4px 0;
+  }
+}
+
 </style>
