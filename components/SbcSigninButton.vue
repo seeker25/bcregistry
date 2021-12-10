@@ -109,7 +109,7 @@
   font-weight: bold;
   font-size: 0.875em;
   text-decoration: none;
-  letter-spacing: none;
+  letter-spacing: normal;
   text-transform: none;
   text-align: center;
   border-radius: 0.25rem;

@@ -466,7 +466,7 @@ a.v-btn {
   font-size: 0.875em;
   height: 44px;
   text-decoration: none;
-  letter-spacing: none;
+  letter-spacing: normal;
   text-transform: none;
   text-align: center;
   border-radius: 0.25rem;
@@ -477,4 +477,67 @@ a.v-btn {
 }
 .v-application .app-body a {
   color: #1a5a96;
+}
+.v-application .app-body a:hover {
+  color: #00e;
+}
+
+
+.top-tooltip,
+.left-tooltip {
+  margin-left: 0 !important;
+}
+
+.v-tooltip__content {
+  width: 270px !important;
+  background-color: RGB(73, 80, 87) !important;
+  color: white !important;
+  border-radius: 4px;
+  font-size: 12px !important;
+  line-height: 18px !important;
+  letter-spacing: 0;
+}
+
+.v-tooltip__content:after {
+  content: '' !important;
+  position: absolute !important;
+  top: 50% !important;
+  right: 100% !important;
+  margin-top: -10px !important;
+  border-top: 10px solid transparent !important;
+  border-bottom: 10px solid transparent !important;
+  border-right: 8px solid RGBA(73, 80, 87, 0.95) !important;
+}
+
+.top-tooltip:after {
+  top: 100% !important;
+  left: 45% !important;
+  margin-top: 0 !important;
+  border-right: 10px solid transparent !important;
+  border-left: 10px solid transparent !important;
+  border-top: 8px solid RGBA(73, 80, 87, 0.95) !important;
+}
+
+.left-tooltip:after {
+  top: 50% !important;
+  left: 100% !important;
+  margin-top: -10px !important;
+  border-bottom: 10px solid transparent !important;
+  border-top: 10px solid transparent !important;
+  border-right: 10px solid transparent !important;
+  border-left: 8px solid RGBA(73, 80, 87, 0.95) !important;
+}
+
+.bottom-tooltip {
+  width: 390px !important;
+}
+
+.bottom-tooltip:after {
+  left: 45% !important;
+  top: 0 !important;
+  margin-top: -18px !important;
+  border-top: 10px solid transparent !important;
+  border-left: 10px solid transparent !important;
+  border-right: 10px solid transparent !important;
+  border-bottom: 8px solid RGBA(73, 80, 87, 0.95) !important;
 }

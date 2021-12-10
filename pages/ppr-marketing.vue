@@ -35,7 +35,7 @@
               <v-btn
                   large
                   class="button-login font-weight-bold mr-2"
-                  to="$config.pprURL"
+                  :href="$config.pprURL"
                 >
                   Go to My Personal Property Registry
                 </v-btn>
@@ -113,7 +113,7 @@
                       transition="fade-transition"
                     >
                   <template v-slot:activator="{ on }">
-                    <span style="text-decoration: underline dotted;" v-on="on"> 
+                    <span style="border-bottom: 1px dotted #212529;" v-on="on"> 
                 legal claims on personal property</span>
                 </template>
                 <div class="pa-2" style="width: 250px">
@@ -202,9 +202,9 @@
       <v-row>
         <v-col></v-col>
         <div class="col-sm-12 col-md-3">
-          <v-card class="text--center pa-5">
+          <v-card class="text--center px-5 py-8">
             <v-row
-              ><v-col class="font-weight-bold">MORE INFORMATION</v-col></v-row
+              ><v-col class="font-weight-bold"><h4>MORE INFORMATION</h4></v-col></v-row
             >
             <v-row
               ><v-col
@@ -215,17 +215,17 @@
             <v-row
               ><v-col
                 >Find detailed information about the Personal Property Registry.
-                <br /><a href="https://www2.gov.bc.ca/gov/content/employment-business/business/managing-a-business/bc-registry-services-personal-property-registry">
+                <br /><a target="_blank" href="https://www2.gov.bc.ca/gov/content/employment-business/business/managing-a-business/bc-registry-services-personal-property-registry">
                 Learn More <v-icon class="pl-1" color="primary" dark dense>mdi-open-in-new</v-icon></a></v-col
               ></v-row
             >
           </v-card>
         </div>
         <div class="col-sm-12 col-md-3">
-          <v-card class="text--center pa-5"
+          <v-card class="text--center px-5 py-8"
             ><v-row
               ><v-col class="font-weight-bold"
-                >VEHICLE CLAIMS REPORT</v-col
+                ><h4>VEHICLE CLAIMS REPORT</h4></v-col
               ></v-row
             >
             <v-row
@@ -237,16 +237,16 @@
             <v-row
               ><v-col
                 >Vehicle claim history reports are available from ICBC and
-                Carfax. <br /><a href="https://www.icbc.com/vehicle-registration/buy-vehicle/buy-a-used-vehicle/Pages/Vehicle-history-reports.aspx">
+                Carfax. <br /><a target="_blank" href="https://www.icbc.com/vehicle-registration/buy-vehicle/buy-a-used-vehicle/Pages/Vehicle-history-reports.aspx">
                 Order a Report <v-icon class="pl-1" color="primary" dark dense>mdi-open-in-new</v-icon></a></v-col
               ></v-row
             ></v-card
           >
         </div>
         <div class="col-sm-12 col-md-3">
-          <v-card class="text--center pa-5"
+          <v-card class="text--center px-5 py-8"
             ><v-row
-              ><v-col class="font-weight-bold">LEGAL SERVICES</v-col></v-row
+              ><v-col class="font-weight-bold"><h4>LEGAL SERVICES</h4></v-col></v-row
             >
             <v-row
               ><v-col
@@ -257,7 +257,7 @@
             <v-row
               ><v-col
                 >Get professional support filling out forms and filling
-                documents. <br /><a href="https://dyedurham.com/">Contact Dye & Durham
+                documents. <br /><a target="_blank" href="https://dyedurham.com/">Contact Dye & Durham
                 <v-icon class="pl-1" color="primary" dark dense>mdi-open-in-new</v-icon>
                 </a></v-col
               ></v-row
@@ -296,7 +296,7 @@
             <ul>
               <li>
                 It normally takes about 5 minutes to
-                <a href=" https://www2.gov.bc.ca/gov/content/governments/government-id/bcservicescardapp">
+                <a href="https://www2.gov.bc.ca/gov/content/governments/government-id/bcservicescardapp">
                 set up a mobile card</a>.
               </li>
               <li>
@@ -313,6 +313,7 @@
               large
               class="button-login font-weight-bold mr-2"
               to="/choose-authentication-method"
+              style="margin-top:15px;"
             >
               Create a BC Registries Account
             </v-btn>
@@ -322,9 +323,10 @@
             outlined
             color="bcgovblue"
             class="learn-more-btn font-weight-bold"
-            href="https://www2.gov.bc.ca/gov/content/governments/government-id/bc-services-card/log-in-with-card/mobile-card"
+            href="https://www2.gov.bc.ca/gov/content/governments/government-id/bcservicescardapp"
             target="_blank"
             rel="noopener noreferrer"
+            style="margin-top:15px;"
           >
             Learn More
           </v-btn>
@@ -373,7 +375,6 @@ export default {
 }
 
 .ppr-bg {
-  color: $gray9;
   background-color: #fff;
   background-image: url(../assets/img/PPR_homebanner_image_v2_x2.jpg);
   background-position: right center;
@@ -385,7 +386,7 @@ export default {
   background-color: #fff;
   background-image: url(../assets/img/PPR_reportpaper_x2.jpg);
   background-position: top center;
-  background-size: 75%;
+  background-size: 80%;
   background-repeat: no-repeat;
 }
 
@@ -409,7 +410,11 @@ export default {
   background-color: #fff;
 }
 .bigger-h1 {
-  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+    color: inherit;
+    letter-spacing: -.02rem;
+    line-height: 1.25;
+    font-size: 2.5rem;
 }
 
 .padding-100 {
@@ -421,19 +426,40 @@ export default {
   padding-top: 20px;
   padding-left: 20px;
   font-style: italic;
+  color: $gray7;
 }
+
+.container {
+  max-width: 1360px; // should match auth-web, etc
+}
+
+
 
 @media (max-width: 960px) {
   .ppr-bg {
-    background: none;
+    background-image: none;
   }
+  .report-bg, .search-bg, .register-bg {
+    background-size:100%;
+    width: 400px;
+    height: 500px;
+  }
+  .row {
+    margin: 2px;
+  }
+}
+
+@media (max-width: 750px) {
   .report-bg, .search-bg, .register-bg {
     background-size:100%;
     width: 400px;
     height: 300px;
   }
-  .row {
-    margin: 2px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 700px;
   }
 }
 
@@ -446,7 +472,7 @@ export default {
   }
    
   .report-height {
-    height: 500px;
+    height: 550px;
   } 
   .search-height {
     height: 400px;
@@ -457,21 +483,25 @@ export default {
 }
 
 @media (min-width: 1200px) {
+  .container {
+    max-width: 1100px; // should match auth-web, etc
+  }
   .ppr-bg {
     height: 30rem;
   }
 }
 
 @media (min-width: 1920px) {
+  .container {
+     max-width: 1360px; // should match auth-web, etc
+  }
   .ppr-bg.auth {
     background-size: 50%;
     background-position-x: right;
   }
 }
 
-.container {
-  max-width: 1360px; // should match auth-web, etc
-}
+
 
 li::marker {
   list-style: square;
@@ -517,7 +547,7 @@ a .v-icon {
   font-weight: bold;
   font-size: 0.875em;
   text-decoration: none;
-  letter-spacing: none;
+  letter-spacing: normal;
   text-transform: none;
   text-align: center;
   border-radius: 0.25rem;
