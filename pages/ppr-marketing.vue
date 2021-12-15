@@ -140,7 +140,7 @@
               real property interests in the
               <a href="https://www.ltsa.ca" target="_blank"
                 >Land Title Surveyor Authority (LTSA).
-                <v-icon class="pl-1" color="primary" dark dense>mdi-open-in-new</v-icon></a
+                <v-icon class="pl-1" color="primary" style="font-size:16px">mdi-open-in-new</v-icon></a
               >
             </div>
           </div>
@@ -216,7 +216,7 @@
               ><v-col
                 >Find detailed information about the Personal Property Registry.
                 <br /><a target="_blank" href="https://www2.gov.bc.ca/gov/content/employment-business/business/managing-a-business/bc-registry-services-personal-property-registry">
-                Learn More <v-icon class="pl-1" color="primary" dark dense>mdi-open-in-new</v-icon></a></v-col
+                Learn More <v-icon class="pl-1" color="primary" style="font-size:16px">mdi-open-in-new</v-icon></a></v-col
               ></v-row
             >
           </v-card>
@@ -238,7 +238,7 @@
               ><v-col
                 >Vehicle claim history reports are available from ICBC and
                 Carfax. <br /><a target="_blank" href="https://www.icbc.com/vehicle-registration/buy-vehicle/buy-a-used-vehicle/Pages/Vehicle-history-reports.aspx">
-                Order a Report <v-icon class="pl-1" color="primary" dark dense>mdi-open-in-new</v-icon></a></v-col
+                Order a Report <v-icon class="pl-1" color="primary" style="font-size:16px">mdi-open-in-new</v-icon></a></v-col
               ></v-row
             ></v-card
           >
@@ -258,7 +258,7 @@
               ><v-col
                 >Get professional support filling out forms and filling
                 documents. <br /><a target="_blank" href="https://dyedurham.com/">Contact Dye & Durham
-                <v-icon class="pl-1" color="primary" dark dense>mdi-open-in-new</v-icon>
+                <v-icon class="pl-1" color="primary" style="font-size:16px">mdi-open-in-new</v-icon>
                 </a></v-col
               ></v-row
             ></v-card
@@ -524,11 +524,6 @@ li {
 a,
 .learn-more-btn {
   color: $BCgovLink;
-}
-
-a .v-icon {
-  text-decoration: none;
-  text-decoration-color: white;
 }
 
 .v-btn__content {
