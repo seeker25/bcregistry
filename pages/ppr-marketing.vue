@@ -11,7 +11,7 @@
             </v-col>
           </v-row>
           <v-row>
-            <v-col class="col-md-5 col-sm-12">
+            <v-col class="col-md-5 col-sm-12 body-text">
               The Personal Property Registry records security interests and
               liens against personal property belonging to British Columbia businesses
               and individuals.
@@ -23,7 +23,7 @@
             </v-col>
           </v-row>
           <v-row v-if="!loggedIn">
-            <v-col>
+            <v-col class="body-text">
               New to BC Registries?
               <a class="font-weight-bold" :href="$config.authURL + 'choose-authentication-method'"
                 >Create a BC Registries Account</a
@@ -35,9 +35,9 @@
               <v-btn
                   large
                   class="button-login font-weight-bold mr-2"
-                  :href="$config.pprURL"
+                  href="/dashboard"
                 >
-                  Go to My Personal Property Registry
+                  Go to BC Registries Dashboard
                 </v-btn>
             </v-col>
           </v-row>
@@ -199,10 +199,10 @@
       <v-row><v-col cols="12">
       <h2 class="text--center pb-5">Helpful Links</h2>
       </v-col></v-row>
-      <v-row>
-        <v-col></v-col>
-        <div class="col-sm-12 col-md-3">
-          <v-card class="text--center px-5 py-8">
+      <v-row class="justify-center">
+
+        <div class="col col-auto">
+          <v-card class="text--center px-5 py-8 square-card">
             <v-row
               ><v-col class="font-weight-bold"><h4>MORE INFORMATION</h4></v-col></v-row
             >
@@ -221,8 +221,8 @@
             >
           </v-card>
         </div>
-        <div class="col-sm-12 col-md-3">
-          <v-card class="text--center px-5 py-8"
+        <div class="col col-auto">
+          <v-card class="text--center px-5 py-8 square-card"
             ><v-row
               ><v-col class="font-weight-bold"
                 ><h4>VEHICLE CLAIMS REPORT</h4></v-col
@@ -243,8 +243,8 @@
             ></v-card
           >
         </div>
-        <div class="col-sm-12 col-md-3">
-          <v-card class="text--center px-5 py-8"
+        <div class="col col-auto">
+          <v-card class="text--center px-5 py-8 square-card"
             ><v-row
               ><v-col class="font-weight-bold"><h4>LEGAL SERVICES</h4></v-col></v-row
             >
@@ -264,7 +264,7 @@
             ></v-card
           >
         </div>
-        <v-col></v-col>
+
       </v-row>
     </v-container>
     <div class="whitebg full-width">
@@ -377,7 +377,7 @@ export default {
 .ppr-bg {
   background-color: #fff;
   background-image: url(../assets/img/PPR_homebanner_image_v2_x2.jpg);
-  background-position: right center;
+  background-position: right top;
   background-size: 50%;
   background-repeat: no-repeat;
 }
@@ -429,12 +429,6 @@ export default {
   color: $gray7;
 }
 
-.container {
-  max-width: 1360px; // should match auth-web, etc
-}
-
-
-
 @media (max-width: 960px) {
   .ppr-bg {
     background-image: none;
@@ -457,16 +451,9 @@ export default {
   }
 }
 
-@media (min-width: 768px) {
-  .container {
-    max-width: 700px;
-  }
-}
 
 @media (min-width: 960px) {
-  .container {
-    max-width: 900px;
-  }
+
   .ppr-bg {
     height: 30rem;
   }
@@ -483,25 +470,18 @@ export default {
 }
 
 @media (min-width: 1200px) {
-  .container {
-    max-width: 1100px; // should match auth-web, etc
-  }
+
   .ppr-bg {
     height: 30rem;
   }
 }
 
 @media (min-width: 1920px) {
-  .container {
-     max-width: 1360px; // should match auth-web, etc
-  }
   .ppr-bg.auth {
     background-size: 50%;
     background-position-x: right;
   }
 }
-
-
 
 li::marker {
   list-style: square;
@@ -551,5 +531,13 @@ a,
 	-moz-box-shadow: none;
 	box-shadow: none;
   height: 44px;
+}
+
+.square-card {
+    height: 300px;
+    width: 300px;
+    padding: 15px;
+    border-radius: 4px;
+    background-color: #fff;
 }
 </style>

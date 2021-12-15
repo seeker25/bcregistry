@@ -69,7 +69,7 @@ export default {
     },
     breadcrumbs() {
       // @ts-ignore - not sure why typescript isn't picking $route up
-      if (this.$route.path === '/ppr-marketing') {
+      if ((this.$route.path === '/ppr-marketing') || (this.$route.path === '/ppr-marketing/')) {
         return [
           {
             disabled: false,
@@ -117,7 +117,7 @@ export default {
     },
     backUrl() {
       // @ts-ignore - not sure why typescript isn't picking $route up
-      if (this.$route.path === '/ppr-marketing') {
+      if ((this.$route.path === '/ppr-marketing') || (this.$route.path === '/ppr-marketing/')) {
         return '/'
       }
       return false
