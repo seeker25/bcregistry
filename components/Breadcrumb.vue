@@ -34,7 +34,7 @@
             </v-col>
           </v-row>
         </v-col>
-        <v-col class="pl-3 col-md-10 pad-wide">
+        <v-col class="pl-3 pt-2 col-md-10 pad-wide">
           <v-breadcrumbs class="pa-0" :items="breadcrumbs">
             <v-breadcrumbs-item
               slot="item"
@@ -59,32 +59,27 @@
 <script lang="ts">
 import { getKeycloakRoles } from '@/utils'
 export default {
-  data() {
-    return {
-      backUrl: '',
-    }
-  },
   computed: {
     backDisabled() {
       // @ts-ignore - not sure why typescript isn't picking $route up
-      if (this.$route.path === '/dashboard') {
+      if ((this.$route.path === '/dashboard') || (this.$route.path === '/')) {
         return true
       }
       return false
     },
     breadcrumbs() {
       // @ts-ignore - not sure why typescript isn't picking $route up
-      if (this.$route.path === '/ppr-marketing') {
+      if ((this.$route.path === '/ppr-marketing') || (this.$route.path === '/ppr-marketing/')) {
         return [
           {
             disabled: false,
             href: '/dashboard',
-            text: 'BC Registries Dashboard',
+            text: 'BC Registries and Online Services',
           },
           {
             disabled: true,
             href: '',
-            text: 'My Personal Property Registry',
+            text: 'Personal Property Registry',
           },
         ]
       }
@@ -119,6 +114,13 @@ export default {
         ]
       }
       return []
+    },
+    backUrl() {
+      // @ts-ignore - not sure why typescript isn't picking $route up
+      if ((this.$route.path === '/ppr-marketing') || (this.$route.path === '/ppr-marketing/')) {
+        return '/'
+      }
+      return false
     },
   },
 }
@@ -155,7 +157,7 @@ export default {
 
 @media (min-width: 960px) {
   .row.no-gutters.pad-wide, .col.pad-wide {
-    padding: 6px 0
+    padding: 2px 0
   }
 }
 @media (max-width: 960px) {

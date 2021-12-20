@@ -48,6 +48,30 @@
   padding: 0;
 }
 
+@media (min-width: 768px) {
+  .container {
+    max-width: 700px;
+  }
+}
+
+@media (min-width: 960px) {
+  .container {
+    max-width: 900px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1100px; // should match auth-web, etc
+  }
+}
+
+@media (min-width: 1920px) {
+  .container {
+     max-width: 1360px; // should match auth-web, etc
+  }
+}
+
 // Page Layout
 .view-container {
   display: flex;
