@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid class="px-10 py-12">
+  <v-container fluid class="py-12">
     <h1 class="dash-header">{{ isStaffSbc ? 'SBC Staff' : 'BC' }} Registries Dashboard</h1>
     <p class="dash-header-info ma-0 pt-3">Access to your BC Registries account product and services</p>
     <h3 class="dash-sub-header">
@@ -7,15 +7,15 @@
       <span style="font-weight: normal;">({{ subscribedProducts.length  }})</span>
     </h3>
     <v-row no-gutters>
-      <v-col cols="8">
+      <div class="col-md-8 col-sm-12">
         <user-product
           v-for="product in subscribedProducts"
           :key="product.code"
           class="mt-5"
           :product="getProductInfo($config, product.code)"
         />
-      </v-col>
-      <v-col class="pl-6" cols="4">
+      </div>
+      <div class="pl-6 col-md-4 col-sm-12">
         <v-container rounded class="dash-container-info mt-5 white" fluid>
           <h4>Add Product and Services</h4>
           <p class="ma-0 pt-3">
@@ -23,7 +23,7 @@
             Administrator of your BC Registries account.
           </p>
         </v-container>
-      </v-col>
+      </div>
     </v-row>
   </v-container>
 </template>

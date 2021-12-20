@@ -21,7 +21,7 @@ export const getProductInfo = (config, type: ProductCode): ProductI => {
       return {
         image: 'PPR_dashboard_thumbnail_image',
         link: config?.pprURL || 'link_not_configured',
-        text: 'Register or search for legal claims on personal property in BC.',
+        text: 'Register or search for legal claims on personal property in British Columbia.',
         title: 'My Personal Property Registry'
       } as ProductI
     case ProductCode.RPT:
