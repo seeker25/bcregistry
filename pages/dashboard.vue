@@ -51,14 +51,15 @@ export default {
     }
   },
   async mounted() {
+    if (this.roles.includes('staff')) {
+      const redirectURL = this.$config.authURL + 'staff/dashboard/active'
+      window.location.href = redirectURL
+    }
+    let products = []
     // title logic
     if (this.roles.includes('gov_account_user')) {
       this.isStaffSbc = true
-    }
-
-    // get products / services
-    let products = []
-    if (this.roles.includes('staff') || this.roles.includes('gov_account_user')) {
+      // get products / services
       products = [
         {
           code: ProductCode.BUSINESS,
