@@ -545,3 +545,7 @@ a.v-btn {
 .mdi-account-card-details-outline:before {
   content: "\F0DAB";
 }
+
+.v-breadcrumbs li:nth-child(2n) {
+  padding: 0 6px;
+}

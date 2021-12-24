@@ -377,8 +377,7 @@ export default {
 .ppr-bg {
   background-color: #fff;
   background-image: url(../assets/img/PPR_homebanner_image_v2_x2.jpg);
-  background-position: right top;
-  background-size: 50%;
+  background-position: 100% 100%;
   background-repeat: no-repeat;
 }
 
@@ -386,7 +385,7 @@ export default {
   background-color: #fff;
   background-image: url(../assets/img/PPR_reportpaper_x2.jpg);
   background-position: top center;
-  background-size: 80%;
+  background-size: 110%;
   background-repeat: no-repeat;
 }
 
@@ -459,7 +458,7 @@ export default {
   }
    
   .report-height {
-    height: 550px;
+    height: 650px;
   } 
   .search-height {
     height: 400px;
@@ -478,7 +477,7 @@ export default {
 
 @media (min-width: 1920px) {
   .ppr-bg.auth {
-    background-size: 50%;
+    background-size: 48%;
     background-position-x: right;
   }
 }
@@ -496,7 +495,7 @@ li {
   font-weight: normal;
 }
 
-.body-text .col {
+.body-text .col, .col.body-text {
   color: $gray7;
   line-height: 22px;
 }

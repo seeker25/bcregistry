@@ -73,7 +73,7 @@ export default {
         return [
           {
             disabled: false,
-            href: '/dashboard',
+            href: '/',
             text: 'BC Registries and Online Services',
           },
           {
@@ -86,7 +86,8 @@ export default {
       // @ts-ignore - not sure why typescript isn't picking $route up
       if (this.$route.path === '/dashboard') {
         const keycloakRoles = getKeycloakRoles()
-        if (keycloakRoles && keycloakRoles.includes('gov_account_user')) {
+        if (keycloakRoles &&
+        (keycloakRoles.includes('gov_account_user') || (keycloakRoles.includes('staff')))) {
           return [
             {
               disabled: true,

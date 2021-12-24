@@ -6,7 +6,7 @@ export const getProductInfo = (config, type: ProductCode): ProductI => {
     case ProductCode.BUSINESS:
       return {
         image: 'BCRS_dashboard_thumbnail_image',
-        link: config?.businessURL || 'link_not_configured',
+        link: config?.authURL + 'home/maintain-business' || 'link_not_configured',
         text: 'Register or incorporate a business, manage name requests and keep business records up to date.',
         title: 'My Business Registry'
       } as ProductI
