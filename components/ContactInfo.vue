@@ -23,7 +23,7 @@
           <ul class="contact-info__list mb-5">
             <li>
               <span>Toll Free:</span
-              ><a href="tel:+1-800-663-6102">1-800-663-6102</a>
+              ><a href="tel:+1-877-526-1526">1-877-526-1526</a>
             </li>
             <li>
               <span>Email:</span>
@@ -35,7 +35,7 @@
           </ul>
           <p class="mb-0">
             <strong>Hours of Operation:</strong><br />
-            Monday to Friday, 8:00m - 5:00pm Pacific Time (except Statutory Holidays)
+            Monday to Friday, 8:30am - 5:30pm Pacific time
           </p>
         </div>
       </div>
