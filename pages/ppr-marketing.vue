@@ -3,26 +3,26 @@
     <article>
       <header class="ppr-bg auth d-flex align-center">
         <v-container>
-          <v-row>
+          <v-row no-gutters>
             <v-col class="col-md-6 col-sm-12">
               <h1 class="text--left bigger-h1">
                 Register or search for legal claims on personal property
               </h1>
             </v-col>
           </v-row>
-          <v-row>
+          <v-row no-gutters>
             <v-col class="col-md-5 col-sm-12 body-text">
               The Personal Property Registry records security interests and
               liens against personal property belonging to British Columbia businesses
               and individuals.
             </v-col>
           </v-row>
-          <v-row v-if="!loggedIn">
+          <v-row v-if="!loggedIn" class="pt-6" no-gutters>
             <v-col class="col-md-6 col-sm-12">
               <SbcSigninButton />
             </v-col>
           </v-row>
-          <v-row v-if="!loggedIn">
+          <v-row v-if="!loggedIn" class="pt-6" no-gutters>
             <v-col class="body-text">
               New to BC Registries?
               <a class="font-weight-bold" :href="$config.authURL + 'choose-authentication-method'"
@@ -30,7 +30,7 @@
               >
             </v-col>
           </v-row>
-          <v-row v-if="loggedIn">
+          <v-row v-if="loggedIn" class="pt-6" no-gutters>
             <v-col>
               <v-btn
                   large
@@ -379,6 +379,7 @@ export default {
   background-image: url(../assets/img/PPR_homebanner_image_v2_x2.jpg);
   background-position: 100% 100%;
   background-repeat: no-repeat;
+  background-size: 880px;
 }
 
 .report-bg {
