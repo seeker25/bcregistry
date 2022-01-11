@@ -4,7 +4,7 @@
       <article>
         <header class="hero-banner d-flex align-center">
           <div class="container">
-            <h1>Access and manage your BC Registries and Online services</h1>
+            <h1>Access and manage your BC Registries and Online Services</h1>
             <p class="services-info">
               All registrations of businesses, not-for-profit societies,
               cooperative associations, personal property and manufactured homes
@@ -27,10 +27,20 @@
         </header>
       </article>
     </div>
+
+    <v-divider class="h-divider"></v-divider>
     <AccountsFooter />
+
+    <v-divider class="h-divider"></v-divider>
     <BCRegistriesAccount />
+
+    <v-divider class="h-divider"></v-divider>
     <BCOnlineAccount />
+
+    <v-divider class="h-divider"></v-divider>
     <DirectAccount />
+
+    <v-divider class="h-divider"></v-divider>
     <NoAccount />
   </div>
 </template>
@@ -41,6 +51,7 @@ import BCOnlineAccount from '~/components/BCOnlineAccount.vue'
 import BCRegistriesAccount from '~/components/BCRegistriesAccount.vue'
 import DirectAccount from '~/components/DirectAccount.vue'
 import NoAccount from '~/components/NoAccount.vue'
+
 export default {
   components: {
     AccountsFooter,
@@ -101,13 +112,14 @@ $card-width: 50%;
 }
 
 .hero-banner {
-  color: #212529;
-  background-color: #fff;
+  color: $gray9;
+  background-color: white;
   background-image: url(../assets/img/BCReg_homebanner_images_final_80compressed_032521.jpg);
   background-position: 100% 100%;
   background-size: 75%;
   background-repeat: no-repeat;
 }
+
 .hero-banner h1 {
   margin-bottom: 1.5rem;
   color: inherit;
@@ -115,20 +127,23 @@ $card-width: 50%;
   line-height: 1.25;
   font-size: 2.5rem;
 }
+
 .hero-banner h1 sup {
   top: -0.9rem;
   margin-left: 0.25rem;
   vertical-align: middle;
-  color: #fcba19;
+  color: $BCgovGold5;
   text-transform: uppercase;
   letter-spacing: 0.05rem;
   font-size: 0.875rem;
 }
+
 .hero-banner p {
   max-width: 40rem;
   margin: 1.5rem 0;
   font-size: 1rem;
 }
+
 .hero-banner .container {
   padding: 2rem 1.5rem;
 }
@@ -136,6 +151,7 @@ $card-width: 50%;
 article {
   padding: 0;
 }
+
 .services-info {
   font-size: 1rem;
   line-height: 1.5rem;

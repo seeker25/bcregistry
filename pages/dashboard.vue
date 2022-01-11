@@ -6,15 +6,17 @@
       My Products and Services
       <span style="font-weight: normal;">({{ subscribedProducts.length  }})</span>
     </h3>
+
     <v-row no-gutters>
       <div class="col-md-8 col-sm-12">
-        <user-product
+        <UserProduct
           v-for="product in subscribedProducts"
           :key="product.code"
           class="mt-5"
           :product="getProductInfo($config, product.code)"
         />
       </div>
+
       <div class="pl-6 col-md-4 col-sm-12">
         <v-container rounded class="dash-container-info mt-5 white" fluid>
           <h4>Add Product and Services</h4>
@@ -27,12 +29,14 @@
     </v-row>
   </v-container>
 </template>
+
 <script>
 import { SessionStorageKeys } from 'sbc-common-components/src/util/constants'
 // local
 import UserProduct from '@/components/UserProduct.vue'
 import { ProductCode, ProductStatus } from '@/enums'
 import { getAccountProducts, getKeycloakRoles, getProductInfo } from '@/utils'
+
 export default {
   components: {
     UserProduct
@@ -70,7 +74,9 @@ export default {
           subscriptionStatus: ProductStatus.ACTIVE
         },
       ]
-    } else products = await getAccountProducts()
+    } else {
+      products = await getAccountProducts()
+    }
     this.subscribedProducts = products.filter(
       product => product.subscriptionStatus === ProductStatus.ACTIVE)
   }
@@ -88,17 +94,19 @@ export default {
     line-height: 1.375rem;
   }
 }
+
 .dash-header {
   color: $gray9;
 }
+
 .dash-header-info {
   color: $gray7;
   font-size: 1rem;
 }
+
 .dash-sub-header {
   color: $gray9;
   font-size: 1.125rem;
   padding-top: 50px;
 }
-
 </style>

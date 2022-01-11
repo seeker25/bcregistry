@@ -258,7 +258,7 @@ export default class SbcHeader extends Mixins(NavigationMixin) {
 <style lang="scss" scoped>
 @import '../assets/scss/theme.scss';
 
-$app-header-font-color: #ffffff;
+$app-header-font-color: white;
 
 nav {
   ul {

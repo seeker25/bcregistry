@@ -1,6 +1,7 @@
 <template>
-  <sbc-signout :redirect-url="logoutURL" />
+  <SbcSignout :redirect-url="logoutURL" />
 </template>
+
 <script>
 import SbcSignout from 'sbc-common-components/src/components/SbcSignout.vue'
 

@@ -34,6 +34,7 @@
             </v-col>
           </v-row>
         </v-col>
+
         <v-col class="pl-3 pt-2 col-md-10 pad-wide">
           <v-breadcrumbs class="pa-0" :items="breadcrumbs">
             <v-breadcrumbs-item
@@ -56,8 +57,10 @@
     </div>
   </v-container>
 </template>
+
 <script lang="ts">
 import { getKeycloakRoles } from '@/utils'
+
 export default {
   computed: {
     backDisabled() {
@@ -110,7 +113,7 @@ export default {
           {
             disabled: true,
             href: '',
-            text: 'Access and manage your BC Registries and Online services',
+            text: 'BC Registries and Online Services',
           },
         ]
       }
@@ -129,12 +132,14 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/scss/theme.scss';
+
 .back-btn {
   background-color: white;
   color: $primary-blue !important;
   min-height: 32px !important;
   min-width: 32px !important;
 }
+
 .back-btn-disabled {
   background-color: white;
   color: $primary-blue !important;
@@ -142,15 +147,18 @@ export default {
   min-width: 32px !important;
   opacity: 0.4 !important;
 }
+
 .breadcrumb-row {
   background-color: $BCgovBlue3-5;
   color: white;
   max-width: none;
 }
+
 .breadcrumb-text {
   color: white !important;
   font-size: 0.8125rem !important;
 }
+
 .underlined {
   color: white !important;
   text-decoration: underline;
@@ -161,10 +169,10 @@ export default {
     padding: 2px 0
   }
 }
+
 @media (max-width: 960px) {
   .row.no-gutters.pad-wide, .col.pad-wide {
     margin: 4px 0;
   }
 }
-
 </style>

@@ -8,29 +8,33 @@
             <a
               href="https://www2.gov.bc.ca/gov/content/home/disclaimer"
               target="_blank"
-              >Disclaimer</a
             >
+              Disclaimer
+            </a>
           </li>
           <li>
             <a
               href="https://www2.gov.bc.ca/gov/content/home/privacy"
               target="_blank"
-              >Privacy</a
             >
+              Privacy
+            </a>
           </li>
           <li>
             <a
               href="https://www2.gov.bc.ca/gov/content/home/accessibility"
               target="_blank"
-              >Accessibility</a
             >
+              Accessibility
+            </a>
           </li>
           <li>
             <a
               href="https://www2.gov.bc.ca/gov/content/home/copyright"
               target="_blank"
-              >Copyright</a
             >
+              Copyright
+            </a>
           </li>
         </ul>
       </nav>
@@ -64,7 +68,7 @@ nav {
     a {
       display: block;
       padding: 0.25rem 0.5rem;
-      color: #fff;
+      color: white;
       text-decoration: none;
 
       &:hover {

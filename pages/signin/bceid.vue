@@ -1,6 +1,7 @@
 <template>
   <div></div>
 </template>
+
 <script>
 // Required for generated site to work with header login.
 export default {
@@ -13,5 +14,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" scoped></style>

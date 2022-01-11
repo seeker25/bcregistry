@@ -38,7 +38,7 @@ export function getKeycloakRoles (): Array<string> {
   throw new Error('Error getting Keycloak roles')
 }
 
-// get product subscription authorizations
+/** Gets product subscription authorizations from Auth API. */
 export async function getAccountProducts (): Promise<APIProductI[]> {
   const url = sessionStorage.getItem(SessionStorageKeys.AuthApiUrl)
   const currentAccount = sessionStorage.getItem(SessionStorageKeys.CurrentAccount)

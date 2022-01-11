@@ -128,12 +128,12 @@ ol > li:before {
 }
 
 pre {
-  background-color: #ffffff !important;
+  background-color: white !important;
 }
 
 table {
   width: 100%;
-  background-color: #fff;
+  background-color: white;
   border: 2px solid $gray1;
   border-collapse: collapse;
 
@@ -144,7 +144,7 @@ table {
   }
 
   th {
-    color: #ffffff;
+    color: white;
     background-color: $BCgovBlue4;
     font-weight: 700;
     white-space: nowrap;
@@ -179,7 +179,7 @@ a.v-btn {
   text-decoration: none;
 
   &.primary {
-    color: #ffffff;
+    color: white;
     background-color: $BCgovBlue5;
     font-weight: 700;
   }
@@ -189,7 +189,7 @@ a.v-btn {
   display: flex;
   flex-direction: column;
   padding: 2rem;
-  background-color: #ffffff;
+  background-color: white;
   border-radius: 0.25rem;
   box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12)!important;
 
@@ -246,7 +246,7 @@ a.v-btn {
 .menu-card {
   padding-top: 30px;
   padding-right: 20px;
-  background-color: #f1f3f5 !important;
+  background-color: $gray1 !important;
 }
 .menu-list-text {
   font-weight: bold;
@@ -255,8 +255,8 @@ a.v-btn {
 }
 .menu-header {
   flex: 0 3 auto;
-  color: #fff;
-  background: #38598a;
+  color: white;
+  background: $BCgovBlue3-5;
   font-weight: bold;
   font-size: 1rem;
   padding-left: 30px;
@@ -276,24 +276,24 @@ a.v-btn {
 .menu-title {
   font-size: 2rem;
   font-weight: bold;
-  color: #212529;
+  color: $gray9;
   text-align: center;
 }
 .menu-info {
   font-size: 1rem;
   line-height: 1.5rem;
-  color: #495057;
+  color: $gray7;
   text-align: center;
   max-width: 850px;
 }
 .menu-info-bold {
   font-size: 1.125rem;
   font-weight: bold;
-  color: #212529;
+  color: $gray9;
   text-align: center;
 }
 .menu-title-badge {
-  color: #003366 !important;
+  color: $BCgovBlue5 !important;
   background: $BCgovGold5 !important;
   font-weight: bold;
   font-size: 0.875rem;
@@ -307,7 +307,7 @@ a.v-btn {
 
 // Common payment section begin
 .payment {
-  background-color: #e2e8ee;
+  background-color: $gray2-5;
 }
 .payment-info-bold {
   font-size: 1.125rem;
@@ -328,7 +328,7 @@ a.v-btn {
   width: 100%;
   padding-top: 30px;
   text-align: center;
-  background-color: #e2e8ee !important;
+  background-color: $gray2-5 !important;
 }
 .button-row {
   width: 100%;
@@ -336,8 +336,8 @@ a.v-btn {
   text-align: center;
 }
 .button-blue {
-  color: #fff !important;
-  background: #38598a !important;
+  color: white !important;
+  background: $BCgovBlue3-5 !important;
   font-weight: bold;
   font-size: 0.75rem;
   text-decoration: none !important;
@@ -363,7 +363,7 @@ a.v-btn {
 
 .h-divider {
   margin: 0;
-  border-color: #e2e8ee;
+  border-color: $gray2-5;
   border-style: solid;
   border-width: 3px;
   box-shadow: 0 1px 1px $gray4, 0 -1px 1px $gray4;
@@ -460,8 +460,8 @@ a.v-btn {
 
 
 .button-login {
-  color: #003366 !important;
-  background: #fcba19 !important;
+  color: $BCgovBlue5 !important;
+  background: $BCgovGold5 !important;
   font-weight: bold;
   font-size: 0.875em;
   height: 44px;
@@ -476,7 +476,7 @@ a.v-btn {
 	box-shadow: none;
 }
 .v-application .app-body a {
-  color: #1a5a96;
+  color: $BCgovLink;
 }
 .v-application .app-body a:hover {
   color: #00e;

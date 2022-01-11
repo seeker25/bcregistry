@@ -1,6 +1,6 @@
 <template>
   <v-app id="app" class="app-container">
-    <sbc-header class="sbc-header" :in-auth="false" :show-actions="true" />
+    <SbcHeader class="sbc-header" :in-auth="false" :show-actions="true" />
     <Breadcrumb class="wide-10" />
     <div class="app-body">
       <nuxt />
@@ -13,6 +13,7 @@
 import SbcFooter from 'sbc-common-components/src/components/SbcFooter.vue'
 import SbcHeader from 'sbc-common-components/src/components/SbcHeader.vue'
 import Breadcrumb from '~/components/Breadcrumb.vue'
+
 export default {
   components: {
     SbcFooter,
@@ -49,7 +50,7 @@ export default {
 }
 
 .theme--light.v-application {
-  background-color: var(--v-background-base, #f1f3f5) !important;
+  background-color: var(--v-background-base, $gray1) !important;
 }
 
 .app-body {

@@ -3,11 +3,12 @@ import colors from 'vuetify/es5/util/colors'
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
+
   ssr: false, // Required for sbc-common-header sessionStorage config to work.
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - BC Registry',
-    title: 'BC Registry',
+    title: 'BC Registries and Online Services',
     htmlAttrs: {
       lang: 'en',
     },
@@ -16,7 +17,7 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -62,24 +63,26 @@ export default {
       light: true,
       themes: {
         light: {
-          primary: '#1a5a96',
+          primary: '#1a5a96', // same as $BCgovLink
           accent: colors.grey.darken3,
           secondary: colors.amber.darken3,
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
           success: colors.green.accent3,
-          background: '#f1f3f5',
+          background: '#f1f3f5', // same as $gray1
+          gray9: '#212529', // same as $gray9
         },
         dark: {
-          primary: '#1a5a96',
+          primary: '#1a5a96', // same as $BCgovLink
           accent: colors.grey.darken3,
           secondary: colors.amber.darken3,
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
           success: colors.green.accent3,
-          background: '#f1f3f5',
+          background: '#f1f3f5', // same as $gray1
+          gray9: '#212529', // same as $gray9
         },
       },
     },

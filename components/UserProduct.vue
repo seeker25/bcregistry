@@ -15,6 +15,7 @@
     </v-row>
   </v-card>
 </template>
+
 <script lang="ts">
 import { ProductI } from '@/interfaces'
 
@@ -41,6 +42,7 @@ export default {
   text-transform: none;
   pointer-events: none;
 }
+
 .service-container {
   border-left: 3px solid transparent;
   cursor: pointer;
@@ -52,10 +54,12 @@ export default {
     box-shadow: 1px 1px 6px 0px $gray6;
   }
 }
+
 .service-img {
   height: 225px;
   width: 300px;
 }
+
 .service-info {
   padding-left: 30px !important;
 
