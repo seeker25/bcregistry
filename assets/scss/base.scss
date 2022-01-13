@@ -62,7 +62,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   color: $gray9;
   letter-spacing: -0.02rem;
-  font-weight: 700;
+  font-weight: bold;
 }
 
 h1 {
@@ -95,15 +95,6 @@ p {
 }
 
 // ELEMENTS
-hr {
-  margin: 0;
-  border-color: $gray4;
-  border-style: solid;
-  border-width: 1px;
-  box-shadow: 0 1px 1px $gray4, 0 -1px 1px $gray4;
-}
-
-
 ol {
   margin:0 0 1.5em;
   padding:0;
@@ -122,7 +113,7 @@ ol > li:before {
   margin-left: -5rem;
   width: 3rem;
   padding-right: 2rem;
-  font-weight: 700;
+  font-weight: bold;
   text-align: right;
   content:counter(item) ".";
 }
@@ -146,67 +137,38 @@ table {
   th {
     color: white;
     background-color: $BCgovBlue4;
-    font-weight: 700;
+    font-weight: bold;
     white-space: nowrap;
   }
 }
 
-ul {
-  list-style: square;
-  padding-left: 30px;
-  color: $gray4;
-}
-
+// Common button begin
 .v-btn {
-  font-size: 1rem;
-  font-weight: normal;
+  font-size: 0.875rem;
+  font-weight: bold;
   letter-spacing: normal;
-  padding: inherit 28px !important;
   text-transform: none;
-  .v-icon + span,
-  span + .v-icon {
-    margin-left: 0.25rem;
-  }
-}
-
-// CUSTOM
-/*
-a.v-btn {
-  margin-top: 0.75rem;
-  display: inline-block;
-  padding: 0.75rem 1rem;
-  border-radius: 0.25rem;
   text-decoration: none;
+  -webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+.button-white-on-blue {
+  color: white !important;
+  background: $BCgovBlue5 !important;
 
-  &.primary {
-    color: white;
-    background-color: $BCgovBlue5;
-    font-weight: 700;
+  &:hover,
+  &:focus {
+    background: $BCgovBlue4 !important;
   }
 }
-*/
-.card {
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
-  background-color: white;
-  border-radius: 0.25rem;
-  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12)!important;
 
-  .card-title {
-    flex: 0 0 auto;
-    margin-top: -0.5rem;
-    margin-bottom: 0;
-  }
-
-  .card-body {
-    flex: 1 1 auto;
-  }
-
-  .card-actions {
-    margin-top: 1rem;
-  }
+.button-blue-on-white {
+  color: $BCgovLink !important;
+  background: unset !important;
+  border: thin solid;
 }
+// Common button end
 
 // HELPER CLASSES
 .align--center {
@@ -217,217 +179,136 @@ a.v-btn {
   table-layout: fixed;
 }
 
-.text--center {
-  text-align: center;
-}
-.text--left {
-  text-align: left;
+.word-break-normal {
+  word-break: normal;
 }
 
-.nuxt-inline-helper {
-  display: inline-block;
+.bg-gray1 {
+  background-color: $gray1;
+}
+
+// .nuxt-inline-helper {
+//   display: inline-block;
   
-  &:before {
-    display: inline-block;
-    width: 0.25rem;
-    content: ' ';
-  }
-}
+//   &:before {
+//     display: inline-block;
+//     width: 0.25rem;
+//     content: ' ';
+//   }
+// }
 
-// Common account menu begin
+// Common account container begin
 .account-container {
   width: 100%;
-  flex-wrap: wrap !important;
+  flex-wrap: wrap;
+  padding: 70px 0;
+
+  .v-card {
+    max-width: 390px;
+    margin: 1rem;
+  }
+
+  .v-card__title {
+    color: white;
+    background: $app-dk-blue;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 14px 28px;
+  }
+  .v-card__text {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: $gray7 !important;
+    padding: 28px;
+
+    p {
+      margin: 0;
+    }
+
+    ul {
+      margin-top: 16px;
+      list-style: square;
+
+      li {
+        margin-left: -8px;
+      }
+
+      li::marker {
+        color: $gray4;
+      }
+    }
+
+    div {
+      margin-top: 24px;
+    }
+  }
+  .account-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .account-info {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: $gray7;
+    text-align: center;
+    max-width: 850px;
+  }
+  .account-info-bold {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: $gray9;
+    text-align: center;
+  }
+  .card-title-badge-container {
+    position: absolute;
+    top: 0;
+    right: 0.75rem;
+  }
+  .card-title-badge {
+    color: $BCgovBlue5;
+    background: $BCgovGold5;
+    font-size: 0.75rem;
+    text-align: center;
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    height: 30px;
+    width: auto;
+    padding: 0 12px;
+  }
+  .card-list-item {
+    font-weight: bold;
+    color: $gray7;
+    font-size: 1rem;
+  }
 }
-.account-container h1 {
-  text-align: center;
-  padding-top: 50px;
-}
-.menu-card {
-  padding-top: 30px;
-  padding-right: 20px;
-  background-color: $gray1 !important;
-}
-.menu-list-text {
-  font-weight: bold;
-  color: $gray7;
-  font-size: 1rem;
-}
-.menu-header {
-  flex: 0 3 auto;
-  color: white;
-  background: $BCgovBlue3-5;
-  font-weight: bold;
-  font-size: 1rem;
-  padding-left: 30px;
-  padding-top: 12px !important;
-}
-.menu-item {
-  flex: 0 3 auto;
-  font-size: 1rem !important;
-  line-height: 1.5rem;
-  color: $gray7;
-}
-.menu-item-title {
-  flex: 0 3 auto;
-  font-size: 1.125rem !important;
-  font-weight: bold !important;
-}
-.menu-title {
-  font-size: 2rem;
-  font-weight: bold;
-  color: $gray9;
-  text-align: center;
-}
-.menu-info {
-  font-size: 1rem;
-  line-height: 1.5rem;
-  color: $gray7;
-  text-align: center;
-  max-width: 850px;
-}
-.menu-info-bold {
-  font-size: 1.125rem;
-  font-weight: bold;
-  color: $gray9;
-  text-align: center;
-}
-.menu-title-badge {
-  color: $BCgovBlue5 !important;
-  background: $BCgovGold5 !important;
-  font-weight: bold;
-  font-size: 0.875rem;
-  text-decoration: none !important;
-  text-align: center;
-  border-bottom-left-radius: 0.25rem;
-  border-bottom-right-radius: 0.25rem;
-  height: 35px !important;
-}
-// Common account menu end
+// Common account container end
 
 // Common payment section begin
 .payment {
-  background-color: $gray2-5;
-}
-.payment-info-bold {
-  font-size: 1.125rem;
-  font-weight: bold;
-  color: $gray9;
-  text-align: center;
-}
-.payment-info {
-  font-size: 1rem;
-  line-height: 1.5rem;
-  color: $gray7;
-  text-align: center;
+  background-color: $app-bg-lt-blue;
+
+  .payment-info-title {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: $gray9;
+    text-align: center;
+  }
+  .payment-info-text {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: $gray7;
+    text-align: center;
+    max-width: 850px;
+  }
 }
 // Common payment section end
 
-// Common button begin
-.menu-card-button {
-  width: 100%;
-  padding-top: 30px;
-  text-align: center;
-  background-color: $gray2-5 !important;
-}
-.button-row {
-  width: 100%;
-  padding-top: 30px;
-  text-align: center;
-}
-.button-blue {
-  color: white !important;
-  background: $BCgovBlue3-5 !important;
-  font-weight: bold;
-  font-size: 0.75rem;
-  text-decoration: none !important;
-  text-transform: none !important;
-  text-align: center;
-  border-radius: 0.25rem;
-  flex: auto;
-  max-width: 300px;
-}
-.button-gold {
-  color: $gray9 !important;
-  background: $BCgovGold5 !important;
-  font-weight: bold;
-  font-size: 0.75rem;
-  text-decoration: none !important;
-  text-transform: none !important;
-  text-align: center;
-  border-radius: 0.25rem;
-  flex: auto;
-  max-width: 300px;
-}
-// Common button end
-
-.h-divider {
-  margin: 0;
-  border-color: $gray2-5;
+.theme--light.v-divider.h-divider {
+  border-width: 0 0 3px 0;
   border-style: solid;
-  border-width: 3px;
-  box-shadow: 0 1px 1px $gray4, 0 -1px 1px $gray4;
+  border-color: $app-bg-lt-blue;
 }
 
-
-@media only screen and (max-width: 640px) {
-  .hero-banner {
-    background-image: none;
-  }
-}
-@media (min-width: 960px) {
-  .hero-banner {
-    height: 30rem;
-    background-size: 900px;
-  }
-  .hero-banner.auth {
-    height: 38rem;
-    background-size: 1100px;
-  }
-}
-@media (min-width: 1200px) {
-  .hero-banner {
-    height: 30rem;
-    background-size: 900px;
-  }
-  .hero-banner.auth {
-    height: 38rem;
-    background-size: 1100px;
-  }
-}
-@media (min-width: 1264px) and (min-height: 900px) {
-  .hero-banner {
-    background-size: 950px;
-  }
-  .hero-banner.auth {
-    background-size: 1150px;
-  }
-}
-@media (min-width: 1360px) {
-  .hero-banner .container {
-    padding: 2rem 1rem;
-  }
-}
-@media (min-width: 1700px) {
-  .hero-banner {
-    background-size: 1150px;
-  }
-  .hero-banner.auth {
-    background-size: 1300px;
-  }
-}
-@media (min-width: 1920px) {
-  .hero-banner {
-    background-size: 1320px;
-    background-position-x: right;
-    background-position-y: -240px;
-  }
-  .hero-banner.auth {
-    background-size: 1520px;
-    background-position-x: right;
-    background-position-y: -240px;
-  }
-}
 .hero-banner__cta-btns {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -458,23 +339,6 @@ a.v-btn {
   margin-bottom: 13px;
 }
 
-
-.button-login {
-  color: $BCgovBlue5 !important;
-  background: $BCgovGold5 !important;
-  font-weight: bold;
-  font-size: 0.875em;
-  height: 44px;
-  text-decoration: none;
-  letter-spacing: normal;
-  text-transform: none;
-  text-align: center;
-  border-radius: 0.25rem;
-  flex: auto;
-  -webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
-}
 .v-application .app-body a {
   color: $BCgovLink;
 }

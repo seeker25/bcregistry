@@ -5,7 +5,6 @@
 }
 
 .app-header {
-  padding: 0 40px;
   position: -webkit-sticky; // Safari
   position: sticky;
   top: 0;
@@ -13,23 +12,13 @@
   z-index: 2;
 }
 
-.app-header {
-  height: 70px;
-  color: white;
-  border-bottom: 2px solid $BCgovGold5;
-  background-color: $BCgovBlue5;
-
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
-  }
-}
-
 .app-body {
   flex: 1 1 auto;
   position: relative;
+}
+
+.app-container > .container:first-child {
+  padding: 2rem;
 }
 
 @media (min-width: 960px) {
@@ -39,45 +28,16 @@
   }
 }
 
-.app-footer {
-  flex: 0 0 auto;
-}
-
 .container {
   max-width: 1360px; // should match auth-web, etc
-  padding: 0;
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 700px;
-  }
-}
-
-@media (min-width: 960px) {
-  .container {
-    max-width: 900px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1100px; // should match auth-web, etc
-  }
-}
-
-@media (min-width: 1920px) {
-  .container {
-     max-width: 1360px; // should match auth-web, etc
-  }
 }
 
 // Page Layout
 .view-container {
   display: flex;
   flex-flow: column nowrap;
-  max-width: none;
-  padding: 0;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 
   article {
     flex: 1 1 auto;
@@ -106,55 +66,5 @@
     &.form-primary-btn {
       margin-left: auto;
     }
-  }
-}
-
-.column-lg {
-  width: 15rem;
-}
-
-.column-md {
-  width: 10.5rem;
-}
-
-.column-mdl {
-  width: 13rem;
-}
-
-.column-mds {
-  width: 8rem;
-}
-
-.column-sm {
-  width: 6rem;
-}
-
-.soft-corners {
-  border-radius: 5px 5px 5px 5px;
-}
-
-.soft-corners-top {
-  border-radius: 5px 5px 0 0;
-}
-
-.soft-corners-bottom {
-  border-radius: 0 0 5px 5px;
-}
-// Helper Classes
-.table--fixed {
-  table-layout: fixed;
-}
-
-.text--center {
-  text-align: center;
-}
-
-.nuxt-inline-helper {
-  display: inline-block;
-  
-  &:before {
-    display: inline-block;
-    width: 0.25rem;
-    content: ' ';
   }
 }

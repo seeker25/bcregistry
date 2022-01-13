@@ -8,7 +8,7 @@
         <h2>{{ product.title }}</h2>
         <p class="pt-3 ma-0">{{ product.text }}</p>
         <v-btn class="action-btn px-5" :depressed="true">
-          Open
+          <span>Open</span>
           <v-icon>mdi-chevron-right</v-icon>
         </v-btn>
       </v-col>

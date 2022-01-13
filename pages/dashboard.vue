@@ -1,7 +1,10 @@
 <template>
+  <!-- TODO: test isStaffBc in breadcrumb -->
   <v-container fluid class="py-12">
     <h1 class="dash-header">{{ isStaffSbc ? 'SBC Staff' : 'BC' }} Registries Dashboard</h1>
+
     <p class="dash-header-info ma-0 pt-3">Access to your BC Registries account product and services</p>
+
     <h3 class="dash-sub-header">
       My Products and Services
       <span style="font-weight: normal;">({{ subscribedProducts.length  }})</span>
@@ -18,7 +21,7 @@
       </div>
 
       <div class="pl-6 col-md-4 col-sm-12">
-        <v-container rounded class="dash-container-info mt-5 white" fluid>
+        <v-container fluid rounded class="dash-container-info mt-5 white">
           <h4>Add Product and Services</h4>
           <p class="ma-0 pt-3">
             To request access to additional products and services, contact the account
@@ -41,6 +44,8 @@ export default {
   components: {
     UserProduct
   },
+  // Called every time before loading page components.
+  // TODO: need to start Token Service to refresh KC token periodically?
   asyncData(context) {
     if (!sessionStorage.getItem(SessionStorageKeys.KeyCloakToken)) {
       context.redirect('/signin')

@@ -12,10 +12,10 @@ export default {
   },
   methods: {
     onProfileReady() {
-      if (!sessionStorage.getItem(SessionStorageKeys.KeyCloakToken)) {
-        this.$router.push({ path: '/' })
+      if (sessionStorage.getItem(SessionStorageKeys.KeyCloakToken)) {
+        this.$router.push({ path: '/dashboard' })
       }
-      this.$router.push({ path: '/dashboard' })
+      this.$router.push({ path: '/' })
     },
   },
 }

@@ -1,4 +1,7 @@
+import fs from 'fs'
 import colors from 'vuetify/es5/util/colors'
+
+const packageJson = fs.readFileSync('./package.json')
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -126,11 +129,14 @@ export default {
     pprURL: process.env.PPR_URL,
     willsURL: process.env.WILLS_URL,
     bcolURL: process.env.BCOL_URL,
+    addressChangeURL: process.env.ADDRESSCHANGE_URL,
     regAccountCreateURL: process.env.REGISTRY_ACCOUNT_CREATE_URL,
     keycloakConfigPath:
       process.env.BCROS_BASE_URL + process.env.KEYCLOAK_CONFIG_PATH,
     authAPIURL: process.env.AUTH_API_URL,
     statusAPIURL: process.env.STATUS_API_URL,
+    appName: JSON.parse(packageJson).name,
+    appVersion: JSON.parse(packageJson).version,
   },
 
   devServer: {

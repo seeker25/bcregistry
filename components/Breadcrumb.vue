@@ -1,178 +1,161 @@
 <template>
-  <v-container class="breadcrumb-row pa-0">
-    <div class="container pa-0">
-      <v-row no-gutters class="pad-wide">
+  <div id="breadcrumb">
+    <v-container>
+      <v-row no-gutters>
         <v-col cols="auto">
-          <v-row no-gutters>
-            <v-col v-if="backDisabled" cols="auto" class="pad-wide">
-              <v-btn
-                id="breadcrumb-back-btn"
-                class="back-btn-disabled"
-                exact
-                :href="backUrl"
-                disabled
-                icon
-                small
-              >
-                <v-icon>mdi-arrow-left</v-icon>
-              </v-btn>
-            </v-col>
-            <v-col v-else cols="auto" class="pad-wide">
-              <v-btn
-                id="breadcrumb-back-btn"
-                class="back-btn"
-                exact
-                :href="backUrl"
-                icon
-                small
-              >
-                <v-icon>mdi-arrow-left</v-icon>
-              </v-btn>
-            </v-col>
-            <v-col class="pl-3" cols="auto" style="padding-top: 2px">
-              <div style="border-right: thin solid #ced4da; height: 28px" />
-            </v-col>
-          </v-row>
+          <v-btn
+            id="breadcrumb-back-btn"
+            class="back-btn"
+            exact
+            :href="backUrl"
+            icon small
+            :disabled="backDisabled"
+          >
+            <v-icon color="primary">mdi-arrow-left</v-icon>
+          </v-btn>
         </v-col>
 
-        <v-col class="pl-3 pt-2 col-md-10 pad-wide">
-          <v-breadcrumbs class="pa-0" :items="breadcrumbs">
+        <v-divider class="mx-3" color="white" vertical />
+
+        <v-col cols="auto" class="breadcrumb-col">
+          <v-breadcrumbs :items="breadcrumbs" class="pa-0 ma-0">
+            <template #divider>
+              <v-icon color="white" class="mx-n2">mdi-chevron-right</v-icon>
+            </template>
+
             <v-breadcrumbs-item
               slot="item"
               slot-scope="{ item }"
               exact
               :href="item.href"
             >
-              <span v-if="!item.disabled" class="underlined breadcrumb-text">
+              <span
+                class="breadcrumb-text"
+                :class="item.disabled ? 'inactive-crumb' : 'active-crumb'"
+              >
                 {{ item.text }}
               </span>
-              <span v-else class="breadcrumb-text">{{ item.text }}</span>
             </v-breadcrumbs-item>
-            <v-breadcrumbs-divider slot="divider" class="px-1">
-              <v-icon color="white">mdi-chevron-right</v-icon>
-            </v-breadcrumbs-divider>
           </v-breadcrumbs>
         </v-col>
       </v-row>
-    </div>
-  </v-container>
+    </v-container>
+  </div>
 </template>
 
 <script lang="ts">
-import { getKeycloakRoles } from '@/utils'
+import { Component, Vue } from 'vue-property-decorator'
 
-export default {
-  computed: {
-    backDisabled() {
-      // @ts-ignore - not sure why typescript isn't picking $route up
-      if ((this.$route.path === '/dashboard') || (this.$route.path === '/')) {
-        return true
-      }
-      return false
-    },
-    breadcrumbs() {
-      // @ts-ignore - not sure why typescript isn't picking $route up
-      if ((this.$route.path === '/ppr-marketing') || (this.$route.path === '/ppr-marketing/')) {
-        return [
-          {
-            disabled: false,
-            href: '/',
-            text: 'BC Registries and Online Services',
-          },
-          {
-            disabled: true,
-            href: '',
-            text: 'Personal Property Registry',
-          },
-        ]
-      }
-      // @ts-ignore - not sure why typescript isn't picking $route up
-      if (this.$route.path === '/dashboard') {
-        const keycloakRoles = getKeycloakRoles()
-        if (keycloakRoles &&
-        (keycloakRoles.includes('gov_account_user') || (keycloakRoles.includes('staff')))) {
-          return [
-            {
-              disabled: true,
-              href: '',
-              text: 'Staff Dashboard',
-            },
-          ]
-        }
-        return [
-          {
-            disabled: true,
-            href: '',
-            text: 'BC Registries Dashboard',
-          },
-        ]
-      }
-      // @ts-ignore - not sure why typescript isn't picking $route up
-      if (this.$route.path === '/') {
-        return [
-          {
-            disabled: true,
-            href: '',
-            text: 'BC Registries and Online Services',
-          },
-        ]
-      }
-      return []
-    },
-    backUrl() {
-      // @ts-ignore - not sure why typescript isn't picking $route up
-      if ((this.$route.path === '/ppr-marketing') || (this.$route.path === '/ppr-marketing/')) {
-        return '/'
-      }
-      return false
-    },
-  },
+@Component({})
+export default class Breacrumb extends Vue {
+  get backDisabled(): boolean {
+    if ((this.$route.path === '/dashboard') || (this.$route.path === '/')) {
+      return true
+    }
+    return false
+  }
+
+  get breadcrumbs(): Array<any> {
+    if ((this.$route.path === '/ppr-marketing') || (this.$route.path === '/ppr-marketing/')) {
+      return [
+        {
+          disabled: false,
+          href: '/',
+          text: 'BC Registries and Online Services',
+        },
+        {
+          disabled: true,
+          href: '',
+          text: 'Personal Property Registry',
+        },
+      ]
+    }
+
+    if ((this.$route.path === '/dashboard') || (this.$route.path === '/dashboard/')) {
+      return [
+        {
+          disabled: true,
+          href: '',
+          text: 'BC Registries Dashboard',
+        },
+      ]
+    }
+
+    if (this.$route.path === '/') {
+      return [
+        {
+          disabled: true,
+          href: '',
+          text: 'BC Registries and Online Services',
+        },
+      ]
+    }
+
+    return []
+  }
+
+  get backUrl(): string | boolean {
+    if ((this.$route.path === '/ppr-marketing') || (this.$route.path === '/ppr-marketing/')) {
+      return '/'
+    }
+    return false
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 @import '@/assets/scss/theme.scss';
 
+#breadcrumb {
+  max-height: 45px;
+  background-color: $app-dk-blue;
+  color: white;
+  display: flex;
+  align-items: center;
+
+  li {
+    margin-bottom: 0 !important;
+  }
+}
+
 .back-btn {
   background-color: white;
-  color: $primary-blue !important;
-  min-height: 32px !important;
-  min-width: 32px !important;
-}
-
-.back-btn-disabled {
-  background-color: white;
-  color: $primary-blue !important;
-  min-height: 32px !important;
-  min-width: 32px !important;
-  opacity: 0.4 !important;
-}
-
-.breadcrumb-row {
-  background-color: $BCgovBlue3-5;
-  color: white;
-  max-width: none;
+  color: $app-dk-blue;
 }
 
 .breadcrumb-text {
-  color: white !important;
   font-size: 0.8125rem !important;
+  color: white;
 }
 
-.underlined {
-  color: white !important;
-  text-decoration: underline;
+.breadcrumb-col {
+  display: flex;
+  align-items: center;
 }
 
-@media (min-width: 960px) {
-  .row.no-gutters.pad-wide, .col.pad-wide {
-    padding: 2px 0
+.active-crumb {
+  text-decoration: underline !important;
+  cursor: pointer !important;
+}
+
+.inactive-crumb {
+  cursor: default !important; // To override default or local link styling
+}
+
+::v-deep {
+  .v-breadcrumbs .v-breadcrumbs__divider {
+    color: white !important;
+    margin-bottom: 0;
+
+    &:nth-child(2n) {
+      padding: 0 12px !important;
+    }
   }
-}
 
-@media (max-width: 960px) {
-  .row.no-gutters.pad-wide, .col.pad-wide {
-    margin: 4px 0;
+  .theme--light.v-btn.v-btn--disabled {
+    opacity: .4;
+    .v-icon {
+      color: $app-blue !important;
+    }
   }
-}
-</style>
+}</style>

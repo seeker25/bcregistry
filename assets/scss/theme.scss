@@ -1,10 +1,7 @@
-
-
 // Gray Palette
 $gray0: #f8f9fa;
 $gray1: #f1f3f5;
 $gray2: #e9ecef;
-$gray2-5: #e2e8ee;
 $gray3: #dee2e6;
 $gray4: #ced4da;
 $gray5: #adb5bd;
@@ -18,7 +15,6 @@ $BCgovBlue0: #e0e7ed;
 $BCgovBlue1: #b3c2d1;
 $BCgovBlue2: #8099b3;
 $BCgovBlue3: #4d7094;
-$BCgovBlue3-5: #38598a;
 $BCgovBlue4: #26527d;
 $BCgovBlue5: #003366; // PRIMARY BLUE
 $BCgovBlue6: #002e5e;
@@ -51,14 +47,11 @@ $BCgovAGold2: #FFF8EF;
 $BCgovAGold3: #FFE0BC;
 $BCgovAGold4: #FFD4A2;
 
-// Error Colors
-$BCgovInputError: #ff5252;
-
-// Form Inputs
-$BCgovInputBG: #ffffff;
-
-// Font Colors
-$BCgovFontColorInverted: #ffffff;
-
 // Links
 $BCgovLink: #1a5a96;
+
+// Other App Colours
+$app-blue: #1669bb;
+$app-bg-lt-blue: #e2e8ee;
+$app-lt-blue: #8096B3;
+$app-dk-blue: #38598a;

@@ -1,126 +1,138 @@
 <template>
-  <div
-    id="direct-account"
-    class="container account-container"
-    style="padding-bottom: 70px; padding-top: 70px"
-  >
-    <v-container fluid no-gutters class="pl-0 ma-0 pr-10">
-      <div class="menu-title">Individual / Direct Accounts</div>
-      <v-row>
-        <v-col cols="2"></v-col>
-        <v-col cols="8" class="menu-info">
-          Specific sites dedicated to incorporating, registering and
-          maintaining corporations, businesses and societies. In the future,
-          these services will be moved to the new BC Registries account
-          system.
-        </v-col>
-        <v-col cols="2"></v-col>
-      </v-row>
-      <v-row>
-        <v-col cols="2"></v-col>
-        <v-col cols="8" class="menu-info-bold">
-          Individual accounts are available for the following services:
-        </v-col>
-        <v-col cols="2"></v-col>
-      </v-row>
+  <v-container id="direct-account" fluid class="account-container">
+    <h2 class="account-title">Individual / Direct Accounts</h2>
 
-      <v-card
-        flat
-        class="d-md-flex flex-wrap justify-center bg-gray1"
-        style="padding-top: 30px"
-      >
-        <v-card elevation="2" max-width="375px" class="mr-5 mb-8">
-          <v-card-title class="menu-header">
-            <span class="menu-item-title">Corporate Registry</span>
-            <v-spacer></v-spacer>
-          </v-card-title>
+    <v-row no-gutters class="mt-3">
+      <v-col cols="2"></v-col>
+      <v-col cols="8" class="account-info">
+        Specific sites dedicated to incorporating, registering and
+        maintaining corporations, businesses and societies. In the future,
+        these services will be moved to the new BC Registries account
+        system.
+      </v-col>
+      <v-col cols="2"></v-col>
+    </v-row>
 
-          <v-card-text class="menu-item pl-7 pr-7">
-            <p class="ma-0 pt-8 pb-0">
-              Incorporate, register, and manage B.C. or extraprovincial
-              corporations except for benefit companies.
-            </p>
-            <p class="pt-7 ma-0 pb-6">
-              <a
-                :href="$config.colinURL"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Go to Corporate Online
-              </a>
-              <v-icon class="pl-1" color="primary" dark dense>mdi-open-in-new</v-icon>
-            </p>
-          </v-card-text>
-        </v-card>
+    <v-row no-gutters class="mt-4">
+      <v-col cols="2"></v-col>
+      <v-col cols="8" class="account-info-bold">
+        Individual accounts are available for the following services:
+      </v-col>
+      <v-col cols="2"></v-col>
+    </v-row>
 
-        <v-card elevation="2" max-width="375px" class="mr-5 mb-8">
-          <v-card-title class="menu-header">
-            <span class="menu-item-title">OneStop Business Registry</span>
-            <v-spacer></v-spacer>
-          </v-card-title>
+    <div class="d-flex flex-wrap justify-center bg-gray1 pt-4 pb-7">
+      <!-- Corporate Registry -->
+      <v-card elevation="2">
+        <v-card-title>Corporate Registry</v-card-title>
 
-          <v-card-text class="menu-item pl-7 pr-7">
-            <p class="ma-0 pt-8 pb-0">
-              Registration for sole proprietorships, general partnerships, and
-              "Doing business as" (DBA) names.
-            </p>
-            <p class="pt-7 ma-0 pb-6">
-              <a
-                :href="$config.onestopURL"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Go to OneStop
-              </a>
-              <v-icon class="pl-1" color="primary" dark dense>mdi-open-in-new</v-icon>
-            </p>
-          </v-card-text>
-        </v-card>
+        <v-card-text>
+          <p>
+            Incorporate, register and manage B.C. or extraprovincial
+            corporations except for benefit companies.
+          </p>
 
-        <v-card elevation="2" max-width="375px" class="mr-5 mb-8">
-          <v-card-title class="menu-header">
-            <span class="menu-item-title">Societies Online</span>
-            <v-spacer></v-spacer>
-          </v-card-title>
-
-          <v-card-text class="menu-item pl-7 pr-7">
-            <p class="ma-0 pt-8 pb-0">
-              Registration and management of B.C. and extraprovincial societies.
-            </p>
-            <p class="pt-7 ma-0 pb-6">
-              <a
-                :href="$config.societiesURL"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Go to Societies Online
-              </a>
-              <v-icon class="pl-1" color="primary" dark dense>mdi-open-in-new</v-icon>
-            </p>
-          </v-card-text>
-        </v-card>
+          <div>
+            <a
+              :href="$config.colinURL"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Go to Corporate Online
+            </a>
+            <v-icon class="pl-1" color="primary" dark dense>mdi-open-in-new</v-icon>
+          </div>
+        </v-card-text>
       </v-card>
 
-      <div class="payment pt-7 pb-7 mr-10">
-        <v-row no-gutters class="ma-0 pa-0">
-          <v-col cols="2"></v-col>
-          <v-col cols="8" class="payment-info-bold">
-            <v-icon medium color="#38598a">mdi-currency-usd-circle</v-icon>
-            <span style="padding-left: 10px">Credit card payments</span>
-          </v-col>
-          <v-col cols="2"></v-col>
-        </v-row>
+      <!-- OneStop Business Registry -->
+      <v-card elevation="2">
+        <v-card-title>OneStop Business Registry</v-card-title>
 
-        <v-row no-gutters class="ma-0 pa-0">
-          <v-col cols="2"></v-col>
-          <v-col cols="8" class="payment-info">
-            Credit card payments are accepted for these individual/direct accounts.
-          </v-col>
-          <v-col cols="2"></v-col>
-        </v-row>
-      </div>
-    </v-container>
-  </div>
+        <v-card-text>
+          <p>
+            Registration for sole proprietorships, general partnerships, and
+            "Doing business as" (DBA) names.
+          </p>
+
+          <div>
+            <a
+              :href="$config.onestopURL"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Go to OneStop
+            </a>
+            <v-icon class="pl-1" color="primary" dark dense>mdi-open-in-new</v-icon>
+          </div>
+        </v-card-text>
+      </v-card>
+
+      <!-- Societies Online -->
+      <v-card elevation="2">
+        <v-card-title>Societies Online</v-card-title>
+
+        <v-card-text>
+          <p>
+            Registration and management of B.C. and extraprovincial societies.
+          </p>
+
+          <div>
+            <a
+              :href="$config.societiesURL"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Go to Societies Online
+            </a>
+            <v-icon class="pl-1" color="primary" dark dense>mdi-open-in-new</v-icon>
+          </div>
+        </v-card-text>
+      </v-card>
+
+      <!-- Address Change BC -->
+      <v-card elevation="2">
+        <v-card-title>Address Change BC</v-card-title>
+
+        <v-card-text>
+          <p>
+            Update your personal and/or business records with provincial and
+            local government organizations.
+          </p>
+
+          <div>
+            <a
+              :href="$config.addressChangeURL"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Go to Address Change BC
+            </a>
+            <v-icon class="pl-1" color="primary" dark dense>mdi-open-in-new</v-icon>
+          </div>
+        </v-card-text>
+      </v-card>
+    </div>
+
+    <div class="payment py-7">
+      <v-row no-gutters>
+        <v-col class="col-3"></v-col>
+        <v-col cols="6" class="payment-info-title">
+          <img src="@/assets/svgs/currency-usd-circle.svg" />
+          <span style="padding-left: 10px">Credit card payments:</span>
+        </v-col>
+        <v-col class="col-3"></v-col>
+      </v-row>
+
+      <v-row no-gutters class="mt-2">
+        <v-col class="col-3"></v-col>
+        <v-col cols="6" class="payment-info-text">
+          Credit card payments are accepted for these individual/direct accounts.
+        </v-col>
+        <v-col class="col-3"></v-col>
+      </v-row>
+    </div>
+  </v-container>
 </template>
 
 <style lang="scss" scoped>
@@ -133,7 +145,7 @@ a {
   text-decoration: underline;
 }
 
-.bg-gray1 {
-  background-color: $gray1;
+img {
+  margin-bottom: -6px;
 }
 </style>

@@ -1,10 +1,8 @@
 <template>
   <v-app id="app" class="app-container">
     <SbcHeader class="sbc-header" :in-auth="false" :show-actions="true" />
-    <Breadcrumb class="wide-10" />
-    <div class="app-body">
-      <nuxt />
-    </div>
+    <Breadcrumb />
+    <nuxt class="app-body" />
     <SbcFooter />
   </v-app>
 </template>
@@ -21,6 +19,9 @@ export default {
     Breadcrumb,
   },
   middleware: ['commonHeaderSetup'],
+  created () {
+    console.log(`${this.$config.appName} v${this.$config.appVersion}`)
+  },
 }
 </script>
 
@@ -34,21 +35,6 @@ export default {
   min-height: 100vh;
 }
 
-@media (min-width: 960px) {
-  .app-header {
-    flex: 0 0 auto;
-    height: 70px;
-    z-index: 2;
-  }
-}
-
-@media (max-width: 960px) {
-  .app-header {
-    height: 100px !important;
-    padding: 0 10px;
-  }
-}
-
 .theme--light.v-application {
   background-color: var(--v-background-base, $gray1) !important;
 }
@@ -60,31 +46,15 @@ export default {
   position: relative;
 }
 
-.app-footer {
-  flex: 0 0 auto;
-}
-
-#__nuxt,
-#__layout {
-  min-height: 100vh;
-}
-
-.app-container .app-header {
-  position: sticky;
-  top: 0;
-}
+// #__nuxt,
+// #__layout {
+//   min-height: 100vh;
+// }
 
 .nuxt-content {
   margin: 0;
   width: 100%;
   padding-top: 3rem;
   padding-bottom: 3rem;
-}
-
-@media (min-width: 960px) {
-  .wide-10 {
-    padding-right: 40px;
-    padding-left: 40px;
-  }
 }
 </style>

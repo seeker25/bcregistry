@@ -5,7 +5,8 @@ const authAxios = Axios.create()
 
 authAxios.interceptors.request.use(
   config => {
-    config.headers.common.Authorization = `Bearer ${sessionStorage.getItem(SessionStorageKeys.KeyCloakToken)}`
+    const token = sessionStorage.getItem(SessionStorageKeys.KeyCloakToken)
+    config.headers.common.Authorization = `Bearer ${token}`
     return config
   },
   error => Promise.reject(error)

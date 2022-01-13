@@ -1,16 +1,16 @@
 // Ref: https://github.com/nuxt-community/vuetify-module#customvariables
 //
 // The variables you want to modify
-// $font-size-root: 20px;
+// $font-size-root: 16px;
 $body-font-family: 'BCSans';
 $heading-font-family: 'BCSans';
 
 .sbc-header {
-    .v-btn {
-      background-color: rgba(0, 0, 0, 0) !important;
-      text-transform: none !important;
-      font-weight: normal !important;
-      letter-spacing: normal !important;
-      font-size: 0.875rem !important;
-    }
+  .v-btn {
+    background-color: rgba(0, 0, 0, 0) !important;
+    text-transform: none !important;
+    font-weight: normal !important;
+    letter-spacing: normal !important;
+    font-size: 0.875rem !important;
   }
+}
