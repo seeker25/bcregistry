@@ -6,9 +6,8 @@
           <h3 class="mb-6 wide-16">Need more information?</h3>
           <p class="mb-4 wide-16">
             To learn more about Personal Property Registration in British Columbia,
-            <a :href="PPR_HREF" target="_blank" rel="noopener noreferrer">
-              please visit the Personal Property Information page.
-            </a>
+            please <a :href="PPR_HREF" target="_blank" rel="noopener noreferrer">visit
+            the Personal Property Information page</a>.
           </p>
         </div>
 
@@ -52,7 +51,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/scss/theme.scss';
+@import '@/assets/scss/theme.scss';
 
 .contact-info-container {
   color: white;
@@ -84,12 +83,11 @@ export default {
   padding-bottom: 0.5rem;
   color: inherit;
   border-bottom: 1px solid $BCgovBlue3;
-  font-size: 1.25rem;
+  font-size: $px-20;
 }
 
 .contact-info-container a {
   color: white !important;
-  font-weight: 400;
 }
 
 .contact-info__list {
@@ -98,9 +96,12 @@ export default {
   list-style-type: none;
 }
 
-.contact-info__list li span,
-.contact-info__list li strong {
+.contact-info__list li span {
   margin-right: 0.5rem;
+}
+
+.contact-info__list li a {
+  font-size: $px-14;
 }
 
 @media (max-width: 960px) {

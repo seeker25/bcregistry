@@ -5,7 +5,7 @@ export const getProductInfo = (config, type: ProductCode): ProductI => {
   switch (type) {
     case ProductCode.BUSINESS:
       return {
-        image: 'BCRS_dashboard_thumbnail_image',
+        image: 'BCRS_dashboard_thumbnail_image.jpg',
         link: config?.authURL + 'home/maintain-business' || 'link_not_configured',
         text: 'Register or incorporate a business, manage name requests and keep business records up to date.',
         title: 'My Business Registry'
@@ -19,7 +19,7 @@ export const getProductInfo = (config, type: ProductCode): ProductI => {
       } as ProductI
     case ProductCode.PPR:
       return {
-        image: 'PPR_dashboard_thumbnail_image',
+        image: 'PPR_dashboard_thumbnail_image.jpg',
         link: config?.pprURL || 'link_not_configured',
         text: 'Register or search for legal claims on personal property in British Columbia.',
         title: 'My Personal Property Registry'

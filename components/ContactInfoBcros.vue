@@ -5,10 +5,9 @@
         <div class="col-md-7 col-sm-12 col-12">
           <h3 class="mb-6 wide-16">Need more information?</h3>
           <p class="mb-4 wide-16">
-            To learn more, please visit the
-            <a :href="PPR_HREF" target="_blank" rel="noopener noreferrer">
-              BC Registries and Online Services information page.
-            </a>
+            To learn more about BC Registries and Online Services, please
+            <a :href="BCROS_HREF" target="_blank" rel="noopener noreferrer">visit
+            the BC Registries and Online Services information page</a>.
           </p>
         </div>
 
@@ -23,7 +22,7 @@
               <a href="tel:+1-877-526-1526">1-877-526-1526</a>
             </li>
             <li>
-              <span>Victoria:</span>
+              <span>Victoria Office:</span>
               <a href="tel:+1-250-387-7848">250-387-7848</a>
             </li>
             <li>
@@ -47,8 +46,8 @@
 export default {
   data() {
     return {
-      PPR_HREF: 'https://www2.gov.bc.ca/gov/content/governments/organizational-structure/' +
-        ' ministries-organizations/ministries/citizens-services/bc-registries-online-services',
+      BCROS_HREF: 'https://www2.gov.bc.ca/gov/content/governments/organizational-structure/' +
+        'ministries-organizations/ministries/citizens-services/bc-registries-online-services',
       MAILTO_HREF: 'mailto:bcregistries@gov.bc.ca?subject=BC%20Registries%20Support%20Request',
     }
   },
@@ -56,7 +55,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/scss/theme.scss';
+@import '@/assets/scss/theme.scss';
 
 .contact-info-container {
   color: white;
@@ -88,12 +87,11 @@ export default {
   padding-bottom: 0.5rem;
   color: inherit;
   border-bottom: 1px solid $BCgovBlue3;
-  font-size: 1.25rem;
+  font-size: $px-20;
 }
 
 .contact-info-container a {
   color: white !important;
-  font-weight: 400;
 }
 
 .contact-info__list {
@@ -102,9 +100,12 @@ export default {
   list-style-type: none;
 }
 
-.contact-info__list li span,
-.contact-info__list li strong {
+.contact-info__list li span {
   margin-right: 0.5rem;
+}
+
+.contact-info__list li a {
+  font-size: $px-14;
 }
 
 @media (max-width: 960px) {

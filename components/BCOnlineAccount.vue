@@ -1,6 +1,6 @@
 <template>
   <v-container id="bconline-account" fluid class="account-container">
-    <h2 class="account-title">BC OnLine Accounts</h2>
+    <h2 class="account-title">BC OnLine Account</h2>
 
     <v-row no-gutters class="mt-3">
       <v-col cols="2"></v-col>
@@ -34,7 +34,7 @@
       </v-card>
 
       <!-- Name Request Online (NRO) -->
-      <v-card elevation="2" max-width="390px" class="ma-4 deactivated">
+      <v-card elevation="2" max-width="390px" class="ma-4 disabled">
         <v-card-title>
           <span class="word-break-normal">Name Request Online (NRO)</span>
           <span class="card-title-badge-container">
@@ -93,7 +93,7 @@
 
         <v-card-text>
           <p>
-            Search the BC Assessment database for information about BC
+            Search the BC Assessment database for information about B.C.
             properties and property assessments.
           </p>
         </v-card-text>
@@ -140,22 +140,18 @@
     </div>
 
     <div class="payment py-7">
-      <v-row no-gutters>
-        <v-col class="col-3"></v-col>
-        <v-col cols="6" class="payment-info-title">
-          <img src="@/assets/svgs/currency-usd-circle.svg" />
-          <span style="padding-left: 10px">BC OnLine payments:</span>
-        </v-col>
-        <v-col class="col-3"> </v-col>
-      </v-row>
+      <div class="payment-info-title text-center">
+        <img src="@/assets/svgs/currency-usd-circle.svg" />
+        <span style="padding-left: 10px">BC OnLine payments:</span>
+      </div>
 
       <v-row no-gutters class="mt-2">
-        <v-col class="col-3"></v-col>
-        <v-col cols="6" class="payment-info-text">
+        <v-col class="col-1 col-md-2"></v-col>
+        <v-col class="col-10 col-md-8 payment-info-text">
           All payments for BC OnLine accounts are made using pre-authorized
           BC OnLine account payments.
         </v-col>
-        <v-col class="col-3"></v-col>
+        <v-col class="col-1 col-md-2"></v-col>
       </v-row>
 
       <div class="text-center mt-5">
@@ -168,13 +164,15 @@
 </template>
 
 <style lang="scss" scoped>
-@import '../assets/scss/theme.scss';
+@import '@/assets/scss/theme.scss';
 
 img {
   margin-bottom: -6px;
 }
 
-.v-card.deactivated {
+.v-card.disabled {
+  background-color: $gray0;
+
   .v-card__title {
     background-color: $app-lt-blue;
   }

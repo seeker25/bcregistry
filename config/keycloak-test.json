@@ -1,8 +1,0 @@
-{
-  "realm": "fcf0kpqr",
-  "auth-server-url": "https://test.oidc.gov.bc.ca/auth/",
-  "ssl-required": "external",
-  "resource": "bcregistry-dashboard",
-  "public-client": true,
-  "confidential-port": 0
-}

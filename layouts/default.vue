@@ -1,5 +1,5 @@
 <template>
-  <v-app id="app" class="app-container">
+  <v-app id="app">
     <SbcHeader class="sbc-header" :in-auth="false" :show-actions="true" />
     <Breadcrumb />
     <nuxt class="app-body" />
@@ -26,35 +26,7 @@ export default {
 </script>
 
 <style lang="scss">
+// this imports these SCSS file app-wide
 @import '@/assets/scss/base.scss';
 @import '@/assets/scss/layout.scss';
-
-.app-container {
-  display: flex;
-  flex-flow: column nowrap;
-  min-height: 100vh;
-}
-
-.theme--light.v-application {
-  background-color: var(--v-background-base, $gray1) !important;
-}
-
-.app-body {
-  -webkit-box-flex: 1;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-  position: relative;
-}
-
-// #__nuxt,
-// #__layout {
-//   min-height: 100vh;
-// }
-
-.nuxt-content {
-  margin: 0;
-  width: 100%;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
 </style>

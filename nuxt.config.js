@@ -141,7 +141,7 @@ export default {
 
   devServer: {
     proxy: {
-      // this is needed to prevent a CORS error when running locally (will need to update with url)
+      // this is needed to prevent a CORS error when running locally
       '/local-keycloak-config-url/*': {
         target:
           'https://ppr-ui-dev.apps.silver.devops.gov.bc.ca/ppr/config/kc/',

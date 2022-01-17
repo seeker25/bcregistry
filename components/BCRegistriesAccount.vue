@@ -33,9 +33,7 @@
           </p>
 
           <ul>
-            <li class="card-list-item">
-              Incorporate and manage benefit companies and cooperative associations.
-            </li>
+            <li>Incorporate and manage benefit companies and cooperative associations.</li>
           </ul>
 
           <div>
@@ -63,8 +61,8 @@
           </p>
 
           <ul>
-            <li class="card-list-item">Search for a business name.</li>
-            <li class="card-list-item">Manage your existing Name Request.</li>
+            <li>Search for a business name.</li>
+            <li>Manage your existing Name Request.</li>
           </ul>
 
           <div>
@@ -98,8 +96,8 @@
           </p>
 
           <ul>
-            <li class="card-list-item">File a wills notice.</li>
-            <li class="card-list-item">Search for an existing wills notice.</li>
+            <li>File a wills notice.</li>
+            <li>Search for an existing wills notice.</li>
           </ul>
 
           <div>
@@ -133,8 +131,8 @@
           </p>
 
           <ul>
-            <li class="card-list-item">Register security agreements and liens.</li>
-            <li class="card-list-item">Search for registered security agreements and liens.</li>
+            <li>Register security agreements and liens.</li>
+            <li>Search for registered security agreements and liens.</li>
           </ul>
 
           <div>
@@ -153,24 +151,19 @@
     </div>
 
     <div class="payment py-7">
-      <v-row no-gutters>
-        <!-- TODO: use breakpoints to adjust content width -->
-        <v-col class="col-3 col-md-2"></v-col>
-        <v-col class="col-6 col-md-8 payment-info-title">
-          <img src="@/assets/svgs/currency-usd-circle.svg" />
-          <span style="padding-left: 10px">Multiple payment types:</span>
-        </v-col>
-        <v-col class="col-3 col-md-2"></v-col>
-      </v-row>
+      <div class="payment-info-title text-center">
+        <img src="@/assets/svgs/currency-usd-circle.svg" />
+        <span style="padding-left: 10px">Multiple payment types:</span>
+      </div>
 
       <v-row no-gutters class="mt-2">
-        <v-col class="col-3 col-md-2"></v-col>
-        <v-col class="col-6 col-md-8 payment-info-text">
+        <v-col class="col-1 col-md-2"></v-col>
+        <v-col class="col-10 col-md-8 payment-info-text">
           The BC Registries account supports multiple payment options
           depending on the account and transaction type, including credit
           card, online banking, BC OnLine, and pre-authorized debit (PAD).
         </v-col>
-        <v-col class="col-3 col-md-2"></v-col>
+        <v-col class="col-1 col-md-2"></v-col>
       </v-row>
 
       <div v-if="!loggedIn" class="mt-5 mr-4 d-sm-flex flex-wrap justify-center">
@@ -218,7 +211,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/scss/theme.scss';
+@import '@/assets/scss/theme.scss';
 
 .link {
   color: $BCgovLink !important;

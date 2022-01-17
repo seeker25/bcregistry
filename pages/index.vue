@@ -1,33 +1,32 @@
 <template>
   <div>
-    <article>
-      <header class="hero-banner d-flex align-center">
-        <v-container>
-          <v-row no-gutters>
-            <v-col class="col-xl-7 col-md-6">
-              <h1>Access and manage your BC Registries and Online Services</h1>
-            </v-col>
-          </v-row>
-          <v-row no-gutters>
-            <v-col class="col-xl-7 col-lg-5 col-md-4">
-              <p>
-                All registrations of businesses, not-for-profit societies, cooperative
-                associations, personal property and manufactured homes are administered
-                and supported by BC Registries and Online Services.
-              </p>
-              <p>
-                As our online modernization initiative continues, refer to this page for
-                updates on ways to manage registration information.
-              </p>
-              <!-- TODO: remove after debugging -->
-              <!-- <p>
-                You are currently <strong>{{loggedIn ? 'LOGGED IN' : 'NOT LOGGED IN'}}</strong>.
-              </p> -->
-            </v-col>
-          </v-row>
-        </v-container>
-      </header>
-    </article>
+    <header class="hero-banner d-flex align-center">
+      <v-container>
+        <v-row no-gutters>
+          <v-col class="col-md-6 col-xl-7">
+            <h1>Access and manage your BC Registries and Online Services</h1>
+          </v-col>
+        </v-row>
+
+        <v-row no-gutters>
+          <v-col class="col-md-4 col-lg-5 col-xl-7">
+            <p>
+              All registrations of businesses, not-for-profit societies, cooperative
+              associations, personal property and manufactured homes are administered
+              and supported by BC Registries and Online Services.
+            </p>
+            <p>
+              As our online modernization initiative continues, refer to this page for
+              updates on ways to manage registration information.
+            </p>
+            <!-- TODO: remove after debugging -->
+            <!-- <p>
+              You are currently <strong>{{loggedIn ? 'LOGGED IN' : 'NOT LOGGED IN'}}</strong>.
+            </p> -->
+          </v-col>
+        </v-row>
+      </v-container>
+    </header>
 
     <v-divider class="h-divider"></v-divider>
     <AccountsFooter />
@@ -80,7 +79,6 @@ export default {
 @import '@/assets/scss/theme.scss';
 
 .hero-banner {
-  color: $gray9;
   background-color: white;
   background-image: none;
 }
@@ -91,8 +89,8 @@ export default {
     height: 30rem;
     background-image: url(../assets/img/BCReg_homebanner_images_final_80compressed_032521.jpg);
     background-position: bottom right;
-    background-size: 845px;
     background-repeat: no-repeat;
+    background-size: 845px;
   }
 }
 
@@ -107,13 +105,13 @@ export default {
 @media (min-width: 1904px) {
   .hero-banner {
     height: 35rem;
-    background-size: 1125px;
+    background-size: 1145px;
   }
 }
 
 h1 {
   line-height: 1.25;
-  font-size: 2.5rem;
+  font-size: $px-40;
 }
 
 p {

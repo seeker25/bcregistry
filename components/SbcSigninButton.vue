@@ -69,7 +69,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import '../assets/scss/theme.scss';
+@import '@/assets/scss/theme.scss';
 
 .v-card {
   background: white !important;
@@ -78,12 +78,12 @@
 .v-card__title {
   color: $gray9 !important;
   font-weight: bold;
-  font-size: 0.875em;
+  font-size: $px-14;
   line-height: 20px;
 }
 
 .v-list-item__title {
   color: $gray9 !important;
-  font-size: 0.875rem !important;
+  font-size: $px-14 !important;
 }
 </style>

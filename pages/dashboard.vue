@@ -90,12 +90,13 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/scss/theme.scss';
+
 .dash-container-info {
   padding: 30px;
 
   p {
     color: $gray7;
-    font-size: 0.875rem;
+    font-size: $px-14;
     line-height: 1.375rem;
   }
 }
@@ -106,12 +107,12 @@ export default {
 
 .dash-header-info {
   color: $gray7;
-  font-size: 1rem;
+  font-size: $px-16;
 }
 
 .dash-sub-header {
   color: $gray9;
-  font-size: 1.125rem;
+  font-size: $px-18;
   padding-top: 50px;
 }
 </style>

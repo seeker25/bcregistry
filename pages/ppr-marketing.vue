@@ -1,17 +1,17 @@
 <template>
   <div>
-    <header class="ppr-bg auth d-flex align-center">
+    <header class="hero-banner d-flex align-center">
       <v-container>
         <v-row no-gutters>
-          <v-col class="col-md-6 col-sm-12">
-            <h1 class="text-left bigger-h1">
+          <v-col class="col-md-6 col-xl-7">
+            <h1 class="bigger-h1">
               Register or search for legal claims on personal property
             </h1>
           </v-col>
         </v-row>
 
         <v-row no-gutters>
-          <v-col class="col-md-5 col-sm-12 body-text">
+          <v-col class="col-md-4 col-lg-5 col-xl-7 pt-6 body-text">
             The Personal Property Registry records security interests and
             liens against personal property belonging to British Columbia businesses
             and individuals.
@@ -19,7 +19,7 @@
         </v-row>
 
         <v-row v-if="!loggedIn" class="pt-6" no-gutters>
-          <v-col class="col-12 col-md-6">
+          <v-col class="col-md-6 col-12">
             <SbcSigninButton />
           </v-col>
         </v-row>
@@ -107,10 +107,11 @@
       </v-row>
     </v-container>
 
-    <v-container class="padding-100 body-text whitebg full-width">
-      <v-row class="search-height">
-        <div class="search-bg col-md-6 col-sm-12"><!-- background image here --></div>
-        <div class="col-md-6 col-sm-12">
+    <v-container class="padding-100 body-text white-bg">
+      <!-- SEARCH -->
+      <v-row>
+        <v-col class="search-bg white-bg col-12 col-md-6"><!-- background image here --></v-col>
+        <v-col class="col-12 col-md-6">
           <h2 class="pb-6">
             Search for Registered Security Agreements and Liens
           </h2>
@@ -155,11 +156,12 @@
               <v-icon small class="pl-1" color="primary">mdi-open-in-new</v-icon>
             </a>
           </div>
-        </div>
+        </v-col>
       </v-row>
 
-      <v-row class="padding-100 report-height">
-        <div class="col-md-6 col-sm-12">
+      <!-- REPORT -->
+      <v-row class="padding-100">
+        <v-col class="col-12 col-md-6">
           <h2 class="pb-6">Get Detailed Search Result Reports</h2>
           <ul>
             <li>
@@ -176,13 +178,14 @@
               a claim, on personal property.
             </li>
           </ul>
-        </div>
-        <div class="report-bg col-md-6 col-sm-12"><!-- background image here --></div>
+        </v-col>
+        <v-col class="report-bg white-bg col-12 col-md-6"><!-- background image here --></v-col>
       </v-row>
 
-      <v-row class="register-height">
-        <div class="register-bg col-md-6 col-sm-12"><!-- background image here --></div>
-        <div class="col-md-6 col-sm-12">
+      <!-- REGISTER -->
+      <v-row>
+        <v-col class="register-bg white-bg col-12 col-md-6"><!-- background image here --></v-col>
+        <v-col class="col-12 col-md-6">
           <h2 class="pb-6">Register Security Agreements and Liens</h2>
           <ul>
             <li>Register legal claims on personal property.</li>
@@ -203,7 +206,7 @@
             <li>Amend, Renew, or Discharge registrations.</li>
             <li>Re-register expired or discharged registrations.</li>
           </ul>
-        </div>
+        </v-col>
       </v-row>
     </v-container>
 
@@ -215,7 +218,8 @@
       </v-row>
 
       <v-row class="justify-center">
-        <div class="col col-auto">
+        <!-- MORE INFORMATION -->
+        <v-col class="col-auto">
           <v-card class="text-center px-5 py-8 square-card">
             <v-row>
               <v-col class="font-weight-bold"><h4>MORE INFORMATION</h4></v-col>
@@ -236,9 +240,10 @@
               </v-col>
             </v-row>
           </v-card>
-        </div>
+        </v-col>
 
-        <div class="col col-auto">
+        <!-- VEHICLE CLAIMS REPORT -->
+        <v-col class="col-auto">
           <v-card class="text-center px-5 py-8 square-card">
             <v-row>
               <v-col class="font-weight-bold">
@@ -261,9 +266,10 @@
               </v-col>
             </v-row>
           </v-card>
-        </div>
+        </v-col>
 
-        <div class="col col-auto">
+        <!-- LEGAL SERVICES -->
+        <v-col class="col-auto">
           <v-card class="text-center px-5 py-8 square-card">
             <v-row>
               <v-col class="font-weight-bold">
@@ -286,75 +292,73 @@
               </v-col>
             </v-row>
           </v-card>
-        </div>
+        </v-col>
       </v-row>
     </v-container>
 
-    <div class="whitebg full-width">
-      <v-container class="padding-100 body-text">
-        <h1 class="text-center">Create an Account to Get started</h1>
+    <v-container class="padding-100 body-text white-bg">
+      <h1 class="text-center">Create an Account to Get started</h1>
 
-        <v-row class="pt-4 pb-6">
-          <v-col class="text-center">
-            Log in securely using your mobile BC Services Card, government's
-            trusted way to access online services.
-          </v-col>
-        </v-row>
+      <v-row class="pt-4 pb-6">
+        <v-col class="text-center">
+          Log in securely using your mobile BC Services Card, government's
+          trusted way to access online services.
+        </v-col>
+      </v-row>
 
-        <v-row>
-          <div class="col-md-6 col-sm-12">
-            <h2 class="pb-4">It's Secure</h2>
-            <ul>
-              <li>
-                A mobile card is a representation of your BC Services Card on
-                your mobile device. It's used to prove who you are when you log
-                in to access government services online.
-              </li>
-              <li>
-                Only your name and a unique identifier is stored on the mobile device.
-              </li>
-            </ul>
-          </div>
+      <v-row>
+        <v-col class="col-12 col-md-6">
+          <h2 class="pb-4">It's Secure</h2>
+          <ul>
+            <li>
+              A mobile card is a representation of your BC Services Card on
+              your mobile device. It's used to prove who you are when you log
+              in to access government services online.
+            </li>
+            <li>
+              Only your name and a unique identifier is stored on the mobile device.
+            </li>
+          </ul>
+        </v-col>
 
-          <div class="col-md-6 col-sm-12">
-            <h2 class="pb-4">It's Quick and Easy</h2>
-            <ul>
-              <li>
-                It normally takes about 5 minutes to
-                <a href="https://www2.gov.bc.ca/gov/content/governments/government-id/bcservicescardapp">
-                set up a mobile card</a>.
-              </li>
-              <li>
-                You can verify your identity by video right from your mobile
-                device. You don't need to go in person unless you can't verify
-                by video.
-              </li>
-            </ul>
-          </div>
-        </v-row>
+        <v-col class="col-12 col-md-6">
+          <h2 class="pb-4">It's Quick and Easy</h2>
+          <ul>
+            <li>
+              It normally takes about 5 minutes to
+              <a href="https://www2.gov.bc.ca/gov/content/governments/government-id/bcservicescardapp">
+              set up a mobile card</a>.
+            </li>
+            <li>
+              You can verify your identity by video right from your mobile
+              device. You don't need to go in person unless you can't verify
+              by video.
+            </li>
+          </ul>
+        </v-col>
+      </v-row>
 
-        <div class="mt-10 mr-4 d-sm-flex justify-center">
-          <template v-if="!loggedIn">
-            <v-btn
-              large
-              class="button-white-on-blue"
-              to="/choose-authentication-method"
-            >
-              Create a BC Registries Account
-            </v-btn>
-          </template>
+      <div class="mt-10 mr-4 d-sm-flex justify-center">
+        <template v-if="!loggedIn">
           <v-btn
             large
-            class="button-blue-on-white"
-            href="https://www2.gov.bc.ca/gov/content/governments/government-id/bcservicescardapp"
-            target="_blank"
-            rel="noopener noreferrer"
+            class="button-white-on-blue"
+            to="/choose-authentication-method"
           >
-            Learn More
+            Create a BC Registries Account
           </v-btn>
-        </div>
-      </v-container>
-    </div>
+        </template>
+        <v-btn
+          large
+          class="button-blue-on-white"
+          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bcservicescardapp"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn More
+        </v-btn>
+      </div>
+    </v-container>
 
     <ContactInfo />
   </div>
@@ -395,52 +399,42 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/scss/theme.scss';
 
-.full-width {
-  width: 100%;
-}
-
-.ppr-bg {
+.hero-banner {
   background-color: white;
-  background-image: url(../assets/img/PPR_homebanner_image_v2_x2.jpg);
-  background-position: 100% 100%;
-  background-repeat: no-repeat;
-  background-size: 880px;
-}
-
-.report-bg {
-  background-color: white;
-  background-image: url(../assets/img/PPR_reportpaper_x2.jpg);
-  background-position: top center;
-  background-size: 110%;
-  background-repeat: no-repeat;
+  background-image: none;
 }
 
 .search-bg {
-  background-color: white;
   background-image: url(../assets/img/PPR_search_screenshot.png);
   background-position: top center;
-  background-size: 75%;
+  background-size: contain;
   background-repeat: no-repeat;
+  height: 340px;
+}
+
+.report-bg {
+  background-image: url(../assets/img/PPR_reportpaper_x2.jpg);
+  background-position: top center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 340px;
 }
 
 .register-bg {
-  background-color: white;
   background-image: url(../assets/img/PPR_register_screenshot.png);
   background-position: top center;
-  background-size: 75%;
+  background-size: contain;
   background-repeat: no-repeat;
+  height: 340px;
 }
 
-.whitebg {
+.white-bg {
   background-color: white;
 }
 
 .bigger-h1 {
-  margin-bottom: 1.5rem;
-  color: inherit;
-  letter-spacing: -.02rem;
   line-height: 1.25;
-  font-size: 2.5rem;
+  font-size: $px-40;
 }
 
 .padding-100 {
@@ -455,62 +449,21 @@ export default {
   color: $gray7;
 }
 
-@media (max-width: 959px) {
-  .ppr-bg {
-    background-image: none;
-  }
-  .report-bg, .search-bg, .register-bg {
-    background-size: 100%;
-    width: 400px;
-    height: 500px;
-  }
-  .row {
-    margin: 2px;
-  }
-}
-
-@media (max-width: 750px) {
-  .report-bg, .search-bg, .register-bg {
-    background-size: 100%;
-    width: 400px;
-    height: 300px;
-  }
-}
-
-
-@media (min-width: 960px) {
-  .ppr-bg {
-    height: 30rem;
-  }
-  .report-height {
-    height: 650px;
-  } 
-  .search-height {
-    height: 400px;
-  }
-  .register-height {
-    height: 410px;
-  }
-}
-
-@media (min-width: 1920px) {
-  .ppr-bg.auth {
-    background-size: 48%;
-    background-position-x: right;
-  }
-}
-
-li::marker {
+ul {
   list-style: square;
-  padding-left: 30px;
-  color: $gray4;
-}
-li {
-  color: $gray7;
-  font-size: 1rem;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  font-weight: normal;
+
+  li {
+    color: $gray7;
+    font-size: $px-16;
+    font-weight: normal;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: -8px;
+  }
+
+  li::marker {
+    color: $gray4;
+  }
 }
 
 .body-text .col, .col.body-text {
@@ -539,10 +492,52 @@ a {
   border-bottom: 1px dotted $gray9;
 }
 
+@media (min-width: 750px) {
+  .search-bg,
+  .report-bg,
+  .register-bg {
+    height: 522px;
+  }
+}
+
+// "md" breakpoint
+@media (min-width: 960px) {
+  .hero-banner {
+    height: 30rem;
+    background-image: url(../assets/img/PPR_homebanner_image_v2_x2.jpg);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: 836px;
+  }
+  .search-bg {
+    height: 370px;
+  }
+  .report-bg {
+    height: 240px;
+  }
+  .register-bg {
+    height: 368px;
+  }
+}
+
+// "lg" breakpoint
+@media (min-width: 1264px) {
+  .hero-banner {
+    background-size: 1010px;
+  }
+}
+
+// "xl" breakpoint
+@media (min-width: 1904px) {
+  .hero-banner {
+    height: 35rem;
+    background-size:1130px;
+  }
+}
+
 .v-btn {
   margin: 0.5rem;
 }
-
 
 // "sm" breakpoint
 @media (max-width: 599px) {

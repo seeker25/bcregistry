@@ -115,32 +115,28 @@
     </div>
 
     <div class="payment py-7">
-      <v-row no-gutters>
-        <v-col class="col-3"></v-col>
-        <v-col cols="6" class="payment-info-title">
-          <img src="@/assets/svgs/currency-usd-circle.svg" />
-          <span style="padding-left: 10px">Credit card payments:</span>
-        </v-col>
-        <v-col class="col-3"></v-col>
-      </v-row>
+      <div class="payment-info-title text-center">
+        <img src="@/assets/svgs/currency-usd-circle.svg" />
+        <span style="padding-left: 10px">Credit card payments:</span>
+      </div>
 
       <v-row no-gutters class="mt-2">
-        <v-col class="col-3"></v-col>
-        <v-col cols="6" class="payment-info-text">
+        <v-col class="col-1 col-md-2"></v-col>
+        <v-col class="col-10 col-md-8 payment-info-text">
           Credit card payments are accepted for these individual/direct accounts.
         </v-col>
-        <v-col class="col-3"></v-col>
+        <v-col class="col-1 col-md-2"></v-col>
       </v-row>
     </div>
   </v-container>
 </template>
 
 <style lang="scss" scoped>
-@import '../assets/scss/theme.scss';
+@import '@/assets/scss/theme.scss';
 
 a {
   color: $BCgovLink !important;
-  font-size: 1rem;
+  font-size: $px-16;
   font-weight: bold;
   text-decoration: underline;
 }

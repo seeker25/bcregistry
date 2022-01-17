@@ -9,7 +9,7 @@
             exact
             :href="backUrl"
             icon small
-            :disabled="backDisabled"
+            :disabled="isBackDisabled"
           >
             <v-icon color="primary">mdi-arrow-left</v-icon>
           </v-btn>
@@ -45,60 +45,77 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
+import { getKeycloakRoles } from '@/utils'
 
 @Component({})
 export default class Breacrumb extends Vue {
-  get backDisabled(): boolean {
-    if ((this.$route.path === '/dashboard') || (this.$route.path === '/')) {
-      return true
+  /** Whether the back button should be disabled. */
+  get isBackDisabled(): boolean {
+    switch (this.$route.path) {
+      case '/':
+      case '/dashboard':
+      case '/dashboard/': return true
     }
     return false
   }
 
+  /** The list of breadcrumbs for the current route. */
   get breadcrumbs(): Array<any> {
-    if ((this.$route.path === '/ppr-marketing') || (this.$route.path === '/ppr-marketing/')) {
-      return [
-        {
-          disabled: false,
-          href: '/',
-          text: 'BC Registries and Online Services',
-        },
-        {
-          disabled: true,
-          href: '',
-          text: 'Personal Property Registry',
-        },
-      ]
-    }
+    switch (this.$route.path) {
+      case '/ppr-marketing':
+      case '/ppr-marketing/': {
+        return [
+          {
+            disabled: false,
+            href: '/',
+            text: 'BC Registries and Online Services',
+          },
+          {
+            disabled: true,
+            href: '',
+            text: 'Personal Property Registry',
+          },
+        ]
+      }
 
-    if ((this.$route.path === '/dashboard') || (this.$route.path === '/dashboard/')) {
-      return [
-        {
-          disabled: true,
-          href: '',
-          text: 'BC Registries Dashboard',
-        },
-      ]
-    }
+      case '/dashboard':
+      case '/dashboard/': {
+        let isStaff: boolean
+        try {
+          const keycloakRoles = getKeycloakRoles()
+          isStaff = (keycloakRoles.includes('gov_account_user') || keycloakRoles.includes('staff'))
+        } catch(e) {
+          isStaff = false
+        }
 
-    if (this.$route.path === '/') {
-      return [
-        {
-          disabled: true,
-          href: '',
-          text: 'BC Registries and Online Services',
-        },
-      ]
+        return [
+          {
+            disabled: true,
+            href: '',
+            text: isStaff ? 'Staff Dashboard' : 'BC Registries Dashboard',
+          },
+        ]
+      }
+
+      case '/': {
+        return [
+          {
+            disabled: true,
+            href: '',
+            text: 'BC Registries and Online Services',
+          },
+        ]
+      }
     }
 
     return []
   }
 
-  get backUrl(): string | boolean {
-    if ((this.$route.path === '/ppr-marketing') || (this.$route.path === '/ppr-marketing/')) {
-      return '/'
-    }
-    return false
+  /** The back URL for the current route. */
+  get backUrl(): string {
+    // for now, in all cases, the back URL is the top route
+    // this can be updated later if the back URL is anything else
+    return '/'
   }
 }
 </script>
@@ -124,7 +141,7 @@ export default class Breacrumb extends Vue {
 }
 
 .breadcrumb-text {
-  font-size: 0.8125rem !important;
+  font-size: $px-13 !important;
   color: white;
 }
 

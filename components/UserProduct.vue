@@ -2,7 +2,11 @@
   <v-card class="service-container" :href="product.link">
     <v-row align="center" no-gutters>
       <v-col cols="auto">
-        <img v-if="product.image" class="service-img" :src="`/${product.image}.jpg`" />
+        <img
+          v-if="product.image"
+          class="service-img"
+          :src="`/${product.image}`"
+        />
       </v-col>
       <v-col class="service-info">
         <h2>{{ product.title }}</h2>
@@ -32,10 +36,11 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/scss/theme.scss';
+
 .action-btn {
   background-color: $primary-blue !important;
   color: white;
-  font-size: 0.875rem;
+  font-size: $px-14;
   font-weight: 600;
   height: 40px !important;
   margin-top: 30px;
@@ -65,7 +70,7 @@ export default {
 
   p {
     color: $gray7;
-    font-size: 1rem;
+    font-size: $px-16;
   }
 }
 </style>

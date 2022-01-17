@@ -35,8 +35,10 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import '@/assets/scss/theme.scss';
+
 h1 {
-  font-size: 20px;
+  font-size: $px-20;
 }
 </style>

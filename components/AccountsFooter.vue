@@ -36,7 +36,7 @@ export default class SbcHeader extends Vue {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/scss/theme.scss';
+@import '@/assets/scss/theme.scss';
 
 .accounts-footer {
   background: white;
@@ -46,7 +46,7 @@ export default class SbcHeader extends Vue {
 
 .accounts-footer-info {
   text-align: center;
-  font-size: 1.125rem;
+  font-size: $px-18;
   font-weight: bold;
   color: $gray9;
 }
@@ -57,15 +57,16 @@ li {
 }
 
 a {
-  font-size: 1rem;
+  font-size: $px-16;
   font-weight: bold;
   text-decoration: underline;
 }
 
 li:not(:first-child) {
-  border-left: 1px solid white;
+  border-left: 1px solid rgba(0,0,0,0); // no colour
 }
 
+// this is the point at which the link items fit on 1 line
 @media (min-width: 1268px) {
   li:not(:first-child) {
    border-left: 1px solid $gray3;
