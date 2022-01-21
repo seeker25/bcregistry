@@ -85,9 +85,9 @@ export default Vue.extend ({
   },
   async mounted () {
     // get account id from object in session storage
-    // wait up to 1 sec for current account to be synced (typically by SbcHeader)
+    // wait up to 10 sec for current account to be synced (typically by SbcHeader)
     let accountId: number
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 100; i++) {
       const currentAccount = sessionStorage.getItem(SessionStorageKeys.CurrentAccount)
       const account = JSON.parse(currentAccount)
       accountId = account?.id as number
