@@ -34,9 +34,9 @@
       </v-card>
 
       <!-- Name Request Online (NRO) -->
-      <v-card elevation="2" max-width="390px" class="ma-4 disabled">
+      <v-card elevation="2" class="disabled">
         <v-card-title>
-          <span class="word-break-normal">Name Request Online (NRO)</span>
+          <span>Name Request Online (NRO)</span>
           <span class="card-title-badge-container">
             <div class="card-title-badge">MOVED</div>
           </span>
@@ -51,14 +51,19 @@
       </v-card>
 
       <!-- Personal Property Registry -->
-      <v-card elevation="2">
-        <v-card-title>Personal Property Registry</v-card-title>
+      <v-card elevation="2" class="disabled">
+        <v-card-title>
+          <span>Personal Property Registry</span>
+          <span class="card-title-badge-container">
+            <div class="card-title-badge">MOVED</div>
+          </span>
+        </v-card-title>
 
         <v-card-text>
           <p>
-            Personal property registrations and search for existing registrations.
-            <span class="font-weight-bold">The Personal Property Registry will be
-              moved to the BC Registries account soon.</span>
+            Personal property registrations and search for existing
+            registrations. The Personal Property Registry has been moved
+            to the BC Registries account.
           </p>
         </v-card-text>
       </v-card>

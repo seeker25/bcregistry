@@ -1,3 +1,7 @@
+/**
+ * This plugin function is called before instantiating the root Vue.js application.
+ * It populates session storage variables needed by misc components (eg, SbcHeader).
+ */
 export default function (context) {
   if (process.client) {
     if (!sessionStorage.getItem('AUTH_WEB_URL')) {

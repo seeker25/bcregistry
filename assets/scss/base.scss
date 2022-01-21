@@ -91,10 +91,6 @@ h4 {
   font-size: $px-16;
 }
 
-a {
-  color: $BCgovLink
-}
-
 p {
   margin: 1rem 0;
 }
@@ -147,6 +143,22 @@ table {
   }
 }
 
+// common anchor colours
+.v-application .app-body a {
+  color: $BCgovLink;
+
+  &:hover {
+    color: $BCgovLinkHover;
+  }
+}
+
+// specific anchor styles
+a.link {
+  font-size: $px-16;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 // Common button begin
 .v-btn {
   font-size: $px-14;
@@ -158,6 +170,7 @@ table {
 	-moz-box-shadow: none;
 	box-shadow: none;
 }
+
 .button-white-on-blue {
   color: white !important;
   background: $BCgovBlue5 !important;
@@ -182,10 +195,6 @@ table {
 
 .table--fixed {
   table-layout: fixed;
-}
-
-.word-break-normal {
-  word-break: normal;
 }
 
 .bg-gray1 {
@@ -317,12 +326,12 @@ table {
   display: -ms-flexbox;
   display: flex;
 }
+
 .hero-banner__cta-btns .cta-btn {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 100%;
   flex: 0 0 100%;
 }
-
 
 .hero-banner__cta-btns .cta-btns-authenticated > div,
 .hero-banner__cta-btns .cta-btns-authenticated {
@@ -334,6 +343,7 @@ table {
   flex-wrap: wrap;
   margin-bottom: 13px;
 }
+
 .hero-banner__cta-btns .cta-btns-authenticated .v-btn,
 .hero-banner__cta-btns .cta-btns-authenticated > div .v-btn {
   -webkit-box-flex: 0;
@@ -341,14 +351,6 @@ table {
   flex: 0 0 100%;
   margin-bottom: 13px;
 }
-
-.v-application .app-body a {
-  color: $BCgovLink;
-}
-.v-application .app-body a:hover {
-  color: #00e;
-}
-
 
 .top-tooltip,
 .left-tooltip {

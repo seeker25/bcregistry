@@ -26,8 +26,11 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  // Plugins to run before rendering page: https://nuxtjs.org/docs/directory-structure/plugins/
+  plugins: [
+    '~/plugins/printNameVersion.ts',
+    '~/plugins/setSessionStorage.ts',
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -53,7 +56,9 @@ export default {
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    proxy: true,
+  },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {},
@@ -92,8 +97,8 @@ export default {
   },
 
   router: {
-    middleware: 'commonHeaderRedirect',
     extendRoutes(routes) {
+      // NEEDED FOR SIGNIN FROM PPR-MARKETING PAGE:
       routes.push({
         path: '/ppr-marketing/signin/bcsc',
         component: '~/pages/signin/bcsc.vue',
@@ -106,10 +111,14 @@ export default {
         path: '/ppr-marketing/signin/idir',
         component: '~/pages/signin/idir.vue',
       })
+
+      // NEEDED FOR SIGNOUT FROM PPR-MARKETING PAGE:
       routes.push({
         path: '/ppr-marketing/signout',
         component: '~/pages/signout.vue',
       })
+
+      // NEEDED FOR SIGNOUT FROM DASHBOARD PAGE:
       routes.push({
         path: '/dashboard/signout',
         component: '~/pages/signout.vue',
@@ -139,15 +148,14 @@ export default {
     appVersion: JSON.parse(packageJson).version,
   },
 
-  devServer: {
-    proxy: {
-      // this is needed to prevent a CORS error when running locally
-      '/local-keycloak-config-url/*': {
-        target:
-          'https://ppr-ui-dev.apps.silver.devops.gov.bc.ca/ppr/config/kc/',
-        pathRewrite: {
-          '/local-keycloak-config-url': '',
-        },
+  proxy: {
+    // this is needed to prevent a CORS error when running locally
+    // NB: doesn't work with 'generate' in 'static' mode
+    '/local-keycloak-config-url/*': {
+      target:
+        'https://ppr-ui-dev.apps.silver.devops.gov.bc.ca/ppr/config/kc/',
+      pathRewrite: {
+        '/local-keycloak-config-url': '',
       },
     },
   },

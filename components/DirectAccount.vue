@@ -34,13 +34,14 @@
 
           <div>
             <a
+              class="link"
               :href="$config.colinURL"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Go to Corporate Online
+              <span>Go to Corporate Online</span>
             </a>
-            <v-icon class="pl-1" color="primary" dark dense>mdi-open-in-new</v-icon>
+            <v-icon dense color="primary">mdi-open-in-new</v-icon>
           </div>
         </v-card-text>
       </v-card>
@@ -57,13 +58,14 @@
 
           <div>
             <a
+              class="link"
               :href="$config.onestopURL"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Go to OneStop
+              <span>Go to OneStop</span>
             </a>
-            <v-icon class="pl-1" color="primary" dark dense>mdi-open-in-new</v-icon>
+            <v-icon dense color="primary">mdi-open-in-new</v-icon>
           </div>
         </v-card-text>
       </v-card>
@@ -79,13 +81,14 @@
 
           <div>
             <a
+              class="link"
               :href="$config.societiesURL"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Go to Societies Online
+              <span>Go to Societies Online</span>
             </a>
-            <v-icon class="pl-1" color="primary" dark dense>mdi-open-in-new</v-icon>
+            <v-icon dense color="primary">mdi-open-in-new</v-icon>
           </div>
         </v-card-text>
       </v-card>
@@ -102,13 +105,14 @@
 
           <div>
             <a
+              class="link"
               :href="$config.addressChangeURL"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Go to Address Change BC
+              <span>Go to Address Change BC</span>
             </a>
-            <v-icon class="pl-1" color="primary" dark dense>mdi-open-in-new</v-icon>
+            <v-icon dense color="primary">mdi-open-in-new</v-icon>
           </div>
         </v-card-text>
       </v-card>
@@ -133,13 +137,6 @@
 
 <style lang="scss" scoped>
 @import '@/assets/scss/theme.scss';
-
-a {
-  color: $BCgovLink !important;
-  font-size: $px-16;
-  font-weight: bold;
-  text-decoration: underline;
-}
 
 img {
   margin-bottom: -6px;

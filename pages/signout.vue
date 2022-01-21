@@ -2,17 +2,23 @@
   <SbcSignout :redirect-url="logoutURL" />
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator'
 import SbcSignout from 'sbc-common-components/src/components/SbcSignout.vue'
 
-export default {
+/**
+ * When the user clicks "Log out", they are are redirected to THIS page, which
+ * renders the SbcSignout component that actually performs the signout process.
+ */
+@Component({
   components: {
     SbcSignout,
   },
-  computed: {
-    logoutURL() {
-      return this.$config.baseURL
-    },
-  },
+})
+export default class Signout extends Vue {
+  /** The URL to redirect to when the signout process completes. */
+  get logoutURL (): string {
+    return this.$config.baseURL
+  }
 }
 </script>

@@ -13,7 +13,7 @@
         <p class="pt-3 ma-0">{{ product.text }}</p>
         <v-btn class="action-btn px-5" :depressed="true">
           <span>Open</span>
-          <v-icon>mdi-chevron-right</v-icon>
+          <v-icon class="pl-1">mdi-chevron-right</v-icon>
         </v-btn>
       </v-col>
     </v-row>

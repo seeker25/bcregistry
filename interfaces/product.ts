@@ -7,8 +7,8 @@ export interface APIProductI {
 }
 
 export interface ProductI {
-  image: String,
-  link: String,
-  text: String,
-  title: String
+  image: string
+  link: string
+  text: string
+  title: string
 }

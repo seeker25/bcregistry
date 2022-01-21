@@ -45,12 +45,14 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import { getKeycloakRoles } from '@/utils'
+import { Getter } from 'vuex-class'
 
 @Component({})
 export default class Breacrumb extends Vue {
+  @Getter isSbcStaff!: boolean
+
   /** Whether the back button should be disabled. */
-  get isBackDisabled(): boolean {
+  get isBackDisabled (): boolean {
     switch (this.$route.path) {
       case '/':
       case '/dashboard':
@@ -60,7 +62,7 @@ export default class Breacrumb extends Vue {
   }
 
   /** The list of breadcrumbs for the current route. */
-  get breadcrumbs(): Array<any> {
+  get breadcrumbs (): any[] {
     switch (this.$route.path) {
       case '/ppr-marketing':
       case '/ppr-marketing/': {
@@ -80,19 +82,11 @@ export default class Breacrumb extends Vue {
 
       case '/dashboard':
       case '/dashboard/': {
-        let isStaff: boolean
-        try {
-          const keycloakRoles = getKeycloakRoles()
-          isStaff = (keycloakRoles.includes('gov_account_user') || keycloakRoles.includes('staff'))
-        } catch(e) {
-          isStaff = false
-        }
-
         return [
           {
             disabled: true,
             href: '',
-            text: isStaff ? 'Staff Dashboard' : 'BC Registries Dashboard',
+            text: this.isSbcStaff ? 'Staff Dashboard' : 'BC Registries Dashboard',
           },
         ]
       }
@@ -112,7 +106,7 @@ export default class Breacrumb extends Vue {
   }
 
   /** The back URL for the current route. */
-  get backUrl(): string {
+  get backUrl (): string {
     // for now, in all cases, the back URL is the top route
     // this can be updated later if the back URL is anything else
     return '/'

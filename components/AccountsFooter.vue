@@ -7,16 +7,16 @@
     <nav class="text-center mt-5">
       <ul class="pa-0">
         <li>
-          <a @click="smoothScroll('bcregistries-account')">BC Registries Account</a>
+          <a class="link" @click="smoothScroll('bcregistries-account')">BC Registries Account</a>
         </li>
         <li>
-          <a @click="smoothScroll('bconline-account')">BC OnLine Account</a>
+          <a class="link" @click="smoothScroll('bconline-account')">BC OnLine Account</a>
         </li>
         <li>
-          <a @click="smoothScroll('direct-account')">Individual / Direct Accounts</a>
+          <a class="link" @click="smoothScroll('direct-account')">Individual / Direct Accounts</a>
         </li>
         <li>
-          <a @click="smoothScroll('no-account')">Account Not Required</a>
+          <a class="link" @click="smoothScroll('no-account')">Account Not Required</a>
         </li>
       </ul>
     </nav>
@@ -54,12 +54,6 @@ export default class SbcHeader extends Vue {
 li {
   display: inline-block;
   padding: 0.25rem 4rem;
-}
-
-a {
-  font-size: $px-16;
-  font-weight: bold;
-  text-decoration: underline;
 }
 
 li:not(:first-child) {

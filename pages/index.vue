@@ -19,10 +19,6 @@
               As our online modernization initiative continues, refer to this page for
               updates on ways to manage registration information.
             </p>
-            <!-- TODO: remove after debugging -->
-            <!-- <p>
-              You are currently <strong>{{loggedIn ? 'LOGGED IN' : 'NOT LOGGED IN'}}</strong>.
-            </p> -->
           </v-col>
         </v-row>
       </v-container>
@@ -46,8 +42,7 @@
   </div>
 </template>
 
-<script>
-import { SessionStorageKeys } from 'sbc-common-components/src/util/constants'
+<script lang="ts">
 import AccountsFooter from '~/components/AccountsFooter.vue'
 import BCOnlineAccount from '~/components/BCOnlineAccount.vue'
 import BCRegistriesAccount from '~/components/BCRegistriesAccount.vue'
@@ -63,14 +58,6 @@ export default {
     DirectAccount,
     NoAccount,
     ContactInfo,
-  },
-  computed: {
-    loggedIn() {
-      if (sessionStorage.getItem(SessionStorageKeys.KeyCloakToken)) {
-        return true
-      }
-      return false
-    },
   },
 }
 </script>

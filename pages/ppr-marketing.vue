@@ -18,30 +18,30 @@
           </v-col>
         </v-row>
 
-        <v-row v-if="!loggedIn" class="pt-6" no-gutters>
+        <v-row v-if="!isLoggedIn" class="pt-6" no-gutters>
           <v-col class="col-md-6 col-12">
             <SbcSigninButton />
           </v-col>
         </v-row>
 
-        <v-row v-if="!loggedIn" class="py-6" no-gutters>
+        <v-row v-if="!isLoggedIn" class="py-6" no-gutters>
           <v-col class="body-text">
             New to BC Registries?
             <a
-              class="font-weight-bold"
+              class="link"
               :href="$config.authURL + 'choose-authentication-method'"
             >
-              Create a BC Registries Account
+              <span>Create a BC Registries Account</span>
             </a>
           </v-col>
         </v-row>
 
-        <v-row v-if="loggedIn" class="py-6" no-gutters>
+        <v-row v-if="isLoggedIn" class="py-6" no-gutters>
           <v-col>
             <v-btn
               large
               class="button-white-on-blue"
-              href="/dashboard"
+              to="/dashboard"
             >
               Go to BC Registries Dashboard
             </v-btn>
@@ -51,12 +51,14 @@
     </header>
 
     <v-container class="body-text">
-      <h1 class="text-center" style="padding-top: 80px">Coming Soon...</h1>
+      <h1 class="text-center" style="padding-top: 80px">
+        A Modern Personal Property Registry for B.C.
+      </h1>
 
       <v-row class="pt-3 pb-8">
         <v-col cols="12" class="text-center">
-          In early 2022, the BC Personal Property Registry will be launching an
-          all-new application.
+          The Personal Property Registry is now one of BC Registries and Online
+          Services' new modernized applications.
         </v-col>
       </v-row>
 
@@ -107,108 +109,119 @@
       </v-row>
     </v-container>
 
-    <v-container class="padding-100 body-text white-bg">
-      <!-- SEARCH -->
-      <v-row>
-        <v-col class="search-bg white-bg col-12 col-md-6"><!-- background image here --></v-col>
-        <v-col class="col-12 col-md-6">
-          <h2 class="pb-6">
-            Search for Registered Security Agreements and Liens
-          </h2>
-          <ul>
-            <li>
-              Search for 
-              <v-tooltip
-                top
-                content-class="top-tooltip pa-2 mr-2"
-                transition="fade-transition"
-              >
-                <template #activator="{ on }">
-                  <span class="bb-gray9" v-on="on"> 
-                    legal claims on personal property
-                  </span>
-                </template>
-                <div class="pa-2" style="width: 250px">
-                  Legal claims on personal property (also called security interests
-                  or property interests) include security agreements, liens, and more.
-                </div>
-              </v-tooltip>
-              as well as the people, businesses, and organizations associated with these claims.
-            </li>
-            <li>
-              Select registrations to download and view the secured parties,
-              debtors, and collateral in each.
-            </li>
-            <li>View and manage your search history.</li>
-            <li>
-              Download copies of your Search Result Reports for your records
-              or for use in court.
-            </li>
-          </ul>
+    <div class="white-bg padding-100">
+      <v-container class="body-text">
+        <!-- SEARCH -->
+        <v-row class="search-row">
+          <v-col class="search-bg white-bg col-12 col-md-6"><!-- background image here --></v-col>
+          <v-col class="col-12 col-md-6 d-flex align-center">
+            <div>
+              <h2 class="pb-6">
+                Search for Registered Security Agreements and Liens
+              </h2>
+              <ul>
+                <li>
+                  Search for 
+                  <v-tooltip
+                    top
+                    content-class="top-tooltip pa-2 mr-2"
+                    transition="fade-transition"
+                  >
+                    <template #activator="{ on }">
+                      <span class="bb-gray9" v-on="on"> 
+                        legal claims on personal property
+                      </span>
+                    </template>
+                    <div class="pa-2" style="width: 250px">
+                      Legal claims on personal property (also called security interests
+                      or property interests) include security agreements, liens, and more.
+                    </div>
+                  </v-tooltip>
+                  as well as the people, businesses, and organizations associated with these claims.
+                </li>
+                <li>
+                  Select registrations to download and view the secured parties,
+                  debtors, and collateral in each.
+                </li>
+                <li>View and manage your search history.</li>
+                <li>
+                  Download copies of your Search Result Reports for your records
+                  or for use in court.
+                </li>
+              </ul>
 
-          <div class="note">
-            Note: The Personal Property Registry includes interests in
-            fixtures and crops (personal property attached to land), but does
-            not include ownership and interests in real property (land). Find
-            real property interests in the
-            <a href="https://www.ltsa.ca" target="_blank">
-              Land Title Surveyor Authority (LTSA).
-              <v-icon small class="pl-1" color="primary">mdi-open-in-new</v-icon>
-            </a>
-          </div>
-        </v-col>
-      </v-row>
+              <div class="note pt-5 pl-5">
+                Note: The Personal Property Registry includes interests in
+                fixtures and crops (personal property attached to land), but does
+                not include ownership and interests in real property (land). Find
+                real property interests in the
+                <a
+                  href="https://www.ltsa.ca"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>Land Title Surveyor Authority (LTSA)</span>
+                </a>
+                <v-icon small color="primary">mdi-open-in-new</v-icon>.
+              </div>
+            </div>
+          </v-col>
+        </v-row>
 
-      <!-- REPORT -->
-      <v-row class="padding-100">
-        <v-col class="col-12 col-md-6">
-          <h2 class="pb-6">Get Detailed Search Result Reports</h2>
-          <ul>
-            <li>
-              Get a detailed report containing the list of registrations that
-              match your criteria.
-            </li>
-            <li>
-              See the current information and complete history of each
-              registration in your report.
-            </li>
-            <li>Easily find a particular registration in your report.</li>
-            <li>
-              Use your Search Result Report as evidence of a claim, or lack of
-              a claim, on personal property.
-            </li>
-          </ul>
-        </v-col>
-        <v-col class="report-bg white-bg col-12 col-md-6"><!-- background image here --></v-col>
-      </v-row>
+        <!-- REPORT -->
+        <v-row class="report-row margin-100">
+          <v-col class="col-12 col-md-6 d-flex align-center">
+            <div>
+              <h2 class="pb-6">Get Detailed Search Result Reports</h2>
+              <ul>
+                <li>
+                  Get a detailed report containing the list of registrations that
+                  match your criteria.
+                </li>
+                <li>
+                  See the current information and complete history of each
+                  registration in your report.
+                </li>
+                <li>Easily find a particular registration in your report.</li>
+                <li>
+                  Use your Search Result Report as evidence of a claim, or lack of
+                  a claim, on personal property.
+                </li>
+              </ul>
+            </div>
+          </v-col>
+          <v-col class="report-bg white-bg col-12 col-md-6"><!-- background image here --></v-col>
+        </v-row>
 
-      <!-- REGISTER -->
-      <v-row>
-        <v-col class="register-bg white-bg col-12 col-md-6"><!-- background image here --></v-col>
-        <v-col class="col-12 col-md-6">
-          <h2 class="pb-6">Register Security Agreements and Liens</h2>
-          <ul>
-            <li>Register legal claims on personal property.</li>
-            <li>
-              Look up Secured Parties based on a B.C. business name or
-              incorporation number or enter them manually.
-            </li>
-            <li>
-              Save drafts of your financing statements before registering.
-            </li>
-            <li>Review your registration for accuracy prior to payment.</li>
-            <li>
-              Manage and find your draft and registered financing statements easily.
-            </li>
-            <li>
-              See if your registrations are due to expire or if they have been discharged.
-            </li>
-            <li>Amend, Renew, or Discharge registrations.</li>
-            <li>Re-register expired or discharged registrations.</li>
-          </ul>
-        </v-col>
-      </v-row>
-    </v-container>
+        <!-- REGISTER -->
+        <v-row class="register-row">
+          <v-col class="register-bg white-bg col-12 col-md-6"><!-- background image here --></v-col>
+          <v-col class="col-12 col-md-6 d-flex align-center">
+            <div>
+              <h2 class="pb-6">Register Security Agreements and Liens</h2>
+              <ul>
+                <li>Register legal claims on personal property.</li>
+                <li>
+                  Look up Secured Parties based on a B.C. business name or
+                  incorporation number or enter them manually.
+                </li>
+                <li>
+                  Save drafts of your financing statements before registering.
+                </li>
+                <li>Review your registration for accuracy prior to payment.</li>
+                <li>
+                  Manage and find your draft and registered financing statements easily.
+                </li>
+                <li>
+                  See if your registrations are due to expire or if they have been discharged.
+                </li>
+                <li>Amend, Renew, or Discharge registrations.</li>
+              </ul>
+            </div>
+          </v-col>
+        </v-row>
+      </v-container>
+    </div>
 
     <v-container class="padding-100 body-text">
       <v-row>
@@ -232,11 +245,15 @@
             <v-row>
               <v-col>
                 Find detailed information about the Personal Property Registry.
-                <br />
-                <a :href="PPR_HREF" target="_blank">
-                  Learn More
-                  <v-icon small class="pl-1" color="primary">mdi-open-in-new</v-icon>
+                <a
+                  class="link d-inline-block mt-6"
+                  :href="PPR_HREF"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>Learn More</span>
                 </a>
+                <v-icon dense color="primary">mdi-open-in-new</v-icon>
               </v-col>
             </v-row>
           </v-card>
@@ -259,10 +276,15 @@
               <v-col>
                 Vehicle claim history reports are available from ICBC and Carfax.
                 <br />
-                <a :href="VEH_HIST_RPTS_HREF" target="_blank">
-                  Order a Report
-                  <v-icon small class="pl-1" color="primary">mdi-open-in-new</v-icon>
+                <a
+                  class="link d-inline-block mt-6"
+                  :href="VEH_HIST_RPTS_HREF"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>Order a Report</span>
                 </a>
+                <v-icon dense color="primary">mdi-open-in-new</v-icon>
               </v-col>
             </v-row>
           </v-card>
@@ -285,10 +307,15 @@
               <v-col>
                 Get professional support filling out forms and filling documents.
                 <br />
-                <a href="https://dyedurham.com/" target="_blank">
-                  Contact Dye &amp; Durham
-                  <v-icon small class="pl-1" color="primary">mdi-open-in-new</v-icon>
+                <a
+                  class="link d-inline-block mt-6"
+                  href="https://dyedurham.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>Contact Dye &amp; Durham</span>
                 </a>
+                <v-icon dense color="primary">mdi-open-in-new</v-icon>
               </v-col>
             </v-row>
           </v-card>
@@ -296,69 +323,77 @@
       </v-row>
     </v-container>
 
-    <v-container class="padding-100 body-text white-bg">
-      <h1 class="text-center">Create an Account to Get started</h1>
+    <div class="white-bg padding-100">
+      <v-container class="body-text">
+        <h1 class="text-center">Create an Account to Get started</h1>
 
-      <v-row class="pt-4 pb-6">
-        <v-col class="text-center">
-          Log in securely using your mobile BC Services Card, government's
-          trusted way to access online services.
-        </v-col>
-      </v-row>
+        <v-row class="pt-4 pb-6">
+          <v-col class="text-center">
+            Log in securely using your mobile BC Services Card, government's
+            trusted way to access online services.
+          </v-col>
+        </v-row>
 
-      <v-row>
-        <v-col class="col-12 col-md-6">
-          <h2 class="pb-4">It's Secure</h2>
-          <ul>
-            <li>
-              A mobile card is a representation of your BC Services Card on
-              your mobile device. It's used to prove who you are when you log
-              in to access government services online.
-            </li>
-            <li>
-              Only your name and a unique identifier is stored on the mobile device.
-            </li>
-          </ul>
-        </v-col>
+        <v-row>
+          <v-col class="col-12 col-md-6">
+            <h2 class="pb-4">It's Secure</h2>
+            <ul>
+              <li>
+                A mobile card is a representation of your BC Services Card on
+                your mobile device. It's used to prove who you are when you log
+                in to access government services online.
+              </li>
+              <li>
+                Only your name and a unique identifier is stored on the mobile device.
+              </li>
+            </ul>
+          </v-col>
 
-        <v-col class="col-12 col-md-6">
-          <h2 class="pb-4">It's Quick and Easy</h2>
-          <ul>
-            <li>
-              It normally takes about 5 minutes to
-              <a href="https://www2.gov.bc.ca/gov/content/governments/government-id/bcservicescardapp">
-              set up a mobile card</a>.
-            </li>
-            <li>
-              You can verify your identity by video right from your mobile
-              device. You don't need to go in person unless you can't verify
-              by video.
-            </li>
-          </ul>
-        </v-col>
-      </v-row>
+          <v-col class="col-12 col-md-6">
+            <h2 class="pb-4">It's Quick and Easy</h2>
+            <ul>
+              <li>
+                It normally takes about 5 minutes to
+                <a 
+                  href="https://www2.gov.bc.ca/gov/content/governments/government-id/bcservicescardapp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>set up a mobile card</span>
+                </a>
+                <v-icon small color="primary">mdi-open-in-new</v-icon>.
+              </li>
+              <li>
+                You can verify your identity by video right from your mobile
+                device. You don't need to go in person unless you can't verify
+                by video.
+              </li>
+            </ul>
+          </v-col>
+        </v-row>
 
-      <div class="mt-10 mr-4 d-sm-flex justify-center">
-        <template v-if="!loggedIn">
+        <div class="mt-10 mr-4 d-sm-flex justify-center">
+          <template v-if="!isLoggedIn">
+            <v-btn
+              large
+              class="button-white-on-blue"
+              :href="$config.authURL + 'choose-authentication-method'"
+            >
+              Create a BC Registries Account
+            </v-btn>
+          </template>
           <v-btn
             large
-            class="button-white-on-blue"
-            to="/choose-authentication-method"
+            class="button-blue-on-white"
+            href="https://www2.gov.bc.ca/gov/content/governments/government-id/bcservicescardapp"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Create a BC Registries Account
+            Learn More
           </v-btn>
-        </template>
-        <v-btn
-          large
-          class="button-blue-on-white"
-          href="https://www2.gov.bc.ca/gov/content/governments/government-id/bcservicescardapp"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn More
-        </v-btn>
-      </div>
-    </v-container>
+        </div>
+      </v-container>
+    </div>
 
     <ContactInfo />
   </div>
@@ -374,7 +409,7 @@ export default {
     SbcSigninButton,
     ContactInfo,
   },
-  data() {
+  data () {
     return {
       PPR_HREF: 'https://www2.gov.bc.ca/gov/content/employment-business/business/managing-a-business/' +
         'bc-registry-services-personal-property-registry',
@@ -386,11 +421,9 @@ export default {
     title: 'BC Personal Property Registry',
   },
   computed: {
-    loggedIn() {
-      if (sessionStorage.getItem(SessionStorageKeys.KeyCloakToken)) {
-        return true
-      }
-      return false
+    isLoggedIn (): boolean {
+      const token = sessionStorage.getItem(SessionStorageKeys.KeyCloakToken)
+      return !!token
     },
   },
 }
@@ -406,26 +439,30 @@ export default {
 
 .search-bg {
   background-image: url(../assets/img/PPR_search_screenshot.png);
-  background-position: top center;
+  background-position: center center;
   background-size: contain;
   background-repeat: no-repeat;
-  height: 340px;
 }
 
 .report-bg {
   background-image: url(../assets/img/PPR_reportpaper_x2.jpg);
-  background-position: top center;
+  background-position: center center;
   background-size: contain;
   background-repeat: no-repeat;
-  height: 340px;
 }
 
 .register-bg {
   background-image: url(../assets/img/PPR_register_screenshot.png);
-  background-position: top center;
+  background-position: center center;
   background-size: contain;
   background-repeat: no-repeat;
-  height: 340px;
+}
+
+// height of background images at minimum screen width
+.search-bg,
+.report-bg,
+.register-bg {
+  min-height: 340px;
 }
 
 .white-bg {
@@ -442,9 +479,12 @@ export default {
   padding-bottom: 100px;
 }
 
+.margin-100 {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
 .note {
-  padding-top: 20px;
-  padding-left: 20px;
   font-style: italic;
   color: $gray7;
 }
@@ -471,33 +511,20 @@ ul {
   line-height: 22px;
 }
 
-a {
-  color: $BCgovLink;
-  background: white;
-}
-
 .v-btn__content {
   letter-spacing: normal;
 }
 
 .square-card {
-    height: 300px;
-    width: 300px;
-    padding: 15px;
-    border-radius: 4px;
-    background-color: white;
+  height: 300px;
+  width: 300px;
+  padding: 15px;
+  border-radius: 4px;
+  background-color: white;
 }
 
 .bb-gray9 {
   border-bottom: 1px dotted $gray9;
-}
-
-@media (min-width: 750px) {
-  .search-bg,
-  .report-bg,
-  .register-bg {
-    height: 522px;
-  }
 }
 
 // "md" breakpoint
@@ -509,14 +536,12 @@ a {
     background-repeat: no-repeat;
     background-size: 836px;
   }
-  .search-bg {
-    height: 370px;
-  }
-  .report-bg {
-    height: 240px;
-  }
-  .register-bg {
-    height: 368px;
+
+  // height of rows at 960px screen width and higher
+  .search-row,
+  .report-row,
+  .register-row {
+    height: 450px;
   }
 }
 

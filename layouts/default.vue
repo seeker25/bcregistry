@@ -1,13 +1,13 @@
 <template>
   <v-app id="app">
-    <SbcHeader class="sbc-header" :in-auth="false" :show-actions="true" />
+    <SbcHeader class="sbc-header" />
     <Breadcrumb />
     <nuxt class="app-body" />
     <SbcFooter />
   </v-app>
 </template>
 
-<script>
+<script lang="ts">
 import SbcFooter from 'sbc-common-components/src/components/SbcFooter.vue'
 import SbcHeader from 'sbc-common-components/src/components/SbcHeader.vue'
 import Breadcrumb from '~/components/Breadcrumb.vue'
@@ -18,10 +18,9 @@ export default {
     SbcHeader,
     Breadcrumb,
   },
-  middleware: ['commonHeaderSetup'],
-  created () {
-    console.log(`${this.$config.appName} v${this.$config.appVersion}`)
-  },
+  // run "syncSession" before rendering any pages
+  // NB: cannot be run as a plugin
+  middleware: ['syncSession'],
 }
 </script>
 

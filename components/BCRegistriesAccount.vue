@@ -43,9 +43,9 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              Go to BC Business Registry
+              <span>Go to BC Business Registry</span>
             </a>
-            <v-icon class="pl-1" color="primary" dark dense>mdi-open-in-new</v-icon>
+            <v-icon dense color="primary">mdi-open-in-new</v-icon>
           </div>
         </v-card-text>
       </v-card>
@@ -72,9 +72,9 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              Go to Name Request
+              <span>Go to Name Request</span>
             </a>
-            <v-icon class="pl-1" color="primary" dark dense>mdi-open-in-new</v-icon>
+            <v-icon dense color="primary">mdi-open-in-new</v-icon>
           </div>
         </v-card-text>
       </v-card>
@@ -82,7 +82,7 @@
       <!-- Wills Registry -->
       <v-card elevation="2">
         <v-card-title>
-          <span class="word-break-normal">Wills Registry</span>
+          <span>Wills Registry</span>
           <span class="card-title-badge-container">
             <div class="card-title-badge">COMING SOON</div>
           </span>
@@ -107,21 +107,16 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              Go to Wills Registry
+              <span>Go to Wills Registry</span>
             </a>
-            <v-icon class="pl-1" color="primary" dark dense>mdi-open-in-new</v-icon>
+            <v-icon dense color="primary">mdi-open-in-new</v-icon>
           </div>
         </v-card-text>
       </v-card>
 
       <!-- Personal Property Registry -->
       <v-card elevation="2">
-        <v-card-title>
-          <span class="word-break-normal">Personal Property Registry</span>
-          <span class="card-title-badge-container">
-            <div class="card-title-badge">COMING SOON</div>
-          </span>
-        </v-card-title>
+        <v-card-title>Personal Property Registry</v-card-title>
 
         <v-card-text>
           <p>
@@ -142,9 +137,9 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              Go to Personal Property Registry
+              <span>Go to Personal Property Registry</span>
             </a>
-            <v-icon class="pl-1" color="primary" dark dense>mdi-open-in-new</v-icon>
+            <v-icon dense color="primary">mdi-open-in-new</v-icon>
           </div>
         </v-card-text>
       </v-card>
@@ -166,7 +161,7 @@
         <v-col class="col-1 col-md-2"></v-col>
       </v-row>
 
-      <div v-if="!loggedIn" class="mt-5 mr-4 d-sm-flex flex-wrap justify-center">
+      <div v-if="!isLoggedIn" class="mt-5 mr-4 d-sm-flex flex-wrap justify-center">
         <SbcSigninButton />
 
         <v-btn
@@ -178,11 +173,11 @@
         </v-btn>
       </div>
 
-      <div v-if="loggedIn" class="text-center mt-5 mr-4">
+      <div v-if="isLoggedIn" class="text-center mt-5 mr-4">
         <v-btn
           large
           class="button-white-on-blue"
-          href="/dashboard"
+          to="/dashboard"
         >
           Go to BC Registries Dashboard
         </v-btn>
@@ -191,7 +186,7 @@
   </v-container>
 </template>
 
-<script>
+<script lang="ts">
 import { SessionStorageKeys } from 'sbc-common-components/src/util/constants'
 import SbcSigninButton from '~/components/SbcSigninButton.vue'
 
@@ -200,11 +195,9 @@ export default {
     SbcSigninButton,
   },
   computed: {
-    loggedIn() {
-      if (sessionStorage.getItem(SessionStorageKeys.KeyCloakToken)) {
-        return true
-      }
-      return false
+    isLoggedIn (): boolean {
+      const token = sessionStorage.getItem(SessionStorageKeys.KeyCloakToken)
+      return !!token
     },
   },
 }
@@ -212,11 +205,6 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/scss/theme.scss';
-
-.link {
-  color: $BCgovLink !important;
-  font-weight: bold;
-}
 
 img {
   margin-bottom: -6px;
