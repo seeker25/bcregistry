@@ -55,11 +55,6 @@ export default {
     port: 8080, // default: 3000
   },
 
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {
-    proxy: true,
-  },
-
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {},
 
@@ -140,23 +135,12 @@ export default {
     bcolURL: process.env.BCOL_URL,
     addressChangeURL: process.env.ADDRESSCHANGE_URL,
     regAccountCreateURL: process.env.REGISTRY_ACCOUNT_CREATE_URL,
-    keycloakConfigPath: process.env.KEYCLOAK_CONFIG_PATH,
+    keycloakConfigPath: process.env.BCROS_BASE_URL + process.env.KEYCLOAK_CONFIG_PATH
+      + `?${new Date().getTime()}`,
     authAPIURL: process.env.AUTH_API_URL,
     statusAPIURL: process.env.STATUS_API_URL,
     appName: JSON.parse(packageJson).name,
     appVersion: JSON.parse(packageJson).version,
-  },
-
-  proxy: {
-    // this is needed to prevent a CORS error when running locally
-    // NB: doesn't work with 'generate' in 'static' mode
-    '/local-keycloak-config-url/*': {
-      target:
-        'https://ppr-ui-dev.apps.silver.devops.gov.bc.ca/ppr/config/kc/',
-      pathRewrite: {
-        '/local-keycloak-config-url': '',
-      },
-    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
