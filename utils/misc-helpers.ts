@@ -1,17 +1,17 @@
-import { SessionStorageKeys } from 'sbc-common-components/src/util/constants'
+import { Routes } from '@/enums'
 
 /**
  * Returns true if current route is Signin.
  */
 export function isSigninRoute (path = window.location.pathname): boolean {
-  return path.includes('/signin')
+  return path.includes(Routes.SIGNIN)
 }
 
 /**
  * Returns true if current route is Signout.
  */
 export function isSignoutRoute (path = window.location.pathname): boolean {
-  return path.includes('/signout')
+  return path.includes(Routes.SIGNOUT)
 }
 
 /**

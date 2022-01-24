@@ -121,10 +121,11 @@ export default {
     },
   },
 
-  // Environment variables for all site links defined here.
+  // Populate config variables...
   publicRuntimeConfig: {
+    // from environment variables:
     baseURL: process.env.BCROS_BASE_URL,
-    authURL: process.env.AUTH_URL,
+    authWebUrl: process.env.AUTH_URL,
     nameRequestURL: process.env.NAME_REQUEST_URL,
     businessURL: process.env.BUSINESS_URL,
     colinURL: process.env.COLIN_URL,
@@ -135,12 +136,21 @@ export default {
     bcolURL: process.env.BCOL_URL,
     addressChangeURL: process.env.ADDRESSCHANGE_URL,
     regAccountCreateURL: process.env.REGISTRY_ACCOUNT_CREATE_URL,
-    keycloakConfigPath: process.env.BCROS_BASE_URL + process.env.KEYCLOAK_CONFIG_PATH
-      + `?${new Date().getTime()}`,
     authAPIURL: process.env.AUTH_API_URL,
     statusAPIURL: process.env.STATUS_API_URL,
+    // as composite variables:
+    keycloakConfigPath: process.env.BCROS_BASE_URL + process.env.KEYCLOAK_CONFIG_PATH
+      + `?${new Date().getTime()}`,
     appName: JSON.parse(packageJson).name,
     appVersion: JSON.parse(packageJson).version,
+    registryDashboard: `${process.env.BCROS_BASE_URL}dashboard`,
+    pprDashboard: `${process.env.PPR_URL}/dashboard`,
+    businessRegistryStaffDashboard: `${process.env.AUTH_URL}staff/dashboard/active`,
+    myBusinessRegistryDashboard: `${process.env.AUTH_URL}account/business`,
+    createBcRegistriesAccount: `${process.env.AUTH_URL}choose-authentication-method`,
+    signinBceidUrl: `${process.env.AUTH_URL}signin/bceid`,
+    signinBcscUrl: `${process.env.AUTH_URL}signin/bcsc`,
+    signinIdirUrl: `${process.env.AUTH_URL}signin/idir`,
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

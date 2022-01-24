@@ -9,7 +9,7 @@ export function getProductInfo (config, type: ProductCode): ProductI {
     case ProductCode.BUSINESS:
       return {
         image: 'BCRS_dashboard_thumbnail_image.jpg',
-        link: config?.authURL || 'link_not_configured',
+        link: config?.myBusinessRegistryDashboard || 'link_not_configured',
         text: 'Register or incorporate a business, manage name requests and keep business records up to date.',
         title: 'My Business Registry'
       } as ProductI
@@ -23,7 +23,7 @@ export function getProductInfo (config, type: ProductCode): ProductI {
     case ProductCode.PPR:
       return {
         image: 'PPR_dashboard_thumbnail_image.jpg',
-        link: config?.pprURL || 'link_not_configured',
+        link: config?.pprDashboard || 'link_not_configured',
         text: 'Register or search for legal claims on personal property in British Columbia.',
         title: 'My Personal Property Registry'
       } as ProductI

@@ -6,6 +6,7 @@
 import { Component, Vue } from 'vue-property-decorator'
 import SbcSignin from 'sbc-common-components/src/components/SbcSignin.vue'
 import { SessionStorageKeys } from 'sbc-common-components/src/util/constants'
+import { Routes } from '@/enums'
 
 /**
  * When the user clicks "Log in", they are are redirected to THIS page, which
@@ -21,11 +22,11 @@ export default class Signin extends Vue {
   onProfileReady (): void {
     // once user has signed in, go to dashboard
     if (sessionStorage.getItem(SessionStorageKeys.KeyCloakToken)) {
-      this.$router.push({ path: '/dashboard' })
+      this.$router.push({ path: Routes.DASHBOARD })
       return
     }
     // should not happen, but fall back gracefully
-    this.$router.push({ path: '/' })
+    this.$router.push({ path: Routes.HOME })
   }
 }
 </script>

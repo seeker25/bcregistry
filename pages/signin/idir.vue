@@ -7,9 +7,8 @@
 export default {
   asyncData ({ $config, redirect }) {
     // redirect to Auth to sign in and then return to dashboard
-    const redirectURL = $config.authURL + 'signin/idir/' +
-      encodeURIComponent($config.baseURL + 'dashboard')
-    redirect(redirectURL)
+    const url = $config.signinIdirUrl + encodeURIComponent($config.registryDashboard)
+    redirect(url)
   },
 }
 </script>

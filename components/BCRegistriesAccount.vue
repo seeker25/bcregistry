@@ -133,7 +133,7 @@
           <div>
             <a
               class="link"
-              href="/ppr-marketing"
+              :href="pprMarketing"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -177,7 +177,7 @@
         <v-btn
           large
           class="button-white-on-blue"
-          to="/dashboard"
+          :to="dashboard"
         >
           Go to BC Registries Dashboard
         </v-btn>
@@ -189,6 +189,7 @@
 <script lang="ts">
 import { SessionStorageKeys } from 'sbc-common-components/src/util/constants'
 import SbcSigninButton from '~/components/SbcSigninButton.vue'
+import { Routes } from '@/enums'
 
 export default {
   components: {
@@ -198,6 +199,12 @@ export default {
     isLoggedIn (): boolean {
       const token = sessionStorage.getItem(SessionStorageKeys.KeyCloakToken)
       return !!token
+    },
+    dashboard (): string {
+      return `${Routes.DASHBOARD}`
+    },
+    pprMarketing (): string {
+      return `${Routes.PPR_MARKETING}`
     },
   },
 }

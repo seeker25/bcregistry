@@ -14,6 +14,7 @@ nvm install 16
 $ npm install
 
 # serve with hot reload at localhost:8080
+# NB: supports only 2 concurrent browser sessions, so more sessions may display strangely or not at all
 $ npm run dev
 
 # build for production and launch server
@@ -22,6 +23,9 @@ $ npm run start
 
 # generate static project
 $ npm run generate
+
+# locally preview the static project
+$ npm run start
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).

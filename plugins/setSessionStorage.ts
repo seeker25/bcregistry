@@ -5,7 +5,7 @@
 export default function (context) {
   if (process.client) {
     if (!sessionStorage.getItem('AUTH_WEB_URL')) {
-      sessionStorage.setItem('AUTH_WEB_URL', context.$config.authURL)
+      sessionStorage.setItem('AUTH_WEB_URL', context.$config.authWebUrl)
       // console.log('Auth Web URL:', sessionStorage.getItem('AUTH_WEB_URL'))
     }
     if (!sessionStorage.getItem('KEYCLOAK_CONFIG_PATH')) {

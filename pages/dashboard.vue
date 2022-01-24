@@ -71,7 +71,7 @@ export default Vue.extend ({
 
     // if user is staff, redirect to Business Registry staff dashboard
     if (isStaff) {
-      return redirect($config.authURL + 'staff/dashboard/active')
+      return redirect($config.businessRegistryStaffDashboard)
     }
   },
   data () {

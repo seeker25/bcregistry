@@ -29,7 +29,7 @@
             New to BC Registries?
             <a
               class="link"
-              :href="$config.authURL + 'choose-authentication-method'"
+              :href="$config.createBcRegistriesAccount"
             >
               <span>Create a BC Registries Account</span>
             </a>
@@ -41,7 +41,7 @@
             <v-btn
               large
               class="button-white-on-blue"
-              to="/dashboard"
+              :to="dashboard"
             >
               Go to BC Registries Dashboard
             </v-btn>
@@ -377,7 +377,7 @@
             <v-btn
               large
               class="button-white-on-blue"
-              :href="$config.authURL + 'choose-authentication-method'"
+              :href="$config.createBcRegistriesAccount"
             >
               Create a BC Registries Account
             </v-btn>
@@ -403,6 +403,7 @@
 import { SessionStorageKeys } from 'sbc-common-components/src/util/constants'
 import ContactInfo from '~/components/ContactInfoPpr.vue'
 import SbcSigninButton from '~/components/SbcSigninButton.vue'
+import { Routes } from '@/enums'
 
 export default {
   components: {
@@ -424,6 +425,9 @@ export default {
     isLoggedIn (): boolean {
       const token = sessionStorage.getItem(SessionStorageKeys.KeyCloakToken)
       return !!token
+    },
+    dashboard (): string {
+      return `${Routes.DASHBOARD}`
     },
   },
 }

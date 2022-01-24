@@ -46,6 +46,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import { Getter } from 'vuex-class'
+import { Routes } from '@/enums'
 
 @Component({})
 export default class Breacrumb extends Vue {
@@ -54,9 +55,9 @@ export default class Breacrumb extends Vue {
   /** Whether the back button should be disabled. */
   get isBackDisabled (): boolean {
     switch (this.$route.path) {
-      case '/':
-      case '/dashboard':
-      case '/dashboard/': return true
+      case `${Routes.HOME}`:
+      case `${Routes.DASHBOARD}`:
+      case `${Routes.DASHBOARD}/`: return true
     }
     return false
   }
@@ -64,42 +65,39 @@ export default class Breacrumb extends Vue {
   /** The list of breadcrumbs for the current route. */
   get breadcrumbs (): any[] {
     switch (this.$route.path) {
-      case '/ppr-marketing':
-      case '/ppr-marketing/': {
+      case `${Routes.PPR_MARKETING}`: 
+      case `${Routes.PPR_MARKETING}/`:
         return [
           {
             disabled: false,
-            href: '/',
+            href: `${Routes.HOME}`,
             text: 'BC Registries and Online Services',
           },
           {
             disabled: true,
-            href: '',
+            href: null,
             text: 'Personal Property Registry',
           },
         ]
-      }
 
-      case '/dashboard':
-      case '/dashboard/': {
+      case `${Routes.DASHBOARD}`:
+      case `${Routes.DASHBOARD}/`:
         return [
           {
             disabled: true,
-            href: '',
+            href: null,
             text: this.isSbcStaff ? 'Staff Dashboard' : 'BC Registries Dashboard',
           },
         ]
-      }
 
-      case '/': {
+      case `${Routes.HOME}`:
         return [
           {
             disabled: true,
-            href: '',
+            href: null,
             text: 'BC Registries and Online Services',
           },
         ]
-      }
     }
 
     return []
@@ -109,7 +107,7 @@ export default class Breacrumb extends Vue {
   get backUrl (): string {
     // for now, in all cases, the back URL is the top route
     // this can be updated later if the back URL is anything else
-    return '/'
+    return `${Routes.HOME}`
   }
 }
 </script>
