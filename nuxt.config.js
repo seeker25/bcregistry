@@ -148,9 +148,9 @@ export default {
     businessRegistryStaffDashboard: `${process.env.AUTH_URL}staff/dashboard/active`,
     myBusinessRegistryDashboard: `${process.env.AUTH_URL}account/business`,
     createBcRegistriesAccount: `${process.env.AUTH_URL}choose-authentication-method`,
-    signinBceidUrl: `${process.env.AUTH_URL}signin/bceid`,
-    signinBcscUrl: `${process.env.AUTH_URL}signin/bcsc`,
-    signinIdirUrl: `${process.env.AUTH_URL}signin/idir`,
+    signinBceidUrl: `${process.env.AUTH_URL}signin/bceid/`,
+    signinBcscUrl: `${process.env.AUTH_URL}signin/bcsc/`,
+    signinIdirUrl: `${process.env.AUTH_URL}signin/idir/`,
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
