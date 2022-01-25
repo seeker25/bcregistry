@@ -1,15 +1,18 @@
 <template>
   <v-container fluid class="py-12">
+    <v-overlay v-model="loadingProducts">
+      <v-progress-circular color="primary" size="50" indeterminate />
+    </v-overlay>
     <h1 class="dash-header">{{ isSbcStaff ? 'SBC Staff' : 'BC' }} Registries Dashboard</h1>
 
     <p class="dash-header-info ma-0 pt-3">Access to your BC Registries account product and services</p>
 
-    <h3 class="dash-sub-header">
+    <h3 v-if="!loadingProducts" class="dash-sub-header">
       My Products and Services
       <span class="font-weight-regular">({{ subscribedProducts.length }})</span>
     </h3>
 
-    <v-row no-gutters>
+    <v-row v-if="!loadingProducts" no-gutters>
       <div class="col-md-8 col-sm-12">
         <UserProduct
           v-for="product in subscribedProducts"
@@ -77,6 +80,7 @@ export default Vue.extend ({
   data () {
     return {
       getProductInfo, // for use in template
+      loadingProducts: false,
       subscribedProducts: [],
     }
   },
@@ -86,6 +90,7 @@ export default Vue.extend ({
   async mounted () {
     // get account id from object in session storage
     // wait up to 10 sec for current account to be synced (typically by SbcHeader)
+    this.loadingProducts = true
     let accountId: number
     for (let i = 0; i < 100; i++) {
       const currentAccount = sessionStorage.getItem(SessionStorageKeys.CurrentAccount)
@@ -134,6 +139,8 @@ export default Vue.extend ({
         this.subscribedProducts.push(thisProduct)
       }
     }
+    // wait a short amount so it doesn't look glitchy when products come back immediately
+    setTimeout(() => { this.loadingProducts = false }, 12000)
   }
 })
 </script>
