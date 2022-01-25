@@ -15,7 +15,7 @@
           v-for="product in subscribedProducts"
           :key="product.code"
           class="mt-5"
-          :product="getProductInfo($config, product.code)"
+          :product="product"
         />
       </div>
 
@@ -125,10 +125,16 @@ export default Vue.extend ({
       // get products list from API
       products = await fetchAccountProducts(this.getAccountId)
     }
-    this.subscribedProducts = products.filter(
-      product => product.subscriptionStatus === ProductStatus.ACTIVE
-    )
-  },
+    const currentProducts = products.filter(
+      product => product.subscriptionStatus === ProductStatus.ACTIVE)
+    // only show products with no placeholder
+    for (let i = 0; i < currentProducts.length; i++) {
+      const thisProduct = getProductInfo(this.$config, currentProducts[i].code)
+      if (thisProduct.title !== 'placeholder_title') {
+        this.subscribedProducts.push(thisProduct)
+      }
+    }
+  }
 })
 </script>
 
