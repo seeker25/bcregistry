@@ -140,7 +140,7 @@ export default Vue.extend ({
       }
     }
     // wait a short amount so it doesn't look glitchy when products come back immediately
-    setTimeout(() => { this.loadingProducts = false }, 12000)
+    setTimeout(() => { this.loadingProducts = false }, 250)
   }
 })
 </script>
