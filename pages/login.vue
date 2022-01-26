@@ -3,16 +3,16 @@
     <div>
       <h1 class="text-center">BC Registries Account Login</h1>
 
-      <v-card max-width="460" class="mt-10">
-        <v-card-title>
+      <v-card max-width="460" class="mt-10 pa-7">
+        <v-card-title class="pa-0">
           <v-img
             max-height="260"
-            src="img/BCReg_Generic_Login_image.jpg"
+            src="/img/BCReg_Generic_Login_image.jpg"
             alt="Generic Login Image">
           </v-img>
         </v-card-title>
 
-        <v-card-text class="d-flex justify-center pt-4 pb-8">
+        <v-card-text class="px-0 py-7">
           <SbcSigninButton />
         </v-card-text>
       </v-card>
@@ -43,3 +43,11 @@ export default Vue.extend ({
   },
 })
 </script>
+
+<style lang="scss" scoped>
+@import '@/assets/scss/theme.scss';
+
+::v-deep .sbc-signin-button {
+  width: 100%;
+}
+</style>

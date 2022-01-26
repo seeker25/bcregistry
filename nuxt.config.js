@@ -107,6 +107,20 @@ export default {
         component: '~/pages/signin/idir.vue',
       })
 
+      // NEEDED FOR SIGNIN FROM LOGIN PAGE:
+      routes.push({
+        path: '/login/signin/bcsc',
+        component: '~/pages/signin/bcsc.vue',
+      })
+      routes.push({
+        path: '/login/signin/bceid',
+        component: '~/pages/signin/bceid.vue',
+      })
+      routes.push({
+        path: '/login/signin/idir',
+        component: '~/pages/signin/idir.vue',
+      })
+
       // NEEDED FOR SIGNOUT FROM PPR-MARKETING PAGE:
       routes.push({
         path: '/ppr-marketing/signout',

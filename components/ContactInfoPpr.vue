@@ -52,7 +52,7 @@ export default class ContactInfoPpr extends Vue {
   readonly PPR_HREF = 'https://www2.gov.bc.ca/gov/content/employment-business/business/managing-a-business/' +
     'bc-registry-services-personal-property-registry'
 
-  readonly MAILTO_HREF: 'mailto:bcolhelp@gov.bc.ca?subject=Personal%20Property%20Registry%20Support%20Request'
+  readonly MAILTO_HREF = 'mailto:bcolhelp@gov.bc.ca?subject=Personal%20Property%20Registry%20Support%20Request'
 }
 </script>
 
