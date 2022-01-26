@@ -187,26 +187,29 @@
 </template>
 
 <script lang="ts">
+import { Component, Vue } from 'vue-property-decorator'
 import { SessionStorageKeys } from 'sbc-common-components/src/util/constants'
 import SbcSigninButton from '~/components/SbcSigninButton.vue'
 import { Routes } from '@/enums'
 
-export default {
+@Component({
   components: {
-    SbcSigninButton,
-  },
-  computed: {
-    isLoggedIn (): boolean {
-      const token = sessionStorage.getItem(SessionStorageKeys.KeyCloakToken)
-      return !!token
-    },
-    dashboard (): string {
-      return `${Routes.DASHBOARD}`
-    },
-    pprMarketing (): string {
-      return `${Routes.PPR_MARKETING}`
-    },
-  },
+    SbcSigninButton
+  }
+})
+export default class BCRegistriesAccount extends Vue {
+  get isLoggedIn (): boolean {
+    const token = sessionStorage.getItem(SessionStorageKeys.KeyCloakToken)
+    return !!token
+  }
+
+  get dashboard (): string {
+    return `${Routes.DASHBOARD}`
+  }
+
+  get pprMarketing (): string {
+    return `${Routes.PPR_MARKETING}`
+  }
 }
 </script>
 

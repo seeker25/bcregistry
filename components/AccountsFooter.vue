@@ -27,7 +27,7 @@
 import { Component, Vue } from 'vue-property-decorator'
 
 @Component({})
-export default class SbcHeader extends Vue {
+export default class AccountsFooter extends Vue {
   async smoothScroll (id: string): Promise<void> {
     const element = document.getElementById(id)
     if (element) await element.scrollIntoView({ behavior: 'smooth' })

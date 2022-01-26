@@ -45,14 +45,14 @@
 </template>
 
 <script lang="ts">
-export default {
-  data () {
-    return {
-      PPR_HREF: 'https://www2.gov.bc.ca/gov/content/employment-business/business/managing-a-business/' +
-        'bc-registry-services-personal-property-registry',
-      MAILTO_HREF: 'mailto:bcolhelp@gov.bc.ca?subject=Personal%20Property%20Registry%20Support%20Request',
-    }
-  },
+import { Component, Vue } from 'vue-property-decorator'
+
+@Component({})
+export default class ContactInfoPpr extends Vue {
+  readonly PPR_HREF = 'https://www2.gov.bc.ca/gov/content/employment-business/business/managing-a-business/' +
+    'bc-registry-services-personal-property-registry'
+
+  readonly MAILTO_HREF: 'mailto:bcolhelp@gov.bc.ca?subject=Personal%20Property%20Registry%20Support%20Request'
 }
 </script>
 
@@ -76,7 +76,7 @@ export default {
     font-size: $px-20;
   }
 
-  a {
+  a, a:hover {
     color: inherit;
   }
 }

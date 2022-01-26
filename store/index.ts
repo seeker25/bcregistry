@@ -2,7 +2,6 @@ interface StateI {
   isStaff: boolean
   isSbcStaff: boolean
   roles: string[]
-  accountId: number
 }
 
 export function state (): StateI {
@@ -10,7 +9,6 @@ export function state (): StateI {
     isStaff: null,
     isSbcStaff: null,
     roles: [],
-    accountId: null,
   }
 }
 
@@ -27,31 +25,25 @@ export function state (): StateI {
   setRoles (state: StateI, val: string[]) {
     state.roles = val
   },
-  setAccountId (state: StateI, val: number) {
-    state.accountId = val
-  },
 }
 
 // Use "dispatch" to call an action, eg:
 // this.$store.dispatch('setStaff', true)
 // or use vuex "mapActions" helper.
 export const actions = {
-  setStaff({ commit }, val: boolean) {
+  setStaff ({ commit }, val: boolean) {
     commit('setStaff', val)
   },
-  setSbcStaff({ commit }, val: boolean) {
+  setSbcStaff ({ commit }, val: boolean) {
     commit('setSbcStaff', val)
   },
-  setRoles({ commit }, val: string[]) {
+  setRoles ({ commit }, val: string[]) {
     commit('setRoles', val)
-  },
-  setAccountId({ commit }, val: number) {
-    commit('setAccountId', val)
   },
 }
 
  // Use "getters" to call a getter, eg:
- // this.$store.getters.isStaff()
+ // this.$store.getters.isStaff
  // or use vuex mapGetters() helper.
  export const getters = {
   isStaff (state: StateI): boolean {
@@ -60,10 +52,7 @@ export const actions = {
   isSbcStaff (state: StateI): boolean {
     return state.isSbcStaff
   },
-  getRoles(state: StateI): string[] {
+  getRoles (state: StateI): string[] {
     return state.roles
-  },
-  getAccountId(state: StateI): number {
-    return state.accountId
   },
 }

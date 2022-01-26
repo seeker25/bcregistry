@@ -12,21 +12,30 @@
         <v-icon class="mr-n1 pl-2">mdi-menu-down</v-icon>
       </v-btn>
     </template>
-    <!-- TODO: do we need ":fromLogin" and ":redirectOnLoginSuccess" here? -->
-    <SbcAuthMenu />
+    <SbcAuthMenu
+      :from-login="fromLogin"
+      :redirect-on-login-success="redirectOnLoginSuccess"
+    />
   </v-menu>
 </template>
 
 <script lang="ts">
+import { Component, Prop, Vue } from 'vue-property-decorator'
 import SbcAuthMenu from 'sbc-common-components/src/components/SbcAuthMenu.vue'
 
-export default {
+@Component({
   components: {
-    SbcAuthMenu,
-  },
+    SbcAuthMenu
+  }
+})
+export default class SbcSigninButton extends Vue {
+  @Prop({ default: false })
+  readonly fromLogin: boolean
+
+  @Prop({ default: null })
+  readonly redirectOnLoginSuccess: string
 }
 </script>
-
 
 <style lang="scss" scoped>
 @import '@/assets/scss/theme.scss';

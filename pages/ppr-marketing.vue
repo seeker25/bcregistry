@@ -400,12 +400,14 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue'
 import { SessionStorageKeys } from 'sbc-common-components/src/util/constants'
 import ContactInfo from '~/components/ContactInfoPpr.vue'
 import SbcSigninButton from '~/components/SbcSigninButton.vue'
 import { Routes } from '@/enums'
+import { setLogoutUrl } from '@/utils'
 
-export default {
+export default Vue.extend ({
   components: {
     SbcSigninButton,
     ContactInfo,
@@ -430,7 +432,10 @@ export default {
       return `${Routes.DASHBOARD}`
     },
   },
-}
+  mounted () {
+    setLogoutUrl(this.$config.registryPprMarketing)
+  },
+})
 </script>
 
 <style lang="scss" scoped>

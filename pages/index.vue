@@ -43,14 +43,16 @@
 </template>
 
 <script lang="ts">
+import Vue from 'vue'
 import AccountsFooter from '~/components/AccountsFooter.vue'
 import BCOnlineAccount from '~/components/BCOnlineAccount.vue'
 import BCRegistriesAccount from '~/components/BCRegistriesAccount.vue'
 import DirectAccount from '~/components/DirectAccount.vue'
 import NoAccount from '~/components/NoAccount.vue'
 import ContactInfo from '~/components/ContactInfoBcros.vue'
+import { setLogoutUrl } from '@/utils'
 
-export default {
+export default Vue.extend ({
   components: {
     AccountsFooter,
     BCRegistriesAccount,
@@ -59,7 +61,10 @@ export default {
     NoAccount,
     ContactInfo,
   },
-}
+  mounted () {
+    setLogoutUrl(this.$config.baseURL)
+  },
+})
 </script>
 
 <style lang="scss" scoped>

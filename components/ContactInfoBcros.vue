@@ -49,14 +49,14 @@
 </template>
 
 <script lang="ts">
-export default {
-  data () {
-    return {
-      BCROS_HREF: 'https://www2.gov.bc.ca/gov/content/governments/organizational-structure/' +
-        'ministries-organizations/ministries/citizens-services/bc-registries-online-services',
-      MAILTO_HREF: 'mailto:bcregistries@gov.bc.ca?subject=BC%20Registries%20Support%20Request',
-    }
-  },
+import { Component, Vue } from 'vue-property-decorator'
+
+@Component({})
+export default class ContactInfoBcros extends Vue {
+  readonly BCROS_HREF = 'https://www2.gov.bc.ca/gov/content/governments/organizational-structure/' +
+    'ministries-organizations/ministries/citizens-services/bc-registries-online-services'
+
+  readonly MAILTO_HREF = 'mailto:bcregistries@gov.bc.ca?subject=BC%20Registries%20Support%20Request'
 }
 </script>
 
@@ -80,7 +80,7 @@ export default {
     font-size: $px-20;
   }
 
-  a {
+  a, a:hover {
     color: inherit;
   }
 }

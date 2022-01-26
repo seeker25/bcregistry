@@ -14,7 +14,7 @@ import { Routes } from '@/enums'
  */
 @Component({
   components: {
-    SbcSignin,
+    SbcSignin
   }
 })
 export default class Signin extends Vue {

@@ -21,16 +21,13 @@
 </template>
 
 <script lang="ts">
+import { Component, Prop, Vue } from 'vue-property-decorator'
 import { ProductI } from '@/interfaces'
 
-export default {
-  name: 'UserProduct',
-  props: {
-    product: {
-      type: Object as () => ProductI,
-      default: null
-    }
-  }
+@Component({})
+export default class UserProduct extends Vue {
+  @Prop({ default: null })
+  readonly product: ProductI
 }
 </script>
 

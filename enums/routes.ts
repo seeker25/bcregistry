@@ -4,4 +4,5 @@ export enum Routes {
   PPR_MARKETING = '/ppr-marketing',
   SIGNIN = '/signin',
   SIGNOUT = '/signout',
+  LOGIN = '/login',
 }

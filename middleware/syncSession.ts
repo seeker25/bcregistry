@@ -8,6 +8,7 @@ import { isSigninRoute, isSignoutRoute } from '@/utils'
  */
 export default async function ({ $config, route }) {
   console.info('Starting Keycloak service...')
+
   await KeycloakService.setKeycloakConfigUrl($config.keycloakConfigPath)
 
   // Auto-authenticate user only if they are not trying a login or logout.

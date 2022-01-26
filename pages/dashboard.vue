@@ -7,31 +7,33 @@
 
     <p class="dash-header-info ma-0 pt-3">Access to your BC Registries account product and services</p>
 
-    <h3 v-if="!loadingProducts" class="dash-sub-header">
-      My Products and Services
-      <span class="font-weight-regular">({{ subscribedProducts.length }})</span>
-    </h3>
+    <template v-if="!loadingProducts">
+      <h3 class="dash-sub-header">
+        My Products and Services
+        <span class="font-weight-regular">({{ subscribedProducts.length }})</span>
+      </h3>
 
-    <v-row v-if="!loadingProducts" no-gutters>
-      <div class="col-md-8 col-sm-12">
-        <UserProduct
-          v-for="product in subscribedProducts"
-          :key="product.code"
-          class="mt-5"
-          :product="product"
-        />
-      </div>
+      <v-row v-if="subscribedProducts.length > 0" no-gutters>
+        <div class="col-md-8 col-sm-12">
+          <UserProduct
+            v-for="product in subscribedProducts"
+            :key="product.code"
+            class="mt-5"
+            :product="product"
+          />
+        </div>
 
-      <div class="pl-6 col-md-4 col-sm-12">
-        <v-container fluid rounded class="dash-container-info mt-5 white">
-          <h4>Add Product and Services</h4>
-          <p class="ma-0 pt-3">
-            To request access to additional products and services, contact the account
-            Administrator of your BC Registries account.
-          </p>
-        </v-container>
-      </div>
-    </v-row>
+        <div class="pl-6 col-md-4 col-sm-12">
+          <v-container fluid rounded class="dash-container-info mt-5 white">
+            <h4>Add Product and Services</h4>
+            <p class="ma-0 pt-3">
+              To request access to additional products and services, contact the account
+              Administrator of your BC Registries account.
+            </p>
+          </v-container>
+        </div>
+      </v-row>
+    </template>
   </v-container>
 </template>
 
@@ -41,7 +43,8 @@ import { SessionStorageKeys } from 'sbc-common-components/src/util/constants'
 import { mapGetters } from 'vuex'
 import UserProduct from '@/components/UserProduct.vue'
 import { ProductCode, ProductStatus } from '@/enums'
-import { fetchAccountProducts, fetchOrganization, getKeycloakRoles, getProductInfo, sleep } from '@/utils'
+import { fetchAccountProducts, fetchOrganization, getKeycloakRoles, getProductInfo, sleep,
+  setLogoutUrl } from '@/utils'
 
 export default Vue.extend ({
   components: {
@@ -80,14 +83,16 @@ export default Vue.extend ({
   data () {
     return {
       getProductInfo, // for use in template
-      loadingProducts: false,
+      loadingProducts: true,
       subscribedProducts: [],
     }
   },
   computed: {
-    ...mapGetters(['isSbcStaff', 'getRoles', 'getAccountId']),
+    ...mapGetters(['isSbcStaff', 'getRoles']),
   },
   async mounted () {
+    setLogoutUrl(this.$config.registryLogin)
+
     // get account id from object in session storage
     // wait up to 10 sec for current account to be synced (typically by SbcHeader)
     this.loadingProducts = true
@@ -99,49 +104,55 @@ export default Vue.extend ({
       if (accountId) break
       await sleep(100)
     }
-    this.$store.commit('setAccountId', accountId)
 
-    // check if user is SBC staff
-    let isSbcStaff: boolean
-    if (this.getRoles?.includes('gov_account_user')) {
-      try {
-        const org = await fetchOrganization(accountId)
-        isSbcStaff = org?.branchName?.includes('Service BC') || false
-      } catch {
-        isSbcStaff = false
+    // fetch data only if we have account id
+    if (accountId) {
+      // check if user is SBC staff
+      let isSbcStaff: boolean
+      if (this.getRoles?.includes('gov_account_user')) {
+        try {
+          const org = await fetchOrganization(accountId)
+          isSbcStaff = org?.branchName?.includes('Service BC') || false
+        } catch {
+          isSbcStaff = false
+        }
+      }
+      this.$store.commit('setSbcStaff', isSbcStaff)
+
+      let products = []
+      if (this.isSbcStaff) {
+        // static products list for SBC staff
+        products = [
+          {
+            code: ProductCode.BUSINESS,
+            subscriptionStatus: ProductStatus.ACTIVE
+          },
+          {
+            code: ProductCode.PPR,
+            subscriptionStatus: ProductStatus.ACTIVE
+          },
+        ]
+      } else {
+        // get products list from API
+        products = await fetchAccountProducts(accountId)
+      }
+
+      const currentProducts = products.filter(
+        product => product.subscriptionStatus === ProductStatus.ACTIVE
+      )
+
+      // only show products with no placeholder
+      for (let i = 0; i < currentProducts.length; i++) {
+        const thisProduct = getProductInfo(this.$config, currentProducts[i].code)
+        if (thisProduct.title !== 'placeholder_title') {
+          this.subscribedProducts.push(thisProduct)
+        }
       }
     }
-    this.$store.commit('setSbcStaff', isSbcStaff)
 
-    let products = []
-    if (this.isSbcStaff) {
-      // static products list for SBC staff
-      products = [
-        {
-          code: ProductCode.BUSINESS,
-          subscriptionStatus: ProductStatus.ACTIVE
-        },
-        {
-          code: ProductCode.PPR,
-          subscriptionStatus: ProductStatus.ACTIVE
-        },
-      ]
-    } else {
-      // get products list from API
-      products = await fetchAccountProducts(this.getAccountId)
-    }
-    const currentProducts = products.filter(
-      product => product.subscriptionStatus === ProductStatus.ACTIVE)
-    // only show products with no placeholder
-    for (let i = 0; i < currentProducts.length; i++) {
-      const thisProduct = getProductInfo(this.$config, currentProducts[i].code)
-      if (thisProduct.title !== 'placeholder_title') {
-        this.subscribedProducts.push(thisProduct)
-      }
-    }
-    // wait a short amount so it doesn't look glitchy when products come back immediately
+    // wait 250ms so it doesn't look glitchy if products come back immediately
     setTimeout(() => { this.loadingProducts = false }, 250)
-  }
+  },
 })
 </script>
 
