@@ -30,6 +30,7 @@ export default {
   plugins: [
     '~/plugins/printNameVersion.ts',
     '~/plugins/setSessionStorage.ts',
+    '~/plugins/initLaunchDarkly.ts',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -92,47 +93,7 @@ export default {
   },
 
   router: {
-    extendRoutes(routes) {
-      // NEEDED FOR SIGNIN FROM PPR-MARKETING PAGE:
-      routes.push({
-        path: '/ppr-marketing/signin/bcsc',
-        component: '~/pages/signin/bcsc.vue',
-      })
-      routes.push({
-        path: '/ppr-marketing/signin/bceid',
-        component: '~/pages/signin/bceid.vue',
-      })
-      routes.push({
-        path: '/ppr-marketing/signin/idir',
-        component: '~/pages/signin/idir.vue',
-      })
-
-      // NEEDED FOR SIGNIN FROM LOGIN PAGE:
-      routes.push({
-        path: '/login/signin/bcsc',
-        component: '~/pages/signin/bcsc.vue',
-      })
-      routes.push({
-        path: '/login/signin/bceid',
-        component: '~/pages/signin/bceid.vue',
-      })
-      routes.push({
-        path: '/login/signin/idir',
-        component: '~/pages/signin/idir.vue',
-      })
-
-      // NEEDED FOR SIGNOUT FROM PPR-MARKETING PAGE:
-      routes.push({
-        path: '/ppr-marketing/signout',
-        component: '~/pages/signout.vue',
-      })
-
-      // NEEDED FOR SIGNOUT FROM DASHBOARD PAGE:
-      routes.push({
-        path: '/dashboard/signout',
-        component: '~/pages/signout.vue',
-      })
-    },
+    middleware: 'handleRedirects',
   },
 
   // Populate config variables...
@@ -152,6 +113,7 @@ export default {
     regAccountCreateURL: process.env.REGISTRY_ACCOUNT_CREATE_URL,
     authAPIURL: process.env.AUTH_API_URL,
     statusAPIURL: process.env.STATUS_API_URL,
+    ldClientId: process.env.AUTH_LD_CLIENT_ID,
     // as composite variables:
     keycloakConfigPath: process.env.BCROS_BASE_URL + process.env.KEYCLOAK_CONFIG_PATH
       + `?${new Date().getTime()}`,

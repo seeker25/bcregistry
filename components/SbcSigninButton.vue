@@ -12,15 +12,12 @@
         <v-icon class="mr-n1 pl-2">mdi-menu-down</v-icon>
       </v-btn>
     </template>
-    <SbcAuthMenu
-      :from-login="fromLogin"
-      :redirect-on-login-success="redirectOnLoginSuccess"
-    />
+    <SbcAuthMenu />
   </v-menu>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
+import { Component, Vue } from 'vue-property-decorator'
 import SbcAuthMenu from 'sbc-common-components/src/components/SbcAuthMenu.vue'
 
 @Component({
@@ -28,13 +25,7 @@ import SbcAuthMenu from 'sbc-common-components/src/components/SbcAuthMenu.vue'
     SbcAuthMenu
   }
 })
-export default class SbcSigninButton extends Vue {
-  @Prop({ default: false })
-  readonly fromLogin: boolean
-
-  @Prop({ default: null })
-  readonly redirectOnLoginSuccess: string
-}
+export default class SbcSigninButton extends Vue {}
 </script>
 
 <style lang="scss" scoped>

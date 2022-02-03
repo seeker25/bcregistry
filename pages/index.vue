@@ -50,8 +50,11 @@ import BCRegistriesAccount from '~/components/BCRegistriesAccount.vue'
 import DirectAccount from '~/components/DirectAccount.vue'
 import NoAccount from '~/components/NoAccount.vue'
 import ContactInfo from '~/components/ContactInfoBcros.vue'
-import { setLogoutUrl } from '@/utils'
+import { setLoginUrl, setLogoutUrl } from '@/utils'
 
+/*
+ * This is the BCROS marketing page.
+ */
 export default Vue.extend ({
   components: {
     AccountsFooter,
@@ -62,6 +65,9 @@ export default Vue.extend ({
     ContactInfo,
   },
   mounted () {
+    // if user logs in from this page, go to dashboard
+    setLoginUrl(this.$config.registryDashboard)
+    // if user logs out from this page, return here
     setLogoutUrl(this.$config.baseURL)
   },
 })

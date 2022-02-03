@@ -51,10 +51,10 @@ export default Vue.extend ({
     UserProduct,
   },
   asyncData ({ $config, redirect, store }) {
-    // if user is not logged in, redirect to home page
+    // if user is not logged in, redirect to login page
     const token = sessionStorage.getItem(SessionStorageKeys.KeyCloakToken)
     if (!token) {
-      return redirect($config.baseURL)
+      return redirect($config.registryLogin)
     }
 
     // get roles
@@ -91,6 +91,7 @@ export default Vue.extend ({
     ...mapGetters(['isSbcStaff', 'getRoles']),
   },
   async mounted () {
+    // if user logs out from this page, go to login page
     setLogoutUrl(this.$config.registryLogin)
 
     // get account id from object in session storage

@@ -41,7 +41,7 @@
             <v-btn
               large
               class="button-white-on-blue"
-              :to="dashboard"
+              :to="Routes.DASHBOARD"
             >
               Go to BC Registries Dashboard
             </v-btn>
@@ -405,8 +405,11 @@ import { SessionStorageKeys } from 'sbc-common-components/src/util/constants'
 import ContactInfo from '~/components/ContactInfoPpr.vue'
 import SbcSigninButton from '~/components/SbcSigninButton.vue'
 import { Routes } from '@/enums'
-import { setLogoutUrl } from '@/utils'
+import { setLoginUrl, setLogoutUrl } from '@/utils'
 
+/*
+ * This is the PPR marketing page.
+ */
 export default Vue.extend ({
   components: {
     SbcSigninButton,
@@ -418,6 +421,7 @@ export default Vue.extend ({
         'bc-registry-services-personal-property-registry',
       VEH_HIST_RPTS_HREF: 'https://www.icbc.com/vehicle-registration/buy-vehicle/buy-a-used-vehicle/' +
         'Pages/Vehicle-history-reports.aspx',
+      Routes, // for use in template
     }
   },
   head: {
@@ -428,11 +432,11 @@ export default Vue.extend ({
       const token = sessionStorage.getItem(SessionStorageKeys.KeyCloakToken)
       return !!token
     },
-    dashboard (): string {
-      return `${Routes.DASHBOARD}`
-    },
   },
   mounted () {
+    // if user logs in from this page, go to dashboard
+    setLoginUrl(this.$config.registryDashboard)
+    // if user logs out from this page, return here
     setLogoutUrl(this.$config.registryPprMarketing)
   },
 })

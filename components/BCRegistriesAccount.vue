@@ -39,7 +39,7 @@
           <div>
             <a
               class="link"
-              :href="$config.businessURL"
+              :href="appendAccountId($config.businessURL)"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -68,7 +68,7 @@
           <div>
             <a
               class="link"
-              :href="$config.nameRequestURL"
+              :href="appendAccountId($config.nameRequestURL)"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -103,7 +103,7 @@
           <div>
             <a
               class="link"
-              :href="$config.willsURL"
+              :href="appendAccountId($config.willsURL)"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -189,6 +189,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import { SessionStorageKeys } from 'sbc-common-components/src/util/constants'
+import { appendAccountId } from 'sbc-common-components/src/util/common-util'
 import SbcSigninButton from '~/components/SbcSigninButton.vue'
 import { Routes } from '@/enums'
 
@@ -198,6 +199,8 @@ import { Routes } from '@/enums'
   }
 })
 export default class BCRegistriesAccount extends Vue {
+  readonly appendAccountId = appendAccountId // for use in template
+
   get isLoggedIn (): boolean {
     const token = sessionStorage.getItem(SessionStorageKeys.KeyCloakToken)
     return !!token

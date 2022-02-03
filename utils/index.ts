@@ -1,5 +1,6 @@
 export * from './auth-api-helpers'
 export * from './axios-helper'
+export * from './feature-flags'
 export * from './jwt-helpers'
 export * from './misc-helpers'
 export * from './user-product-helper'

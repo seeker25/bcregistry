@@ -1,25 +1,27 @@
 <template>
-  <SbcSignout :redirect-url="logoutUrl" />
+  <LoadingScreen :is-loading="true" />
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import SbcSignout from 'sbc-common-components/src/components/SbcSignout.vue'
+import KeycloakService from 'sbc-common-components/src/services/keycloak.services'
+import LoadingScreen from 'sbc-common-components/src/components/LoadingScreen.vue'
 import { getLogoutUrl } from '@/utils'
 
 /**
- * When the user clicks "Log out", they are are redirected to THIS page, which
- * renders the SbcSignout component that actually performs the signout process.
+ * When the user clicks the "Log out" button, they are are routed to this page,
+ * which performs the signout process.
  */
 @Component({
   components: {
-    SbcSignout
+    LoadingScreen
   }
 })
 export default class Signout extends Vue {
-  /** The URL to redirect to when the signout process completes. */
-  get logoutUrl (): string {
-    return getLogoutUrl() || this.$config.registryLogin
+  private async mounted () {
+    // get URL to redirect to when the signout process completes
+    const redirectUrl = getLogoutUrl() || this.$config.registryLogin
+    await KeycloakService.logout(decodeURIComponent(redirectUrl))
   }
 }
 </script>

@@ -19,9 +19,8 @@ export default {
     SbcHeader,
     Breadcrumb,
   },
-  // run "syncSession" before rendering any pages
-  // NB: cannot be run as a plugin
-  middleware: ['syncSession'],
+  // initialize Keycloak before rendering any pages
+  middleware: ['initKeycloak'],
   computed: {
     isShowBreadcrumb (): boolean {
       return !isLoginRoute()
