@@ -93,7 +93,50 @@ export default {
   },
 
   router: {
-    middleware: 'handleRedirects',
+    // Ideally, these extended routes would be handled in a middleware
+    // function that handles the appropriate navigations/redirects, but
+    // that doesn't seem to work when deployed.
+    extendRoutes(routes) {
+      // FOR SIGNIN FROM PPR-MARKETING PAGE:
+      routes.push({
+        path: '/ppr-marketing/signin/bcsc',
+        component: '~/pages/signin/bcsc.vue',
+      })
+      routes.push({
+        path: '/ppr-marketing/signin/bceid',
+        component: '~/pages/signin/bceid.vue',
+      })
+      routes.push({
+        path: '/ppr-marketing/signin/idir',
+        component: '~/pages/signin/idir.vue',
+      })
+
+       // FOR SIGNIN FROM LOGIN PAGE:
+       routes.push({
+        path: '/login/signin/bcsc',
+        component: '~/pages/signin/bcsc.vue',
+      })
+      routes.push({
+        path: '/login/signin/bceid',
+        component: '~/pages/signin/bceid.vue',
+      })
+      routes.push({
+        path: '/login/signin/idir',
+        component: '~/pages/signin/idir.vue',
+      })
+
+      // FOR SIGNOUT FROM PPR-MARKETING PAGE:
+      routes.push({
+        path: '/ppr-marketing/signout',
+        component: '~/pages/signout.vue',
+      })
+
+      // FOR SIGNOUT FROM DASHBOARD PAGE:
+      routes.push({
+        path: '/dashboard/signout',
+        component: '~/pages/signout.vue',
+      })
+    },
   },
 
   // Populate config variables...
