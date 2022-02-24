@@ -117,8 +117,9 @@
       <!-- Personal Property Registry -->
       <v-card elevation="2">
         <v-card-title>Personal Property Registry</v-card-title>
-        <div v-if="showNewFlag" class="card-title-badge">New</div>
-
+          <span v-if="showNewFlag" class="card-title-badge-container">
+            <div class="card-title-badge font-weight-bold pt-2">NEW</div>
+          </span>
         <v-card-text>
           <p>
             Record security interests and liens against
