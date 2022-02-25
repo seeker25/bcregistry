@@ -117,7 +117,9 @@
       <!-- Personal Property Registry -->
       <v-card elevation="2">
         <v-card-title>Personal Property Registry</v-card-title>
-
+          <span v-if="showNewFlag" class="card-title-badge-container">
+            <div class="card-title-badge font-weight-bold pt-2">NEW</div>
+          </span>
         <v-card-text>
           <p>
             Record security interests and liens against
@@ -192,6 +194,7 @@ import { SessionStorageKeys } from 'sbc-common-components/src/util/constants'
 import { appendAccountId } from 'sbc-common-components/src/util/common-util'
 import SbcSigninButton from '~/components/SbcSigninButton.vue'
 import { Routes } from '@/enums'
+import { getFeatureFlag } from '~/utils'
 
 @Component({
   components: {
@@ -204,6 +207,10 @@ export default class BCRegistriesAccount extends Vue {
   get isLoggedIn (): boolean {
     const token = sessionStorage.getItem(SessionStorageKeys.KeyCloakToken)
     return !!token
+  }
+
+  get showNewFlag (): boolean {
+    return getFeatureFlag('bcregistry-ui-ppr-new-chip')
   }
 
   get dashboard (): string {
