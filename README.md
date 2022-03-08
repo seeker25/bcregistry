@@ -12,7 +12,8 @@ nvm install 16
 ```bash
 # install dependencies
 $ npm install
-
+```
+```bash
 # serve with hot reload at localhost:8080
 # NB: supports only 2 concurrent browser sessions, so more sessions may display strangely or not at all
 $ npm run dev
