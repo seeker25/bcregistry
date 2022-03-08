@@ -17,7 +17,8 @@ $ npm install
 # serve with hot reload at localhost:8080
 # NB: supports only 2 concurrent browser sessions, so more sessions may display strangely or not at all
 $ npm run dev
-
+```
+```bash
 # build for production and launch server
 $ npm run build
 $ npm run start
