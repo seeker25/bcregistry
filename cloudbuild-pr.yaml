@@ -8,6 +8,23 @@ steps:
   #
   - name: node:16.14.2
     entrypoint: npm
+    env:
+    - 'BCROS_BASE_URL=$_BCROS_BASE_URL'
+    - 'AUTH_URL=$_AUTH_URL'
+    - 'NAME_REQUEST_URL=$_NAME_REQUEST_URL'
+    - 'COLIN_URL=$_COLIN_URL'
+    - 'ONESTOP_URL=$_ONESTOP_URL'
+    - 'SOCIETIES_URL=$_SOCIETIES_URL'
+    - 'PPR_URL=$_PPR_URL'
+    - 'WILLS_URL=$_WILLS_URL'
+    - 'BCOL_URL=$_BCOL_URL'
+    - 'REGISTRY_ACCOUNT_CREATE_URL=$_REGISTRY_ACCOUNT_CREATE_URL'
+    - 'KEYCLOAK_CONFIG_PATH=$_KEYCLOAK_CONFIG_PATH'
+    - 'AUTH_API_URL=$_AUTH_API_URL'
+    - 'STATUS_API_URL=$_STATUS_API_URL'
+    - 'ADDRESSCHANGE_URL=$_ADDRESSCHANGE_URL'
+    - 'BUSINESS_URL=$_BUSINESS_URL'
+    - 'AUTH_LD_CLIENT_ID=$_AUTH_LD_CLIENT_ID'
     args: ['--openssl-legacy-provider', 'run', 'generate']
   #
   # Deploy to firebase channel, using the PR #
@@ -39,4 +56,5 @@ availableSecrets:
   secretManager:
   - versionName: projects/$PROJECT_ID/secrets/github-appkey/versions/latest
     env: 'TOKEN'
-
+options:
+    dynamic_substitutions: true
