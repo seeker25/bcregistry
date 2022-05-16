@@ -109,7 +109,7 @@ export default Vue.extend ({
     // fetch data only if we have account id
     if (accountId) {
       // check if user is SBC staff
-      let isSbcStaff: boolean
+      let isSbcStaff = false
       if (this.getRoles?.includes('gov_account_user')) {
         try {
           const org = await fetchOrganization(accountId)
