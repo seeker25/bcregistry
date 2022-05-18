@@ -83,8 +83,8 @@
       <v-card elevation="2">
         <v-card-title>
           <span>Wills Registry</span>
-          <span class="card-title-badge-container">
-            <div class="card-title-badge">COMING SOON</div>
+          <span v-if="showNewFlagWills" class="card-title-badge-container">
+            <div class="card-title-badge font-weight-bold pt-2">NEW</div>
           </span>
         </v-card-title>
 
@@ -117,7 +117,7 @@
       <!-- Personal Property Registry -->
       <v-card elevation="2">
         <v-card-title>Personal Property Registry</v-card-title>
-          <span v-if="showNewFlag" class="card-title-badge-container">
+          <span v-if="showNewFlagPPR" class="card-title-badge-container">
             <div class="card-title-badge font-weight-bold pt-2">NEW</div>
           </span>
         <v-card-text>
@@ -149,7 +149,7 @@
       <!-- Rural Property Tax -->
       <v-card elevation="2">
         <v-card-title>Rural Property Tax</v-card-title>
-          <span v-if="showNewFlag" class="card-title-badge-container">
+          <span v-if="showNewFlagRPT" class="card-title-badge-container">
             <div class="card-title-badge font-weight-bold pt-2">NEW</div>
           </span>
         <v-card-text>
@@ -162,9 +162,9 @@
           </p>
 
           <ul>
-            <li>Search a property's tax amounts over the last 10 years</li>
-            <li>Search a property's tax-paid status</li>
-            <li>Search a property's legal description</li>
+            <li>Search a property's tax amounts over the last 10 years.</li>
+            <li>Search a property's tax-paid status.</li>
+            <li>Search a property's legal description.</li>
           </ul>
 
           <div>
@@ -244,7 +244,15 @@ export default class BCRegistriesAccount extends Vue {
     return !!token
   }
 
-  get showNewFlag (): boolean {
+  get showNewFlagWills (): boolean {
+    return getFeatureFlag('bcregistry-ui-wills-new-chip')
+  }
+
+  get showNewFlagRPT (): boolean {
+    return getFeatureFlag('bcregistry-ui-rpt-new-chip')
+  }
+
+  get showNewFlagPPR (): boolean {
     return getFeatureFlag('bcregistry-ui-ppr-new-chip')
   }
 
