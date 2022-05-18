@@ -83,11 +83,10 @@
       <v-card elevation="2">
         <v-card-title>
           <span>Wills Registry</span>
-          <span v-if="showNewFlagWills" class="card-title-badge-container">
-            <div class="card-title-badge font-weight-bold pt-2">NEW</div>
-          </span>
         </v-card-title>
-
+        <span v-if="showNewFlagWills" class="card-title-badge-container">
+          <div class="card-title-badge font-weight-bold pt-2">NEW</div>
+        </span>
         <v-card-text>
           <p>
             <span class="font-weight-bold">Coming soon</span> to BC
@@ -117,9 +116,9 @@
       <!-- Personal Property Registry -->
       <v-card elevation="2">
         <v-card-title>Personal Property Registry</v-card-title>
-          <span v-if="showNewFlagPPR" class="card-title-badge-container">
-            <div class="card-title-badge font-weight-bold pt-2">NEW</div>
-          </span>
+        <span v-if="showNewFlagPPR" class="card-title-badge-container">
+          <div class="card-title-badge font-weight-bold pt-2">NEW</div>
+        </span>
         <v-card-text>
           <p>
             Record security interests and liens against
@@ -149,9 +148,9 @@
       <!-- Rural Property Tax -->
       <v-card elevation="2">
         <v-card-title>Rural Property Tax</v-card-title>
-          <span v-if="showNewFlagRPT" class="card-title-badge-container">
-            <div class="card-title-badge font-weight-bold pt-2">NEW</div>
-          </span>
+        <span v-if="showNewFlagRPT" class="card-title-badge-container">
+          <div class="card-title-badge font-weight-bold pt-2">NEW</div>
+        </span>
         <v-card-text>
           <p>
             Search property tax records for rural properties or
