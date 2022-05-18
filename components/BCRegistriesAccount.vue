@@ -89,8 +89,7 @@
         </span>
         <v-card-text>
           <p>
-            <span class="font-weight-bold">Coming soon</span> to BC
-            Registries account, Wills Registry allows solicitors, notaries
+            Wills Registry allows solicitors, notaries
             and title search companies to do the following:
           </p>
 
