@@ -88,7 +88,7 @@
         <v-card-text>
           <p>
             File a Wills Notice or search for an existing Wills Notice.
-            <span class="font-weight-bold"> Wills Registry has been moved to the BC Registries account.</span>
+            <span class="font-weight-bold">Wills Registry has been moved to the BC Registries account.</span>
           </p>
         </v-card-text>
       </v-card>
@@ -117,7 +117,7 @@
         <v-card-text>
           <p>
             Search property tax records for rural properties in B.C.
-            <span class="font-weight-bold"> Rural Property Tax has been moved to the BC Registries account.</span>
+            <span class="font-weight-bold">Rural Property Tax has been moved to the BC Registries account.</span>
           </p>
         </v-card-text>
       </v-card>
