@@ -80,15 +80,16 @@
       </v-card>
 
       <!-- Wills Registry -->
-      <v-card elevation="2">
-        <v-card-title>Wills Registry</v-card-title>
+      <v-card elevation="2" class="disabled">
+        <v-card-title>Wills Registry
           <span class="card-title-badge-container">
             <div class="card-title-badge">MOVED</div>
           </span>
+        </v-card-title>
         <v-card-text>
           <p>
             File a Wills Notice or search for an existing Wills Notice.
-            <span class="font-weight-bold">Wills Registry has been moved to the BC Registries account.</span>
+            The Wills Registry has been moved to the BC Registries account.
           </p>
         </v-card-text>
       </v-card>
@@ -117,7 +118,7 @@
         <v-card-text>
           <p>
             Search property tax records for rural properties in B.C.
-            <span class="font-weight-bold">Rural Property Tax has been moved to the BC Registries account.</span>
+            Rural Property Tax has been moved to the BC Registries account.
           </p>
         </v-card-text>
       </v-card>
