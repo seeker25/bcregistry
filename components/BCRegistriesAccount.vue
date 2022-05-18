@@ -145,6 +145,41 @@
           </div>
         </v-card-text>
       </v-card>
+
+      <!-- Rural Property Tax -->
+      <v-card elevation="2">
+        <v-card-title>Rural Property Tax</v-card-title>
+          <span v-if="showNewFlag" class="card-title-badge-container">
+            <div class="card-title-badge font-weight-bold pt-2">NEW</div>
+          </span>
+        <v-card-text>
+          <p>
+            Search property tax records for rural properties or
+            leased crown land in B.C., excluding municipal
+            properties and Indigenous lands. Charges levied
+            by regional or improvement districts like water
+            usage are not shown. Here you can:
+          </p>
+
+          <ul>
+            <li>Search a property's tax amounts over the last 10 years</li>
+            <li>Search a property's tax-paid status</li>
+            <li>Search a property's legal description</li>
+          </ul>
+
+          <div>
+            <a
+              class="link"
+              :href="$config.rptURL"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Go to Rural Property Tax</span>
+            </a>
+            <v-icon dense color="primary">mdi-open-in-new</v-icon>
+          </div>
+        </v-card-text>
+      </v-card>
     </div>
 
     <div class="payment py-7">

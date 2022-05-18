@@ -105,8 +105,13 @@
       </v-card>
 
       <!-- Rural Property Tax -->
-      <v-card elevation="2">
-        <v-card-title>Rural Property Tax</v-card-title>
+      <v-card elevation="2" class="disabled">
+        <v-card-title>
+          <span> Rural Property Tax</span>
+          <span class="card-title-badge-container">
+            <div class="card-title-badge">MOVED</div>
+          </span>
+        </v-card-title>
 
         <v-card-text>
           <p>

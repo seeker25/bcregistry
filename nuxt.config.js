@@ -152,6 +152,7 @@ export default {
     pprURL: process.env.PPR_URL,
     willsURL: process.env.WILLS_URL,
     bcolURL: process.env.BCOL_URL,
+    rptURL: process.env.RPT_URL,
     addressChangeURL: process.env.ADDRESSCHANGE_URL,
     regAccountCreateURL: process.env.REGISTRY_ACCOUNT_CREATE_URL,
     authAPIURL: process.env.AUTH_API_URL,
