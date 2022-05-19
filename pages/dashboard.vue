@@ -44,8 +44,8 @@
                 online videos, and downloadable quick guides.
               </p>
               <v-row no-gutters class="align-bottom pt-7">
-                <span class="primary--text font-weight-bold">Go to the Registry Application Help Page</span>
-                <v-icon color="primary" small right>mdi-open-in-new</v-icon>
+                <span class="appBlue--text font-weight-bold">Go to the Registry Application Help Page</span>
+                <v-icon color="appBlue" small right>mdi-open-in-new</v-icon>
               </v-row>
             </v-container>
           </a>
@@ -205,6 +205,10 @@ export default Vue.extend ({
 
 .service-container {
   cursor: pointer;
+
+  span {
+    font-size: $px-14;
+  }
 
   &:hover {
     box-shadow: 1px 1px 6px 0px $gray6;

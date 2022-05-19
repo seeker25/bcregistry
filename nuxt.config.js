@@ -76,6 +76,7 @@ export default {
           success: colors.green.accent3,
           background: '#f1f3f5', // same as $gray1
           gray9: '#212529', // same as $gray9
+          appBlue:'#1669BB'
         },
         dark: {
           primary: '#1a5a96', // same as $BCgovLink
@@ -87,6 +88,7 @@ export default {
           success: colors.green.accent3,
           background: '#f1f3f5', // same as $gray1
           gray9: '#212529', // same as $gray9
+          appBlue:'#1669BB'
         },
       },
     },
