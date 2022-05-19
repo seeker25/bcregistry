@@ -7,7 +7,9 @@ declare const window: any
  * Default flag values when LD is not available.
  */
 const defaultFlagSet: LDFlagSet = {
-  'bcregistry-ui-ppr-new-chip': true
+  'bcregistry-ui-ppr-new-chip': true,
+  'bcregistry-ui-rpt-new-chip': true,
+  'bcregistry-ui-wills-new-chip': true
 }
 
 /**
@@ -76,5 +78,6 @@ export async function updateLdUser (
  * @returns the flag value/variation, or undefined if the flag is not found
  */
 export function getFeatureFlag (name: string): any {
+  debugger
   return ldClient ? ldClient.variation(name) : defaultFlagSet[name]
 }
