@@ -152,17 +152,14 @@
         </span>
         <v-card-text>
           <p>
-            Search property tax records for rural properties or
-            leased crown land in B.C., excluding municipal
-            properties and Indigenous lands. Charges levied
-            by regional or improvement districts like water
-            usage are not shown. Here you can:
+            Search property tax records for rural properties or leased crown land in B.C.
+            (excluding municipal properties and Indigenous lands). Here you can find the following for a property:
           </p>
 
           <ul>
-            <li>Search a property's tax amounts over the last 10 years.</li>
-            <li>Search a property's tax-paid status.</li>
-            <li>Search a property's legal description.</li>
+            <li>Tax amounts over the last 10 years.</li>
+            <li>Tax-paid status.</li>
+            <li>Legal description.</li>
           </ul>
 
           <div>
