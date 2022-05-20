@@ -240,15 +240,15 @@ export default class BCRegistriesAccount extends Vue {
   }
 
   get showNewFlagWills (): boolean {
-    return getFeatureFlag('bcregistry-ui-wills-new-chip')
+    return getFeatureFlag('bcregistry-ui-wills-new-chip') as boolean
   }
 
   get showNewFlagRPT (): boolean {
-    return getFeatureFlag('bcregistry-ui-rpt-new-chip')
+    return getFeatureFlag('bcregistry-ui-rpt-new-chip') as boolean
   }
 
   get showNewFlagPPR (): boolean {
-    return getFeatureFlag('bcregistry-ui-ppr-new-chip')
+    return getFeatureFlag('bcregistry-ui-ppr-new-chip') as boolean
   }
 
   get dashboard (): string {
