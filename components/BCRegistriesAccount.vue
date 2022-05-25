@@ -144,9 +144,9 @@
         </v-card-text>
       </v-card>
 
-      <!-- Rural Property Tax -->
+      <!-- Rural Property Tax Search -->
       <v-card elevation="2">
-        <v-card-title>Rural Property Tax</v-card-title>
+        <v-card-title>Rural Property Tax Search</v-card-title>
         <span v-if="showNewFlagRPT" class="card-title-badge-container">
           <div class="card-title-badge font-weight-bold pt-2">NEW</div>
         </span>
@@ -169,7 +169,7 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span>Learn more about Rural Property Tax</span>
+              <span>Learn more about Rural Property Tax Search</span>
             </a>
             <v-icon dense color="primary">mdi-open-in-new</v-icon>
           </div>

@@ -106,10 +106,10 @@
         </v-card-text>
       </v-card>
 
-      <!-- Rural Property Tax -->
+      <!-- Rural Property Tax Search -->
       <v-card elevation="2" class="disabled">
         <v-card-title>
-          <span> Rural Property Tax</span>
+          <span> Rural Property Tax Search</span>
           <span class="card-title-badge-container">
             <div class="card-title-badge">MOVED</div>
           </span>
@@ -118,7 +118,7 @@
         <v-card-text>
           <p>
             Search property tax records for rural properties in B.C.
-            Rural Property Tax has been moved to the BC Registries account.
+            Rural Property Tax Search has been moved to the BC Registries account.
           </p>
         </v-card-text>
       </v-card>
