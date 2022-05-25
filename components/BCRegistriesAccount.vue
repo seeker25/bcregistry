@@ -105,7 +105,7 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span>Go to Wills Registry</span>
+              <span>Learn more about Wills Registry</span>
             </a>
             <v-icon dense color="primary">mdi-open-in-new</v-icon>
           </div>
@@ -169,7 +169,7 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span>Go to Rural Property Tax</span>
+              <span>Learn more about Rural Property Tax</span>
             </a>
             <v-icon dense color="primary">mdi-open-in-new</v-icon>
           </div>
