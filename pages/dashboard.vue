@@ -140,17 +140,25 @@ export default Vue.extend ({
 
       let products = []
       if (this.isSbcStaff) {
-        // static products list for SBC staff
-        products = [
-          {
-            code: ProductCode.BUSINESS,
-            subscriptionStatus: ProductStatus.ACTIVE
-          },
-          {
-            code: ProductCode.PPR,
-            subscriptionStatus: ProductStatus.ACTIVE
-          },
-        ]
+          // static products list for SBC staff
+          products = [
+            {
+              code: ProductCode.BUSINESS,
+              subscriptionStatus: ProductStatus.ACTIVE
+            },
+            {
+              code: ProductCode.PPR,
+              subscriptionStatus: ProductStatus.ACTIVE
+            },
+            {
+              code: ProductCode.RPT,
+              subscriptionStatus: ProductStatus.ACTIVE
+            },
+            {
+              code: ProductCode.VS,
+              subscriptionStatus: ProductStatus.ACTIVE
+            }
+          ]
       } else {
         // get products list from API
         products = await fetchAccountProducts(accountId)

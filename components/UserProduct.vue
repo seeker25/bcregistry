@@ -49,7 +49,7 @@ export default class UserProduct extends Vue {
   border-left: 3px solid transparent;
   cursor: pointer;
   max-width: none;
-  padding: 30px;
+  padding: 24px;
 
   &:hover {
     border-left: 3px solid $primary-blue !important;

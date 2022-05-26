@@ -7,7 +7,9 @@ declare const window: any
  * Default flag values when LD is not available.
  */
 const defaultFlagSet: LDFlagSet = {
-  'bcregistry-ui-ppr-new-chip': true
+  'bcregistry-ui-ppr-new-chip': true,
+  'bcregistry-ui-rpt-new-chip': true,
+  'bcregistry-ui-wills-new-chip': true
 }
 
 /**

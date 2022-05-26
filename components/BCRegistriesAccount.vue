@@ -83,15 +83,13 @@
       <v-card elevation="2">
         <v-card-title>
           <span>Wills Registry</span>
-          <span class="card-title-badge-container">
-            <div class="card-title-badge">COMING SOON</div>
-          </span>
         </v-card-title>
-
+        <span v-if="showNewFlagWills" class="card-title-badge-container">
+          <div class="card-title-badge font-weight-bold pt-2">NEW</div>
+        </span>
         <v-card-text>
           <p>
-            <span class="font-weight-bold">Coming soon</span> to BC
-            Registries account, Wills Registry allows solicitors, notaries
+            Wills Registry allows solicitors, notaries
             and title search companies to do the following:
           </p>
 
@@ -107,7 +105,7 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span>Go to Wills Registry</span>
+              <span>Learn more about Wills Registry</span>
             </a>
             <v-icon dense color="primary">mdi-open-in-new</v-icon>
           </div>
@@ -117,9 +115,9 @@
       <!-- Personal Property Registry -->
       <v-card elevation="2">
         <v-card-title>Personal Property Registry</v-card-title>
-          <span v-if="showNewFlag" class="card-title-badge-container">
-            <div class="card-title-badge font-weight-bold pt-2">NEW</div>
-          </span>
+        <span v-if="showNewFlagPPR" class="card-title-badge-container">
+          <div class="card-title-badge font-weight-bold pt-2">NEW</div>
+        </span>
         <v-card-text>
           <p>
             Record security interests and liens against
@@ -140,6 +138,38 @@
               rel="noopener noreferrer"
             >
               <span>Go to Personal Property Registry</span>
+            </a>
+            <v-icon dense color="primary">mdi-open-in-new</v-icon>
+          </div>
+        </v-card-text>
+      </v-card>
+
+      <!-- Rural Property Tax Search -->
+      <v-card elevation="2">
+        <v-card-title>Rural Property Tax Search</v-card-title>
+        <span v-if="showNewFlagRPT" class="card-title-badge-container">
+          <div class="card-title-badge font-weight-bold pt-2">NEW</div>
+        </span>
+        <v-card-text>
+          <p>
+            Search property tax records for rural properties or leased crown land in B.C.
+            (excluding municipal properties and Indigenous lands). Here you can find the following for a property:
+          </p>
+
+          <ul>
+            <li>Tax amounts over the last 10 years.</li>
+            <li>Tax-paid status.</li>
+            <li>Legal description.</li>
+          </ul>
+
+          <div>
+            <a
+              class="link"
+              :href="$config.rptURL"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Learn more about Rural Property Tax Search</span>
             </a>
             <v-icon dense color="primary">mdi-open-in-new</v-icon>
           </div>
@@ -209,8 +239,16 @@ export default class BCRegistriesAccount extends Vue {
     return !!token
   }
 
-  get showNewFlag (): boolean {
-    return getFeatureFlag('bcregistry-ui-ppr-new-chip')
+  get showNewFlagWills (): boolean {
+    return getFeatureFlag('bcregistry-ui-wills-new-chip') as boolean
+  }
+
+  get showNewFlagRPT (): boolean {
+    return getFeatureFlag('bcregistry-ui-rpt-new-chip') as boolean
+  }
+
+  get showNewFlagPPR (): boolean {
+    return getFeatureFlag('bcregistry-ui-ppr-new-chip') as boolean
   }
 
   get dashboard (): string {
