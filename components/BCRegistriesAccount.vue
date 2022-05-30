@@ -175,6 +175,61 @@
           </div>
         </v-card-text>
       </v-card>
+
+      <!-- Business Search -->
+      <v-card elevation="2">
+        <v-card-title>Business Search</v-card-title>
+        <span v-if="showBetaFlagBusSearch" class="card-title-badge-container">
+          <div class="card-title-badge font-weight-bold pt-2">BETA</div>
+        </span>
+        <v-card-text>
+          <p>
+            Search for
+            <v-tooltip
+              top
+              content-class="top-tooltip pa-2 mr-2"
+              transition="fade-transition"
+            >
+              <template #activator="{ on }">
+                <span class="tool-tip-text" v-on="on">businesses</span>
+              </template>
+              <div class="pa-2" style="width: 250px">
+                Benefit Companies, Cooperative Associations, Sole Proprietorships and Partnerships
+                are currently available to search. Other business types will be added in the future.
+              </div>
+            </v-tooltip>
+            registered in B.C. and request copies of business
+            <v-tooltip
+              top
+              content-class="top-tooltip pa-2 mr-2"
+              transition="fade-transition"
+            >
+              <template #activator="{ on }">
+                <span class="tool-tip-text" v-on="on">documents.</span>
+              </template>
+              <div class="pa-2" style="width: 250px">
+                Business Summaries and electronic filing documents
+                are available to be downloaded. Other document types
+                will be added in the future.
+              </div>
+            </v-tooltip>
+          </p>
+          <p class="mt-6">
+            To access search, please log in to your account.
+          </p>
+          <div>
+            <a
+              class="link"
+              :href="$config.busSrchLearnMoreURL"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Learn more about Business Search</span>
+            </a>
+            <v-icon dense color="primary">mdi-open-in-new</v-icon>
+          </div>
+        </v-card-text>
+      </v-card>
     </div>
 
     <div class="payment py-7">
@@ -239,6 +294,10 @@ export default class BCRegistriesAccount extends Vue {
     return !!token
   }
 
+  get showBetaFlagBusSearch (): boolean {
+    return getFeatureFlag('bcregistry-ui-bus-search-beta-chip') as boolean
+  }
+
   get showNewFlagWills (): boolean {
     return getFeatureFlag('bcregistry-ui-wills-new-chip') as boolean
   }
@@ -266,6 +325,11 @@ export default class BCRegistriesAccount extends Vue {
 
 img {
   margin-bottom: -6px;
+}
+
+.tool-tip-text {
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
 }
 
 .v-btn,

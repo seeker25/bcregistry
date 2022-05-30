@@ -175,6 +175,8 @@ export default {
     signinBceidUrl: `${process.env.AUTH_URL}signin/bceid/`,
     signinBcscUrl: `${process.env.AUTH_URL}signin/bcsc/`,
     signinIdirUrl: `${process.env.AUTH_URL}signin/idir/`,
+    businessSearchUrl: process.env.BUSINESS_SEARCH_URL,
+    busSrchLearnMoreURL: process.env.BUS_SEARCH_LEARN_MORE
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
