@@ -61,8 +61,11 @@ import { SessionStorageKeys } from 'sbc-common-components/src/util/constants'
 import { mapGetters } from 'vuex'
 import UserProduct from '@/components/UserProduct.vue'
 import { ProductCode, ProductStatus } from '@/enums'
-import { fetchAccountProducts, fetchOrganization, getKeycloakRoles, getProductInfo, sleep,
-  setLogoutUrl } from '@/utils'
+import {
+  fetchAccountProducts, fetchOrganization,
+  getFeatureFlag, getKeycloakRoles,
+  getProductInfo, sleep, setLogoutUrl
+} from '@/utils'
 
 export default Vue.extend ({
   components: {
@@ -170,6 +173,9 @@ export default Vue.extend ({
 
       // only show products with no placeholder
       for (let i = 0; i < currentProducts.length; i++) {
+        if (currentProducts[i].code === ProductCode.BUSINESS_SEARCH) {
+          if (!getFeatureFlag('bcregistry-ui-bus-search-enabled')) continue
+        }
         const thisProduct = getProductInfo(this.$config, currentProducts[i].code)
         if (thisProduct.title !== 'placeholder_title') {
           this.subscribedProducts.push(thisProduct)

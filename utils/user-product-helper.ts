@@ -14,6 +14,13 @@ export function getProductInfo (config, type: ProductCode): ProductI {
         text: 'Register or incorporate a business, manage name requests and keep business records up to date.',
         title: 'My Business Registry'
       } as ProductI
+    case ProductCode.BUSINESS_SEARCH:
+      return {
+        image: 'img/BusinessSearchFPO_dashboard_thumbnail_image.jpg',
+        link: appendAccountId(config?.businessSearchUrl) || 'link_not_configured',
+        text: 'Search for a business registered in B.C. and access business documents.',
+        title: 'Business Search'
+      } as ProductI
     case ProductCode.CSO:
       return {
         image: 'placeholder_image',
