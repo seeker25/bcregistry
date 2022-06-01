@@ -182,6 +182,9 @@
         <span v-if="showBetaFlagBusSearch" class="card-title-badge-container">
           <div class="card-title-badge font-weight-bold pt-2">BETA</div>
         </span>
+        <span v-if="showComingSoonFlagBusSearch" class="card-title-badge-container">
+          <div class="card-title-badge font-weight-bold pt-2">COMING SOON</div>
+        </span>
         <v-card-text>
           <p>
             Search for
@@ -215,7 +218,7 @@
             </v-tooltip>
           </p>
           <p class="mt-6">
-            To access search, please log in to your account.
+            Available to use by end of summer 2022.
           </p>
           <div>
             <a
@@ -298,6 +301,10 @@ export default class BCRegistriesAccount extends Vue {
     return getFeatureFlag('bcregistry-ui-bus-search-beta-chip') as boolean
   }
 
+  get showComingSoonFlagBusSearch (): boolean {
+    return getFeatureFlag('bcregistry-ui-bus-search-coming-soon-chip') as boolean
+  }
+
   get showNewFlagWills (): boolean {
     return getFeatureFlag('bcregistry-ui-wills-new-chip') as boolean
   }
@@ -328,6 +335,7 @@ img {
 }
 
 .tool-tip-text {
+  cursor: default;
   text-decoration-line: underline;
   text-decoration-style: dotted;
 }
