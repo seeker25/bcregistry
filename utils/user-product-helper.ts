@@ -18,7 +18,7 @@ export function getProductInfo (config, type: ProductCode): ProductI {
       return {
         image: 'img/BusinessSearchFPO_dashboard_thumbnail_image.jpg',
         link: appendAccountId(config?.businessSearchUrl) || 'link_not_configured',
-        text: 'Search for a business registered in B.C. and access business documents.',
+        text: 'Search for businesses registered in B.C. and access business documents.',
         title: 'Business Search'
       } as ProductI
     case ProductCode.CSO:
