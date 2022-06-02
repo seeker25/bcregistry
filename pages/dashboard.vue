@@ -64,7 +64,8 @@ import { ProductCode, ProductStatus } from '@/enums'
 import {
   fetchAccountProducts, fetchOrganization,
   getFeatureFlag, getKeycloakRoles,
-  getProductInfo, sleep, setLogoutUrl
+  getProductInfo, sleep, setLogoutUrl,
+  hasMhrAndPprProducts, addMyAssetRegistriesTile
 } from '@/utils'
 
 export default Vue.extend ({
@@ -170,6 +171,7 @@ export default Vue.extend ({
       const currentProducts = products.filter(
         product => product.subscriptionStatus === ProductStatus.ACTIVE
       )
+      const isMhrPpr = hasMhrAndPprProducts(currentProducts)
 
       // only show products with no placeholder
       for (let i = 0; i < currentProducts.length; i++) {
@@ -177,10 +179,19 @@ export default Vue.extend ({
           if (!getFeatureFlag('bcregistry-ui-bus-search-enabled')) continue
         }
         const thisProduct = getProductInfo(this.$config, currentProducts[i].code)
-        if (thisProduct.title !== 'placeholder_title') {
-          this.subscribedProducts.push(thisProduct)
+
+        // if user has both MHR and PPR product codes - don't add the tiles for them
+        if (!isMhrPpr || (currentProducts[i].code !== ProductCode.MHR && currentProducts[i].code !== ProductCode.PPR)) {
+          if (thisProduct.title !== 'placeholder_title') {
+            this.subscribedProducts.push(thisProduct)
+          }
         }
       }
+
+      // if user has both MHR and PPR product codes - add a My Asset Registries tile
+      if (isMhrPpr) {
+        addMyAssetRegistriesTile(this.$config, this.subscribedProducts)
+      } 
     }
 
     // wait 250ms so it doesn't look glitchy if products come back immediately

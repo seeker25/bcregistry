@@ -33,13 +33,15 @@ export function createComponent(
   localVue: any,
   store: any,
   propsData: any,
-  vuetify: Vuetify
+  vuetify: Vuetify,
+  mocks: any = {}
 ): Wrapper<any> {
   document.body.setAttribute('data-app', 'true')
   return mount(component, {
     localVue,
     store,
     propsData: { ...propsData },
-    vuetify
+    vuetify,
+    mocks
   })
 }

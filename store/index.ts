@@ -1,7 +1,22 @@
+import Vue from 'vue'
+import Vuex from 'vuex'
 interface StateI {
   isStaff: boolean
   isSbcStaff: boolean
   roles: string[]
+}
+
+export function getVuexStore () {
+  Vue.use(Vuex)
+
+  const store = new Vuex.Store<any>({ 
+    state, 
+    getters, 
+    mutations, 
+    actions
+  })
+
+  return store
 }
 
 export function state (): StateI {

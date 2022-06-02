@@ -8,16 +8,17 @@ import { SessionStorageKeys } from 'sbc-common-components/src/util/constants'
 // local
 import dashboard from '@/pages/dashboard.vue'
 import UserProduct from '@/components/UserProduct.vue'
-import { state } from '@/store'
+import { getVuexStore } from '@/store'
 import { ProductCode, ProductStatus } from '@/enums'
 import { authAxios, getProductInfo } from '@/utils'
 import { createComponent } from '@/test/utils'
 
 Vue.use(Vuetify)
 const vuetify = new Vuetify({})
-const store = state
+const store = getVuexStore()
 const localVue = createLocalVue()
 localVue.use(Vuetify)
+jest.useFakeTimers()
 
 const testProducts = [
   {
@@ -26,7 +27,11 @@ const testProducts = [
   },
   {
     code: ProductCode.PPR,
-    subscriptionStatus: ProductStatus.NOT_SUBSCRIBED
+    subscriptionStatus: ProductStatus.ACTIVE
+  },
+  {
+    code: ProductCode.MHR,
+    subscriptionStatus: ProductStatus.ACTIVE
   }
 ]
 
@@ -39,15 +44,18 @@ describe('Dashboard tests', () => {
   const currentAccount = { id: 'test_id' }
   sessionStorage.setItem(SessionStorageKeys.CurrentAccount, JSON.stringify(currentAccount))
   sessionStorage.setItem(SessionStorageKeys.AuthApiUrl, 'mocked_url')
-  
+
   beforeEach(async () => {
     sandbox = createSandbox()
     const getStub = sandbox.stub(authAxios, 'get')
     const getProducts = getStub.withArgs(`orgs/${currentAccount.id}/products`)
     getProducts.returns(new Promise(resolve => resolve({ data: testProducts })))
 
-    const propsData = {}
-    wrapper = createComponent(dashboard, localVue, store, propsData, vuetify)
+    const propsData = { getProductInfo: getProducts, loadingProducts: false }
+    const mocks = {
+      $config: { myBusinessRegistryDashboard: '', pprDashboard: '' }
+    }
+    wrapper = createComponent(dashboard, localVue, store, propsData, vuetify, mocks)
     await flushPromises()
   })
   afterEach(() => {
@@ -70,4 +78,19 @@ describe('Dashboard tests', () => {
     expect(wrapper.find('.dash-sub-header').text()).toContain('(1)')
     expect(wrapper.find('.dash-container-info').exists()).toBe(true)
   })
+
+  test('Displays active products with My Asset Registries tile', async () => {
+    expect(wrapper.findComponent(dashboard).exists()).toBe(true)
+
+    // Add a delay because of expicit timeout set in the dashboard
+    jest.advanceTimersByTime(250)
+    await Vue.nextTick()
+
+    const userProducts = wrapper.findAllComponents(UserProduct)
+
+    expect(userProducts).toHaveLength(2)
+    expect(userProducts.at(0).text()).toContain('My Business Registry');
+    expect(userProducts.at(1).text()).toContain('My Asset Registries');
+  })
+
 })

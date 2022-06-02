@@ -58,8 +58,8 @@ export default class UserProduct extends Vue {
 }
 
 .service-img {
-  height: 225px;
-  width: 300px;
+  height: 183px;
+  width: 244px;
 }
 
 .service-info {

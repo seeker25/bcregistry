@@ -1,6 +1,6 @@
-import { ProductCode } from '@/enums'
-import { ProductI } from '@/interfaces'
 import { appendAccountId } from 'sbc-common-components/src/util/common-util'
+import { ProductCode, ProductStatus } from '@/enums'
+import { ProductI, APIProductI } from '@/interfaces'
 
 /**
  * Returns product info object for specified type.
@@ -27,6 +27,13 @@ export function getProductInfo (config, type: ProductCode): ProductI {
         link: 'placeholder_link',
         text: 'placeholder_text',
         title: 'placeholder_title'
+      } as ProductI
+    case ProductCode.MHR:
+      return {
+        image: 'img/PPR_dashboard_thumbnail_image.jpg',
+        link: appendAccountId(config?.pprDashboard) || 'link_not_configured',
+        text: 'Register or search for manufactured homes in British Columbia.',
+        title: 'My Manufactured Home Registry'
       } as ProductI
     case ProductCode.PPR:
       return {
@@ -58,4 +65,33 @@ export function getProductInfo (config, type: ProductCode): ProductI {
         title: 'placeholder_title'
       } as ProductI
   }
+}
+
+/**
+ * Get info for My Asset Registries tile (that replaces MHR and PPR products)
+ */
+export function getMhrPprTileInfo(config): ProductI {
+  return {
+    image: 'img/My_Asset_Registries_dashboard_thumbnail_image.jpg',
+    link: appendAccountId(config?.pprDashboard) || 'link_not_configured',
+    text: 'Register or search for manufactured homes, and register or search for legal claims on personal property.',
+    title: 'My Asset Registries'
+  }
+}
+
+/**
+ * Check if products array has MHR and PPR
+ */
+export function hasMhrAndPprProducts(products: Array<APIProductI>): boolean {
+  return products
+  .filter(product => product.code === ProductCode.MHR || product.code === ProductCode.PPR)
+  .length === 2
+}
+
+/**
+ * Add one My Asset Registries tile instead of MHR and PPR tiles
+ */
+export function addMyAssetRegistriesTile(config, products: Array<any>): void {
+  const mhrPprProduct = getMhrPprTileInfo(config)
+  products.push(mhrPprProduct)
 }
