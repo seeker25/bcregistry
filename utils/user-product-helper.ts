@@ -30,9 +30,10 @@ export function getProductInfo (config, type: ProductCode): ProductI {
       } as ProductI
     case ProductCode.MHR:
       return {
-        image: 'img/PPR_dashboard_thumbnail_image.jpg',
+        image: 'img/MHR_dashboard_thumbnail_image.jpg',
         link: appendAccountId(config?.pprDashboard) || 'link_not_configured',
-        text: 'Register or search for manufactured homes in British Columbia.',
+        // eslint-disable-next-line max-len
+        text: 'Register or search for manufactured homes, and search for personal property legal claims on manufactured homes.',
         title: 'My Manufactured Home Registry'
       } as ProductI
     case ProductCode.PPR:
