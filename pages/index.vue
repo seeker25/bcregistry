@@ -50,7 +50,7 @@ import BCRegistriesAccount from '~/components/BCRegistriesAccount.vue'
 import DirectAccount from '~/components/DirectAccount.vue'
 import NoAccount from '~/components/NoAccount.vue'
 import ContactInfo from '~/components/ContactInfoBcros.vue'
-import { setLoginUrl, setLogoutUrl } from '@/utils'
+import { setLoginUrl, setLogoutUrl, setSiteMinderLogoutUrl } from '@/utils'
 
 /*
  * This is the BCROS marketing page.
@@ -69,6 +69,8 @@ export default Vue.extend ({
     setLoginUrl(this.$config.registryDashboard)
     // if user logs out from this page, return here
     setLogoutUrl(this.$config.baseURL)
+    // siteminder url to clear cookie
+    setSiteMinderLogoutUrl(this.$config.siteMinderLogoutUrl)
   },
 })
 </script>

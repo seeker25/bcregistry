@@ -28,6 +28,7 @@ steps:
     - 'RPT_URL=$_RPT_URL'
     - 'BUSINESS_SEARCH_URL=$_BUSINESS_SEARCH_URL'
     - 'BUS_SEARCH_LEARN_MORE=$_BUS_SEARCH_LEARN_MORE'
+    - 'SITEMINDER_LOGOUT_URL=$_SITEMINDER_LOGOUT_URL'
     args: ['--openssl-legacy-provider', 'run', 'generate']
   #
   # Deploy to firebase channel, using the PR #

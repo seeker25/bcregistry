@@ -2,6 +2,7 @@ import { Routes } from '@/enums'
 
 const LOGOUT_URL = 'LOGOUT_URL'
 const LOGIN_URL = 'LOGIN_URL'
+const SITEMINDER_LOGOUT_URL = 'SITEMINDER_LOGOUT_URL'
 
 /** Returns true if current route is Signin. */
 export function isSigninRoute (path = window.location.pathname): boolean {
@@ -41,4 +42,11 @@ export function setLoginUrl (url: string): void {
 /** Gets URL to return to when user logs in. */
 export function getLoginUrl (): string {
   return sessionStorage.getItem(LOGIN_URL)
+}
+
+/** Sets site mionder URL to clear cookie. */
+export function setSiteMinderLogoutUrl (url: string): void {
+  if(url?.includes('http')) {
+    sessionStorage.setItem(SITEMINDER_LOGOUT_URL, url)
+  }  
 }
