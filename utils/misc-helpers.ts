@@ -3,6 +3,8 @@ import { Routes } from '@/enums'
 const LOGOUT_URL = 'LOGOUT_URL'
 const LOGIN_URL = 'LOGIN_URL'
 const SITEMINDER_LOGOUT_URL = 'SITEMINDER_LOGOUT_URL'
+const REGISTRY_HOME_URL = 'REGISTRY_HOME_URL'
+
 
 /** Returns true if current route is Signin. */
 export function isSigninRoute (path = window.location.pathname): boolean {
@@ -49,4 +51,9 @@ export function setSiteMinderLogoutUrl (url: string): void {
   if(url?.includes('http')) {
     sessionStorage.setItem(SITEMINDER_LOGOUT_URL, url)
   }  
+}
+
+/** Gets URL for sbc-common component to identify home URL. */
+export function setRegistyHomeUrl (url: string): void {
+  sessionStorage.setItem(REGISTRY_HOME_URL, url)
 }
