@@ -153,6 +153,7 @@ export default {
     societiesURL: process.env.SOCIETIES_URL,
     pprURL: process.env.PPR_URL,
     willsURL: process.env.WILLS_URL,
+    willsLearnMoreURL: process.env.WILLS_LEARN_MORE_URL,
     bcolURL: process.env.BCOL_URL,
     rptURL: process.env.RPT_URL,
     addressChangeURL: process.env.ADDRESSCHANGE_URL,
