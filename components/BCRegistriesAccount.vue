@@ -79,39 +79,6 @@
         </v-card-text>
       </v-card>
 
-      <!-- Wills Registry -->
-      <v-card elevation="2">
-        <v-card-title>
-          <span>Wills Registry</span>
-        </v-card-title>
-        <span v-if="showNewFlagWills" class="card-title-badge-container">
-          <div class="card-title-badge font-weight-bold pt-2">NEW</div>
-        </span>
-        <v-card-text>
-          <p>
-            Wills Registry allows solicitors, notaries
-            and title search companies to do the following:
-          </p>
-
-          <ul>
-            <li>File a wills notice.</li>
-            <li>Search for an existing wills notice.</li>
-          </ul>
-
-          <div>
-            <a
-              class="link"
-              :href="appendAccountId($config.willsURL)"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span>Learn more about Wills Registry</span>
-            </a>
-            <v-icon dense color="primary">mdi-open-in-new</v-icon>
-          </div>
-        </v-card-text>
-      </v-card>
-
       <!-- Personal Property Registry -->
       <v-card elevation="2">
         <v-card-title>Personal Property Registry</v-card-title>
@@ -170,6 +137,39 @@
               rel="noopener noreferrer"
             >
               <span>Learn more about Rural Property Tax Search</span>
+            </a>
+            <v-icon dense color="primary">mdi-open-in-new</v-icon>
+          </div>
+        </v-card-text>
+      </v-card>
+
+      <!-- Wills Registry -->
+      <v-card elevation="2">
+        <v-card-title>
+          <span>Wills Registry</span>
+        </v-card-title>
+        <span v-if="showComingSoonWillsFlag" class="card-title-badge-container">
+          <div class="card-title-badge font-weight-bold pt-2">COMING SOON</div>
+        </span>
+        <v-card-text>
+          <p>
+            Wills Registry allows solicitors, notaries
+            and title search companies to do the following:
+          </p>
+
+          <ul>
+            <li>File a wills notice.</li>
+            <li>Search for an existing wills notice.</li>
+          </ul>
+
+          <div>
+            <a
+              class="link"
+              :href="$config.willsLearnMoreURL"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Learn more about Wills Registry</span>
             </a>
             <v-icon dense color="primary">mdi-open-in-new</v-icon>
           </div>
@@ -305,8 +305,8 @@ export default class BCRegistriesAccount extends Vue {
     return getFeatureFlag('bcregistry-ui-bus-search-coming-soon-chip') as boolean
   }
 
-  get showNewFlagWills (): boolean {
-    return getFeatureFlag('bcregistry-ui-wills-new-chip') as boolean
+  get showComingSoonWillsFlag (): boolean {
+    return getFeatureFlag('bcregistry-ui-wills-coming-soon-chip') as boolean
   }
 
   get showNewFlagRPT (): boolean {
