@@ -218,7 +218,7 @@
             </v-tooltip>
           </p>
           <p class="mt-6">
-            Available to use by end of summer 2022.
+            Available to use by end of fall 2022.
           </p>
           <div>
             <a
@@ -228,6 +228,102 @@
               rel="noopener noreferrer"
             >
               <span>Learn more about Business Search</span>
+            </a>
+            <v-icon dense color="primary">mdi-open-in-new</v-icon>
+          </div>
+        </v-card-text>
+      </v-card>
+
+       <!-- BC Assessment -->
+      <v-card elevation="2" v-if="showBCAFlag">
+        <v-card-title>BC Assessment</v-card-title>
+        <span v-if="showNewFlagBCA" class="card-title-badge-container">
+          <div class="card-title-badge font-weight-bold pt-2">NEW</div>
+        </span>
+        <v-card-text>
+          <p>
+            Search the BC Assessment database for information about real property in B.C. Here you 
+            are able to:
+          </p>
+
+          <ul>
+            <li>Find property ownership and location information.</li>
+            <li>Obtain property assessment information.</li>
+            <li>Obtain for residential property inventory details.</li>
+          </ul>
+
+          <div>
+            <a
+              class="link"
+              :href="$config.bcaLearnMoreURL"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Learn more about BC Assessment</span>
+            </a>
+            <v-icon dense color="primary">mdi-open-in-new</v-icon>
+          </div>
+        </v-card-text>
+      </v-card>
+
+        <!-- Site Registry -->
+      <v-card elevation="2" v-if="showESRAFlag">
+        <v-card-title>Site Registry</v-card-title>
+        <span v-if="showNewFlagESRA" class="card-title-badge-container">
+          <div class="card-title-badge font-weight-bold pt-2">NEW</div>
+        </span>
+        <v-card-text>
+          <p>
+            The Site Registry retains provincial government information on the 
+            environmental condition of land. The site registry can be a helpful 
+            resource for anyone interested in purchasing or developing a property. 
+            Here you can:
+          </p>
+
+          <ul>
+            <li>Search the Site Registry to identify properties with environmental records submitted 
+              under Part 4 of B.C.'s Environmental Management Act.</li>            
+          </ul>
+
+          <div>
+            <a
+              class="link"
+              :href="$config.siteRegistryLearnMoreURL"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Learn more about Site Registry</span>
+            </a>
+            <v-icon dense color="primary">mdi-open-in-new</v-icon>
+          </div>
+        </v-card-text>
+      </v-card>
+
+      <!-- Court Services Online -->
+      <v-card elevation="2" v-if="showCSOFlag">
+        <v-card-title>Court Services Online (CSO)</v-card-title>
+        <span v-if="showNewFlagCSO" class="card-title-badge-container">
+          <div class="card-title-badge font-weight-bold pt-2">NEW</div>
+        </span>
+        <v-card-text>
+          <p>
+            Court Services Online is British Columbia's electronic court registry. Here you can:
+          </p>
+
+          <ul>
+            <li>Make applications or file any other court documents in any B.C. court registry.</li>
+            <li>Browse daily court listings across the province.</li>
+            <li>Search court file information.</li>            
+          </ul>
+
+          <div>
+            <a
+              class="link"
+              :href="$config.csoLearnMoreURL"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Learn more about Court Services Online</span>
             </a>
             <v-icon dense color="primary">mdi-open-in-new</v-icon>
           </div>
@@ -313,8 +409,32 @@ export default class BCRegistriesAccount extends Vue {
     return getFeatureFlag('bcregistry-ui-rpt-new-chip') as boolean
   }
 
+  get showNewFlagBCA (): boolean {
+    return getFeatureFlag('bcregistry-ui-bca-new-chip') as boolean
+  }
+
+  get showNewFlagESRA (): boolean {
+    return getFeatureFlag('bcregistry-ui-esra-new-chip') as boolean
+  }
+
+  get showNewFlagCSO (): boolean {
+    return getFeatureFlag('bcregistry-ui-cso-new-chip') as boolean
+  }
+
   get showNewFlagPPR (): boolean {
     return getFeatureFlag('bcregistry-ui-ppr-new-chip') as boolean
+  }
+
+  get showESRAFlag (): boolean {
+    return getFeatureFlag('bcregistry-ui-esra-enabled') as boolean
+  }
+
+  get showCSOFlag (): boolean {
+    return getFeatureFlag('bcregistry-ui-cso-enabled') as boolean
+  }
+
+  get showBCAFlag (): boolean {
+    return getFeatureFlag('bcregistry-ui-bca-enabled') as boolean
   }
 
   get dashboard (): string {

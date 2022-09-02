@@ -95,13 +95,18 @@
       </v-card>
 
       <!-- BC Assessment -->
-      <v-card elevation="2">
-        <v-card-title>BC Assessment</v-card-title>
-
+      <v-card elevation="2" :class="showBCAFlag ? 'disabled': ''">
+        <v-card-title>BC Assessment
+          <span v-if="showBCAFlag" class="card-title-badge-container">
+            <div class="card-title-badge">MOVED</div>
+          </span>
+        </v-card-title>
         <v-card-text>
           <p>
-            Search the BC Assessment database for information about B.C.
-            properties and property assessments.
+            Search the BC Assessment database for information about real property in B.C. 
+            <span v-if="showBCAFlag">
+              BC Assessment Online has been moved to the BC Registries account.
+            </span> 
           </p>
         </v-card-text>
       </v-card>
@@ -124,27 +129,35 @@
       </v-card>
 
       <!-- Site Registry -->
-      <v-card elevation="2">
-        <v-card-title>Site Registry</v-card-title>
-
+      <v-card elevation="2" :class="showESRAFlag ? 'disabled': ''">
+        <v-card-title>Site Registry
+          <span v-if="showESRAFlag" class="card-title-badge-container">
+            <div class="card-title-badge">MOVED</div>
+          </span>
+        </v-card-title>
         <v-card-text>
           <p>
-            Search for information retained by the provincial government on
-            the environmental condition of land as a routine part of due
-            diligence searches by land transaction professionals.
+            Search for information retained by the B.C. government on
+            the environmental condition of land. <span v-if="showESRAFlag">
+            Site Registry has been moved to the BC Registries account.
+            </span>
           </p>
         </v-card-text>
       </v-card>
 
       <!-- Court Services Online (CSO) -->
-      <v-card elevation="2">
-        <v-card-title>Court Services Online (CSO)</v-card-title>
-
+      <v-card elevation="2" :class="showCSOFlag ? 'disabled': ''">
+        <v-card-title>Court Services Online (CSO)
+          <span v-if="showCSOFlag" class="card-title-badge-container">
+            <div class="card-title-badge">MOVED</div>
+          </span>
+        </v-card-title>
         <v-card-text>
           <p>
-            Perform court file searches and electronically file court
-            documents in all courts in B.C. Customers can also purchase
-            court documents through BC OnLine.
+            Perform court file searches, purchase documents, and electronically file court
+            documents in all courts in B.C. <span v-if="showCSOFlag">
+            Court Services Online has been moved to the BC Registries account.
+            </span> 
           </p>
         </v-card-text>
       </v-card>
@@ -173,6 +186,29 @@
     </div>
   </v-container>
 </template>
+
+<script lang="ts">
+  import { Component, Vue } from 'vue-property-decorator'
+  import { appendAccountId } from 'sbc-common-components/src/util/common-util'
+  import { getFeatureFlag } from '~/utils'
+  
+  @Component({})
+  export default class BCOnlineAccount extends Vue {
+    readonly appendAccountId = appendAccountId // for use in template
+  
+    get showESRAFlag (): boolean {
+      return getFeatureFlag('bcregistry-ui-esra-enabled') as boolean
+    }
+  
+    get showCSOFlag (): boolean {
+      return getFeatureFlag('bcregistry-ui-cso-enabled') as boolean
+    }
+  
+    get showBCAFlag (): boolean {       
+      return getFeatureFlag('bcregistry-ui-bca-enabled') as boolean
+    }
+  }
+  </script>
 
 <style lang="scss" scoped>
 @import '@/assets/scss/theme.scss';

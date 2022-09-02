@@ -21,13 +21,20 @@ export function getProductInfo (config, type: ProductCode): ProductI {
         text: 'Search for businesses registered in B.C. and access business documents.',
         title: 'Business Search'
       } as ProductI
+    case ProductCode.BCA:
+      return {
+        image: 'img/BCA_dashboard_thumbnail_image.jpg',
+        link: appendAccountId(config?.bcaURL) || 'link_not_configured',
+        text: 'Search for real property information including assessment, ownership, location and residential inventory details.',
+        title: 'BC Assessment'
+      } as ProductI
     case ProductCode.CSO:
       return {
-        image: 'placeholder_image',
-        link: 'placeholder_link',
-        text: 'placeholder_text',
-        title: 'placeholder_title'
-      } as ProductI
+        image: 'img/CSO_dashboard_thumbnail_image.jpg',
+        link: appendAccountId(config?.csoURL) || 'link_not_configured',
+        text: 'Make applications or file other court documents, browse daily court listings, and search court file information.',
+        title: 'Court Services Online'
+      } as ProductI    
     case ProductCode.MHR:
       return {
         image: 'img/MHR_dashboard_thumbnail_image.jpg',
@@ -50,14 +57,21 @@ export function getProductInfo (config, type: ProductCode): ProductI {
         text: `Search property tax records for rural properties or leased crown land in B.C.,
                excluding municipal and Indigenous lands.`,
         title: 'Rural Property Tax Search'
-      } as ProductI
+      } as ProductI    
+    case ProductCode.ESRA:
+      return {
+        image: 'img/ESRA_dashboard_thumbnail_image.jpg',
+        link: appendAccountId(config?.siteRegistryURL) || 'link_not_configured',
+        text: 'Search for B.C. government information on the environmental condition of land.',
+        title: 'Site Registry'
+      } as ProductI    
     case ProductCode.VS:
       return {
         image: 'img/VS_dashboard_thumbnail_image.jpg',
         link: appendAccountId(config?.willsURL) || 'link_not_configured',
         text: 'File a wills notice or search for an existing wills notice.',
         title: 'Wills Registry'
-      } as ProductI
+      } as ProductI    
     default:
       return {
         image: 'placeholder_image',
