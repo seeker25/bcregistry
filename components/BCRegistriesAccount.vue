@@ -249,7 +249,7 @@
           <ul>
             <li>Find property ownership and location information.</li>
             <li>Obtain property assessment information.</li>
-            <li>Obtain for residential property inventory details.</li>
+            <li>Obtain residential property inventory details.</li>
           </ul>
 
           <div>
@@ -275,7 +275,7 @@
         <v-card-text>
           <p>
             The Site Registry retains provincial government information on the 
-            environmental condition of land. The site registry can be a helpful 
+            environmental condition of land. The Site Registry can be a helpful 
             resource for anyone interested in purchasing or developing a property. 
             Here you can:
           </p>
@@ -323,7 +323,7 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span>Learn more about Court Services Online</span>
+              <span class="reduced-letter-spacing">Learn more about Court Services Online</span>
             </a>
             <v-icon dense color="primary">mdi-open-in-new</v-icon>
           </div>
@@ -473,6 +473,10 @@ img {
 
   .v-btn {
     width: 100%;
-  }
+  }  
+}
+
+.reduced-letter-spacing {
+  letter-spacing: -0.5px;
 }
 </style>

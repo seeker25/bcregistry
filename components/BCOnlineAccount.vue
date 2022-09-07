@@ -105,7 +105,7 @@
           <p>
             Search the BC Assessment database for information about real property in B.C. 
             <span v-if="showBCAFlag">
-              BC Assessment Online has been moved to the BC Registries account.
+              BC Assessment has been moved to the BC Registries account.
             </span> 
           </p>
         </v-card-text>
