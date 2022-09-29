@@ -1,14 +1,13 @@
 <template>
   <v-app id="app">
-    <SbcHeader class="sbc-header" :in-auth="false" />
+    <SbcHeader class="sbc-header" />
 
     <!-- Alert banner -->
     <v-alert
       v-if="bannerText"
       tile dense
-      icon=" "
       type="warning"
-      class="mb-0 text-center colour-dk-text"
+      class="mb-0 text-center color-dk-text"
       v-html="bannerText"
     />
 
@@ -37,7 +36,7 @@ export default {
     isShowBreadcrumb (): boolean {
       return !isLoginRoute()
     },
-    bannerText (): string | null {
+    bannerText (): string {
       const bannerText: string = getFeatureFlag('banner-text')
 
       // remove spaces so that " " becomes falsy
