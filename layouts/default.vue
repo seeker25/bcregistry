@@ -1,6 +1,17 @@
 <template>
   <v-app id="app">
-    <SbcHeader class="sbc-header" />
+    <SbcHeader class="sbc-header" :in-auth="false" />
+
+    <!-- Alert banner -->
+    <v-alert
+      v-if="bannerText"
+      tile dense
+      icon=" "
+      type="warning"
+      class="mb-0 text-center colour-dk-text"
+      v-html="bannerText"
+    />
+
     <Breadcrumb v-if="isShowBreadcrumb" />
     <nuxt class="app-body" />
     <SbcFooter />
@@ -11,6 +22,7 @@
 import SbcFooter from 'sbc-common-components/src/components/SbcFooter.vue'
 import SbcHeader from 'sbc-common-components/src/components/SbcHeader.vue'
 import Breadcrumb from '~/components/Breadcrumb.vue'
+import { getFeatureFlag } from '~/utils'
 import { isLoginRoute } from '@/utils'
 
 export default {
@@ -24,6 +36,12 @@ export default {
   computed: {
     isShowBreadcrumb (): boolean {
       return !isLoginRoute()
+    },
+    bannerText (): string | null {
+      const bannerText: string = getFeatureFlag('banner-text')
+
+      // remove spaces so that " " becomes falsy
+      return bannerText?.trim()
     }
   },
 }
@@ -39,6 +57,6 @@ export default {
   // to -12px all around, which breaks the SbcHeader layout,
   // so override top and bottom specifically here
   margin-top: 0;
-  margin-bottom: 0; 
+  margin-bottom: 0;
 }
 </style>

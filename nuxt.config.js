@@ -160,7 +160,7 @@ export default {
     regAccountCreateURL: process.env.REGISTRY_ACCOUNT_CREATE_URL,
     authAPIURL: process.env.AUTH_API_URL,
     statusAPIURL: process.env.STATUS_API_URL,
-    ldClientId: process.env.AUTH_LD_CLIENT_ID,
+    ldClientId: process.env.BCROS_LD_CLIENT_ID,
     // as composite variables:
     keycloakConfigPath: process.env.BCROS_BASE_URL + process.env.KEYCLOAK_CONFIG_PATH
       + `?${new Date().getTime()}`,
