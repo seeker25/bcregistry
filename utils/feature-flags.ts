@@ -12,7 +12,9 @@ const defaultFlagSet: LDFlagSet = {
   'bcregistry-ui-bus-search-coming-soon-chip': false,
   'bcregistry-ui-ppr-new-chip': true,
   'bcregistry-ui-rpt-new-chip': true,
-  'bcregistry-ui-wills-new-chip': true
+  'bcregistry-ui-wills-new-chip': true,
+  'banner-text': ' ',
+  'whats-new': ' '
 }
 
 /**

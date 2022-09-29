@@ -101,14 +101,14 @@ ol {
   padding:0;
   counter-reset:item;
 }
- 
+
 ol > li {
   margin: 1rem 0;
   padding:0 0 0 5rem;
   list-style-type: none;
   counter-increment: item;
 }
- 
+
 ol > li:before {
   display: inline-block;
   margin-left: -5rem;
@@ -203,7 +203,7 @@ a.link {
 
 // .nuxt-inline-helper {
 //   display: inline-block;
-  
+
 //   &:before {
 //     display: inline-block;
 //     width: 0.25rem;
@@ -432,4 +432,8 @@ a.link {
 // override class that hides What's New panel on screens < 1264 px wide
 .v-navigation-drawer--close {
   visibility: inherit;
+}
+
+.color-dk-text {
+  color: $dk-text !important;
 }
