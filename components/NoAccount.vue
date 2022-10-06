@@ -1,6 +1,6 @@
 <template>
   <v-container id="no-account" fluid class="account-container">
-    <h2 class="account-title">No Account Required</h2>
+    <h2 class="account-title">Account Not Required</h2>
 
     <v-row no-gutters class="mt-4">
       <v-col cols="2"></v-col>
@@ -11,7 +11,7 @@
     </v-row>
 
     <div class="d-flex justify-center flex-wrap bg-gray1 pt-4 pb-7">
-      <!-- Name Request -->
+      <!-- Name Requests -->
       <v-card elevation="2">
         <v-card-title>Name Requests</v-card-title>
 
@@ -28,6 +28,30 @@
               rel="noopener noreferrer"
             >
               <span>Go to Name Request</span>
+            </a>
+            <v-icon dense color="primary">mdi-open-in-new</v-icon>
+          </div>
+        </v-card-text>
+      </v-card>
+
+      <!-- Business BCeID -->
+      <v-card elevation="2">
+        <v-card-title>Business BCeID</v-card-title>
+
+        <v-card-text>
+          <p>
+            Provides you secure online access to services that accept Business BCeID.
+            It proves who you are and which business you're associated with.
+          </p>
+
+          <div>
+            <a
+              class="link"
+              :href="$config.bceidURL"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Go to BCeID</span>
             </a>
             <v-icon dense color="primary">mdi-open-in-new</v-icon>
           </div>
