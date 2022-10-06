@@ -49,6 +49,6 @@ steps:
     args: ['-c', 'firebase deploy --project=${_DEPLOYMENT_PROJECT} --only hosting']
 
 substitutions:
-    _DEPLOYMENT_PROJECT: 'yfthig-${DEPLOYMENT_ENVIRONMENT}'
+    _DEPLOYMENT_PROJECT: 'yfthig-${_DEPLOYMENT_ENVIRONMENT}'
 options:
     dynamic_substitutions: true
