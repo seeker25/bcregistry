@@ -9,27 +9,34 @@ steps:
   - name: node:16.14.2
     entrypoint: npm
     env:
-    - 'BCROS_BASE_URL=$_BCROS_BASE_URL'
-    - 'AUTH_URL=$_AUTH_URL'
-    - 'NAME_REQUEST_URL=$_NAME_REQUEST_URL'
-    - 'COLIN_URL=$_COLIN_URL'
-    - 'ONESTOP_URL=$_ONESTOP_URL'
-    - 'SOCIETIES_URL=$_SOCIETIES_URL'
-    - 'PPR_URL=$_PPR_URL'
-    - 'WILLS_URL=$_WILLS_URL'
-    - 'WILLS_LEARN_MORE_URL=$_WILLS_LEARN_MORE_URL'
-    - 'BCOL_URL=$_BCOL_URL'
-    - 'REGISTRY_ACCOUNT_CREATE_URL=$_REGISTRY_ACCOUNT_CREATE_URL'
-    - 'KEYCLOAK_CONFIG_PATH=$_KEYCLOAK_CONFIG_PATH'
-    - 'AUTH_API_URL=$_AUTH_API_URL'
-    - 'STATUS_API_URL=$_STATUS_API_URL'
     - 'ADDRESSCHANGE_URL=$_ADDRESSCHANGE_URL'
-    - 'BUSINESS_URL=$_BUSINESS_URL'
+    - 'AUTH_API_URL=$_AUTH_API_URL'
+    - 'AUTH_URL=$_AUTH_URL'
+    - 'BCA_LEARN_MORE_URL=$_BCA_LEARN_MORE_URL'
+    - 'BCA_URL=$_BCA_URL'
+    - 'BCOL_URL=$_BCOL_URL'
     - 'BCREGISTRY_LD_CLIENT_ID=$_BCREGISTRY_LD_CLIENT_ID'
-    - 'RPT_URL=$_RPT_URL'
-    - 'BUSINESS_SEARCH_URL=$_BUSINESS_SEARCH_URL'
+    - 'BCROS_BASE_URL=$_BCROS_BASE_URL'
     - 'BUS_SEARCH_LEARN_MORE=$_BUS_SEARCH_LEARN_MORE'
+    - 'BUSINESS_SEARCH_URL=$_BUSINESS_SEARCH_URL'
+    - 'BUSINESS_URL=$_BUSINESS_URL'
+    - 'COLIN_URL=$_COLIN_URL'
+    - 'CSO_LEARN_MORE_URL=$_CSO_LEARN_MORE_URL'
+    - 'CSO_URL=$_CSO_URL'
+    - 'DEPLOYMENT_ENVIRONMENT=$_DEPLOYMENT_ENVIRONMENT'
+    - 'ESRA_LEARN_MORE_URL=$_ESRA_LEARN_MORE_URL'
+    - 'ESRA_URL=$_ESRA_URL'
+    - 'KEYCLOAK_CONFIG_PATH=$_KEYCLOAK_CONFIG_PATH'
+    - 'NAME_REQUEST_URL=$_NAME_REQUEST_URL'
+    - 'ONESTOP_URL=$_ONESTOP_URL'
+    - 'PPR_URL=$_PPR_URL'
+    - 'REGISTRY_ACCOUNT_CREATE_URL=$_REGISTRY_ACCOUNT_CREATE_URL'
+    - 'RPT_URL=$_RPT_URL'
     - 'SITEMINDER_LOGOUT_URL=$_SITEMINDER_LOGOUT_URL'
+    - 'SOCIETIES_URL=$_SOCIETIES_URL'
+    - 'STATUS_API_URL=$_STATUS_API_URL'
+    - 'WILLS_LEARN_MORE_URL=$_WILLS_LEARN_MORE_URL'
+    - 'WILLS_URL=$_WILLS_URL'
     args: ['--openssl-legacy-provider', 'run', 'generate']
   #
   # Deploy to firebase channel, using the PR #
@@ -37,4 +44,11 @@ steps:
   #
   - name: gcr.io/yfthig-dev/firebase
     entrypoint: bash
-    args: ['-c', 'firebase deploy --project=yfthig-dev --only hosting']
+    env:
+    - 'DEPLOYMENT_ENVIRONMENT=$_DEPLOYMENT_ENVIRONMENT'
+    args: ['-c', 'firebase deploy --project=${_DEPLOYMENT_PROJECT} --only hosting']
+
+substitutions:
+    _DEPLOYMENT_PROJECT: 'yfthig-${DEPLOYMENT_ENVIRONMENT}'
+options:
+    dynamic_substitutions: true
