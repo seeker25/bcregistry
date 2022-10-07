@@ -45,9 +45,7 @@ steps:
   #
   - name: gcr.io/yfthig-dev/firebase
     entrypoint: bash
-    env:
-    - 'DEPLOYMENT_ENVIRONMENT=$_DEPLOYMENT_ENVIRONMENT'
-    args: ['-c', 'firebase deploy --project=${_DEPLOYMENT_PROJECT} --only hosting']
+    args: ['-c', 'firebase deploy --project=${_DEPLOYMENT_PROJECT} --config=${_FIREBASE_JSON:-"firebase.json"} --only hosting']
 
 substitutions:
     _DEPLOYMENT_PROJECT: 'yfthig-${_DEPLOYMENT_ENVIRONMENT}'
