@@ -187,27 +187,13 @@
         </span>
         <v-card-text>
           <p>
-            Search for
-            <v-tooltip
-              top
-              content-class="top-tooltip pa-2 mr-2"
-              transition="fade-transition"
-            >
-              <template #activator="{ on }">
-                <span class="tool-tip-text" v-on="on">businesses</span>
-              </template>
-              <div class="pa-2" style="width: 250px">
-                Benefit Companies, Cooperative Associations, Sole Proprietorships and Partnerships
-                are currently available to search. Other business types will be added in the future.
-              </div>
-            </v-tooltip>
-            registered in B.C. and request copies of business documents.            
+            Search for businesses registered in B.C. and request copies of business documents.            
           </p>  
           
           <ul>
-            <li>Search for businesses by name or number</li>
-            <li>Search for firms by their owner</li>
-            <li>Download business documents</li>
+            <li>Search for businesses by name or number.</li>
+            <li>Search for firms by their owner.</li>
+            <li>Download business documents.</li>
           </ul>
 
           <div>
