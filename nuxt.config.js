@@ -162,7 +162,6 @@ export default {
     siteRegistryLearnMoreURL: process.env.ESRA_LEARN_MORE_URL,
     siteRegistryURL: process.env.ESRA_URL,
     nameRequestURL: process.env.NAME_REQUEST_URL,
-    onestopURL: process.env.ONESTOP_URL,
     pprURL: process.env.PPR_URL,
     regAccountCreateURL: process.env.REGISTRY_ACCOUNT_CREATE_URL,
     rptURL: process.env.RPT_URL,

@@ -34,6 +34,8 @@
 
           <ul>
             <li>Incorporate and manage benefit companies and cooperative associations.</li>
+            <li>Register and manage sole proprietorship, general partnership, and Doing
+              Business As (DBA) business entities.</li>
           </ul>
 
           <div>
@@ -120,7 +122,8 @@
         <v-card-text>
           <p>
             Search property tax records for rural properties or leased crown land in B.C.
-            (excluding municipal properties and Indigenous lands). Here you can find the following for a property:
+            (excluding municipal properties and Indigenous lands). Here you can find the
+            following for a property:
           </p>
 
           <ul>
@@ -187,7 +190,8 @@
         </span>
         <v-card-text>
           <p>
-            Search for businesses registered in B.C. and request copies of business documents.            
+            Search for businesses registered in B.C. and request copies of business
+            documents.            
           </p>  
           
           <ul>
@@ -211,7 +215,7 @@
       </v-card>
 
        <!-- BC Assessment -->
-      <v-card elevation="2" v-if="showBCAFlag">
+      <v-card v-if="showBCAFlag" elevation="2">
         <v-card-title>BC Assessment</v-card-title>
         <span v-if="showNewFlagBCA" class="card-title-badge-container">
           <div class="card-title-badge font-weight-bold pt-2">NEW</div>
@@ -243,7 +247,7 @@
       </v-card>
 
         <!-- Site Registry -->
-      <v-card elevation="2" v-if="showESRAFlag">
+      <v-card v-if="showESRAFlag" elevation="2">
         <v-card-title>Site Registry</v-card-title>
         <span v-if="showNewFlagESRA" class="card-title-badge-container">
           <div class="card-title-badge font-weight-bold pt-2">NEW</div>
@@ -276,7 +280,7 @@
       </v-card>
 
       <!-- Court Services Online -->
-      <v-card elevation="2" v-if="showCSOFlag">
+      <v-card v-if="showCSOFlag" elevation="2">
         <v-card-title>Court Services Online (CSO)</v-card-title>
         <span v-if="showNewFlagCSO" class="card-title-badge-container">
           <div class="card-title-badge font-weight-bold pt-2">NEW</div>
