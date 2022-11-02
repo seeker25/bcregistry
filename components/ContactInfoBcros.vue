@@ -37,6 +37,16 @@
             </li>
           </ul>
 
+          <p class="mt-6 mb-0 wide-16">
+            For account setup and login support, contact us at:
+          </p>
+          <ul class="contact-info-list mt-0">
+            <li>
+              <span>Toll Free:</span>
+              <a href="tel:+1-877-370-1033">1-877-370-1033</a>
+            </li>
+          </ul>
+
           <p class="mt-5 mb-0">
             <strong>Hours of Operation:</strong>
             <br />
