@@ -27,15 +27,14 @@
 
         <v-card-text>
           <p>
-            Manage the incorporation, registration and
-            listing of businesses and organizations in B.C.
+            Start a B.C. based business and keep business records up to date.
             Here you are currently able to:
           </p>
 
           <ul>
             <li>Incorporate and manage benefit companies and cooperative associations.</li>
-            <li>Register and manage sole proprietorship, general partnership, and Doing
-              Business As (DBA) business entities.</li>
+            <li>Register and manage general partnerships and sole proprietorships
+              (including "Doing Business As"  / DBA names).</li>
           </ul>
 
           <div>
