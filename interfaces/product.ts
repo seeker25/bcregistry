@@ -11,4 +11,5 @@ export interface ProductI {
   link: string
   text: string
   title: string
+  openInNewTab?: boolean
 }
