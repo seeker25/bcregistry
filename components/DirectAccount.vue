@@ -47,26 +47,19 @@
       </v-card>
 
       <!-- OneStop Business Registry -->
-      <v-card elevation="2">
-        <v-card-title>OneStop Business Registry</v-card-title>
+      <v-card elevation="2" class="disabled">
+        <v-card-title>
+          <span>OneStop Business Registry</span>
+          <span class="card-title-badge-container">
+            <div class="card-title-badge">MOVED</div>
+          </span>
+        </v-card-title>
 
         <v-card-text>
           <p>
-            Registration for sole proprietorships, general partnerships, and
-            "Doing business as" (DBA) names.
+            OneStop Business Registry is now part of Business Registry and can be
+            accessed through the BC Registries account.
           </p>
-
-          <div>
-            <a
-              class="link"
-              :href="$config.onestopURL"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span>Go to OneStop</span>
-            </a>
-            <v-icon dense color="primary">mdi-open-in-new</v-icon>
-          </div>
         </v-card-text>
       </v-card>
 
@@ -140,5 +133,17 @@
 
 img {
   margin-bottom: -6px;
+}
+
+.v-card.disabled {
+  background-color: $gray0;
+
+  .v-card__title {
+    background-color: $app-lt-blue;
+  }
+
+  .v-card__text {
+    background-color: $gray0;
+  }
 }
 </style>

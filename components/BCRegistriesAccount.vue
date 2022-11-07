@@ -27,13 +27,14 @@
 
         <v-card-text>
           <p>
-            Manage the incorporation, registration and
-            listing of businesses and organizations in B.C.
+            Start a B.C. based business and keep business records up to date.
             Here you are currently able to:
           </p>
 
           <ul>
             <li>Incorporate and manage benefit companies and cooperative associations.</li>
+            <li>Register and manage general partnerships and sole proprietorships
+              (including "Doing Business As"  / DBA names).</li>
           </ul>
 
           <div>
@@ -120,7 +121,8 @@
         <v-card-text>
           <p>
             Search property tax records for rural properties or leased crown land in B.C.
-            (excluding municipal properties and Indigenous lands). Here you can find the following for a property:
+            (excluding municipal properties and Indigenous lands). Here you can find the
+            following for a property:
           </p>
 
           <ul>
@@ -187,39 +189,16 @@
         </span>
         <v-card-text>
           <p>
-            Search for
-            <v-tooltip
-              top
-              content-class="top-tooltip pa-2 mr-2"
-              transition="fade-transition"
-            >
-              <template #activator="{ on }">
-                <span class="tool-tip-text" v-on="on">businesses</span>
-              </template>
-              <div class="pa-2" style="width: 250px">
-                Benefit Companies, Cooperative Associations, Sole Proprietorships and Partnerships
-                are currently available to search. Other business types will be added in the future.
-              </div>
-            </v-tooltip>
-            registered in B.C. and request copies of business
-            <v-tooltip
-              top
-              content-class="top-tooltip pa-2 mr-2"
-              transition="fade-transition"
-            >
-              <template #activator="{ on }">
-                <span class="tool-tip-text" v-on="on">documents.</span>
-              </template>
-              <div class="pa-2" style="width: 250px">
-                Business Summaries and electronic filing documents
-                are available to be downloaded. Other document types
-                will be added in the future.
-              </div>
-            </v-tooltip>
-          </p>
-          <p class="mt-6">
-            Available to use by end of fall 2022.
-          </p>
+            Search for businesses registered in B.C. and request copies of business
+            documents.            
+          </p>  
+          
+          <ul>
+            <li>Search for businesses by name or number.</li>
+            <li>Search for firms by their owner.</li>
+            <li>Download business documents.</li>
+          </ul>
+
           <div>
             <a
               class="link"
@@ -235,7 +214,7 @@
       </v-card>
 
        <!-- BC Assessment -->
-      <v-card elevation="2" v-if="showBCAFlag">
+      <v-card v-if="showBCAFlag" elevation="2">
         <v-card-title>BC Assessment</v-card-title>
         <span v-if="showNewFlagBCA" class="card-title-badge-container">
           <div class="card-title-badge font-weight-bold pt-2">NEW</div>
@@ -267,7 +246,7 @@
       </v-card>
 
         <!-- Site Registry -->
-      <v-card elevation="2" v-if="showESRAFlag">
+      <v-card v-if="showESRAFlag" elevation="2">
         <v-card-title>Site Registry</v-card-title>
         <span v-if="showNewFlagESRA" class="card-title-badge-container">
           <div class="card-title-badge font-weight-bold pt-2">NEW</div>
@@ -300,7 +279,7 @@
       </v-card>
 
       <!-- Court Services Online -->
-      <v-card elevation="2" v-if="showCSOFlag">
+      <v-card v-if="showCSOFlag" elevation="2">
         <v-card-title>Court Services Online (CSO)</v-card-title>
         <span v-if="showNewFlagCSO" class="card-title-badge-container">
           <div class="card-title-badge font-weight-bold pt-2">NEW</div>
