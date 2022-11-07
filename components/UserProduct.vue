@@ -1,5 +1,5 @@
 <template>
-  <v-card class="service-container" :href="product.link" :target="product.openInNewTab ? '_blank' : false">
+  <v-card class="service-container" :href="product.link" :target="product.openInNewTab ? '_blank' : ''">
     <v-row align="center" no-gutters>
       <v-col cols="auto">
         <img
