@@ -25,7 +25,7 @@ export function getProductInfo (config, type: ProductCode): ProductI {
       return {
         image: 'img/BCA_dashboard_thumbnail_image.jpg',
         link: appendAccountId(config?.bcaURL) || 'link_not_configured',
-        text: 'Search for real property information including assessment, ownership, location and residential inventory details.',
+        text: 'Generate a BC Assessment report to find real property ownership or location information, obtain property assessment information or obtain residential property inventory details for properties within British Columbia.',
         title: 'BC Assessment',
         openInNewTab: true
       } as ProductI
