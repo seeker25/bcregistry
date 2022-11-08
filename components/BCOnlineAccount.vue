@@ -103,10 +103,12 @@
         </v-card-title>
         <v-card-text>
           <p>
-            Search the BC Assessment database for information about real property in B.C. 
+            Generate a BC Assessment report to find real property ownership or location information,
+             obtain property assessment information or obtain residential property inventory details
+             for properties within British Columbia.
             <span v-if="showBCAFlag">
               BC Assessment has been moved to the BC Registries account.
-            </span> 
+            </span>
           </p>
         </v-card-text>
       </v-card>
@@ -157,7 +159,7 @@
             Perform court file searches, purchase documents, and electronically file court
             documents in all courts in B.C. <span v-if="showCSOFlag">
             Court Services Online has been moved to the BC Registries account.
-            </span> 
+            </span>
           </p>
         </v-card-text>
       </v-card>
@@ -191,20 +193,20 @@
   import { Component, Vue } from 'vue-property-decorator'
   import { appendAccountId } from 'sbc-common-components/src/util/common-util'
   import { getFeatureFlag } from '~/utils'
-  
+
   @Component({})
   export default class BCOnlineAccount extends Vue {
     readonly appendAccountId = appendAccountId // for use in template
-  
+
     get showESRAFlag (): boolean {
       return getFeatureFlag('bcregistry-ui-esra-enabled') as boolean
     }
-  
+
     get showCSOFlag (): boolean {
       return getFeatureFlag('bcregistry-ui-cso-enabled') as boolean
     }
-  
-    get showBCAFlag (): boolean {       
+
+    get showBCAFlag (): boolean {
       return getFeatureFlag('bcregistry-ui-bca-enabled') as boolean
     }
   }
