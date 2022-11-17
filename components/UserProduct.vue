@@ -1,5 +1,5 @@
 <template>
-  <v-card class="service-container" :href="product.link" :target="product.openInNewTab ? '_blank' : ''">
+  <v-card class="service-container" :href="product.link">
     <v-row align="center" no-gutters>
       <v-col cols="auto">
         <img
@@ -13,8 +13,7 @@
         <p class="pt-3 ma-0">{{ product.text }}</p>
         <v-btn class="action-btn px-5" :depressed="true">
           <span>Open</span>
-          <v-icon v-if="product.openInNewTab" class="pl-1 new-window-icon">mdi-open-in-new</v-icon>
-          <v-icon>mdi-chevron-right</v-icon>
+          <v-icon class="pl-1">mdi-chevron-right</v-icon>
         </v-btn>
       </v-col>
     </v-row>
@@ -44,10 +43,6 @@ export default class UserProduct extends Vue {
   margin-top: 30px;
   text-transform: none;
   pointer-events: none;
-}
-
-.new-window-icon {
-  font-size: $px-16;
 }
 
 .service-container {
