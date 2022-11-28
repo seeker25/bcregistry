@@ -57,6 +57,39 @@
           </div>
         </v-card-text>
       </v-card>
+
+      <!-- OrgBook BC -->
+      <v-card elevation="2">
+        <v-card-title>OrgBook BC</v-card-title>
+
+        <v-card-text>
+          <p>
+            OrgBook BC provides verified data about organizations including: 
+          </p>
+
+          <ul>
+            <li>Business numbers, legal names, and registration status.</li>
+            <li>Select licenses and permits.</li>
+          </ul>
+
+          <p class="mt-4">
+            OrgBook BC uses Verifiable Credentials technology to ensure data trustworthiness.
+            It provides an open API that you can use in your own services.
+          </p>
+
+          <div>
+            <a
+              class="link"
+              :href="$config.orgBookURL"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Go to OrgBook BC</span>
+            </a>
+            <v-icon dense color="primary">mdi-open-in-new</v-icon>
+          </div>
+        </v-card-text>
+      </v-card>
     </div>
 
     <div class="payment py-7">
