@@ -36,7 +36,7 @@
           target="_blank"
           rel="noopener noreferrer"
           :href="'https://www2.gov.bc.ca/gov/content/employment-business/business/managing-a-business/'
-            +'permits-licences/news-updates/modernization-updates/using-the-business-registry'">
+            +'permits-licences/news-updates/modernization-updates/modernization-resources'">
             <v-container fluid rounded class="dash-container-info service-container mt-5 white">
               <h4>Help with How to Use BC Registries Products and Services</h4>
               <p class="ma-0 pt-3">
