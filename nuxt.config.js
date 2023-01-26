@@ -145,7 +145,7 @@ export default {
   publicRuntimeConfig: {
     // from environment variables:
     addressChangeURL: process.env.ADDRESSCHANGE_URL,
-    authAPIURL: process.env.AUTH_API_URL,
+    authAPIURL: process.env.AUTH_API_URL + process.env.AUTH_API_VERSION,
     authWebUrl: process.env.AUTH_URL,
     bcaLearnMoreURL: process.env.BCA_LEARN_MORE_URL,
     bcaURL: process.env.BCA_URL,
@@ -168,12 +168,13 @@ export default {
     rptURL: process.env.RPT_URL,
     siteMinderLogoutUrl: process.env.SITEMINDER_LOGOUT_URL,
     societiesURL: process.env.SOCIETIES_URL,
-    statusAPIURL: process.env.STATUS_API_URL,
+    statusAPIURL: process.env.STATUS_API_URL + process.env.STATUS_API_VERSION,
     willsLearnMoreURL: process.env.WILLS_LEARN_MORE_URL,
     willsURL: process.env.WILLS_URL,
-    // as composite variables:
-    keycloakConfigPath: process.env.BCROS_BASE_URL + process.env.KEYCLOAK_CONFIG_PATH
-      + `?${new Date().getTime()}`,
+    keycloakAuthUrl: process.env.KEYCLOAK_AUTH_URL,
+    keycloakRealm: process.env.KEYCLOAK_REALM,
+    keycloakClientId: process.env.KEYCLOAK_CLIENTID,
+
     appName: JSON.parse(packageJson).name,
     appVersion: JSON.parse(packageJson).version,
     registryLogin: `${process.env.BCROS_BASE_URL}login`,

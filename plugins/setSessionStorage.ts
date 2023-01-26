@@ -10,10 +10,6 @@ export default function (context) {
       sessionStorage.setItem(SessionStorageKeys.AuthWebUrl, context.$config.authWebUrl)
       // console.log('Auth Web URL:', sessionStorage.getItem('AUTH_WEB_URL'))
     }
-    if (!sessionStorage.getItem('KEYCLOAK_CONFIG_PATH')) {
-      sessionStorage.setItem('KEYCLOAK_CONFIG_PATH', context.$config.keycloakConfigPath)
-      // console.log('Keycloak Config Path:', sessionStorage.getItem('KEYCLOAK_CONFIG_PATH'))
-    }
     if (!sessionStorage.getItem(SessionStorageKeys.AuthApiUrl)) {
       sessionStorage.setItem(SessionStorageKeys.AuthApiUrl, context.$config.authAPIURL)
       // console.log('Auth API URL:', sessionStorage.getItem('AUTH_API_URL'))
