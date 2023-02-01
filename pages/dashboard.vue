@@ -65,7 +65,7 @@ import {
   fetchAccountProducts, fetchOrganization,
   getFeatureFlag, getKeycloakRoles,
   getProductInfo, sleep, setLogoutUrl,
-  hasMhrAndPprProducts, addMyAssetRegistriesTile
+  hasMhrAndPprProducts, addMyAssetRegistriesTile, setSiteMinderLogoutUrl
 } from '@/utils'
 
 export default Vue.extend ({
@@ -116,6 +116,8 @@ export default Vue.extend ({
     // if user logs out from this page, go to login page
     setLogoutUrl(this.$config.registryLogin)
 
+    setSiteMinderLogoutUrl(this.$config.siteMinderLogoutUrl)
+
     // get account id from object in session storage
     // wait up to 10 sec for current account to be synced (typically by SbcHeader)
     this.loadingProducts = true
@@ -143,7 +145,7 @@ export default Vue.extend ({
       this.$store.commit('setSbcStaff', isSbcStaff)
 
       let products = []
-      
+
       // get products list from API
       products = await fetchAccountProducts(accountId)
 
@@ -170,7 +172,7 @@ export default Vue.extend ({
       // if user has both MHR and PPR product codes - add a My Asset Registries tile
       if (isMhrPpr) {
         addMyAssetRegistriesTile(this.$config, this.subscribedProducts)
-      } 
+      }
     }
 
     // wait 250ms so it doesn't look glitchy if products come back immediately
