@@ -80,6 +80,41 @@
         </v-card-text>
       </v-card>
 
+      <!-- Business Search -->
+      <v-card elevation="2">
+        <v-card-title>Business Search</v-card-title>
+        <span v-if="showBetaFlagBusSearch" class="card-title-badge-container">
+          <div class="card-title-badge font-weight-bold pt-2">BETA</div>
+        </span>
+        <span v-if="showComingSoonFlagBusSearch" class="card-title-badge-container">
+          <div class="card-title-badge font-weight-bold pt-2">COMING SOON</div>
+        </span>
+        <v-card-text>
+          <p>
+            Search for businesses registered in B.C. and request copies of business
+            documents.
+          </p>
+
+          <ul>
+            <li>Search for businesses by name or number.</li>
+            <li>Search for firms by their owner.</li>
+            <li>Download business documents.</li>
+          </ul>
+
+          <div>
+            <a
+              class="link"
+              :href="$config.busSrchLearnMoreURL"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Learn more about Business Search</span>
+            </a>
+            <v-icon dense color="primary">mdi-open-in-new</v-icon>
+          </div>
+        </v-card-text>
+      </v-card>
+
       <!-- Personal Property Registry -->
       <v-card elevation="2">
         <v-card-title>Personal Property Registry</v-card-title>
@@ -106,6 +141,37 @@
               rel="noopener noreferrer"
             >
               <span>Go to Personal Property Registry</span>
+            </a>
+            <v-icon dense color="primary">mdi-open-in-new</v-icon>
+          </div>
+        </v-card-text>
+      </v-card>
+
+      <!-- Manufactured Home Registry -->
+      <v-card v-if="showMhrFlag" elevation="2">
+        <v-card-title>Manufactured Home Registry</v-card-title>
+        <span v-if="showBetaMhr" class="card-title-badge-container">
+          <div class="card-title-badge font-weight-bold pt-2">BETA</div>
+        </span>
+        <v-card-text>
+          <p>
+            In the beta version of the Manufactured Home Registry, you are currently able to:
+          </p>
+
+          <ul>
+            <li>Search for, and download reports for, manufactured homes and personal property
+              liens on manufactured homes.</li>
+            <li>Search by owner name, organization, registration or serial number.</li>
+          </ul>
+
+          <div>
+            <a
+              class="link"
+              :href="$config.mhrLearnMoreURL"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Learn more about Manufactured Home Registry</span>
             </a>
             <v-icon dense color="primary">mdi-open-in-new</v-icon>
           </div>
@@ -178,41 +244,6 @@
         </v-card-text>
       </v-card>
 
-      <!-- Business Search -->
-      <v-card elevation="2">
-        <v-card-title>Business Search</v-card-title>
-        <span v-if="showBetaFlagBusSearch" class="card-title-badge-container">
-          <div class="card-title-badge font-weight-bold pt-2">BETA</div>
-        </span>
-        <span v-if="showComingSoonFlagBusSearch" class="card-title-badge-container">
-          <div class="card-title-badge font-weight-bold pt-2">COMING SOON</div>
-        </span>
-        <v-card-text>
-          <p>
-            Search for businesses registered in B.C. and request copies of business
-            documents.            
-          </p>  
-          
-          <ul>
-            <li>Search for businesses by name or number.</li>
-            <li>Search for firms by their owner.</li>
-            <li>Download business documents.</li>
-          </ul>
-
-          <div>
-            <a
-              class="link"
-              :href="$config.busSrchLearnMoreURL"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span>Learn more about Business Search</span>
-            </a>
-            <v-icon dense color="primary">mdi-open-in-new</v-icon>
-          </div>
-        </v-card-text>
-      </v-card>
-
        <!-- BC Assessment -->
       <v-card v-if="showBCAFlag" elevation="2">
         <v-card-title>BC Assessment</v-card-title>
@@ -221,7 +252,7 @@
         </span>
         <v-card-text>
           <p>
-            Search the BC Assessment database for information about real property in B.C. Here you 
+            Search the BC Assessment database for information about real property in B.C. Here you
             are able to:
           </p>
 
@@ -253,15 +284,15 @@
         </span>
         <v-card-text>
           <p>
-            The Site Registry retains provincial government information on the 
-            environmental condition of land. The Site Registry can be a helpful 
-            resource for anyone interested in purchasing or developing a property. 
+            The Site Registry retains provincial government information on the
+            environmental condition of land. The Site Registry can be a helpful
+            resource for anyone interested in purchasing or developing a property.
             Here you can:
           </p>
 
           <ul>
-            <li>Search the Site Registry to identify properties with environmental records submitted 
-              under Part 4 of B.C.'s Environmental Management Act.</li>            
+            <li>Search the Site Registry to identify properties with environmental records submitted
+              under Part 4 of B.C.'s Environmental Management Act.</li>
           </ul>
 
           <div>
@@ -292,7 +323,7 @@
           <ul>
             <li>Make applications or file any other court documents in any B.C. court registry.</li>
             <li>Browse daily court listings across the province.</li>
-            <li>Search court file information.</li>            
+            <li>Search court file information.</li>
           </ul>
 
           <div>
@@ -416,6 +447,14 @@ export default class BCRegistriesAccount extends Vue {
     return getFeatureFlag('bcregistry-ui-bca-enabled') as boolean
   }
 
+  get showMhrFlag (): boolean {
+    return getFeatureFlag('bcregistry-ui-mhr-enabled') as boolean
+  }
+
+  get showBetaMhr (): boolean {
+    return getFeatureFlag('bcregistry-ui-mhr-beta-chip') as boolean
+  }
+
   get dashboard (): string {
     return `${Routes.DASHBOARD}`
   }
@@ -452,7 +491,7 @@ img {
 
   .v-btn {
     width: 100%;
-  }  
+  }
 }
 
 .reduced-letter-spacing {

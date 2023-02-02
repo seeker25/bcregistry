@@ -74,7 +74,12 @@
 
         <v-card-text>
           <p>
-            Registrations and search for manufactured and mobile homes.
+            Manage manufactured home registrations, and search for manufactured
+            homes and personal property liens on homes.
+          </p>
+          <p v-if="showMhrFlag" class="mt-3">
+            <strong>Note: </strong>A beta version of Manufactured Home Registry
+            search is now available through the BC Registries account.
           </p>
         </v-card-text>
       </v-card>
@@ -208,6 +213,10 @@
 
     get showBCAFlag (): boolean {
       return getFeatureFlag('bcregistry-ui-bca-enabled') as boolean
+    }
+
+    get showMhrFlag (): boolean {
+      return getFeatureFlag('bcregistry-ui-mhr-enabled') as boolean
     }
   }
   </script>
