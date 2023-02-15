@@ -40,7 +40,7 @@ export function getProductInfo (config, type: ProductCode): ProductI {
         image: 'img/MHR_dashboard_thumbnail_image.jpg',
         link: appendAccountId(config?.pprDashboard) || 'link_not_configured',
         // eslint-disable-next-line max-len
-        text: 'Register or search for manufactured homes, and search for personal property legal claims on manufactured homes.',
+        text: 'Search for manufactured homes, and search for personal property legal claims on manufactured homes.',
         title: 'My Manufactured Home Registry'
       } as ProductI
     case ProductCode.PPR:
