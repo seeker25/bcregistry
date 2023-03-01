@@ -88,21 +88,5 @@ describe('User Product helper functions tests', () => {
     expect(hasMhrAndPprProducts(products)).toBe(false)
 
   })
-
-  test('should add MHR and PPR product to subscribed list of products', () => {
-
-    const subscribedProducts = [{
-      image: 'placeholder_image',
-      link: 'placeholder_link',
-      text: 'placeholder_text',
-      title: 'placeholder_title'
-    }]
-
-    addMyAssetRegistriesTile({ myBusinessRegistryDashboard: '', pprDashboard: '' }, subscribedProducts)
-    const mhrPprProduct = subscribedProducts.find(p => p.title === 'My Asset Registries')
-
-    expect(subscribedProducts).toHaveLength(2)
-    expect(mhrPprProduct).not.toBeUndefined()
-  })
 })
 

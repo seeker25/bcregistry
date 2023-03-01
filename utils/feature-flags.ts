@@ -7,9 +7,10 @@ declare const window: any
  * Default flag values when LD is not available.
  */
 const defaultFlagSet: LDFlagSet = {
-  'bcregistry-ui-bus-search-enabled': false,
+  'bcregistry-ui-bus-search-enabled': true,
   'bcregistry-ui-bus-search-beta-chip': false,
   'bcregistry-ui-bus-search-coming-soon-chip': false,
+  'bcregistry-ui-mhr-enabled': false,
   'bcregistry-ui-ppr-new-chip': true,
   'bcregistry-ui-rpt-new-chip': true,
   'bcregistry-ui-wills-new-chip': true,
@@ -84,4 +85,13 @@ export async function updateLdUser (
  */
 export function getFeatureFlag (name: string): any {
   return ldClient ? ldClient.variation(name) : defaultFlagSet[name]
+}
+
+/**
+ * A method that returns if the flag has a default value set or not
+ * @param flagName 
+ * @returns if the flag has a default value set or not
+ */
+export function hasDefaultValue (flagName: string): boolean {
+  return Object.keys(defaultFlagSet).includes(flagName)
 }

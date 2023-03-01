@@ -89,7 +89,7 @@ export function getMhrPprTileInfo(config): ProductI {
   return {
     image: 'img/My_Asset_Registries_dashboard_thumbnail_image.jpg',
     link: appendAccountId(config?.pprDashboard) || 'link_not_configured',
-    text: 'Register or search for manufactured homes, and register or search for legal claims on personal property.',
+    text: 'Search for manufactured homes, and register or search for legal claims on personal property.',
     title: 'My Asset Registries'
   }
 }
@@ -101,12 +101,4 @@ export function hasMhrAndPprProducts(products: Array<APIProductI>): boolean {
   return products
   .filter(product => product.code === ProductCode.MHR || product.code === ProductCode.PPR)
   .length === 2
-}
-
-/**
- * Add one My Asset Registries tile instead of MHR and PPR tiles
- */
-export function addMyAssetRegistriesTile(config, products: Array<any>): void {
-  const mhrPprProduct = getMhrPprTileInfo(config)
-  products.push(mhrPprProduct)
 }
