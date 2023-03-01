@@ -65,7 +65,8 @@ import {
   fetchAccountProducts, fetchOrganization,
   getFeatureFlag, getKeycloakRoles,
   getProductInfo, sleep, setLogoutUrl,
-  hasMhrAndPprProducts, addMyAssetRegistriesTile, setSiteMinderLogoutUrl
+  getMhrPprTileInfo, hasDefaultValue,
+  hasMhrAndPprProducts, setSiteMinderLogoutUrl
 } from '@/utils'
 
 export default Vue.extend ({
@@ -152,26 +153,35 @@ export default Vue.extend ({
       const currentProducts = products.filter(
         product => product.subscriptionStatus === ProductStatus.ACTIVE
       )
-      const isMhrPpr = hasMhrAndPprProducts(currentProducts)
 
       // only show products with no placeholder
       for (let i = 0; i < currentProducts.length; i++) {
-        if (currentProducts[i].code === ProductCode.BUSINESS_SEARCH) {
-          if (!getFeatureFlag('bcregistry-ui-bus-search-enabled')) continue
+        const enabledFF = `bcregistry-ui-${currentProducts[i].code}-enabled`
+        // ensure has a default (otherwise it might not have an enabled flag set in LD)
+        if (hasDefaultValue(enabledFF) && !getFeatureFlag(enabledFF)) {
+          // skip disabled products
+          continue
         }
-        const thisProduct = getProductInfo(this.$config, currentProducts[i].code)
 
-        // if user has both MHR and PPR product codes - don't add the tiles for them
-        if (!isMhrPpr || (currentProducts[i].code !== ProductCode.MHR && currentProducts[i].code !== ProductCode.PPR)) {
-          if (thisProduct.title !== 'placeholder_title') {
-            this.subscribedProducts.push(thisProduct)
+        let thisProduct = getProductInfo(this.$config, currentProducts[i].code)
+
+        if (thisProduct.title === 'placeholder_title') {
+          console.error('Product tile not implemented:', currentProducts[i].code)
+          continue
+        }
+
+        // block for MHR/PPR special rules
+        if (hasMhrAndPprProducts(currentProducts)) {
+          if (currentProducts[i].code === ProductCode.PPR) {
+            // replace ppr tile with assets
+            thisProduct = getMhrPprTileInfo(this.$config)
+          } else if (currentProducts[i].code === ProductCode.MHR) {
+            // skip mhr product (included with assets tile)
+            continue
           }
         }
-      }
 
-      // if user has both MHR and PPR product codes - add a My Asset Registries tile
-      if (isMhrPpr) {
-        addMyAssetRegistriesTile(this.$config, this.subscribedProducts)
+        this.subscribedProducts.push(thisProduct)
       }
     }
 
