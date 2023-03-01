@@ -6,7 +6,7 @@ import flushPromises from 'flush-promises'
 import UserProduct from '@/components/UserProduct.vue'
 import { state } from '@/store'
 import { createComponent } from '@/test/utils'
-import { hasMhrAndPprProducts, addMyAssetRegistriesTile } from '@/utils'
+import { hasMhrAndPprProducts } from '@/utils'
 
 
 Vue.use(Vuetify)
