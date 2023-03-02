@@ -156,7 +156,7 @@ export default Vue.extend ({
 
       // only show products with no placeholder
       for (let i = 0; i < currentProducts.length; i++) {
-        const enabledFF = `bcregistry-ui-${currentProducts[i].code}-enabled`
+        const enabledFF = `bcregistry-ui-${currentProducts[i].code}-enabled`.toLowerCase()
         // ensure has a default (otherwise it might not have an enabled flag set in LD)
         if (hasDefaultValue(enabledFF) && !getFeatureFlag(enabledFF)) {
           // skip disabled products
