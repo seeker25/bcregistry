@@ -14,6 +14,7 @@ const defaultFlagSet: LDFlagSet = {
   'bcregistry-ui-ppr-new-chip': true,
   'bcregistry-ui-rpt-new-chip': true,
   'bcregistry-ui-wills-new-chip': true,
+  'bcregistry-ui-bca-enabled': false,
   'banner-text': ' ',
   'whats-new': ' '
 }
@@ -89,7 +90,7 @@ export function getFeatureFlag (name: string): any {
 
 /**
  * A method that returns if the flag has a default value set or not
- * @param flagName 
+ * @param flagName
  * @returns if the flag has a default value set or not
  */
 export function hasDefaultValue (flagName: string): boolean {
