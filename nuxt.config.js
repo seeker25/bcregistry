@@ -167,6 +167,7 @@ export default {
     pprURL: process.env.PPR_URL,
     regAccountCreateURL: process.env.REGISTRY_ACCOUNT_CREATE_URL,
     rptURL: process.env.RPT_URL,
+    rptLearnMoreURL: process.env.RPT_LEARN_MORE_URL,
     siteMinderLogoutUrl: process.env.SITEMINDER_LOGOUT_URL,
     societiesURL: process.env.SOCIETIES_URL,
     statusAPIURL: process.env.STATUS_API_URL + process.env.STATUS_API_VERSION,

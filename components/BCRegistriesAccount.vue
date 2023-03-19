@@ -200,7 +200,7 @@
           <div>
             <a
               class="link"
-              :href="$config.rptURL"
+              :href="$config.rptLearnMoreURL"
               target="_blank"
               rel="noopener noreferrer"
             >
