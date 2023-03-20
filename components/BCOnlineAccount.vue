@@ -70,7 +70,7 @@
 
       <!-- Manufactured Homes Registry -->
       <v-card elevation="2">
-        <v-card-title>Manufactured Homes Registry</v-card-title>
+        <v-card-title>Manufactured Home Registry</v-card-title>
 
         <v-card-text>
           <p>
