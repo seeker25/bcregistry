@@ -176,6 +176,7 @@ export default {
     keycloakAuthUrl: process.env.KEYCLOAK_AUTH_URL,
     keycloakRealm: process.env.KEYCLOAK_REALM,
     keycloakClientId: process.env.KEYCLOAK_CLIENTID,
+    supportFilingUrl: process.env.SUPPORT_FILING_URL,
 
     appName: JSON.parse(packageJson).name,
     appVersion: JSON.parse(packageJson).version,
@@ -188,7 +189,8 @@ export default {
     createBcRegistriesAccount: `${process.env.AUTH_URL}choose-authentication-method`,
     signinBceidUrl: `${process.env.AUTH_URL}signin/bceid/`,
     signinBcscUrl: `${process.env.AUTH_URL}signin/bcsc/`,
-    signinIdirUrl: `${process.env.AUTH_URL}signin/idir/`
+    signinIdirUrl: `${process.env.AUTH_URL}signin/idir/`,
+    filing: `${process.env.BCROS_BASE_URL}filing`,
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
