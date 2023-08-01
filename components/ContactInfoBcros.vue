@@ -19,10 +19,12 @@
           <p class="mt-6 mb-0 wide-16">
             For additional support with BC Registries Filings, visit a
             <a
-            :href="SERVICE_BC_HREF"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Service BC location</a>
+              :href="SERVICE_BC_HREF"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Service BC location</span>
+            </a>
             or visit
             <a
               :href="BCROS_HREF"
