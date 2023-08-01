@@ -15,6 +15,24 @@
             </a>
             <v-icon small color="white">mdi-open-in-new</v-icon>.
           </p>
+          <h3 class="wide-16 mt-10">Get support for BC Registries filings</h3>
+          <p class="mt-6 mb-0 wide-16">
+            For additional support with BC Registries Filings, visit a
+            <a
+            :href="SERVICE_BC_HREF"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Service BC location</a>
+            or visit
+            <a
+              :href="BCROS_HREF"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>bcregistry.gov.bc.ca/filing</span>
+            </a>
+            <v-icon small color="white">mdi-open-in-new</v-icon> for support details.
+          </p>
         </div>
 
         <div class="col-md-5 col-sm-12 col-12">
@@ -67,6 +85,11 @@ export default class ContactInfoBcros extends Vue {
     'ministries-organizations/ministries/citizens-services/bc-registries-online-services'
 
   readonly MAILTO_HREF = 'mailto:bcregistries@gov.bc.ca?subject=BC%20Registries%20Support%20Request'
+
+  readonly BCROS_FILING_HREF = 'https://bcregistry.gov.bc.ca/filing'
+
+  readonly SERVICE_BC_HREF = 'https://www2.gov.bc.ca/gov/content/governments/organizational-structure/' +
+  'ministries-organizations/ministries/citizens-services/servicebc'
 }
 </script>
 
