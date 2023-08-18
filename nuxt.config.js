@@ -160,6 +160,7 @@ export default {
     csoLearnMoreURL: process.env.CSO_LEARN_MORE_URL,
     csoURL: process.env.CSO_URL,
     mhrLearnMoreURL: process.env.MHR_LEARN_MORE,
+    ndsUrl: process.env.NDS_URL,
     siteRegistryLearnMoreURL: process.env.ESRA_LEARN_MORE_URL,
     siteRegistryURL: process.env.ESRA_URL,
     nameRequestURL: process.env.NAME_REQUEST_URL,

@@ -1,5 +1,5 @@
 import { appendAccountId } from 'sbc-common-components/src/util/common-util'
-import { ProductCode, ProductStatus } from '@/enums'
+import { ProductCode } from '@/enums'
 import { ProductI, APIProductI } from '@/interfaces'
 
 /**
@@ -25,6 +25,7 @@ export function getProductInfo (config, type: ProductCode): ProductI {
       return {
         image: 'img/BCA_dashboard_thumbnail_image.jpg',
         link: appendAccountId(config?.bcaURL) || 'link_not_configured',
+        // eslint-disable-next-line max-len
         text: 'Generate a BC Assessment report to find real property ownership or location information, obtain property assessment information or obtain residential property inventory details for properties within British Columbia.',
         title: 'BC Assessment'
       } as ProductI
@@ -32,6 +33,7 @@ export function getProductInfo (config, type: ProductCode): ProductI {
       return {
         image: 'img/CSO_dashboard_thumbnail_image.jpg',
         link: appendAccountId(config?.csoURL) || 'link_not_configured',
+        // eslint-disable-next-line max-len
         text: 'Make applications or file other court documents, browse daily court listings, and search court file information.',
         title: 'Court Services Online'
       } as ProductI
@@ -42,6 +44,13 @@ export function getProductInfo (config, type: ProductCode): ProductI {
         // eslint-disable-next-line max-len
         text: 'Search for manufactured homes, and search for personal property legal claims on manufactured homes.',
         title: 'My Manufactured Home Registry'
+      } as ProductI
+    case ProductCode.NDS:
+      return {
+        image: 'img/NDS_dashboard_thumbnail_image.jpg',
+        link: appendAccountId(config?.ndsUrl) || 'link_not_configured',
+        text: 'Search for the names and addresses of people associated with businesses in B.C.',
+        title: 'Director Search (New)'
       } as ProductI
     case ProductCode.PPR:
       return {

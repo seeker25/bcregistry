@@ -12,7 +12,7 @@ export async function fetchAccountProducts (accountId: number): Promise<APIProdu
     headers: { Accept: 'application/json' }
   }
 
-  return authAxios.get(`orgs/${accountId}/products`, config)
+  return authAxios.get(`orgs/${accountId}/products?include_hidden=true`, config)
     .then(response => {
       const data = response?.data as APIProductI[]
       if (!data) {
