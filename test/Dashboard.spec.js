@@ -32,6 +32,10 @@ const testProducts = [
   {
     code: ProductCode.MHR,
     subscriptionStatus: ProductStatus.ACTIVE
+  },
+  {
+    code: ProductCode.NDS,
+    subscriptionStatus: ProductStatus.ACTIVE
   }
 ]
 
@@ -48,12 +52,12 @@ describe('Dashboard tests', () => {
   beforeEach(async () => {
     sandbox = createSandbox()
     const getStub = sandbox.stub(authAxios, 'get')
-    const getProducts = getStub.withArgs(`orgs/${currentAccount.id}/products`)
+    const getProducts = getStub.withArgs(`orgs/${currentAccount.id}/products?include_hidden=true`)
     getProducts.returns(new Promise(resolve => resolve({ data: testProducts })))
 
     const propsData = { getProductInfo: getProducts, loadingProducts: false }
     const mocks = {
-      $config: { myBusinessRegistryDashboard: '', pprDashboard: '' }
+      $config: { myBusinessRegistryDashboard: '', pprDashboard: '', ndsUrl: '' }
     }
     wrapper = createComponent(dashboard, localVue, store, propsData, vuetify, mocks)
     await flushPromises()
@@ -88,9 +92,10 @@ describe('Dashboard tests', () => {
 
     const userProducts = wrapper.findAllComponents(UserProduct)
 
-    expect(userProducts).toHaveLength(2)
+    expect(userProducts).toHaveLength(3)
     expect(userProducts.at(0).text()).toContain('My Business Registry');
     expect(userProducts.at(1).text()).toContain('My Asset Registries');
+    expect(userProducts.at(2).text()).toContain('Director Search (New)');
   })
 
 })
