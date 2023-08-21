@@ -167,6 +167,7 @@ export default {
     orgBookURL: process.env.ORGBOOK_URL,
     pprURL: process.env.PPR_URL,
     regAccountCreateURL: process.env.REGISTRY_ACCOUNT_CREATE_URL,
+    regApiGatewayURL: process.env.REGISTRIES_API_GATEWAY_URL,
     rptURL: process.env.RPT_URL,
     rptLearnMoreURL: process.env.RPT_LEARN_MORE_URL,
     siteMinderLogoutUrl: process.env.SITEMINDER_LOGOUT_URL,

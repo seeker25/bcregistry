@@ -7,14 +7,16 @@ declare const window: any
  * Default flag values when LD is not available.
  */
 const defaultFlagSet: LDFlagSet = {
+  'bcregistry-ui-bca-enabled': false,
   'bcregistry-ui-bus-search-enabled': true,
   'bcregistry-ui-bus-search-beta-chip': false,
   'bcregistry-ui-bus-search-coming-soon-chip': false,
+  'bcregistry-ui-cso-enabled': false,
+  'bcregistry-ui-esra-enabled': false,
   'bcregistry-ui-mhr-enabled': false,
   'bcregistry-ui-ppr-new-chip': true,
   'bcregistry-ui-rpt-new-chip': true,
   'bcregistry-ui-wills-new-chip': true,
-  'bcregistry-ui-bca-enabled': false,
   'banner-text': ' ',
   'whats-new': ' '
 }

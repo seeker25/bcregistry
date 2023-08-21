@@ -339,6 +339,36 @@
           </div>
         </v-card-text>
       </v-card>
+
+      <!-- BC Registries API Gateway -->
+      <v-card elevation="2">
+        <v-card-title>BC Registries API Gateway</v-card-title>
+
+        <v-card-text>
+          <p>
+            Leverage BC Registries API Gateway 
+            & Management Services to accelerate your digital transformation.
+          </p>
+
+          <ul>
+            <li>User Account Management and Authentication</li>
+            <li>Payment Services</li>
+            <li>Access APIs: Business Registry, Personal Property Registry, and more</li>
+          </ul>
+
+          <div>
+            <a
+              class="link"
+              :href="$config.regApiGatewayURL"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Go to BC Registries API Gateway</span>
+            </a>
+            <v-icon dense color="primary">mdi-open-in-new</v-icon>
+          </div>
+        </v-card-text>
+      </v-card>
     </div>
 
     <div class="payment py-7">
