@@ -340,13 +340,13 @@
         </v-card-text>
       </v-card>
 
-      <!-- BC Registries API Gateway -->
+      <!-- API Gateway -->
       <v-card elevation="2">
-        <v-card-title>BC Registries API Gateway</v-card-title>
+        <v-card-title>API Gateway</v-card-title>
 
         <v-card-text>
           <p>
-            Leverage BC Registries API Gateway 
+            Leverage the API Gateway 
             & Management Services to accelerate your digital transformation.
           </p>
 
@@ -363,7 +363,7 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span>Go to BC Registries API Gateway</span>
+              <span>Go to the API Gateway</span>
             </a>
             <v-icon dense color="primary">mdi-open-in-new</v-icon>
           </div>
