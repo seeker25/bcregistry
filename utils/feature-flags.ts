@@ -5,15 +5,17 @@ declare const window: any
 
 /**
  * Default flag values when LD is not available.
+ * NOTE: To disable dashboard tiles, you require an entry in here.
+ * Otherwise the tile will get disabled on the frontpage, but not under the dashboard section.
  */
 const defaultFlagSet: LDFlagSet = {
   'bcregistry-ui-bca-enabled': false,
   'bcregistry-ui-bus-search-enabled': true,
   'bcregistry-ui-bus-search-beta-chip': false,
   'bcregistry-ui-bus-search-coming-soon-chip': false,
-  'bcregistry-ui-cso-enabled': false,
-  'bcregistry-ui-esra-enabled': false,
-  'bcregistry-ui-mhr-enabled': false,
+  'bcregistry-ui-cso-enabled': true,
+  'bcregistry-ui-esra-enabled': true,
+  'bcregistry-ui-mhr-enabled': true,
   'bcregistry-ui-ppr-new-chip': true,
   'bcregistry-ui-rpt-new-chip': true,
   'bcregistry-ui-wills-new-chip': true,
