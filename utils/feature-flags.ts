@@ -10,6 +10,7 @@ declare const window: any
  * These also don't seem to be working when you use a tool to block LaunchDarkly. This needs to be fixed in the future.
  */
 const defaultFlagSet: LDFlagSet = {
+  'bcregistry-ui-bca-enabled': false,
   'bcregistry-ui-bus-search-enabled': true,
   'bcregistry-ui-bus-search-beta-chip': false,
   'bcregistry-ui-bus-search-coming-soon-chip': false,
