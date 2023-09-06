@@ -216,8 +216,8 @@
         <v-card-title>
           <span>Wills Registry</span>
         </v-card-title>
-        <span v-if="showComingSoonWillsFlag" class="card-title-badge-container">
-          <div class="card-title-badge font-weight-bold pt-2">COMING SOON</div>
+        <span v-if="showNewFlagWills" class="card-title-badge-container">
+          <div class="card-title-badge font-weight-bold pt-2">NEW</div>
         </span>
         <v-card-text>
           <p>
@@ -346,7 +346,7 @@
 
         <v-card-text>
           <p>
-            Leverage the API Gateway 
+            Leverage the API Gateway
             & Management Services to accelerate your digital transformation.
           </p>
 
@@ -441,8 +441,8 @@ export default class BCRegistriesAccount extends Vue {
     return getFeatureFlag('bcregistry-ui-bus-search-coming-soon-chip') as boolean
   }
 
-  get showComingSoonWillsFlag (): boolean {
-    return getFeatureFlag('bcregistry-ui-wills-coming-soon-chip') as boolean
+  get showNewFlagWills (): boolean {
+    return getFeatureFlag('bcregistry-ui-wills-new-chip') as boolean
   }
 
   get showNewFlagRPT (): boolean {
