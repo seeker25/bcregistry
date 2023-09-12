@@ -1,4 +1,4 @@
-import { appendAccountId } from 'sbc-common-components/src/util/common-util'
+import { appendAccountId, currentAccountId } from 'sbc-common-components/src/util/common-util'
 import { ProductCode } from '@/enums'
 import { ProductI, APIProductI } from '@/interfaces'
 
@@ -10,7 +10,7 @@ export function getProductInfo (config, type: ProductCode): ProductI {
     case ProductCode.BUSINESS:
       return {
         image: 'img/BCRS_dashboard_thumbnail_image.jpg',
-        link: appendAccountId(config?.myBusinessRegistryDashboard) || 'link_not_configured',
+        link: config?.myBusinessRegistryDashboard?.replace('{accountId}', currentAccountId()) || 'link_not_configured',
         text: 'Register or incorporate a business, manage name requests and keep business records up to date.',
         title: 'My Business Registry'
       } as ProductI

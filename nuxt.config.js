@@ -187,7 +187,7 @@ export default {
     registryPprMarketing: `${process.env.BCROS_BASE_URL}ppr-marketing`,
     pprDashboard: `${process.env.PPR_URL}/dashboard`,
     businessRegistryStaffDashboard: `${process.env.AUTH_URL}staff/dashboard/active`,
-    myBusinessRegistryDashboard: `${process.env.AUTH_URL}account/business/business`,
+    myBusinessRegistryDashboard: `${process.env.AUTH_URL}account/{accountId}/business`,
     createBcRegistriesAccount: `${process.env.AUTH_URL}choose-authentication-method`,
     signinBceidUrl: `${process.env.AUTH_URL}signin/bceid/`,
     signinBcscUrl: `${process.env.AUTH_URL}signin/bcsc/`,
