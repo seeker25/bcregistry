@@ -1,6 +1,8 @@
-import { appendAccountId, currentAccountId } from 'sbc-common-components/src/util/common-util'
-import { ProductCode } from '@/enums'
+import { appendAccountId } from 'sbc-common-components/src/util/common-util'
+import ConfigHelper from 'sbc-common-components/src/util/config-helper'
+import { SessionStorageKeys } from 'sbc-common-components/src/util/constants'
 import { ProductI, APIProductI } from '@/interfaces'
+import { ProductCode } from '@/enums'
 
 /**
  * Returns product info object for specified type.
@@ -110,4 +112,8 @@ export function hasMhrAndPprProducts(products: Array<APIProductI>): boolean {
   return products
   .filter(product => product.code === ProductCode.MHR || product.code === ProductCode.PPR)
   .length === 2
+}
+
+export function currentAccountId () {
+  return JSON.parse(ConfigHelper.getFromSession(SessionStorageKeys.CurrentAccount) || '{}').id || ''
 }
