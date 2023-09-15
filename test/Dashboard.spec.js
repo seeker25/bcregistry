@@ -92,10 +92,10 @@ describe('Dashboard tests', () => {
 
     const userProducts = wrapper.findAllComponents(UserProduct)
 
-    expect(userProducts).toHaveLength(3)
+    // default flag hides nds so product should not be there
+    expect(userProducts).toHaveLength(2)
     expect(userProducts.at(0).text()).toContain('My Business Registry');
     expect(userProducts.at(1).text()).toContain('My Asset Registries');
-    expect(userProducts.at(2).text()).toContain('Director Search (New)');
   })
 
 })
