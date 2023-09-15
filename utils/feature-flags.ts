@@ -15,6 +15,7 @@ const defaultFlagSet: LDFlagSet = {
   'bcregistry-ui-bus-search-beta-chip': false,
   'bcregistry-ui-bus-search-coming-soon-chip': false,
   'bcregistry-ui-mhr-enabled': true,
+  'bcregistry-ui-nds-enabled': false,
   'bcregistry-ui-ppr-new-chip': true,
   'bcregistry-ui-rpt-new-chip': true,
   'bcregistry-ui-wills-new-chip': true,
