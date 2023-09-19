@@ -7,17 +7,19 @@ declare const window: any
  * Default flag values when LD is not available.
  * NOTE: To disable dashboard tiles, you require an entry in here.
  * Otherwise the tile will get disabled on the frontpage, but not under the dashboard section.
- * These also don't seem to be working when you use a tool to block LaunchDarkly. This needs to be fixed in the future.
  */
 const defaultFlagSet: LDFlagSet = {
   'bcregistry-ui-bca-enabled': false,
   'bcregistry-ui-bus-search-enabled': true,
   'bcregistry-ui-bus-search-beta-chip': false,
   'bcregistry-ui-bus-search-coming-soon-chip': false,
+  'bcregistry-ui-cso-enabled': true,
+  'bcregistry-ui-esra-enabled': true,
   'bcregistry-ui-mhr-enabled': true,
   'bcregistry-ui-nds-enabled': false,
   'bcregistry-ui-ppr-new-chip': true,
   'bcregistry-ui-rpt-new-chip': true,
+  'bcregistry-ui-rpt-enabled': true,
   'bcregistry-ui-wills-new-chip': true,
   'banner-text': ' ',
   'whats-new': ' '
@@ -89,7 +91,7 @@ export async function updateLdUser (
  * @returns the flag value/variation, or undefined if the flag is not found
  */
 export function getFeatureFlag (name: string): any {
-  return ldClient ? ldClient.variation(name) : defaultFlagSet[name]
+  return ldClient ? ldClient.variation(name, defaultFlagSet[name]) : defaultFlagSet[name]
 }
 
 /**
