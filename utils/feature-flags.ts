@@ -19,6 +19,7 @@ const defaultFlagSet: LDFlagSet = {
   'bcregistry-ui-nds-enabled': false,
   'bcregistry-ui-ppr-new-chip': true,
   'bcregistry-ui-rpt-new-chip': true,
+  'bcregistry-ui-rpt-enabled': true,
   'bcregistry-ui-wills-new-chip': true,
   'banner-text': ' ',
   'whats-new': ' '
