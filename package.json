@@ -1,6 +1,6 @@
 {
   "name": "bc-registry",
-  "version": "2.1.7",
+  "version": "2.1.6",
   "private": true,
   "scripts": {
     "dev": "nuxt",
