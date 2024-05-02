@@ -19,4 +19,7 @@ module.exports = {
     '<rootDir>/components/**/*.vue',
     '<rootDir>/pages/**/*.vue',
   ],
+  coverageReporters: [
+    ['cobertura', {file: '.././coverage.xml'}]
+  ]
 }
