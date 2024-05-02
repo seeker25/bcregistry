@@ -21,6 +21,7 @@ jobs:
     uses: bcgov/bcregistry-sre/.github/workflows/frontend-cd.yaml@main
     with:
       target: ${{ inputs.target }}
+      node_version: "16.14.2"
       app_name: "bcregistry"
       working_directory: "."
     secrets:
