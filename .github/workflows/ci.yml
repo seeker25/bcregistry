@@ -8,6 +8,7 @@ jobs:
   bcregistry-ui-ci:
     uses: pwei1018/bcregistry-sre/.github/workflows/frontend-ci.yaml@main
     with:
+      node_version: "16.14.2"
       app_name: "bcregistry"
       working_directory: "."
       codecov_flag: ""
