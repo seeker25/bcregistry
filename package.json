@@ -1,6 +1,6 @@
 {
   "name": "bc-registry",
-  "version": "2.1.6",
+  "version": "2.1.7",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -20,7 +20,7 @@
     "http-status-codes": "^2.1.4",
     "launchdarkly-js-client-sdk": "^2.20.0",
     "nuxt": "^2.15.8",
-    "sbc-common-components": "3.0.3"
+    "sbc-common-components": "3.0.12"
   },
   "devDependencies": {
     "@nuxt/types": "^2.15.3",
