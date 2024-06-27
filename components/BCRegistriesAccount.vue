@@ -152,7 +152,7 @@
         <v-card-title>Manufactured Home Registry</v-card-title>
         <v-card-text>
           <p>
-            In the the Manufactured Home Registry, you are able to:
+            In the Manufactured Home Registry, you are able to:
           </p>
 
           <ul>
