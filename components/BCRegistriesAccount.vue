@@ -156,7 +156,7 @@
           </p>
 
           <ul>
-            <li>Search and download reports for, manufactured homes and personal property
+            <li>Search and download reports for manufactured homes and personal property
               liens on manufactured homes.</li>
             <li>Qualified Suppliers can file transportation applications, initial registrations, or transfer ownership.
             </li>
