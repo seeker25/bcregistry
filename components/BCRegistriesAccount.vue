@@ -150,18 +150,16 @@
       <!-- Manufactured Home Registry -->
       <v-card v-if="showMhrFlag" elevation="2">
         <v-card-title>Manufactured Home Registry</v-card-title>
-        <span v-if="showBetaMhr" class="card-title-badge-container">
-          <div class="card-title-badge font-weight-bold pt-2">BETA</div>
-        </span>
         <v-card-text>
           <p>
-            In the beta version of the Manufactured Home Registry, you are currently able to:
+            In the the Manufactured Home Registry, you are able to:
           </p>
 
           <ul>
-            <li>Search for, and download reports for, manufactured homes and personal property
+            <li>Search and download reports for manufactured homes and personal property
               liens on manufactured homes.</li>
-            <li>Search by owner name, organization, registration or serial number.</li>
+            <li>Qualified Suppliers can file transportation applications, initial registrations, or transfer ownership.
+            </li>
           </ul>
 
           <div>
