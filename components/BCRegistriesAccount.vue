@@ -158,7 +158,7 @@
           <ul>
             <li>Search and download reports for manufactured homes and personal property
               liens on manufactured homes.</li>
-            <li>Qualified Suppliers can file transportation applications, initial registrations, or transfer ownership.
+            <li>Qualified Suppliers can file transport permits, initial registrations, or ownership transfers.
             </li>
           </ul>
 
