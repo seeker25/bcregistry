@@ -52,7 +52,7 @@ export function getProductInfo (config, type: ProductCode): ProductI {
         image: 'img/NDS_dashboard_thumbnail_image.jpg',
         link: appendAccountId(config?.ndsUrl) || 'link_not_configured',
         text: 'Search for the names and addresses of people associated with businesses in B.C.',
-        title: 'Director Search (New)'
+        title: 'Director Search'
       } as ProductI
     case ProductCode.PPR:
       return {
