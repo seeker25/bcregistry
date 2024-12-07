@@ -31,6 +31,7 @@ export default {
     '~/plugins/printNameVersion.ts',
     '~/plugins/setSessionStorage.ts',
     '~/plugins/initLaunchDarkly.ts',
+    '~/plugins/googleAnalytics.client.ts',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -50,6 +51,7 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    '@nuxtjs/gtm'
   ],
 
   server: {
@@ -93,7 +95,10 @@ export default {
       },
     },
   },
-
+  gtm: {
+    enabled: process.env.GTM_ID.trim() ? true : false,
+    id: process.env.GTM_ID.trim()
+  },
   router: {
     // Ideally, these extended routes would be handled in a middleware
     // function that handles the appropriate navigations/redirects, but
@@ -144,6 +149,7 @@ export default {
   // Populate config variables...
   publicRuntimeConfig: {
     // from environment variables:
+    nodeEnv: process.env.NODE_ENV,
     addressChangeURL: process.env.ADDRESSCHANGE_URL,
     authAPIURL: process.env.AUTH_API_URL + process.env.AUTH_API_VERSION,
     authWebUrl: process.env.AUTH_URL,
@@ -179,7 +185,9 @@ export default {
     keycloakRealm: process.env.KEYCLOAK_REALM,
     keycloakClientId: process.env.KEYCLOAK_CLIENTID,
     supportFilingUrl: process.env.SUPPORT_FILING_URL,
-
+    gtagId: process.env.GTAG_ID.trim(),
+    gtagDebug: process.env.GTAG_DEBUG.trim(),
+    gtmId: process.env.GTM_ID.trim(),
     appName: JSON.parse(packageJson).name,
     appVersion: JSON.parse(packageJson).version,
     registryLogin: `${process.env.BCROS_BASE_URL}login`,
@@ -192,7 +200,7 @@ export default {
     signinBceidUrl: `${process.env.AUTH_URL}signin/bceid/`,
     signinBcscUrl: `${process.env.AUTH_URL}signin/bcsc/`,
     signinIdirUrl: `${process.env.AUTH_URL}signin/idir/`,
-    filing: `${process.env.BCROS_BASE_URL}filing`,
+    filing: `${process.env.BCROS_BASE_URL}filing`
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
