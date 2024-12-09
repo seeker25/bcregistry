@@ -96,7 +96,7 @@ export default {
     },
   },
   gtm: {
-    enabled: process.env.GTM_ID.trim() ? true : false,
+    enabled: !!process.env.GTM_ID.trim(),
     id: process.env.GTM_ID.trim()
   },
   router: {
