@@ -23,14 +23,6 @@ export default async function (context) {
         //myScript.hid = 'gtm'
         myScript.async = true
         document.head.appendChild(myScript);
-
-        const myScriptExists1 = Boolean(
-        document.querySelector(
-            `head > script[src="https://www.googletagmanager.com/gtag/js?id=${gtagID}"]`
-        )
-        )
-
-        console.info(`gtag header set...${myScriptExists1}`)
     }
 
     //part 2 of Google Analytics script
