@@ -367,6 +367,39 @@
           </div>
         </v-card-text>
       </v-card>
+
+      <!-- Short-Term Rental Registry -->
+      <v-card elevation="2">
+        <v-card-title>Short-Term Rental Registry</v-card-title>
+        <span v-if="showNewFlagSTRR" class="card-title-badge-container">
+          <div class="card-title-badge font-weight-bold pt-2">NEW</div>
+        </span>
+        <v-card-text>
+          <p>
+            Apply for and manage your registrations to comply with
+            B.C.'s new rules for short-term rentals. Here you can:
+          </p>
+
+          <ul>
+            <li>Register a short-term rental property</li>
+            <li>Register a platform service provider</li>
+            <li>Register a strata-titled hotel or motel</li>
+            <li>Manage and renew registrations</li>
+          </ul>
+
+          <div>
+            <a
+              class="link"
+              :href="$config.strrURL"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Go to the Short-Term Rental Registry to get started.</span>
+            </a>
+            <v-icon dense color="primary">mdi-open-in-new</v-icon>
+          </div>
+        </v-card-text>
+      </v-card>
     </div>
 
     <div class="payment py-7">
@@ -481,6 +514,10 @@ export default class BCRegistriesAccount extends Vue {
 
   get showBetaMhr (): boolean {
     return getFeatureFlag('bcregistry-ui-mhr-beta-chip') as boolean
+  }
+
+  get showNewFlagSTRR (): boolean {
+    return getFeatureFlag('bcregistry-ui-strr-new-chip') as boolean
   }
 
   get dashboard (): string {

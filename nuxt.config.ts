@@ -96,8 +96,8 @@ export default {
     },
   },
   gtm: {
-    enabled: !!process.env.GTM_ID.trim(),
-    id: process.env.GTM_ID.trim()
+    enabled: !!process.env.GTM_ID?.trim(),
+    id: process.env.GTM_ID?.trim()
   },
   router: {
     // Ideally, these extended routes would be handled in a middleware
@@ -175,6 +175,7 @@ export default {
     regAccountCreateURL: process.env.REGISTRY_ACCOUNT_CREATE_URL,
     regApiGatewayURL: process.env.REGISTRIES_API_GATEWAY_URL,
     rptURL: process.env.RPT_URL,
+    strrURL: process.env.STRR_URL,
     rptLearnMoreURL: process.env.RPT_LEARN_MORE_URL,
     siteMinderLogoutUrl: process.env.SITEMINDER_LOGOUT_URL,
     societiesURL: process.env.SOCIETIES_URL,
@@ -185,11 +186,11 @@ export default {
     keycloakRealm: process.env.KEYCLOAK_REALM,
     keycloakClientId: process.env.KEYCLOAK_CLIENTID,
     supportFilingUrl: process.env.SUPPORT_FILING_URL,
-    gtagId: process.env.GTAG_ID.trim(),
-    gtagDebug: process.env.GTAG_DEBUG.trim(),
-    gtmId: process.env.GTM_ID.trim(),
-    appName: JSON.parse(packageJson).name,
-    appVersion: JSON.parse(packageJson).version,
+    gtagId: process.env.GTAG_ID?.trim(),
+    gtagDebug: process.env.GTAG_DEBUG?.trim(),
+    gtmId: process.env.GTM_ID?.trim(),
+    appName: JSON.parse(packageJson?.toString()).name,
+    appVersion: JSON.parse(packageJson?.toString()).version,
     registryLogin: `${process.env.BCROS_BASE_URL}login`,
     registryDashboard: `${process.env.BCROS_BASE_URL}dashboard`,
     registryPprMarketing: `${process.env.BCROS_BASE_URL}ppr-marketing`,
