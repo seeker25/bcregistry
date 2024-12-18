@@ -76,6 +76,14 @@ export function getProductInfo (config, type: ProductCode): ProductI {
         text: 'Search for B.C. government information on the environmental condition of land.',
         title: 'Site Registry'
       } as ProductI
+    case ProductCode.STRR:
+      return {
+        image: 'img/STRR_dashboard_thumbnail_image.jpg',
+        link: appendAccountId(config?.strrURL) || 'link_not_configured',
+        text: 'Register your short-term rental property, platform service provider, or ' +
+             'strata-titled hotel or motel with the province.',
+        title: 'Short-Term Rental Registry'
+      } as ProductI
     case ProductCode.VS:
       return {
         image: 'img/VS_dashboard_thumbnail_image.jpg',
