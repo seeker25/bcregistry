@@ -6,7 +6,7 @@ on:
       - main
       - feature*
       - hotfix*
-      - release
+      - release*
   workflow_dispatch:
     inputs:
       target:
