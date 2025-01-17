@@ -89,10 +89,10 @@ export default Vue.extend ({
     }
     store.commit('setRoles', roles)
 
-    // check if user is staff
+    // check if user is staff or contact centre staff
     let isStaff: boolean
     try {
-      isStaff = roles?.includes('staff') || false
+      isStaff = roles?.some(role => ['staff', 'contact_centre_staff'].includes(role)) || false
     } catch {
       isStaff = false
     }
