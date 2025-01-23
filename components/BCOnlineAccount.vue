@@ -69,17 +69,17 @@
       </v-card>
 
       <!-- Manufactured Homes Registry -->
-      <v-card elevation="2">
-        <v-card-title>Manufactured Home Registry</v-card-title>
+      <v-card elevation="2" class="disabled">
+        <v-card-title>Manufactured Home Registry
+          <span class="card-title-badge-container">
+            <div class="card-title-badge">MOVED</div>
+          </span>
+        </v-card-title>
 
         <v-card-text>
           <p>
             Manage manufactured home registrations, and search for manufactured
             homes and personal property liens on homes.
-          </p>
-          <p v-if="showMhrFlag" class="mt-3">
-            <strong>Note: </strong>A beta version of Manufactured Home Registry
-            search is now available through the BC Registries account.
           </p>
         </v-card-text>
       </v-card>
