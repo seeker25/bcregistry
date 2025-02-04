@@ -45,7 +45,7 @@
         <v-card-text>
           <p>
             Name Request Online is now Name Request and is
-            accessed through your BC Registries account.
+            accessed through your Service BC Connect account.
           </p>
         </v-card-text>
       </v-card>
@@ -63,7 +63,7 @@
           <p>
             Personal property registrations and search for existing
             registrations. The Personal Property Registry has been moved
-            to the BC Registries account.
+            to the Service BC Connect account.
           </p>
         </v-card-text>
       </v-card>
@@ -94,7 +94,7 @@
         <v-card-text>
           <p>
             File a Wills Notice or search for an existing Wills Notice.
-            The Wills Registry has been moved to the BC Registries account.
+            The Wills Registry has been moved to the Service BC Connect account.
           </p>
         </v-card-text>
       </v-card>
@@ -112,7 +112,7 @@
              obtain property assessment information or obtain residential property inventory details
              for properties within British Columbia.
             <span v-if="showBCAFlag">
-              BC Assessment has been moved to the BC Registries account.
+              BC Assessment has been moved to the Service BC Connect account.
             </span>
           </p>
         </v-card-text>
@@ -130,7 +130,7 @@
         <v-card-text>
           <p>
             Search property tax records for rural properties in B.C.
-            Rural Property Tax Search has been moved to the BC Registries account.
+            Rural Property Tax Search has been moved to the Service BC Connect account.
           </p>
         </v-card-text>
       </v-card>
@@ -146,7 +146,7 @@
           <p>
             Search for information retained by the B.C. government on
             the environmental condition of land. <span v-if="showESRAFlag">
-            Site Registry has been moved to the BC Registries account.
+            Site Registry has been moved to the Service BC Connect account.
             </span>
           </p>
         </v-card-text>
@@ -163,7 +163,7 @@
           <p>
             Perform court file searches, purchase documents, and electronically file court
             documents in all courts in B.C. <span v-if="showCSOFlag">
-            Court Services Online has been moved to the BC Registries account.
+            Court Services Online has been moved to the Service BC Connect account.
             </span>
           </p>
         </v-card-text>

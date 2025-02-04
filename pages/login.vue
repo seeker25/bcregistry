@@ -1,7 +1,7 @@
 <template>
   <v-container class="view-container d-flex justify-center py-16">
     <div>
-      <h1 class="text-center">BC Registries Account Login</h1>
+      <h1 class="text-center">Service BC Connect Account Login</h1>
 
       <v-card max-width="460" class="mt-10 pa-7">
         <v-card-title class="pa-0">
@@ -31,7 +31,7 @@ const RETURN_PARAM = 'return'
 /**
  * This is a generic login page. It can be displayed after the user has signed out
  * so that they know they have successfully logged out. It can be bookmarked for
- * future use. Other BC Registries Account apps can redirect here (with an optional
+ * future use. Other Service BC Connect Account apps can redirect here (with an optional
  * "return" URL parameter) so they don't have to implement this themselves.
  */
 export default Vue.extend ({

@@ -8,7 +8,7 @@
         v-bind="attrs"
         v-on="on"
       >
-        <span>Log in to my BC Registries Account</span>
+        <span>Log in to my Service BC Connect Account</span>
         <v-icon class="mr-n1 pl-2">mdi-menu-down</v-icon>
       </v-btn>
     </template>

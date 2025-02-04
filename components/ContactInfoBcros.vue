@@ -5,13 +5,13 @@
         <div class="col-md-7 col-sm-12 col-12">
           <h3 class="wide-16">Need more information?</h3>
           <p class="mt-6 mb-0 wide-16">
-            To learn more about BC Registries and Online Services, please
+            To learn more about Service BC Connect, please
             <a
               :href="BCROS_HREF"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span>visit the BC Registries and Online Services information page</span>
+              <span>visit the Service BC Connect information page</span>
             </a>
             <v-icon small color="white">mdi-open-in-new</v-icon>.
           </p>

@@ -7,7 +7,7 @@
     <nav class="text-center mt-5">
       <ul class="pa-0">
         <li>
-          <a class="link" @click="smoothScroll('bcregistries-account')">BC Registries Account</a>
+          <a class="link" @click="smoothScroll('bcregistries-account')">Service BC Connect Account</a>
         </li>
         <li>
           <a class="link" @click="smoothScroll('bconline-account')">BC OnLine Account</a>

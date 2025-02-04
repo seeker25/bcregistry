@@ -4,7 +4,7 @@
       <v-container>
         <v-row no-gutters>
           <v-col class="col-md-6 col-xl-7">
-            <h1>Access and manage your BC Registries and Online Services</h1>
+            <h1>Access and manage your Service BC Connect</h1>
           </v-col>
         </v-row>
 
@@ -13,14 +13,14 @@
             <p>
               All registrations of businesses, not-for-profit societies, cooperative
               associations, personal property and manufactured homes are administered
-              and supported by BC Registries and Online Services.
+              and supported by Service BC Connect.
             </p>
             <p>
               As our online modernization initiative continues, refer to this page for
               updates on ways to manage registration information.
             </p>
             <p>
-              For up-to-date data analytics on our products and services, <a class="link" href="https://www.analytics.bcregistry.gov.bc.ca/">visit our BC Registries
+              For up-to-date data analytics on our products and services, <a class="link" href="https://www.analytics.bcregistry.gov.bc.ca/">visit our Service BC Connect
               Statistics and Insights page</a>.
             </p>
           </v-col>

@@ -1,13 +1,12 @@
 <template>
   <v-container id="bcregistries-account" fluid class="account-container">
-    <h2 class="account-title">BC Registries Account</h2>
+    <h2 class="account-title">Service BC Connect Account</h2>
 
     <v-row no-gutters class="mt-3">
       <v-col cols="2"></v-col>
       <v-col cols="8" class="account-info">
         As we work to modernize our digital registries services, features
-        from other account types are gradually being moved to the new BC
-        Registries account system.
+        from other account types are gradually being moved to the new Service BC Connect account system.
       </v-col>
       <v-col cols="2"></v-col>
     </v-row>
@@ -15,7 +14,7 @@
     <v-row no-gutters class="mt-4">
       <v-col cols="2"></v-col>
       <v-col cols="8" class="account-info-bold">
-        The new BC Registries account supports the following services:
+        The new Service BC Connect account supports the following services:
       </v-col>
       <v-col cols="2"></v-col>
     </v-row>
@@ -411,7 +410,7 @@
       <v-row no-gutters class="mt-2">
         <v-col class="col-1 col-md-2"></v-col>
         <v-col class="col-10 col-md-8 payment-info-text">
-          The BC Registries account supports multiple payment options
+          The Service BC Connect account supports multiple payment options
           depending on the account and transaction type, including credit
           card, online banking, BC OnLine, and pre-authorized debit (PAD).
         </v-col>
@@ -426,7 +425,7 @@
           class="button-blue-on-white"
           :href="$config.regAccountCreateURL"
         >
-          Create a BC Registries Account
+          Create a Service BC Connect Account
         </v-btn>
       </div>
 
@@ -436,7 +435,7 @@
           class="button-white-on-blue"
           :to="dashboard"
         >
-          Go to BC Registries Dashboard
+          Go to Service BC Connect Dashboard
         </v-btn>
       </div>
     </div>

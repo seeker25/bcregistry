@@ -75,7 +75,7 @@ describe('Dashboard tests', () => {
       .toEqual(getProductInfo(wrapper.vm.$config, ProductCode.BUSINESS))
     // check layout
     expect(wrapper.find('.dash-header').exists()).toBe(true)
-    expect(wrapper.find('.dash-header').text()).toBe('BC Registries Dashboard')
+    expect(wrapper.find('.dash-header').text()).toBe('Service BC Connect Dashboard')
     expect(wrapper.find('.dash-header-info').exists()).toBe(true)
     expect(wrapper.find('.dash-sub-header').exists()).toBe(true)
     expect(wrapper.find('.dash-sub-header').text()).toContain('My Products and Services')

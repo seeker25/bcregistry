@@ -3,9 +3,9 @@
     <v-overlay v-model="loadingProducts">
       <v-progress-circular color="primary" size="50" indeterminate />
     </v-overlay>
-    <h1 class="dash-header">{{ isSbcStaff ? 'SBC Staff' : 'BC' }} Registries Dashboard</h1>
+    <h1 class="dash-header">{{ isSbcStaff ? 'SBC Staff' : 'Service BC Connect' }} Dashboard</h1>
 
-    <p class="dash-header-info ma-0 pt-3">Access to your BC Registries account product and services</p>
+    <p class="dash-header-info ma-0 pt-3">Access to your Service BC Connect account product and services</p>
 
     <template v-if="!loadingProducts">
       <h3 class="dash-sub-header">
@@ -28,7 +28,7 @@
             <h4>Add Product and Services</h4>
             <p class="ma-0 pt-3">
               To request access to additional products and services, contact the account
-              Administrator of your BC Registries account.
+              Administrator of your Service BC Connect account.
             </p>
           </v-container>
           <a
@@ -38,7 +38,7 @@
           :href="'https://www2.gov.bc.ca/gov/content/employment-business/business/managing-a-business/'
             +'permits-licences/news-updates/modernization-updates/modernization-resources'">
             <v-container fluid rounded class="dash-container-info service-container mt-5 white">
-              <h4>Help with How to Use BC Registries Products and Services</h4>
+              <h4>Help with How to Use Service BC Connect Products and Services</h4>
               <p class="ma-0 pt-3">
                 Learn about the registries and how to use the applications through step-by-step guides,
                 online videos, and downloadable quick guides.

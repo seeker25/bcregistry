@@ -11,7 +11,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'BC Registries and Online Services',
+    title: 'Service BC Connect',
     htmlAttrs: {
       lang: 'en',
     },
