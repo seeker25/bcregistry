@@ -205,5 +205,10 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    transpile: ['keycloak-js'],
+    extend(config) {
+      config.resolve.alias['keycloak-js'] = require.resolve('keycloak-js');
+    }
+  }
 }
