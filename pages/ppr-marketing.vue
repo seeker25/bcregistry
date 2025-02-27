@@ -26,12 +26,12 @@
 
         <v-row v-if="!isLoggedIn" class="py-6" no-gutters>
           <v-col class="body-text">
-            New to BC Registries?
+            New to Service BC Connect?
             <a
               class="link"
               :href="$config.createBcRegistriesAccount"
             >
-              <span>Create a BC Registries Account</span>
+              <span>Create a Service BC Connect Account</span>
             </a>
           </v-col>
         </v-row>
@@ -43,7 +43,7 @@
               class="button-white-on-blue"
               :to="Routes.DASHBOARD"
             >
-              Go to BC Registries Dashboard
+              Go to Service BC Connect Dashboard
             </v-btn>
           </v-col>
         </v-row>
@@ -57,8 +57,7 @@
 
       <v-row class="pt-3 pb-8">
         <v-col cols="12" class="text-center">
-          The Personal Property Registry is now one of BC Registries and Online
-          Services' new modernized applications.
+          The Personal Property Registry is now one of Service BC Connect new modernized applications.
         </v-col>
       </v-row>
 
@@ -91,7 +90,7 @@
           <br />
           <h4>Account Integration</h4>
           <p>
-            Access to all of your BC Registries products and services from one
+            Access to all of your Service BC Connect products and services from one
             location.
           </p>
         </v-col>
@@ -379,7 +378,7 @@
               class="button-white-on-blue"
               :href="$config.createBcRegistriesAccount"
             >
-              Create a BC Registries Account
+              Create a Service BC Connect Account
             </v-btn>
           </template>
           <v-btn

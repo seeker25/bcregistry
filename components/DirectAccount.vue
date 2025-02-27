@@ -7,7 +7,7 @@
       <v-col cols="8" class="account-info">
         Specific sites dedicated to incorporating, registering and
         maintaining corporations, businesses and societies. In the future,
-        these services will be moved to the new BC Registries account
+        these services will be moved to the new Service BC Connect account
         system.
       </v-col>
       <v-col cols="2"></v-col>
@@ -58,7 +58,7 @@
         <v-card-text>
           <p>
             OneStop Business Registry is now part of Business Registry and can be
-            accessed through the BC Registries account.
+            accessed through the Service BC Connect account.
           </p>
         </v-card-text>
       </v-card>
