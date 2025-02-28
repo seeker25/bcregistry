@@ -23,6 +23,13 @@ export function getProductInfo (config, type: ProductCode): ProductI {
         text: 'Search for businesses registered in B.C. and access business documents.',
         title: 'Business Search'
       } as ProductI
+    case ProductCode.BUSINESS_PERSON_SEARCH:
+      return {
+        image: 'img/business_search_product_image.jpg',
+        link: appendAccountId(config?.ndsUrl) || 'link_not_configured',
+        text: 'Search for registered BC businesses and individuals related to those businesses and access documents.',
+        title: 'Business and Person Search'
+      } as ProductI
     case ProductCode.BCA:
       return {
         image: 'img/BCA_dashboard_thumbnail_image.jpg',

@@ -154,19 +154,33 @@ export default Vue.extend ({
         product => product.subscriptionStatus === ProductStatus.ACTIVE
       )
 
+      let hasCombinedSearch = false
+      const searchProductCodes = [ProductCode.BUSINESS_SEARCH, ProductCode.NDS, ProductCode.CA_SEARCH]
+
       // only show products with no placeholder
       for (let i = 0; i < currentProducts.length; i++) {
-        const enabledFF = `bcregistry-ui-${currentProducts[i].code}-enabled`.toLowerCase()
+        let productCode = currentProducts[i].code
+        const enabledFF = `bcregistry-ui-${productCode}-enabled`.toLowerCase()
         // ensure has a default (otherwise it might not have an enabled flag set in LD)
         if (hasDefaultValue(enabledFF) && !getFeatureFlag(enabledFF)) {
           // skip disabled products
           continue
         }
 
-        let thisProduct = getProductInfo(this.$config, currentProducts[i].code)
+        if (searchProductCodes.includes(productCode) && getFeatureFlag('bcregistry-ui-combine-search-tile')) {
+          if (hasCombinedSearch) {
+            // skip search this product since the new Business and Person Search is already in subscribedProducts
+            continue
+          } else {
+            hasCombinedSearch = true
+            productCode = ProductCode.BUSINESS_PERSON_SEARCH
+          }
+        }
+
+        let thisProduct = getProductInfo(this.$config, productCode)
 
         if (thisProduct.title === 'placeholder_title') {
-          console.error('Product tile not implemented:', currentProducts[i].code)
+          console.error('Product tile not implemented:', productCode)
           continue
         }
 

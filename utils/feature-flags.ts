@@ -21,6 +21,7 @@ const defaultFlagSet: LDFlagSet = {
   'bcregistry-ui-rpt-new-chip': true,
   'bcregistry-ui-rpt-enabled': true,
   'bcregistry-ui-wills-new-chip': true,
+  'bcregistry-ui-combine-search-tile': true,
   'banner-text': ' ',
   'whats-new': ' '
 }
