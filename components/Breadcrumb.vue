@@ -71,7 +71,7 @@ export default class Breacrumb extends Vue {
           {
             disabled: false,
             href: `${Routes.HOME}`,
-            text: 'Service BC Connect',
+            text: 'BC Registries and Online Services',
           },
           {
             disabled: true,
@@ -86,7 +86,7 @@ export default class Breacrumb extends Vue {
           {
             disabled: true,
             href: null,
-            text: this.isSbcStaff ? 'Staff Dashboard' : 'Service BC Connect Dashboard',
+            text: this.isSbcStaff ? 'Staff Dashboard' : 'BC Registries Dashboard',
           },
         ]
 
@@ -95,7 +95,7 @@ export default class Breacrumb extends Vue {
           {
             disabled: true,
             href: null,
-            text: 'Service BC Connect',
+            text: 'BC Registries and Online Services',
           },
         ]
     }
