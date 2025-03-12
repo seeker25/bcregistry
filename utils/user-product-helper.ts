@@ -27,7 +27,8 @@ export function getProductInfo (config, type: ProductCode): ProductI {
       return {
         image: 'img/business_search_product_image.jpg',
         link: appendAccountId(config?.ndsUrl) || 'link_not_configured',
-        text: 'Search for registered BC businesses and individuals related to those businesses and access documents.',
+        // eslint-disable-next-line max-len
+        text: 'Search for businesses registered in B.C. and their related individuals, and request copies of business documents.',
         title: 'Business and Person Search'
       } as ProductI
     case ProductCode.BCA:
