@@ -73,6 +73,11 @@ export default defineNuxtConfig({
     }]
   },
 
+  // disable dark mode
+  ui: {
+    colorMode: false
+  },
+
   gtm: {
     enabled: isGtmEnabled,
     id: isGtmEnabled ? process.env.NUXT_GTM_ID?.trim() as string : 'GTM-UNDEFINED',
