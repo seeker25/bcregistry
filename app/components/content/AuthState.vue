@@ -1,0 +1,12 @@
+<template>
+  <div>
+    <slot
+      v-if="$keycloak.authenticated"
+      name="true"
+    />
+    <slot
+      v-else
+      name="false"
+    />
+  </div>
+</template>
