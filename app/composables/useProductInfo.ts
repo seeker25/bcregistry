@@ -5,18 +5,20 @@ import { ProductStatus } from '~/enums/product-status'
 export const useProductInfo = () => {
   const rtc = useRuntimeConfig().public
   const ldStore = useConnectLaunchdarklyStore()
-  const accountId = useConnectAccountStore().currentAccount.id.toString()
+  const accountStore = useConnectAccountStore()
   const t = useNuxtApp().$i18n.t
   const { $keycloak } = useNuxtApp()
 
   function appendAccountId(url: string): string {
-    return url ? `${url}?accountid=${accountId}` : 'link_not_configured'
+    return url ? `${url}?accountid=${accountStore.currentAccount.id}` : 'link_not_configured'
   }
 
   /**
     * Returns product info object for specified type.
   */
   function getProductInfo(type: ProductCode): Product {
+    const accountId = accountStore.currentAccount.id.toString()
+
     switch (type) {
       case ProductCode.BUSINESS:
         return {
@@ -139,6 +141,7 @@ export const useProductInfo = () => {
 
   async function getActiveUserProducts() {
     const userProducts: Product[] = []
+    const accountId = accountStore.currentAccount.id
 
     // using $fetch giving type mismatch
     const response = await fetch(`${rtc.authApiURL}/orgs/${accountId}/products?include_hidden=true`, {

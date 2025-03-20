@@ -1,5 +1,6 @@
 ---
 content_type: hero
+background_image: "/img/BCReg_homebanner_images_final_80compressed_032521.jpg"
 ---
 
 # Access and manage your BC Registries and Online Services FRENCH
