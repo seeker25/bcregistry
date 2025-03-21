@@ -153,7 +153,7 @@ export const useProductInfo = () => {
     const activeProducts = (await response.json() as APIProduct[])
       .filter(product => product.subscriptionStatus === ProductStatus.ACTIVE)
 
-    let hasCombinedSearch = false
+    let hasSearch = false
     const searchProductCodes = [ProductCode.BUSINESS_SEARCH, ProductCode.NDS, ProductCode.CA_SEARCH]
 
     // only show products with no placeholder
@@ -166,12 +166,12 @@ export const useProductInfo = () => {
         continue
       }
 
-      if (searchProductCodes.includes(productCode) && ldStore.getStoredFlag('bcregistry-ui-combine-search-tile')) {
-        if (hasCombinedSearch) {
+      if (searchProductCodes.includes(productCode)) {
+        if (hasSearch) {
           // skip search this product since the new Business and Person Search is already in subscribedProducts
           continue
         } else {
-          hasCombinedSearch = true
+          hasSearch = true
           productCode = ProductCode.BUSINESS_PERSON_SEARCH
         }
       }
