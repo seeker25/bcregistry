@@ -1,6 +1,6 @@
 {
   "name": "bc-registry",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": true,
   "type": "module",
   "scripts": {
@@ -14,18 +14,17 @@
     "lint:fix": "eslint --fix ."
   },
   "dependencies": {
-    "@nuxt/content": "^3.3.0",
-    "@sbc-connect/nuxt-core-layer-beta": "^0.0.2",
-    "nuxt": "^3.16.0",
+    "@nuxt/content": "^3.4.0",
+    "@sbc-connect/nuxt-core-layer-beta": "^0.0.3",
+    "nuxt": "^3.16.1",
     "nuxt-gtag": "^3.0.2"
   },
   "devDependencies": {
-    "@nuxt/eslint": "^1.1.0",
-    "@nuxt/image": "^1.9.0",
-    "@nuxtjs/i18n": "^9.3.1",
+    "@nuxt/eslint": "^1.2.0",
+    "@nuxt/image": "^1.10.0",
+    "@nuxtjs/i18n": "^9.3.4",
     "@zadigetvoltaire/nuxt-gtm": "^0.0.13",
-    "eslint": "^9.21.0",
-    "nuxt-lodash": "^2.5.3",
+    "eslint": "^9.23.0",
     "typescript": "^5.8.2"
   },
   "pnpm": {

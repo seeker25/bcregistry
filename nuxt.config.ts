@@ -38,7 +38,9 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    '/': { redirect: '/en-CA' }
+    '/': { redirect: '/en-CA' },
+    '/fr-CA': { prerender: false },
+    '/fr-CA/**': { prerender: false }
   },
 
   i18n: {
@@ -63,7 +65,11 @@ export default defineNuxtConfig({
     langDir: 'locales',
     defaultLocale: 'en-CA',
     detectBrowserLanguage: false,
-    vueI18n: join(currentDir, './i18n.config.ts')
+    vueI18n: join(currentDir, './i18n.config.ts'),
+    bundle: {
+      onlyLocales: ['en-CA'], // disable fr-CA
+      optimizeTranslationDirective: false // we recommend disabling this feature as it causes issues and will be deprecated in v10.
+    }
   },
 
   icon: {
@@ -71,11 +77,6 @@ export default defineNuxtConfig({
       prefix: 'sbc',
       dir: './app/assets/svgs'
     }]
-  },
-
-  // disable dark mode
-  ui: {
-    colorMode: false
   },
 
   gtm: {

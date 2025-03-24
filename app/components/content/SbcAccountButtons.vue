@@ -33,7 +33,7 @@ defineProps({
     </div>
     <UButton
       v-else
-      class="px-6 py-3 bg-midnightBlue-900 font-bold not-prose"
+      class="px-6 py-3 bg-midnightBlue-900 font-bold not-prose hover:bg-midnightBlue-900/80"
       :label="$t('btn.goToBCRegDashboard')"
       :block="isSmallScreen"
       :to="localePath('/dashboard')"

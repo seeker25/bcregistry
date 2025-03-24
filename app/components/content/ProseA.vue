@@ -39,21 +39,22 @@ const resolvedPath = computed(() => {
 <template>
   <span>
     <a
-      class="text-bcGovColor-markBlue underline font-bold"
       :target
       :download
       :href="resolvedPath"
     >
-      <slot />
+      <span>
+        <slot />
+        <span
+          v-if="target === '_blank'"
+          class="ml-1 inline-flex pb-1 align-middle"
+        >
+          <UIcon
+            name="i-mdi-open-in-new"
+            class="size-4 shrink-0"
+          />
+        </span>
+      </span>
     </a>
-    <span
-      v-if="target === '_blank'"
-      class="ml-1 inline-flex pb-1 align-middle"
-    >
-      <UIcon
-        name="i-mdi-open-in-new"
-        class="size-4 shrink-0 text-bcGovColor-markBlue"
-      />
-    </span>
   </span>
 </template>

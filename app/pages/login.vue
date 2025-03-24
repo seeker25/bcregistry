@@ -41,7 +41,7 @@ const isSessionExpired = sessionStorage.getItem(ConnectStorageKeys.CONNECT_SESSI
 
 <template>
   <div class="flex grow flex-col items-center justify-center py-10">
-    <div class="flex flex-col items-center gap-4">
+    <div class="flex flex-col items-center gap-10">
       <h1>
         {{ $t('page.login.h1') }}
       </h1>
@@ -73,6 +73,7 @@ const isSessionExpired = sessionStorage.getItem(ConnectStorageKeys.CONNECT_SESSI
             <UButton
               :variant="i === 0 ? 'solid' : 'outline'"
               block
+              class="py-2.5"
               :icon="option.icon"
               :label="option.label"
               @click="option.click"

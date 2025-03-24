@@ -20,7 +20,7 @@ const isSmallScreen = useMediaQuery('(max-width: 640px)')
       <UButton
         v-if="!$keycloak.authenticated"
         :label="$t('btn.createBCRegAccount')"
-        class="bg-midnightBlue-900 font-bold px-6 py-3"
+        class="bg-midnightBlue-900 font-bold px-6 py-3 hover:bg-midnightBlue-900/80"
         size="xl"
         :to="rtc.authWebURL + 'choose-authentication-method'"
         :block="isSmallScreen"

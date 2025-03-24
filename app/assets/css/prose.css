@@ -14,13 +14,19 @@
   font-size: 1.25em;
   line-height: 1.6;
   margin-top: 1.2em;
-  margin-bottom: 1.2em
+  margin-bottom: 1.2em;
 }
 
 .prose :where(a):not(:where([class~="not-prose"],[class~="not-prose"] *)){
   color: var(--tw-prose-links);
   text-decoration: underline;
-  font-weight: 900
+  font-weight: 900;
+}
+
+.prose :where(a):not(:where([class~="not-prose"],[class~="not-prose"] *)):hover{
+  color: var(--color-bcGovColor-markBlueHover);
+  text-decoration: underline;
+  font-weight: 900;
 }
 
 .prose :where(strong):not(:where([class~="not-prose"],[class~="not-prose"] *)){
@@ -134,11 +140,11 @@
 
 .prose :where(h1):not(:where([class~="not-prose"],[class~="not-prose"] *)){
   color: var(--tw-prose-headings);
-  font-weight: 800;
-  font-size: 2.25em;
+  font-weight: 900;
+  font-size: 2.5em;
   margin-top: 0;
   margin-bottom: 0.8888889em;
-  line-height: 1.1111111
+  line-height: 1.25;
 }
 
 .prose :where(h1 strong):not(:where([class~="not-prose"],[class~="not-prose"] *)){
@@ -387,7 +393,7 @@
   --tw-prose-invert-th-borders: #4b5563;
   --tw-prose-invert-td-borders: #374151;
   font-size: 1rem;
-  line-height: 1.25
+  line-height: 1.5;
 }
 
 .prose :where(picture > img):not(:where([class~="not-prose"],[class~="not-prose"] *)){

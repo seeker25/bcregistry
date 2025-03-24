@@ -16,7 +16,7 @@ const cards = await queryCollection(`home_product_cards_${locale.value.replace('
 
 <template>
   <div class="flex flex-col max-w-bcGovLg mx-auto">
-    <div class="px-2 prose text-center mx-auto min-w-full lg:min-w-4xl">
+    <div class="px-2 prose text-center mx-auto w-full sm:max-w-3/4">
       <slot name="header" />
     </div>
     <ul class="m-0 mx-auto flex list-square list-inside flex-wrap justify-center gap-4 md:gap-8 py-4 md:px-4 md:py-8">
@@ -27,7 +27,7 @@ const cards = await queryCollection(`home_product_cards_${locale.value.replace('
       />
     </ul>
     <div class="bg-blue-100 p-4 sm:px-2 sm:py-7 text-center">
-      <div class="max-w-4xl mx-auto flex flex-col gap-4">
+      <div class="sm:max-w-3/4 mx-auto flex flex-col gap-4">
         <slot name="footer" />
       </div>
     </div>
@@ -39,7 +39,7 @@ const cards = await queryCollection(`home_product_cards_${locale.value.replace('
   color: var(--color-bcGovGray-900);
   text-decoration: none;
   font-weight: 900;
-  font-size: var(--text-3xl);
+  font-size: 2rem;
 }
 
 .prose :where(strong){

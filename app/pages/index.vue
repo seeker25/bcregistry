@@ -64,7 +64,7 @@ onMounted(() => {
             <NuxtLink
               :to="link.to"
               class="text-bcGovColor-markBlue font-bold underline focus-visible:outline-2
-              outline-offset-2 rounded-sm outline-bcGovColor-markBlue"
+              outline-offset-2 rounded-sm outline-bcGovColor-markBlue hover:text-bcGovColor-markBlueHover"
             >
               {{ link.label }}
             </NuxtLink>
