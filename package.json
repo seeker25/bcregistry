@@ -1,6 +1,6 @@
 {
   "name": "bc-registry",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "private": true,
   "type": "module",
   "scripts": {
@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@nuxt/content": "^3.4.0",
-    "@sbc-connect/nuxt-core-layer-beta": "^0.0.3",
+    "@sbc-connect/nuxt-core-layer-beta": "^0.0.5",
     "nuxt": "^3.16.1",
     "nuxt-gtag": "^3.0.2"
   },

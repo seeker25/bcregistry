@@ -25,7 +25,8 @@ export default defineContentConfig({
     home_product_cards_enCA: defineCollection({
       type: 'page',
       source: {
-        include: 'en-CA/home/sections/**/cards/**/*.md'
+        include: 'en-CA/home/sections/**/cards/**/*.md',
+        exclude: ['**/bc-assessment.md'] // remove bc assessment card for now
       },
       schema: z.object({
         background_image: z.string().optional(),
@@ -44,7 +45,8 @@ export default defineContentConfig({
     home_product_cards_frCA: defineCollection({
       type: 'page',
       source: {
-        include: 'fr-CA/home/sections/**/cards/**/*.md'
+        include: 'fr-CA/home/sections/**/cards/**/*.md',
+        exclude: ['**/bc-assessment.md'] // remove bc assessment card for now
       },
       schema: z.object({
         background_image: z.string().optional(),
