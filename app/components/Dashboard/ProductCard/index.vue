@@ -4,6 +4,8 @@ const isSmallScreen = useMediaQuery('(max-width: 640px)')
 defineProps<{
   product: Product
 }>()
+
+const id = useId()
 </script>
 
 <template>
@@ -20,16 +22,19 @@ defineProps<{
         class="mx-auto h-[183px] w-[244px]"
         :src="`/${product.image}`"
       >
-      <div class="flex flex-col justify-between">
+      <div class="flex flex-col justify-between flex-1">
         <div class="space-y-4 pb-4">
           <a
             :href="product.link"
-            :aria-describedby="product.text"
+            :aria-describedby="id"
             class="text-2xl font-semibold text-bcGovColor-darkGray no-underline focus:outline-none"
           >
             {{ product.title }}
           </a>
-          <p class="text-lg text-bcGovColor-midGray">
+          <p
+            :id
+            class="text-lg text-bcGovColor-midGray"
+          >
             {{ product.text }}
           </p>
         </div>
