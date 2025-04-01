@@ -1,4 +1,4 @@
-export default defineNuxtRouteMiddleware((to) => {
+export default defineNuxtRouteMiddleware(() => {
   const { kcUser } = useKeycloak()
   const rtc = useRuntimeConfig().public
 
@@ -6,10 +6,5 @@ export default defineNuxtRouteMiddleware((to) => {
 
   if (isStaff) {
     return navigateTo(rtc.businessRegistryStaffDashboard, { external: true })
-  }
-
-  if (to.query.accountid) {
-    const accountStore = useConnectAccountStore()
-    accountStore.switchCurrentAccount(parseInt(to.query.accountid as string))
   }
 })
