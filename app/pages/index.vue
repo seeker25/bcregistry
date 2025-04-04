@@ -34,8 +34,6 @@ onMounted(() => {
   setLoginRedirectUrl(`${rtc.baseUrl}${locale.value}/dashboard`)
   // if user logs out from this page, return here
   clearLogoutRedirectUrl()
-  // siteminder url to clear cookie
-  setSiteMinderLogoutUrl()
 })
 </script>
 
