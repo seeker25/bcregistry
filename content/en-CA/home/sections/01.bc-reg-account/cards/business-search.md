@@ -1,10 +1,10 @@
 ---
-name: Business Search
+name: Business and Person Search
 badge:
-link: 
-  label: Learn more about Business Search
+link:
+  label: Learn more about Business and Person Search
   target: _blank
-  href: 
+  href:
   rtcKey: busSrchLearnMoreURL
   appendAccountId: false
   locale: false
