@@ -40,8 +40,7 @@ export default defineNuxtConfig({
   routeRules: {
     '/': { redirect: '/en-CA' },
     '/fr-CA': { prerender: false },
-    '/fr-CA/**': { prerender: false },
-    '/login/**': { redirect: '/en-CA/login' }
+    '/fr-CA/**': { prerender: false }
   },
 
   i18n: {
