@@ -35,14 +35,14 @@ const cards = await queryCollection(`home_product_cards_${locale.value.replace('
 </template>
 
 <style scoped>
-.prose :where(a){
+.prose :where(a) {
   color: var(--color-bcGovGray-900);
   text-decoration: none;
   font-weight: 900;
   font-size: 2rem;
 }
 
-.prose :where(strong){
+.prose :where(strong) {
   color: var(--color-bcGovGray-900);
   font-weight: 900;
   font-size: var(--text-lg);

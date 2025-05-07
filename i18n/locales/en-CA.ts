@@ -296,6 +296,11 @@ export default {
           title: 'Add Product and Services',
           p1: 'To request access to additional products and services, contact the account Administrator of your BC Registries account.'
         },
+        productFees: {
+          title: 'Product Fees',
+          p1: 'To view fees associated with products on Service BC Connect.',
+          link: 'See our fee schedule for details'
+        },
         howToUse: {
           title: 'Help with How to Use BC Registries Products and Services',
           p1: 'Learn about the registries and how to use the applications through step-by-step guides, online videos, and downloadable quick guides.',

@@ -18,7 +18,6 @@ definePageMeta({
 const isSbcStaff = ref(false)
 const helpHref = 'https://www2.gov.bc.ca/gov/content/employment-business/business/managing-a-business/'
   + 'permits-licences/news-updates/modernization-updates/modernization-resources'
-
 const { data: userProducts, status, error } = await useLazyAsyncData(
   'user-products',
   () => productInfo.getActiveUserProducts(),
@@ -87,6 +86,32 @@ onMounted(async () => {
             <p class="text-sm text-bcGovColor-midGray">
               {{ $t('page.dashboard.help.addProds.p1') }}
             </p>
+          </div>
+        </UCard>
+        <!-- eslint-disable-next-line max-len -->
+        <UCard class="relative cursor-pointer border-blue-500 shadow-none hover:shadow-md focus-within:border-2 lg:w-72 xl:w-96 2xl:w-[420px]">
+          <div class="flex flex-col gap-4">
+            <h5 class="font-semibold text-bcGovColor-darkGray">
+              {{ $t('page.dashboard.help.productFees.title') }}
+            </h5>
+            <p class="text-sm text-bcGovColor-midGray">
+              {{ $t('page.dashboard.help.productFees.p1') }}
+            </p>
+            <span>
+              <NuxtLink
+                class="text-sm font-semibold text-blue-500 focus:outline-none"
+                :to="localePath('/product-fees')"
+                target="_blank"
+              >
+                {{ $t('page.dashboard.help.productFees.link') }}
+              </NuxtLink>
+              <span class="inline-flex align-middle">
+                <UIcon
+                  name="i-mdi-open-in-new"
+                  class="ml-1 size-4 text-blue-500"
+                />
+              </span>
+            </span>
           </div>
         </UCard>
         <!-- eslint-disable-next-line max-len -->

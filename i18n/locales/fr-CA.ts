@@ -292,6 +292,11 @@ export default {
           title: 'Ajouter des Produits et Services',
           p1: "Pour demander l'accès à des produits et services supplémentaires, contactez l'administrateur du compte de vos Registres de la CB."
         },
+        productFees: {
+          title: 'Frais de produit',
+          p1: 'Pour voir les frais associés aux produits sur Service BC Connect.',
+          link: 'See our fee schedule for details'
+        },
         howToUse: {
           title: 'Aide pour Utiliser les Produits et Services des Registres de la C.B.',
           p1: 'Découvrez les registres et comment utiliser les applications grâce à des guides étape par étape, des vidéos en ligne et des guides rapides téléchargeables.',
