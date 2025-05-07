@@ -11,5 +11,6 @@ export enum ProductCode {
   BCA = 'BCA',
   ESRA = 'ESRA',
   NDS = 'NDS',
-  STRR = 'STRR'
+  STRR = 'STRR',
+  RPPR = 'RPPR'
 }

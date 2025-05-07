@@ -141,6 +141,7 @@ export default defineNuxtConfig({
       nameRequestURL: process.env.NUXT_NAME_REQUEST_URL,
       orgBookURL: process.env.NUXT_ORGBOOK_URL,
       pprURL: process.env.NUXT_PPR_URL,
+      payApiURL: `${process.env.NUXT_PAY_API_URL}${process.env.NUXT_PAY_API_VERSION}`,
       regAccountCreateURL: process.env.NUXT_REGISTRY_ACCOUNT_CREATE_URL,
       regApiGatewayURL: process.env.NUXT_REGISTRIES_API_GATEWAY_URL,
       rptURL: process.env.NUXT_RPT_URL,

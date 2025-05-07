@@ -110,7 +110,8 @@ export default {
     needMoreInfo: 'Need more Information?',
     contactUs: 'Contact Us',
     bcRegAndOLServices: 'BC Registries and Online Services',
-    ppr: 'Personal Property Registry'
+    ppr: 'Personal Property Registry',
+    productFees: 'Product Fees',
   },
   words: {
     i: 'I',
@@ -299,6 +300,26 @@ export default {
           title: 'Help with How to Use BC Registries Products and Services',
           p1: 'Learn about the registries and how to use the applications through step-by-step guides, online videos, and downloadable quick guides.',
           link: 'Go to the Registry Application Help Page'
+        }
+      }
+    },
+    productFees: {
+      title: 'Product Fees - BC Registries and Online Services',
+      h1: 'Product Fees',
+      p1: 'An overview of fees associated with products on Service BC Connect.',
+      p2: 'Refunds will not be processed for amounts under $10 unless specifically requested by the client. GST is not charged. Fees are subject to change.',
+      header: 'View Fees by Product Type',
+      selectTitle: 'Choose a product to view fees by product type:',
+      selectDefault: 'All Products',
+      note:'Note:',
+      noteContent: 'A priority fee or future effective fee adds an extra $100.00 to the total cost.',
+      table: {
+        header: {
+          service: 'Service',
+          fee: 'Fee',
+          serviceCharge: 'Service Charge',
+          gst: 'GST',
+          total: 'Total'
         }
       }
     },
