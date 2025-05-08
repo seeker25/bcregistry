@@ -1,4 +1,4 @@
-@import "tailwindcss" theme(static);
+@import "tailwindcss";
 @import "@nuxt/ui";
 @source "../../../node_modules/@sbc-connect/nuxt-core-layer-beta";
 
@@ -10,7 +10,7 @@
   --ui-bg-accented: var(--ui-color-neutral-300);
 }
 
-@theme static {
+@theme {
   /* font */
   --font-sans: 'BCSans', 'Verdana', 'Arial', 'sans-serif';
 

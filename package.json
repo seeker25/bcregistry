@@ -1,9 +1,10 @@
 {
   "name": "bc-registry",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "private": true,
   "type": "module",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "build-check": "nuxt build",
     "build": "nuxt generate",
     "dev": "nuxt dev",
@@ -15,7 +16,7 @@
   },
   "dependencies": {
     "@nuxt/content": "^3.4.0",
-    "@sbc-connect/nuxt-core-layer-beta": "^0.0.9",
+    "@sbc-connect/nuxt-core-layer-beta": "^0.0.10",
     "nuxt": "^3.16.2",
     "nuxt-gtag": "^3.0.2"
   },
