@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@nuxt/content": "^3.4.0",
-    "@sbc-connect/nuxt-core-layer-beta": "^0.0.7",
+    "@sbc-connect/nuxt-core-layer-beta": "^0.0.9",
     "nuxt": "^3.16.2",
     "nuxt-gtag": "^3.0.2"
   },
