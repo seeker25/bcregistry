@@ -146,7 +146,8 @@ export const useProductInfo = () => {
     // using $fetch giving type mismatch
     const response = await fetch(`${rtc.authApiURL}/orgs/${accountId}/products?include_hidden=true`, {
       headers: {
-        Authorization: `Bearer ${$keycloak.token}`
+        Authorization: `Bearer ${$keycloak.token}`,
+        "x-apikey": rtc.authApiKey
       }
     })
 
