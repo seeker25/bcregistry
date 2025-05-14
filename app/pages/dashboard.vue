@@ -88,8 +88,9 @@ onMounted(async () => {
             </p>
           </div>
         </UCard>
+        <!-- Disable for now until price list is ready. -->
         <!-- eslint-disable-next-line max-len -->
-        <UCard class="relative cursor-pointer border-blue-500 shadow-none hover:shadow-md focus-within:border-2 lg:w-72 xl:w-96 2xl:w-[420px]">
+        <UCard v-if="false" class="relative cursor-pointer border-blue-500 shadow-none hover:shadow-md focus-within:border-2 lg:w-72 xl:w-96 2xl:w-[420px]">
           <div class="flex flex-col gap-4">
             <h5 class="font-semibold text-bcGovColor-darkGray">
               {{ $t('page.dashboard.help.productFees.title') }}
