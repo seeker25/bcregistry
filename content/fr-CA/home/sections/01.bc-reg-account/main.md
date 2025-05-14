@@ -17,7 +17,7 @@ As we work to modernize our digital registries services, features from other acc
 
 The BC Registries account supports multiple payment options depending on the account and transaction type, including credit card, online banking, BC OnLine, and pre-authorized debit (PAD).
 
-[Learn more about applicable product fees](/product-fees){target="_blank" class="prose"}
+<!--[Learn more about applicable product fees](/product-fees){target="_blank" class="prose"}disable until pricelist ready-->
 
 :SbcAccountButtons
 ::
