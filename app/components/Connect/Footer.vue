@@ -1,7 +1,7 @@
-<!-- This is temporary until pricelist gets implemented and finalized-->
+<!-- This is temporary until pricelist gets implemented and finalized -->
 <script setup lang="ts">
 const uiVersion = useRuntimeConfig().public.version
-const ac = (useAppConfig() as any).connect.core.footer
+const ac = useAppConfig().connect.core.footer
 const localePath = useLocalePath()
 const links = [
   {
@@ -43,6 +43,7 @@ const appVersions = computed<string[]>(() => {
   return items
 })
 </script>
+
 <template>
   <footer
     id="connect-main-footer"
