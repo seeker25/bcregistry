@@ -42,9 +42,9 @@ export default defineNuxtConfig({
     '/fr-CA': { prerender: false },
     '/fr-CA/**': { prerender: false },
     ...(!isTestOrDev && {
-      '/product-fees': { redirect: '/'  },
-      '/en-CA/product-fees': { redirect: '/'  },
-      '/fr-CA/product-fees': { redirect: '/'  }
+      '/product-fees': { redirect: '/' },
+      '/en-CA/product-fees': { redirect: '/' },
+      '/fr-CA/product-fees': { redirect: '/' }
     })
   },
 
