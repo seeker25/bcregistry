@@ -1,7 +1,6 @@
 import { ProductCode } from './product-code'
 
 export const productDisplay = {
-  [ProductCode.BCA]: 'BC Assessment',
   [ProductCode.BUSINESS]: 'Business Registry & Name Request',
   [ProductCode.BUSINESS_SEARCH]: 'Business and Person Search',
   [ProductCode.CSO]: 'Court Services Online',
@@ -10,6 +9,5 @@ export const productDisplay = {
   [ProductCode.PPR]: 'Personal Property Registry',
   [ProductCode.RPPR]: 'Restricted Personal Property Registry',
   [ProductCode.RPT]: 'Rural Property Tax',
-  [ProductCode.STRR]: 'Short-Term Rental Registry',
   [ProductCode.VS]: 'Wills Registry'
 }

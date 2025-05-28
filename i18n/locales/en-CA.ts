@@ -312,15 +312,16 @@ export default {
       title: 'Product Fees - BC Registries and Online Services',
       h1: 'Product Fees',
       p1: 'An overview of fees associated with products on Service BC Connect.',
-      p2: 'Refunds will not be processed for amounts under $10 unless specifically requested by the client. GST is not charged. Fees are subject to change.',
+      p2: 'Refunds will not be processed for amounts under $10 unless specifically requested by the client. Fees are subject to change.',
       header: 'View Fees by Product Type',
       selectTitle: 'Choose a product to view fees by product type:',
       selectDefault: 'All Products',
       note:'Note:',
       noteContent: 'A priority fee or future effective fee adds an extra $100.00 to the total cost.',
+      variableFeeNote: 'Fees indicated with an asterisk (*) in the description have a variable amount and may differ from the amount shown.',
       table: {
         header: {
-          service: 'Service',
+          service: 'Description',
           fee: 'Fee',
           serviceCharge: 'Service Charge',
           gst: 'GST',

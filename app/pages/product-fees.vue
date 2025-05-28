@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import { productDisplay } from '~/enums/product-display'
+import { ProductCode } from '~/enums/product-code'
 
 const { locale, t } = useI18n()
 const rtc = useRuntimeConfig().public
 const { setLoginRedirectUrl, clearLogoutRedirectUrl } = useKeycloak()
 const localePath = useLocalePath()
+const ldStore = useConnectLaunchdarklyStore()
 
 useHead({
   title: t('page.productFees.title')
@@ -24,6 +26,7 @@ interface ProductFee {
   serviceCharge: number
   gst: number
   total: number | string
+  variable: boolean
   url?: string
 }
 
@@ -44,12 +47,17 @@ function groupAndTotalProducts(inputProducts: ProductFee[]): GroupedProductFee[]
       productCode,
       corpType,
       corpTypeDescription,
-      filingType
+      filingType,
+      variable
     } = currentItem
     const total = typeof fee === 'string' ? fee : fee + serviceCharge + gst
 
+    let serviceString = corpTypeDescription + ' - ' + service
+    if (variable) {
+      serviceString += '*'
+    }
     const productFee: ProductFee = {
-      service: corpTypeDescription + ' - ' + service,
+      service: serviceString,
       fee,
       serviceCharge,
       gst,
@@ -58,7 +66,8 @@ function groupAndTotalProducts(inputProducts: ProductFee[]): GroupedProductFee[]
       filingType,
       productCode,
       corpType,
-      corpTypeDescription
+      corpTypeDescription,
+      variable
     }
 
     if (!accumulator[productCode]) {
@@ -105,7 +114,7 @@ const serviceColumns = [
     cell: ({ row }: { row: { original: { service: string, url?: string } } }) => {
       if (row.original.url) {
         return h('div', {
-          innerHTML: `<a href="${row.original.url}" 
+          innerHTML: `<a href="${row.original.url}"
           target="_blank" class="underline text-bcGovColor-markBlue">${row.original.service}</a>` })
       } else {
         return h('div', row.original.service)
@@ -172,7 +181,8 @@ watch(selectedProduct, (val: string) => {
 
 onMounted(async () => {
   try {
-    const response = await fetch(`${rtc.payApiURL}/fees`, {
+    const apiURL = ldStore.getStoredFlag('override-price-list-api-url') || rtc.payApiURL
+    const response = await fetch(`${apiURL}/fees`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -225,7 +235,7 @@ onMounted(async () => {
           body: 'p-4 sm:px-7 sm:pt-7 sm:pb-0 pb-0 grow',
           footer: 'p-4 sm:pb-7 sm:px-7'
         }"
-        class="mb-10"
+        class="mb-2"
       >
         <template #header>
           <div class="flex justify-between pl-7 pr-4 font-bold">
@@ -249,7 +259,7 @@ onMounted(async () => {
           }"
         />
       </UCard>
-      <p><strong>{{ t('page.productFees.note') }}</strong>  {{ t('page.productFees.noteContent') }} </p>
+      <p> {{ t('page.productFees.variableFeeNote') }} </p>
       <!-- iterate over the grouped products and display them in a card -->
       <UCard
         v-for="(product, index) in filteredProducts"
@@ -270,12 +280,23 @@ onMounted(async () => {
             </span>
           </div>
         </template>
-
+        <p v-if="ProductCode.BUSINESS == product.name"
+           class="text-sm">
+          {{ t('page.productFees.noteContent') }}
+        </p>
         <UTable
           :data="product.productFees"
           :columns="serviceColumns"
+          class="product-fees-table"
         />
       </UCard>
     </div>
   </div>
 </template>
+
+<style scoped>
+:deep(.product-fees-table th),
+:deep(.product-fees-table td) {
+  padding-left: 0 !important;
+}
+</style>
