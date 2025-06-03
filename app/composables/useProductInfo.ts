@@ -143,7 +143,7 @@ export const useProductInfo = () => {
     const userProducts: Product[] = []
     const accountId = accountStore.currentAccount.id
 
-    if (!!accountId) {
+    if (!accountId) {
       const error = 'No accountId to fetch products - no memberships to an org, or call to get account id failing'
       console.error(error)
       throw new Error(error)
