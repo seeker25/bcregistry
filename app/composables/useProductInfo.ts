@@ -143,8 +143,10 @@ export const useProductInfo = () => {
     const userProducts: Product[] = []
     const accountId = accountStore.currentAccount.id
 
-    if (!accountId) {
-      throw new Error('No accountId to fetch products for')
+    if (!!accountId) {
+      const error = 'No accountId to fetch products - no memberships to an org, or call to get account id failing'
+      console.error(error)
+      throw new Error(error)
     }
 
     // using $fetch giving type mismatch
