@@ -143,6 +143,10 @@ export const useProductInfo = () => {
     const userProducts: Product[] = []
     const accountId = accountStore.currentAccount.id
 
+    if (!accountId) {
+      throw new Error('No accountId to fetch products for')
+    }
+
     // using $fetch giving type mismatch
     const response = await fetch(`${rtc.authApiURL}/orgs/${accountId}/products?include_hidden=true`, {
       headers: {
